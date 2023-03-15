@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h2>Crea tu perfil</h2>
+        <img id="logo" src="../img/teclapedia.svg" alt="logo">
+    </header>
+    <main>
+            
+        <form action="">
+            <!-- datos personales -->
+            <div class="horizontales">
+                <img id="fotoPerfil" src="./img/avatar.jpg" alt="Foto de perfil">
+                <div class="datosPersonales">                        
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>                    
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                    <input type="text" name="telefono" id="telefono" placeholder="Teléfono">
+                    <input type="text" name="linkedin" id="linkedin" placeholder="Linkedin">
+                    <input type="text" name="ciudad" id="ciudad" placeholder="Ciudad">
+                    <input type="text" name="pais" id="pais" placeholder="País">
+                </div>
+            </div>
+            <h3>Estudios</h3>
+            <select name="estudios" id="estudios">
+                <option value="nivelEstudios" selected>Nivel de estudios</option> 
+                <option value="sinEstudios">Sin estudios finalizados</option>                
+                <option value="graduado">Graduado escolar</option>
+                <option value="eso">ESO</option>
+                <option value="bachiller">Bachiller</option>
+                <option value="gMedio">Grado medio</option>
+                <option value="gSuperior">Grado superior</option>
+                <option value="universitarios">Estudios universitarios</option>
+                <option value="master">Titulo de máster o postgrado</option>
+            </select>                
+            <input type="text" name="titulo" id="titulo" placeholder="Titulo">
+            <input type="text" name="centro" id="centro" placeholder="Centro">
+            <div class="datoFormulario">
+                <div>
+                    <label for="fInicioEstudio">Inicio:</label>
+                    <input type="date" name="fInicioEstudio" id="fInicioEstudio">
+                </div>
+                <div>
+                    <label for="fFinEstudio">Fin:</label>
+                    <input type="date" name="fFinEstudio" id="fFinEstudio">
+                </div>
+                <div>
+                    <input type="checkbox" name="actualidadEstudio" id="actualidadEstudio">
+                    <label for="actualidadEstudio">Actualidad</label>
+                </div>  
+            </div>
+
+            <h3>Experiencia laboral</h3>
+            <input type="text" name="puesto" id="puesto" placeholder="Puesto">
+            <input type="text" name="empresa" id="empresa" placeholder="Empresa">
+            <div class="datoFormulario">
+                <div>
+                    <label for="fInicioTrabajo">Inicio:</label>
+                    <input type="date" name="fInicioTrabajo" id="fInicioTrabajo">
+                </div>
+                <div>
+                    <label for="fFinTrabajo">Fin:</label>
+                    <input type="date" name="fFinTrabajo" id="fFinTrabajo">
+                </div>
+                <input type="checkbox" name="actualidadTrabajo" id="actualidadTrabajo">
+                <label for="actualidadTrabajo">Actualidad</label>
+            </div>                
+            <textarea name="funciones" id="funciones" rows="7" placeholder="Funciones desempeñadas..."></textarea>
+                            
+            <h3>Otros datos</h3>
+            <div>
+                <label for="carnet">Carnet de conducir:</label>
+                <select name="carnet" id="carnet">
+                    <option value="sinCarnet">No</option>
+                    <option value="a">A</option>
+                    <option value="b">B</option>
+                    <option value="c">C</option>
+                    <option value="ce">C+E</option>
+                    <option value="d">D</option>
+                    <option value="de">D+E</option>
+                </select>
+            </div>
+            <div>
+                <label for="disponibilidad">Disponibilidad de incorporación inmediata</label>
+                <input type="checkbox" name="disponibilidad" id="disponibilidad">
+            </div>
+            <div>
+                <label for="preferencia">Preferencia:</label>
+                <select name="preferencia" id="preferencia">
+                    <option value="mañanas">Mañanas</option>
+                    <option value="tardes">Tardes</option>
+                    <option value="turnoPartido">Turno Partido</option>
+                    <option value="turnoRotatorio">Turno Rotatorio</option>
+                    <option value="indiferente">Indiferente</option>
+                </select>
+            </div>
+            <textarea name="hobbies" id="hobbies" rows="7" placeholder="Cuéntanos tus hobbies..."></textarea>
+            <div class="botones">
+                <button>Crear perfil</button>
+                <button>Cancelar</button> 
+            </div>         
+        </form>
+    </main>
+    <footer>
+        <div class="pie1">
+            <ul>
+                <li>Meta</li>
+                <li>Información</li>
+                <li>Blog</li>
+                <li>Empleo</li>
+                <li>Ayuda</li>
+                <li>API</li>
+                <li>Privacidad</li>
+                <li>Condiciones</li>
+            </ul>
+        </div>
+        <div class="pie2">
+            <select class="idioma" name="idioma" id="">
+                <option value="esp">Español</option>                
+                <option value="eng">Inglés</option>                
+                <option value="fr">Francés</option>                
+                <option value="deu">Alemán</option>
+            </select>
+            <p>&copy; 2023 Teclapedia</p>
+        </div>        
+    </footer>
+</body>
+</html>

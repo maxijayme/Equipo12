@@ -1,0 +1,170 @@
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+/*font-family: 'Tilt Neon', cursive;*/
+
+/* colores background-image: linear-gradient( to top, rgb(1, 37, 22), rgb(22, 159, 7)); */
+
+/*Estilo principal*/
+body {
+    font-family: 'Tilt Neon', cursive;
+    color: rgb(13, 3, 21);    
+    background-color: whitesmoke;
+    width: 30%;
+    margin: 1% auto;
+}
+
+h3, h2 {
+    color: rgb(1, 37, 22);
+}
+
+
+/*Cabecera*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#logo {
+    width: 200px;
+}
+
+
+/* formulario */
+main {
+    border: 1px solid rgb(1, 37, 22);
+    border-radius: 5%;
+    padding: 2%;
+    box-shadow: 10px 5px 5px rgb(1, 37, 22);
+}
+
+form {
+    padding: 20px;
+}
+
+/* Datos personales */
+
+#fotoPerfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+
+.horizontales {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.datosPersonales {
+    /* width: 90%; */
+    padding-left: 15px;
+    align-content: center;
+}
+
+
+input,
+select,
+textarea {
+    border: none;
+    font-family: 'Tilt Neon', cursive;
+}
+
+select,
+input[type="date"],
+input[type="checkbox"],
+label {
+    color: gray;
+    width: fit-content;
+    margin-bottom: 2%;
+}
+
+label {
+    margin-right: 3px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 2%;
+    color: rgb(13, 3, 21);
+}
+
+input:focus {
+    background-color: rgb(218, 249, 215);
+    font-weight: 600;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    margin-top: 2%;
+}
+
+
+.datoFormulario {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+button {
+    width: fit-content;
+    padding: 5px;
+    color: rgb(1, 37, 22);
+    font-weight: bold;
+    border-radius: 7px;
+    border-color: rgb(1, 37, 22);    
+    background-color: whitesmoke;
+}
+
+button:hover {
+    background-color: rgb(1, 37, 22);
+    color: whitesmoke;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 0 15px;
+    margin-top: 5%;
+}
+
+/*Pie de pagina*/
+footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    color: gray;
+    display: flex;
+    flex-direction: column; 
+    margin: auto;
+    margin-top: 30px;
+}
+ul {
+    list-style: none;
+    display: flex;
+}
+li {
+    margin: 20px;
+}
+
+.pie1 {
+    display: flex;
+    margin: auto;
+}
+
+.pie2 {
+    display: flex;
+    margin: auto;
+    color: gray;
+}
+.idioma {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    width: fit-content;
+    border: 0;
+    color: gray;
+    margin-right: 10px;
+}
+
