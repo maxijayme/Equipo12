@@ -8,22 +8,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="container">
-        <div class="form">
-            <h1>LOGO</h1>
-            <form>
-                <img class="icons relative" src ="./img/usuario.png">
-                <input class="input" type="text" placeholder="Nombre" id="name">
-                <img class="icons relative" src="./img/email.png">
-                <input class="input" type="email" placeholder="Email" id="email">
-                <img class="icons relative" src="./img/candado.png">
-                <input class="input" type="password" placeholder="Contraseña" id="password">
-                <img class="icons relative" src="./img/candado.png">
-                <input class="input" type="password" placeholder="Confirmar contraseña" id="password">
-                <a class="ok-account cambiar-color">¿Ya tienes una cuenta?</a>
-                <input class="button" type="submit" value="REGISTRARSE">
-            </form>
+    <main>
+        <div id="container-inicial">
+            <h1>¡Regìstrate y comparte información con otros junior developers!</h1>
         </div>
+        <div>
+            <div id="container-formulario">
+                <img src="../img/teclapedia.svg" id="logo" alt="">
+                <form id="datos"></form>
+                    <input class="hueco" type="text" placeholder="Nombre y Apellidos">
+                    <input class="hueco" type="text" placeholder="Nombre de Usuario">
+                    <input class="hueco" type="text" placeholder="Email">
+                    <input class="hueco" type="text" placeholder="Contraseña">
+                    <input class="hueco" type="text" placeholder="Confirmación contraseña">
+                    <p class="p-cond">Al registrarte, aceptas nuestras Condiciones. Obtén más información sobre cómo recopilamos, usamos y compartimos tus datos en la Política de privacidad, así como el uso que hacemos de las cookies y tecnologías similares en la Política de cookies.</p>
+                    <button>Registrarse</button>
+                </form>
+                <div id="division">
+                    <div class="linea"></div>
+                    <span>o</span>
+                    <div class="linea"></div>
+                </div>
+                <span id="google">
+                    <img src="../login/img/logo_google.png" alt="" id="logo_google">
+                    <a href="#">Iniciar sesión con Google</a>
+                </span>
+            </div>
+            <div id="login">
+                <p>¿Ya tienes cuenta?</p>
+                <a href="../login/index.html">Inicia</a>
+            </div>
+        </div>  
     </main>
 </body>
 </html>
