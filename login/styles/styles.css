@@ -4,26 +4,31 @@ a {
 }
 
 html{
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
+    height: fit-content;
 }
 
 body{
     display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    height: 99%;
+    height: 100vh;
+    justify-content: space-between;
 }
 
 main{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+#main_container{
+    display: flex;
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
+
 #welcome_container {
     width: 300px;
 }
@@ -138,3 +143,39 @@ button{
     font-weight: 700;
 }
 
+/*Pie de pagina*/
+footer {
+    justify-self: flex-end;
+    font-family: 'Roboto'
+    , sans-serif;
+    font-size: x-small;
+    color: gray;
+    display: flex;
+    flex-direction: column; 
+}
+ul {
+    list-style: none;
+    display: flex;
+}
+li {
+    margin: 20px;
+}
+
+.pie1 {
+    display: flex;
+    margin: auto;
+}
+
+.pie2 {
+    display: flex;
+    margin: auto;
+    color: gray;
+}
+.idioma {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    width: fit-content;
+    border: 0;
+    color: gray;
+    margin-right: 10px;
+}
