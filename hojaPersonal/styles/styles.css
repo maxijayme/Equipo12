@@ -49,8 +49,7 @@
     font-size:18pt
 }
 
-/*main*/
-
+/* main */
 main{
     width: 100%;
 }
@@ -66,6 +65,16 @@ main{
     border: 1px solid red;
 }
 
+.bloque {
+    border: 0.5px solid rgb(40, 4, 73);
+    border-radius: 20px;
+    padding: 10px 20px 10px;
+    margin-bottom: 15px;
+}
+.contacto {
+    display: flex;
+    justify-content: space-between;
+}
 /*chat*/
 
 #chat{
@@ -91,7 +100,6 @@ main{
 #chat_avatar{
     height: 40px;
 }
-
 
 /*Pie de pagina*/
 footer {

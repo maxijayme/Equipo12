@@ -4,9 +4,122 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>Hoja personal</title>
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar bg-body-tertiary fixed-top navbar-expand-lg">
+            <div class="container-fluid no-padding">
+                <a class="navbar-brand">
+                    <img src="../img/teclapedia_logo.svg" alt="Teclapedia" id="logo" >
+                </a>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <div id="nav_profile" class="centrado_flex" >
+                    <span>
+                        <i class="bi bi-bell"></i>
+                    </span>
+                    <span>
+                        <img src="./img/avatar.jpg" alt="perfil">
+                    </span>
+                </div>
+            </div>
+          </nav>
+    </header>
+    <main class="container-fluid">
+        <div class="row" id="main_container">
+            <div class="col" id="col_izq">
+                Columna izquierda
+                <div class="bloque centrar">
+                    <div class="contacto">                
+                        <i class="bi bi-telephone"></i>
+                        <p>696 987 776</p>
+                        <i class="bi bi-envelope-at"></i>
+                        <p>luciasanchez@gmail.com</p>
+                        <i class="bi bi-linkedin"></i>
+                        <p>https://www.linkedin.com/in/lucia-sanchez/</p>
+                    </div>
+                    <i class="bi bi-pencil"></i>
+                </div>
+                <div class="bloque">
+                    <h3>Experiencia laboral</h3>
+                    <div class="experiencia">
+                        <h4>Fullstack developer</h4>
+                        <h5>NewTech</h5>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus possimus accusantium, cum distinctio itaque pariatur autem ducimus officiis, laborum reiciendis atque ullam necessitatibus mollitia libero assumenda asperiores ipsum amet ex labore fuga consequatur iure odit explicabo. Nostrum amet, quod, harum odio laudantium sequi dicta obcaecati architecto atque fugit voluptatum in placeat officiis porro iusto eum accusamus commodi, dignissimos dolores velit?</p>
+                    </div>
+                    <div class="experiencia">
+                        <h4>Fullstack developer</h4>
+                        <h5>NewTech</h5>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus possimus accusantium, cum distinctio itaque pariatur autem ducimus officiis, laborum reiciendis atque ullam necessitatibus mollitia libero assumenda asperiores ipsum amet ex labore fuga consequatur iure odit explicabo. Nostrum amet, quod, harum odio laudantium sequi dicta obcaecati architecto atque fugit voluptatum in placeat officiis porro iusto eum accusamus commodi, dignissimos dolores velit?</p>
+                    </div>
+                    <i class="bi bi-pencil"></i>
+                </div>
+                <div class="bloque">
+                    <h3>Estudios</h3>
+                    <div class="estudio">
+                        <h4>Grado en ingeniería informática</h4>
+                        <h5>Universidad de Oviedo</h5>
+                        <h6>2012 - 2016</h6>
+                    </div>
+                    <div class="estudio">
+                        <h4>Grado en ingeniería informática</h4>
+                        <h5>Universidad de Oviedo</h5>
+                        <h6>2012 - 2016</h6>
+                    </div>
+                    <div class="estudio">
+                        <h4>Grado en ingeniería informática</h4>
+                        <h5>Universidad de Oviedo</h5>
+                        <h6>2012 - 2016</h6>
+                    </div>
+                    <i class="bi bi-pencil"></i>
+                </div>
+            </div>
+            <div class="col" id="col_der">
+              Columna derecha
+            </div>
+            <section id="chat">
+                <div id="chat_container">
+                    <div class="centrado_flex">
+                        <img src="./img/avatar.jpg" alt="chat avatar" class="icon_nav" id="chat_avatar">
+                        <span>Mensajes</span>
+                    </div>
+                    <div class="centrado">
+                        <span>...</span>
+                        <span>^</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="pie1">
+            <ul class="pie1">
+                <li>Meta</li>
+                <li>Información</li>
+                <li>Blog</li>
+                <li>Empleo</li>
+                <li>Ayuda</li>
+                <li>API</li>
+                <li>Privacidad</li>
+                <li>Condiciones</li>
+            </ul>
+        </div>
+        <div class="pie2">
+            <select class="idioma" name="idioma" id="">
+                <option value="esp">Español</option>                
+                <option value="eng">Inglés</option>                
+                <option value="fr">Francés</option>                
+                <option value="deu">Alemán</option>
+            </select>
+            <p>&copy; 2023 Teclapedia</p>
+        </div>        
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
