@@ -2,24 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 /*font-family: 'Tilt Neon', cursive;*/
 
+/*gris claro: rgb(249, 249, 249)
+gris oscuro: rgb(241, 241, 241)*/
 /* colores background-image: linear-gradient( to top, rgb(1, 37, 22), rgb(22, 159, 7)); */
 
 /*Estilo principal*/
 body {
     font-family: 'Tilt Neon', cursive;
-    color: rgb(13, 3, 21);    
+    color: rgb(249, 249, 249);    
     background-color: whitesmoke;
     width: 30%;
     margin: 1% auto;
 }
 
-h3, h2 {
-    color: rgb(1, 37, 22);
+h4, h3 {
+    color: black;
 }
 
 
 /*Cabecera*/
-header {
+/* header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,44 +30,64 @@ header {
 
 #logo {
     width: 200px;
-}
+} */
 
 
 /* formulario */
 main {
-    border: 1px solid rgb(1, 37, 22);
-    border-radius: 5%;
+    background-color: rgb(241, 241, 241);
+    border-radius: 2%;
     padding: 2%;
-    box-shadow: 10px 5px 5px rgb(1, 37, 22);
+    margin-top: 3%;
 }
 
-form {
+/* form {
     padding: 20px;
-}
+} */
 
 /* Datos personales */
 
 #fotoPerfil {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    padding: 10px;
+    border-radius: 50%;    
 }
 
+label {
+    color: gray;
+    margin-right: 1%;
+}
 
-.horizontales {
+input,
+select, 
+input[type="date"],
+input[type="checkbox"],
+textarea {
+    margin-bottom: 1%;
+    color: gray;
+}
+
+/* textarea {
+    resize: none;
+}
+
+input[type="date"],
+input[type="checkbox"],
+select {
+    color: gray;
+} */
+/* .horizontales {
     display: flex;
     justify-content: space-between;
     align-content: center;
 }
 .datosPersonales {
-    /* width: 90%; */
-    padding-left: 15px;
+        padding-left: 15px;
     align-content: center;
-}
+} */
 
 
-input,
+/* input,
 select,
 textarea {
     border: none;
@@ -129,7 +151,7 @@ button:hover {
     justify-content: center;
     gap: 0 15px;
     margin-top: 5%;
-}
+} */
 
 /*Pie de pagina*/
 footer {
