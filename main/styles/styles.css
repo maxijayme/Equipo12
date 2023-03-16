@@ -66,6 +66,23 @@ main{
     border: 1px solid red;
 }
 
+/* columna central */
+.fotoPost {
+    width: 50px;
+    height: 40px;
+}
+
+.bi {
+    font-size: 20px;
+    color: rgb(3, 69, 3);
+    padding: 2px;
+}
+
+.botonPublicar {
+    width: 50%;
+    border-radius: 20px;
+}
+
 /*chat*/
 
 #chat{
