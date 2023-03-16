@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar bg-body-tertiary fixed-top navbar-expand-lg">
+        <nav class="navbar bg-body-tertiary fixed-top navbar-expand-lg bg-dark navbar-dark" data-bs-theme="dark">
             <div class="container-fluid no-padding">
                 <a class="navbar-brand">
                     <img src="../img/teclapedia_logo.svg" alt="Teclapedia" id="logo" >
@@ -23,36 +23,41 @@
                     </div>
                 </form>
                 <div id="nav_profile" class="centrado_flex" >
-                    <span>
+                    <div>
                         <i class="bi bi-bell"></i>
-                    </span>
-                    <span>
-                        <img src="./img/avatar.jpg" alt="perfil">
-                    </span>
+                    </div>
+                    <div>
+                        <img src="./img/avatar.jpg"" alt="perfil">
+
+                    </div>
+                 
+                
                 </div>
             </div>
           </nav>
     </header>
-    <main class="container-fluid">
+    <main class="container-fluid h-auto">
         <div class="row" id="main_container">
             <div class="col-2" id="col_izq">
               Columna izquierda
             </div>
-            <div class="col-5" id="col_cen">
+            <div class="col-5 py-3 " id="col_cen">
                 <!-- nueva publicación -->
-                 <div class="newPost container">
+                 <div class="newPost container p-3">
                      <div class="cabeceraNewPost row d-flex justify-content-left">
                          <img src="./img/avatar.jpg" alt="fotoUsuario" class="fotoPost img-fluid">
                          <p class="col h4 text-dark">Comparte algo...</p>
                      </div>                
                      <textarea class="form-control row" name="funciones" id="funciones" rows="5" placeholder="¿Qué quieres compartir?..."></textarea>
-                     <div class="pieNewPost row d-flex">
+                     <div class="pieNewPost row d-flex justify-content-between">
                          <div class="adjuntar col">
                              <i class="bi bi-camera"></i>
                              <i class="bi bi-camera-reels"></i>
                              <i class="bi bi-paperclip"></i>
                          </div>
-                         <button class="btn btn-outline-success col botonPublicar">Publicar</button>
+                         <div class="col " id="boton_publicar">
+                             <button class="btn btn-outline-success botonPublicar">Publicar</button>
+                         </div>
                      </div>                
                  </div>
  
@@ -102,6 +107,7 @@
                          </div>
                      </div>
                  </div>
+            </div>
             <div class="col-2" id="col_der">
                 <section class="friend_request ">
                     <div class="like_container">
@@ -176,7 +182,7 @@
             </section>
         </div>
     </main>
-    <footer>
+    <footer class="container-fluid" >
         <div class="pie1">
             <ul class="pie1">
                 <li>Meta</li>
