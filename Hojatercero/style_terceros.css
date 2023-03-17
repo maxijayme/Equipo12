@@ -1,0 +1,257 @@
+/*Clase para llevar hasta el borde de la pantalla*/
+.no-padding{
+    padding: 0;
+}
+
+.no_margin{
+    margin: 0;
+}
+
+/*Clase para centrado flex*/
+.centrado_flex{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/*header*/
+
+.navbar{
+    border: 1px solid red;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#logo{
+        width: 250px;
+}
+
+#navbarToggler{
+    flex-grow: 0;
+}
+
+#nav_profile{
+    gap: 20px;
+}
+
+#nav_profile img{
+    height: 55px;
+    cursor: pointer;
+}
+
+#nav_profile  i{
+    font-size:18pt
+}
+
+/* Main */
+main{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 10px;
+}
+
+/* aqui esta la parte de los datos de la otra persona */
+.caja_datos{
+    border: 2px solid greenyellow;
+    width: 20%;
+    display: flex;
+    flex-flow: column nowrap;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+
+.info_personal{
+    width: 100%;
+}
+
+.Foto-perfil{
+    width: 250px;
+    height: 250px;
+    padding-left: 20px;
+}
+
+.hobbies{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hobbie{
+    border: #3c8b1b solid;
+    border-radius: 5px;
+    box-shadow:  1px 2px 6px 1px rgba(0, 0, 0, .1);
+    padding-left: 2px;
+}
+
+/* Sus ultimas publicaciones */
+.post-list{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+    width: 300px;
+}
+
+.caja_publicaciones{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.imagen_articulo1{
+    background: url(Fotos/post1.jpg);
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: .2s;
+}
+
+.imagen_articulo2{
+    background: url(Fotos/post2.jpg);
+    width: 100%;
+    height: 210px;
+    background-size: cover;
+    background-position: center;
+    transition: .2s;
+}
+
+.imagen_articulo3{
+    background: url(Fotos/post3.jpg);
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: .2s;
+}
+
+.post{
+    box-shadow: 0 1px 6px 1px rgba(0, 0, 0, .1);
+    overflow: hidden;
+    transition: .2s;
+}
+
+.post:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 1px 14px 2px rgba(0, 0, 0, .15);
+}
+
+.header{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.post:hover .imagen_articulo1,
+.post:hover .imagen_articulo2,
+.post:hover .imagen_articulo3{
+    transform: scale(1.1);
+}
+
+.post_body{
+    padding: 15px;
+    text-align: center;
+}
+
+.post_body span{
+    display: inline-block;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.post_body h2{
+    margin-bottom: 15px;
+}
+
+.post_body p{
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.post_body .post_link{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    background: darkseagreen;
+    color: black;
+    width: 50%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, .1);
+}
+
+.post_body .post_link:hover{
+    background: #6fdb41;
+}
+
+/* Amigos en común */
+.caja_amigos{
+    border: 2px solid greenyellow;
+    width: 25%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo{
+    justify-content: center;
+}
+
+.amigos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Foto-amigos{
+    height: 40px;
+    width: 40px;
+}
+
+/* Footer */
+footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    color: gray;
+    display: flex;
+    flex-direction: column; 
+    margin: auto;
+    margin-top: 30px;
+}
+ul {
+    list-style: none;
+    display: flex;
+}
+li {
+    margin: 20px;
+}
+
+.pie1 {
+    display: flex;
+    margin: auto;
+}
+
+.pie2 {
+    display: flex;
+    margin: auto;
+    color: gray;
+}
+.idioma {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    width: fit-content;
+    border: 0;
+    color: gray;
+    margin-right: 10px;
+}
