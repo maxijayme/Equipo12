@@ -153,13 +153,28 @@ main{
 
 /*columna izquierda */
 #col_izq{
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
     min-width: 280px;
+    background-color: white;
+    border-radius: 25px;
 }
 
-#col_izq{
-    border: 1px solid red;
+.foto{
+    width: 75%;
+    display: flex;
+    margin: auto;
 }
+
+.icon{
+    width: 20px;
+    margin-bottom: 0;
+}
+
+.img-not{
+    width: 25%;
+}
+
 
 /* columna central */
 
@@ -188,6 +203,8 @@ main{
 .newPost,
 .post,
 .request_container,
+.datos,
+.noticias,
 select {
     background-color: rgb(222,225,232);
     border-radius: 15px;
