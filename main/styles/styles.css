@@ -185,9 +185,17 @@ main{
     border-radius: 20px;
 }
 
-.newPost{
+.newPost,
+.post,
+.request_container,
+select {
     background-color: rgb(222,225,232);
     border-radius: 15px;
+}
+
+textarea {
+    resize: none;
+    margin-left: 2px;
 }
 
 /*solicitudes de amistad*/
@@ -197,7 +205,7 @@ main{
 }
 
 .friend_request{
-    height: 650px;
+    height: 100%;
     width: 100%;
     min-width: 280px;
     background-color: white;
@@ -313,6 +321,9 @@ main{
     height: 40px;
 }
 
+button:hover {
+    border: 1px solid rgb(83, 83, 83);
+}
 
 /*Pie de pagina*/
 footer {
