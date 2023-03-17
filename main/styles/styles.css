@@ -164,6 +164,7 @@ main{
     width: 75%;
     display: flex;
     margin: auto;
+    border-radius: 50%;
 }
 
 .icon{
