@@ -113,6 +113,48 @@ main{
 #main_container{
     margin-top: 73px;
     justify-content: space-around;
+    padding-left: 63px;
+}
+
+/*menu superior*/
+
+#menu_superior_container{
+    display: none;
+}
+
+#menu_superior{
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    height: 50px;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+/*menu lateral*/
+
+#menu_lateral{
+    position: absolute;
+    border-radius: 0 15px 15px 0;
+    left: 0;
+    height: 300px;
+    align-items: center;
+    min-width: 56px;
+}
+
+#menu_lateral div, #menu_superior{
+    text-align: center;
+}
+
+#menu_lateral i, #menu_superior i{
+    font-size: 2.2rem;
+    color: white;
+}
+
+/*columna izquierda */
+#col_izq{
+    display: none;
+    min-width: 280px;
 }
 
 #col_izq{
@@ -149,6 +191,10 @@ main{
 }
 
 /*solicitudes de amistad*/
+
+#col_der{
+    display: none;
+}
 
 .friend_request{
     height: 650px;
@@ -241,6 +287,7 @@ main{
     color: rgb(83, 83, 83);
 }
 
+
 /*chat*/
 
 #chat{
@@ -305,3 +352,64 @@ li {
     color: gray;
     margin-right: 10px;
 }
+
+
+/*media queries*/
+
+@media (min-width: 1200px) {
+    #menu_lateral {
+        display: none;
+    }
+    #col_der{
+        display: flex;
+    }
+    #main_container{
+        padding: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    #chat{
+        display: none;
+    }
+}
+
+@media (min-width: 768px){
+    #col_izq{
+        display: flex;
+    } 
+} 
+
+@media (max-width: 768px){
+ #col_cen{
+        max-width: 600px;
+    }
+    #news_icon{
+        display: inline-block;
+    }
+}
+
+@media (max-width: 735px){
+    #main_container{
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 556px){
+    #menu_lateral{
+        display: none;
+    }
+
+    #main_container{
+        padding-left: 0;
+    }
+
+    #news_icon{
+        display: none;
+    }
+    #menu_superior_container{
+        display: flex;
+    }
+}
+
+
