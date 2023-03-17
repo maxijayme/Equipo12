@@ -68,26 +68,39 @@ body{
 
 /*search input*/
 
-
+#searchbar{
+    width: 25%;
+    min-width: 280px;
+    display: flex;
+    justify-content: center
+}
 
 #search-wrapper{
     position: relative;
+    width: 67%;
+    transition: 0.5s;
 }
 
-#searchbar{
-    height: 50px;
+#search_input{
+    height: 35px;
     width: 100%;
     border: none;
     border-radius: 25px;
     padding-left: 45px;
+    padding-right: 10px ;
     font-size: 12pt;
     background-color: #f2f2f2;
+}
+
+#search-wrapper:hover{
+    width: 100%;
+    transition: 0.5s;
 }
 
 header i {
     position: absolute;
     margin-left: 20px;
-    margin-top: 12px;
+    margin-top: 3px;
 }
 
 /*main*/
@@ -135,15 +148,12 @@ main{
     border-radius: 15px;
 }
 
-#funciones{
-    
-}
-
 /*solicitudes de amistad*/
 
 .friend_request{
     height: 650px;
     width: 100%;
+    min-width: 280px;
     background-color: white;
     border-radius: 25px;
     display: flex;
@@ -259,7 +269,6 @@ main{
 
 /*Pie de pagina*/
 footer {
-    border: 1px solid red;
     width: 50%;
     justify-self: flex-end;
     font-family: 'Roboto'
