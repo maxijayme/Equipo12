@@ -118,3 +118,39 @@ button{
 #login a{
     font-weight: 700;
 }
+/*Pie de pagina*/
+footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    color: gray;
+    display: flex;
+    flex-direction: column; 
+    margin: auto;
+    margin-top: 30px;
+}
+ul {
+    list-style: none;
+    display: flex;
+}
+li {
+    margin: 20px;
+}
+
+.pie1 {
+    display: flex;
+    margin: auto;
+}
+
+.pie2 {
+    display: flex;
+    margin: auto;
+    color: gray;
+}
+.idioma {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    width: fit-content;
+    border: 0;
+    color: gray;
+    margin-right: 10px;
+}
