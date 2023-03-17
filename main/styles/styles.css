@@ -415,6 +415,9 @@ li {
     #news_icon{
         display: inline-block;
     }
+    #col_izq{
+        display: none;
+    } 
 }
 
 @media (max-width: 735px){
