@@ -1,6 +1,15 @@
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap%27');
+/*font-family: 'Tilt Neon', cursive;*/
 
 *{
-    margin: 0;
+    margin: 0;    
+    font-family: 'Tilt Neon', cursive;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /*Clase para llevar hasta el borde de la pantalla*/
@@ -23,7 +32,6 @@
 /*header*/
 
 .navbar{
-    border: 1px solid red;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -37,16 +45,68 @@
 }
 
 #nav_profile{
+    width: 150px;
     gap: 20px;
+    align-items:normal;
+    justify-content: space-around;
 }
 
 #nav_profile img{
     height: 55px;
     cursor: pointer;
+    border-radius: 50%;
 }
 
 #nav_profile  i{
-    font-size:18pt
+    font-size:18pt;
+    color: white;
+}
+
+body{
+    background-color: rgb(222,225,232);
+}
+
+.bi {
+    font-size: 20px;
+    color: rgb(3, 69, 3);
+    padding: 2px;
+}
+
+/*search input*/
+
+#searchbar{
+    width: 25%;
+    min-width: 280px;
+    display: flex;
+    justify-content: center
+}
+
+#search-wrapper{
+    position: relative;
+    width: 67%;
+    transition: 0.5s;
+}
+
+#search_input{
+    height: 35px;
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    padding-left: 45px;
+    padding-right: 10px ;
+    font-size: 12pt;
+    background-color: #f2f2f2;
+}
+
+#search-wrapper:hover{
+    width: 100%;
+    transition: 0.5s;
+}
+
+header i {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 3px;
 }
 
 /* main */
@@ -55,7 +115,6 @@ main{
 }
 
 #main_container{
-    border: 1px solid red;
     margin-top: 73px;
     height: 100vh;
     justify-content: space-around;
@@ -63,18 +122,16 @@ main{
 
 #col_izq, #col_der{
     border: 1px solid red;
+    background-color: white;
 }
 
-.bloque {
-    border: 0.5px solid rgb(40, 4, 73);
-    border-radius: 20px;
-    padding: 10px 20px 10px;
-    margin-bottom: 15px;
+.container_contacto,
+.container_experiencia,
+.container_estudios {
+    background-color: rgb(222,225,232);
+    border-radius: 15px;
 }
-.contacto {
-    display: flex;
-    justify-content: space-between;
-}
+
 /*chat*/
 
 #chat{

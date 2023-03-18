@@ -84,6 +84,11 @@ textarea {
     color: rgb(83, 83, 83);
 }
 
+button a {
+    color: rgb(83, 83, 83);
+    text-decoration: none;
+}
+
 button:hover {
     border: 1px solid rgb(83, 83, 83);
 }
