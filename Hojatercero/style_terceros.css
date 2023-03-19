@@ -108,6 +108,7 @@ main{
     align-items: flex-start;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding-top: 10px;
+    margin-top: 80px;
 }
 
 /* aqui esta la parte de los datos de la otra persona */
@@ -273,6 +274,38 @@ main{
 .Foto-amigos{
     height: 40px;
     width: 40px;
+}
+
+/*chat*/
+
+#chat{
+    background-color: white;
+    border-radius: 15px 15px 0 0;
+    height: 60px;
+    width: 300px;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
+    -webkit-box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
+    -moz-box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
+}
+
+#chat_container{
+    width: 90%;
+    display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px;
+   gap: 20px;
+}
+
+#chat_avatar{
+    height: 40px;
+}
+
+button:hover {
+    border: 1px solid rgb(83, 83, 83);
 }
 
 /* Footer */
