@@ -82,14 +82,24 @@ h1{
 }
 
 button{
-    border: 1px solid rgb(44, 44, 44);
     height: 35px;
     width: 250px;
     border-radius: 15px;
     margin: 0 auto;
     font-size: 12pt;
     font-weight: 600;
-    cursor: pointer;
+    background-color:  rgb(193, 241, 227);
+    border: none;
+    transition: 0.5s;
+}
+
+button a{
+    color: rgb(44, 44, 44);
+}
+
+button:hover {
+    background-color: rgb(153, 230, 205);
+    transition: 0.5s;
 }
 
 #divide{
