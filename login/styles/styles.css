@@ -1,16 +1,23 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap%27');
+
+*{
+    font-family: 'Tilt Neon', cursive;
+}
+
 a {
     text-decoration: none;
 }
 
-html{
-    height: fit-content;
-}
+
+html, body{
+    min-height: 100vh;
+    }
 
 body{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -20,6 +27,7 @@ main{
     align-items: center;
     flex-wrap: wrap;
     height: 100%;
+    margin-top: 80px;
 }
 
 #main_container{
@@ -31,10 +39,12 @@ main{
 
 #welcome_container {
     width: 300px;
+    display: flex;
+    align-items: center;
 }
 
 h1{
-    font-size: 56px;
+    font-size: 3.4rem;
 }
 
 #form_container{
@@ -45,6 +55,7 @@ h1{
     border: 1px solid rgba(120, 200, 200, 0.5);
     padding: 0 15px;
     height: 450px;
+    width: 300px;
     font-size: 10pt;
 }
 
@@ -119,7 +130,10 @@ button{
 #save{
     display: flex;
     align-self: flex-start;
+    align-items: center;
     gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #forgot{
@@ -145,9 +159,7 @@ button{
 
 /*Pie de pagina*/
 footer {
-    justify-self: flex-end;
-    font-family: 'Roboto'
-    , sans-serif;
+    margin: 0 auto;
     font-size: x-small;
     color: gray;
     display: flex;
@@ -156,14 +168,17 @@ footer {
 ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 li {
-    margin: 20px;
+    margin: 0 20px 0 20px;
 }
 
 .pie1 {
     display: flex;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 .pie2 {
@@ -178,4 +193,40 @@ li {
     border: 0;
     color: gray;
     margin-right: 10px;
+}
+
+/*media queries*/
+
+@media (min-width: 1024px){
+    #main_container{
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1{
+        font-size: 3rem;
+        
+    }
+    #form_container{
+ 
+    }
+}
+ 
+@media (max-width: 600px) {
+    h1{
+        font-size: 1.4rem;
+        text-align: center;
+    }
+}
+
+@media (max-width:375px){
+    #form_container{
+        width: auto;
+        border: none;
+    }
+
+    #register{
+        width: 100%;
+    }
 }

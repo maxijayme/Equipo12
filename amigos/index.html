@@ -46,7 +46,7 @@
             </div>
           </nav>
     </header>
-    <main class="container-fluid h-auto">
+    <main>
         <div class="row" id="main_container">
             <div class="container bg-body-tertiary bg-dark navbar-dark" data-bs-theme="dark" id="menu_superior_container">
                 <div class="col-1" id="menu_superior">
@@ -134,131 +134,114 @@
                     </article>             
                 </div>
             </div>
-            <div class="col-xl-5 col-md-6 col-sm-11 py-3 " id="col_cen">
-                <!-- nueva publicación -->
-                 <div class="newPost container p-3 mb-3">
-                     <div class="cabeceraNewPost row d-flex justify-content-left align-items-center mb-2">
-                         <img src="./img/avatar.jpg" alt="fotoUsuario" class="fotoPost img-fluid">
-                         <p class="col h4 text-dark">Comparte algo...</p>
-                     </div>                
-                     <div class="row m-1"><textarea class="form-control" name="funciones" id="funciones" rows="5" placeholder="¿Qué quieres compartir?..."></textarea></div>
-                     <div class="pieNewPost row m-1 d-flex justify-content-between">
-                         <div class="adjuntar col d-flex align-items-center">
-                             <i class="bi bi-camera me-2"></i>
-                             <i class="bi bi-camera-reels me-2"></i>
-                             <i class="bi bi-paperclip me-2"></i>
-                         </div>
-                         <div class="col d-flex justify-content-end" id="boton_publicar">
-                             <button class="confirm_delete">Publicar</button>
-                         </div>
-                     </div>                
-                 </div>
- 
-                 <!-- lista de publicaciones -->
-                 <div class="post container p-3 mb-3">
-                     <div class="cabeceraPost row d-flex justify-content-left align-items-center">
-                         <img src="./img/avatar.jpg" alt="fotoUsuario" class="fotoPost  img-fluid">
-                         <p class="col h4 text-dark">Estela Martínez</p>                    
-                     </div>
-                     <div class="row">
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum unde ipsa iste, natus expedita inventore nisi aperiam tempore, accusamus reprehenderit dolore asperiores quos nulla, quas saepe molestias culpa quis minus? Quam harum quibusdam et nulla dolorum quis accusantium aperiam sit voluptatum! Vel pariatur numquam voluptates cum sed in voluptas minima quam quidem. Ullam, porro ab odio, tempore harum beatae nobis possimus corrupti, hic ipsum itaque doloribus fugiat adipisci ex.</p>
-                     </div>
-                     <div class="row">
-                         <div class="piePost m-1">
-                             <i class="bi bi-heart"></i>
-                             <i class="bi bi-share"></i>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="post container p-3 mb-3">
-                     <div class="cabeceraPost row d-flex justify-content-left align-items-center">
-                         <img src="./img/avatar.jpg" alt="fotoUsuario" class="fotoPost  img-fluid">
-                         <p class="col h4 text-dark">Estela Martínez</p>                    
-                     </div>
-                     <div class="row">
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum unde ipsa iste, natus expedita inventore nisi aperiam tempore, accusamus reprehenderit dolore asperiores quos nulla, quas saepe molestias culpa quis minus? Quam harum quibusdam et nulla dolorum quis accusantium aperiam sit voluptatum! Vel pariatur numquam voluptates cum sed in voluptas minima quam quidem. Ullam, porro ab odio, tempore harum beatae nobis possimus corrupti, hic ipsum itaque doloribus fugiat adipisci ex.</p>
-                     </div>
-                     <div class="row">
-                         <div class="piePost m-1">
-                             <i class="bi bi-heart"></i>
-                             <i class="bi bi-share"></i>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="post container p-3">
-                     <div class="cabeceraPost row d-flex justify-content-left align-items-center">
-                         <img src="./img/avatar.jpg" alt="fotoUsuario" class="fotoPost  img-fluid">
-                         <p class="col h4 text-dark">Estela Martínez</p>                    
-                     </div>
-                     <div class="row">
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum unde ipsa iste, natus expedita inventore nisi aperiam tempore, accusamus reprehenderit dolore asperiores quos nulla, quas saepe molestias culpa quis minus? Quam harum quibusdam et nulla dolorum quis accusantium aperiam sit voluptatum! Vel pariatur numquam voluptates cum sed in voluptas minima quam quidem. Ullam, porro ab odio, tempore harum beatae nobis possimus corrupti, hic ipsum itaque doloribus fugiat adipisci ex.</p>
-                     </div>
-                     <div class="row">
-                         <div class="piePost m-1">
-                             <i class="bi bi-heart"></i>
-                             <i class="bi bi-share"></i>
-                         </div>
-                     </div>
-                 </div>
-            </div>
-            <div class="col-2" id="col_der">
-                <section class="friend_request ">
-                    <div class="like_container">
-                        <p class="h5 ps-3">Solicitud de amistad</p>
-                        <a class="pe-3">Ver todas</a>
+            <div class="col-xl-8 col-md-6 col-sm-11 py-3 " id="col_cen">
+                <section id="friends" >
+                    <div id="search_friend">
+                        <h2>Amigos</h2>
+                        <div class="search_people_container">
+                            <div class="search_people-wrapper">
+                                <input type="search" id="search_people" placeholder="Busca amig@s">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <div>
+                                <span><i class="fa fa-filter" ></i></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="request_container ms-3 me-3 p-2"> 
-                        <div class="request_container_profile">
+                    <section class="friends_requests">
+                        <div class="request_container"> 
                             <div class="friend_photo" id="photo1" ></div>
                             <div>
                                 <span>Teresa Garía</span>
-                                <span class="gris">2 hours ago</span>
+                                <p>tereg@gmail.com</p>                           
                             </div>
+                            <button class="confirm_add">Agregar</button>
                         </div>
-                        <div class="button_container">
-                            <button class="confirm_delete">Confirm</button>
-                            <button class="confirm_delete gray">Delete</button>
-                        </div>
-                    </div>
-                    <div class="request_container ms-3 me-3 p-2"> 
-                        <div class="request_container_profile">
-                            <div class="friend_photo" id="photo2"></div>
+                        <div class="request_container"> 
+                            <div class="friend_photo" id="photo2" ></div>
                             <div>
-                                <span>Roberto Sanchez García</span>
-                                <span class="gris">4 hours ago</span>
+                                <span>Roberto Sanchez</span>
+                                <p>rsanchez@gmail.com</p>                           
                             </div>
+                            <button class="confirm_add isFriend">Amigo</button>
                         </div>
-                        <div class="button_container">
-                            <button class="confirm_delete">Confirm</button>
-                            <button class="confirm_delete gray">Delete</button>
-                        </div>
-                    </div>
-                    <div class="request_container ms-3 me-3 p-2"> 
-                        <div class="request_container_profile">
-                            <div class="friend_photo" id="photo3"></div>
+                        <div class="request_container"> 
+                            <div class="friend_photo" id="photo3" ></div>
                             <div>
-                                <span>Juan Perez Perez</span>
-                                <span class="gris">13 hours ago</span>
+                                <span>Juan Perez</span>
+                                <p>jpp@gmail.com</p>                           
                             </div>
+                            <button class="confirm_add">Agregar</button>
                         </div>
-                        <div class="button_container">
-                            <button class="confirm_delete">Confirm</button>
-                            <button class="confirm_delete gray">Delete</button>
-                        </div>
-                    </div>
-                    <div class="request_container ms-3 me-3 mb-3 p-2"> 
-                        <div class="request_container_profile">
-                            <div class="friend_photo" id="photo4"></div>
+                        <div class="request_container"> 
+                            <div class="friend_photo" id="photo4" ></div>
                             <div>
-                                <span>Meta Mark </span>
-                                <span class="gris">43 hours ago</span>
+                                <span>Meta Mark</span>
+                                <p>metamark@gmail.com</p>                           
+                            </div>
+                            <button class="confirm_add">Agregar</button>
+                        </div>
+                        <div class="request_container"> 
+                            <div class="friend_photo" id="photo5" ></div>
+                            <div>
+                                <span>Robert Dubal</span>
+                                <p>robertd@gmail.com</p>                           
+                            </div>
+                            <button class="confirm_add">Agregar</button>
+                        </div>
+                        <div class="request_container"> 
+                            <div class="friend_photo" id="photo6" ></div>
+                            <div>
+                                <span>John Wick</span>
+                                <p>johnwick@gmail.com</p>                           
+                            </div>
+                            <button class="confirm_add">Agregar</button>
+                        </div>
+                        <div class="request_container"> 
+                            <div class="friend_photo" id="photo7" ></div>
+                            <div>
+                                <span>Petar Pan</span>
+                                <p>peterp@gmail.com</p>                           
+                            </div>
+                            <button class="confirm_add">Agregar</button>
+                        </div>
+                        <div class="request_container"> 
+                            <div class="friend_photo" id="photo8" ></div>
+                            <div>
+                                <span>Luis García</span>
+                                <p>luisg@gmail.com</p>                           
+                            </div>
+                            <button class="confirm_add">Agregar</button>
+                        </div>
+                        <div class="request_container"> 
+                            <div class="friend_photo" id="photo9" ></div>
+                            <div>
+                                <span>Dolores M</span>
+                                <p>doloresm@gmail.com</p>                           
+                            </div>
+                            <button class="confirm_add">Agregar</button>
+                        </div>
+                        <div class="request_container"> 
+                            <div class="friend_photo" id="photo10" ></div>
+                            <div>
+                                <span>Alicia Keys</span>
+                                <p>alicek@gmail.com</p>                           
+                            </div>
+                            <button class="confirm_add">Agregar</button>
+                        </div>
+                    </section>
+                    <section id="chat">
+                        <div id="chat_container">
+                            <div class="centrado">
+                                <img src="./img/perfil_maxi.jpg" alt="" class="icon_nav" id="profile_photo">
+                                <span>Mensajes</span>
+                            </div>
+                            <div class="centrado">
+                                <span>...</span>
+                                <span>^</span>
                             </div>
                         </div>
-                        <div class="button_container">
-                            <button class="confirm_delete">Confirm</button>
-                            <button class="confirm_delete gray">Delete</button>
-                        </div>
-                    </div>
+                    </section>
                 </section>
             </div>
             <section id="chat">
