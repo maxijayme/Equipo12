@@ -47,7 +47,6 @@ a{
 #nav_profile{
     width: 150px;
     gap: 20px;
-    align-items:normal;
     justify-content: space-around;
 }
 
@@ -57,28 +56,29 @@ a{
     border-radius: 50%;
 }
 
+#nav_profile span{
+    width: 28px;
+    height: 36px;
+}
+
 #nav_profile  i{
     font-size:18pt;
     color: white;
 }
 
 body{
-    background-color: rgb(222,225,232);
-}
-
-.bi {
-    font-size: 20px;
-    color: rgb(3, 69, 3);
-    padding: 2px;
+    background-color: rgb(234, 243, 243);
 }
 
 /*search input*/
 
 #searchbar{
     width: 25%;
-    min-width: 280px;
+    min-width: 340px;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    margin-top: 5px;
+    margin: auto;
 }
 
 #search-wrapper{
@@ -96,6 +96,7 @@ body{
     padding-right: 10px ;
     font-size: 12pt;
     background-color: #f2f2f2;
+    min-width: 300px;
 }
 
 #search-wrapper:hover{
@@ -107,6 +108,10 @@ header i {
     position: absolute;
     margin-left: 20px;
     margin-top: 3px;
+}
+
+#navbarToggler ul{
+    display: none;
 }
 
 /* main */
@@ -160,7 +165,6 @@ main{
 
 /*Pie de pagina*/
 footer {
-    border: 1px solid red;
     width: 50%;
     justify-self: flex-end;
     font-family: 'Roboto'
@@ -196,4 +200,59 @@ li {
     border: 0;
     color: gray;
     margin-right: 10px;
+}
+
+/*media queries*/
+
+@media (min-width: 1200px) {
+    #menu_lateral {
+        display: none;
+    }
+    #main_container{
+        padding: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    #chat{
+        display: none;
+    }
+}
+
+@media (max-width: 795px){
+    #searchbar{
+        order: 3;
+        align-self: center;
+    }
+    #main_container{
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 556px){
+    #main_container{
+        margin-top: 70px;
+    }
+    #nav_profile{
+        display: none;
+    }    
+    #navbarToggler ul{
+        display:contents;
+    }
+    #navbarToggler li{
+        text-align: right;
+    }
+
+}
+
+@media (max-width: 456px){
+    #logo_link{
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 366px){
+    #logo{
+        max-width: 184px;
+    }
 }

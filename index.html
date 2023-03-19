@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="shortcut icon" href="../img/icon_logo.svg" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <div id="main_container">
+            <div id="welcome_container">
+                <h1>¡Te damos la bienvenida a tu comunidad de junior developers!</h1>
+            </div>
+            <div>
+                <div id="form_container">
+                    <img src="./img/teclapedia.svg" id="logo" alt="">
+                    <form id="fields">
+                        <input class="puts" type="text" placeholder="Nombre de usuario">
+                        <input class="puts" type="password" placeholder="Contraseña">
+                        <span id="save">
+                            <input type="checkbox">
+                            <span>Recuerda mis datos</span>
+                        </span>
+                        <button><a href="./main/index.html">Iniciar sesión</a></button>
+                    </form>
+                    <div>
+                        <a href="">Has olvidado tus datos?</a>
+                    </div>
+                    <div id="divide">
+                        <div class="line"></div>
+                        <span>o</span>
+                        <div class="line"></div>
+                    </div>
+                    <span id="google">
+                        <img src="./img/logo_google.png" alt="" id="logo_google">
+                        <a href="../main/index.html">Iniciar sesión con Google</a>
+                    </span>
+                </div>
+                <div id="register">
+                    <span>¿No tienes una cuenta?</span>
+                    <a href="./register/index.html">Únete ahora</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="pie1">
+            <ul>
+                <li>Meta</li>
+                <li>Información</li>
+                <li>Blog</li>
+                <li>Empleo</li>
+                <li>Ayuda</li>
+                <li>API</li>
+                <li>Privacidad</li>
+                <li>Condiciones</li>
+            </ul>
+        </div>
+        <div class="pie2">
+            <select class="idioma" name="idioma" id="">
+                <option value="esp">Español</option>                
+                <option value="eng">Inglés</option>                
+                <option value="fr">Francés</option>                
+                <option value="deu">Alemán</option>
+            </select>
+            <p>&copy; 2023 Teclapedia</p>
+        </div>        
+    </footer>
+</body>
+</html>
