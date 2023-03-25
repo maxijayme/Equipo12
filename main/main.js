@@ -14,3 +14,5 @@ function addOrRemovelike(){
         this.classList.remove('like')
     }
 }
+
+console.log('a')
