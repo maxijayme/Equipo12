@@ -107,7 +107,7 @@ body{
 header i {
     position: absolute;
     margin-left: 20px;
-    margin-top: 3px;
+    margin-top: 7px;
 }
 
 #navbarToggler ul{
@@ -126,7 +126,6 @@ main{
 }
 
 #col_izq, #col_der{
-    border: 1px solid red;
     background-color: white;
 }
 
@@ -147,7 +146,9 @@ main{
     position: fixed;
     bottom: 0;
     right: 10px;
-    border: 1px solid black;
+    box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
+    -webkit-box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
+    -moz-box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
 }
 
 #chat_container{
@@ -157,6 +158,10 @@ main{
    justify-content: space-between;
    padding: 10px;
    gap: 20px;
+}
+
+#chat_avatar{
+    height: 40px;
 }
 
 #chat_avatar{
