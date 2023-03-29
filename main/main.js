@@ -23,3 +23,5 @@ function addOrRemovelike(target){
         }
     }
 }
+
+console.log('a')
