@@ -115,6 +115,14 @@ header i {
     display: none;
 }
 
+#profileButton{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#ulul{
+    background-color: rgb(43,48,53);
+}
 
 /*main*/
 
