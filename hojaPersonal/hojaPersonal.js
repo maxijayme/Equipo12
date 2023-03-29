@@ -6,8 +6,7 @@ function deleteAccount(){
     console.log(option)
     if(option === true){
         loader()
-        setTimeout( redirect, 3000)
-       
+        setTimeout( redirect, 3000)       
     }
 }
 

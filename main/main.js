@@ -6,9 +6,6 @@ let like = document.querySelector('#post1 span')
 
 function captureLikes(target){
     let targetT =  target.target;
-    // addOrRemovelike(targetT)
-    // .then(likes => console.log(likes))
-    // .catch()
     return new Promise(function(resolve, reject){
         let res = addOrRemovelike(targetT);
         res != null ? resolve(res) : reject()
