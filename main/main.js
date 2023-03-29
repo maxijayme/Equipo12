@@ -2,8 +2,6 @@ document.querySelector('#post1 i').addEventListener("click", captureLikes);
 document.querySelector('#post2 i').addEventListener("click", captureLikes);
 document.querySelector('#post3 i').addEventListener("click", captureLikes);
 
-let like = document.querySelector('#post1 span')
-
 function captureLikes(target){
     let targetT =  target.target;
     return new Promise(function(resolve, reject){
