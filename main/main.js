@@ -6,7 +6,7 @@ function captureLikes(target){
     let targetT =  target.target;
     return new Promise(function(resolve, reject){
         let res = addOrRemovelike(targetT);
-        res != null ? resolve(res) : reject()
+        res != null ? resolve(res) : reject("Es imposible!")
         }
     )
     .then(likes => console.log(`El post ${likes[1]} tiene ${likes[0]} "Me gusta"`))

@@ -19,13 +19,13 @@
                 <div id="form_container">
                     <img src="./img/teclapedia.svg" id="logo" alt="">
                     <form id="fields">
-                        <input class="puts" type="text" placeholder="Nombre de usuario">
-                        <input class="puts" type="password" placeholder="Contraseña">
+                        <input class="puts" type="text" placeholder="Nombre de usuario" id="user">
+                        <input class="puts" type="password" placeholder="Contraseña" id="password">
                         <span id="save">
                             <input type="checkbox">
                             <span>Recuerda mis datos</span>
                         </span>
-                        <button><a href="./main/index.html">Iniciar sesión</a></button>
+                        <button id="login" disabled>Iniciar sesión</button>
                     </form>
                     <div>
                         <a href="">Has olvidado tus datos?</a>
@@ -70,6 +70,6 @@
             <p>&copy; 2023 Teclapedia</p>
         </div>        
     </footer>
-    <script src="./app.js"></script>
+    <script src="./app.js" type="module"></script>
 </body>
 </html>
