@@ -204,9 +204,15 @@ main{
 
 /* columna central */
 
-#col_cen{
+#col_cen, #col_izq, #col_der{
     background-color: white;
     border-radius: 25px;
+    height: 100vh;
+    overflow: scroll;
+}
+
+#col_cen::-webkit-scrollbar, #col_izq::-webkit-scrollbar, #col_der::-webkit-scrollbar {
+    display: none;
 }
 
 .fotoPost {
