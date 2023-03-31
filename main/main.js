@@ -36,6 +36,9 @@ function addOrRemovelike(targetT){
             targetT.nextElementSibling.style.display = 'none';
         }
     }
+
     let response = [likes, id]
     return response;
 }
+
+
