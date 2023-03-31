@@ -70,6 +70,16 @@ body{
     background-color: rgb(234, 243, 243);
 }
 
+#profileButton{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#ulul{
+    background-color: rgb(43,48,53);
+}
+
+
 /*search input*/
 
 #searchbar{
