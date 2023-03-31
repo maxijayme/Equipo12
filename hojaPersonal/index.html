@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar bg-body-tertiary fixed-top navbar-expand-sm bg-dark navbar-dark ml-2 mr-2" data-bs-theme="dark">
             <div class="container-fluid no-padding flex-wrap">
-                <a class="navbar-brand" id="logo_link" href="../main/index.html">
+                <a class="navbar-brand" id="logo_link">
                     <img src="../img/teclapedia_logo.svg" alt="Teclapedia" id="logo" >
                 </a>
                 <form class="d-flex" role="search" id="searchbar">
@@ -23,29 +23,40 @@
                         <input type="search" id="search_input" placeholder="Comienza a escribir para buscar">
                     </div>
                 </form>
+                <div id="nav_profile" class="centrado_flex" >
+                    <span>
+                        <i class="bi bi-bell"></i>
+                    </span>
+                    <div class="dropdown">
+                        <button id="profileButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../img/avatar.jpeg" alt="perfil">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-lg-end" id="ulul">
+                          <li><a class="dropdown-item" href="../hojaPersonal/index.html">Perfil</a></li>
+                          <li><a class="dropdown-item" href="#">Configuración</a></li>
+                          <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                        </ul>
+                      </div>               
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse " id="navbarToggler">
-                    <div id="nav_profile" class="centrado_flex" >
-                        <span>
-                            <i class="bi bi-bell"></i>
-                        </span>
-                        <div>
-                            <a href="../hojaPersonal/index.html">
-                                <img src="../main/img/avatar.jpg"" alt="perfil">
-                            </a>  
-                        </div>                
-                    </div>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarToggler">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
+                        <li class="nav-item">
                         <a class="nav-link active" href="#">Notificaciones</a>
-                      </li>
-                      <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
                         <a class="nav-link active" href="../hojaPersonal/index.html">Perfil</a>
-                      </li>    
+                        </li>    
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">Configuración</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Cerrar sesión</a>
+                        </li>
                     </ul>
-                  </div>
+                </div>
             </div>
           </nav>
     </header>
@@ -56,13 +67,13 @@
                     <div class="row">
                         <ul>
                             <li>
-                                Editar perfil
+                                <a href="#">Editar perfil</a> 
                             </li>
                             <li>
-                                Seguridad
+                                <a href="#">Seguridad</a> 
                             </li>
                             <li>
-                                Cerrar sesión
+                                <a href="../index.html">Cerrar sesión</a> 
                             </li>
                         </ul>
                     </div>
