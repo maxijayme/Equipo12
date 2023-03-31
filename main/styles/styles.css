@@ -72,6 +72,7 @@ body{
 
 /*search input*/
 
+
 #searchbar{
     width: 25%;
     min-width: 340px;
@@ -107,12 +108,22 @@ body{
 header i {
     position: absolute;
     margin-left: 20px;
-    margin-top: 3px;
+    margin-top: 7px;
 }
 
 #navbarToggler ul{
     display: none;
 }
+
+#profileButton{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#ulul{
+    background-color: rgb(43,48,53);
+}
+
 /*main*/
 
 main{
@@ -205,7 +216,7 @@ main{
     border-radius: 50%;
 }
 
-.bi {
+.adjuntar .bi {
     font-size: 20px;
     color: rgb(3, 69, 3);
     padding: 2px;
@@ -235,11 +246,9 @@ textarea {
     resize: none;
     margin-left: 2px;
 }
-
 .like{
     color: red;
 }
-
 /*solicitudes de amistad*/
 
 #col_der{
