@@ -27,7 +27,7 @@ function loginFunc(event){
     if(currentUser.length>0){
         if(currentUser[0].password == password.value){
             localStorage.setItem("currentUser", JSON.stringify(currentUser[0]))
-            location.href="/hojaPersonal/index.html"
+            location.href="/main/index.html"
         }else{
             let html = "<p>Password incorrecto</p>";
             password.insertAdjacentHTML("afterend", html);
