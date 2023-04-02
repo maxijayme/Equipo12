@@ -1,3 +1,17 @@
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap%27');
+/*font-family: 'Tilt Neon', cursive;*/
+
+*{
+    margin: 0;
+    font-family: 'Tilt Neon', cursive;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /*Clase para llevar hasta el borde de la pantalla*/
 .no-padding{
     padding: 0;
@@ -56,6 +70,16 @@ body{
     background-color: rgb(234, 243, 243);
 }
 
+#profileButton{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#ulul{
+    background-color: rgb(43,48,53);
+}
+
+
 /*search input*/
 
 #searchbar{
@@ -99,182 +123,236 @@ header i {
 #navbarToggler ul{
     display: none;
 }
+/*main*/
 
-/* Main */
 main{
-    display: flex;
-    flex-flow: row nowrap;
+    width: 100%;
+    padding-top: 20px;
+}
+
+#main_container{
+    margin-top: 73px;
     justify-content: space-around;
-    align-items: flex-start;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-top: 10px;
-    margin-top: 80px;
+    padding-left: 63px;
 }
 
-/* aqui esta la parte de los datos de la otra persona */
-.caja_datos{
-    border: 2px solid greenyellow;
-    width: 20%;
-    display: flex;
-    flex-flow: column nowrap;
-    flex-wrap: wrap;
-    align-items: flex-start;
+/*menu superior*/
+
+#menu_superior_container{
+    display: none;
+}
+
+#menu_superior{
+    width: 100%;
     justify-content: center;
-    height: 100%;
-    border-radius: 10px;
-    padding-left: 5px;
-}
-
-.info_personal{
-    width: 100%;
-}
-
-.Foto-perfil{
-    width: 250px;
-    height: 250px;
-    padding-left: 20px;
-}
-
-.hobbies{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.hobbie{
-    border: #3c8b1b solid;
-    border-radius: 5px;
-    box-shadow:  1px 2px 6px 1px rgba(0, 0, 0, .1);
-    padding-left: 2px;
-}
-
-/* Sus ultimas publicaciones */
-.post-list{
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 15px;
-    width: 300px;
-}
-
-.caja_publicaciones{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.imagen_articulo1{
-    background: url(Fotos/post1.jpg);
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    transition: .2s;
-}
-
-.imagen_articulo2{
-    background: url(Fotos/post2.jpg);
-    width: 100%;
-    height: 210px;
-    background-size: cover;
-    background-position: center;
-    transition: .2s;
-}
-
-.imagen_articulo3{
-    background: url(Fotos/post3.jpg);
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    transition: .2s;
-}
-
-.post{
-    box-shadow: 0 1px 6px 1px rgba(0, 0, 0, .1);
-    overflow: hidden;
-    transition: .2s;
-}
-
-.post:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 1px 14px 2px rgba(0, 0, 0, .15);
-}
-
-.header{
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.post:hover .imagen_articulo1,
-.post:hover .imagen_articulo2,
-.post:hover .imagen_articulo3{
-    transform: scale(1.1);
-}
-
-.post_body{
-    padding: 15px;
-    text-align: center;
-}
-
-.post_body span{
-    display: inline-block;
-    color: #999;
+    align-content: center;
+    height: 50px;
+    gap: 20px;
     margin-bottom: 10px;
 }
 
-.post_body h2{
-    margin-bottom: 15px;
+/*menu lateral*/
+
+#menu_lateral{
+    position: absolute;
+    border-radius: 0 15px 15px 0;
+    left: 0;
+    height: 300px;
+    align-items: center;
+    min-width: 56px;
 }
 
-.post_body p{
-    line-height: 1.5;
-    margin-bottom: 20px;
+#menu_lateral div, #menu_superior{
+    text-align: center;
 }
 
-.post_body .post_link{
-    display: block;
-    text-decoration: none;
-    padding: 10px;
-    background: darkseagreen;
-    color: black;
-    width: 50%;
+#menu_lateral i, #menu_superior i{
+    font-size: 2.2rem;
+    color: white;
+}
+
+#news_icon{
+    display: none;
+}
+
+/*columna izquierda */
+#col_izq{
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 280px;
+    background-color: white;
+    border-radius: 25px;
+    align-content: baseline;
+}
+
+.foto{
+    width: 65%;
+    display: flex;
     margin: auto;
-    border-radius: 20px;
-    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, .1);
+    border-radius: 50%;
 }
 
-.post_body .post_link:hover{
-    background: #6fdb41;
+.icon{
+    width: 20px;
+    margin-bottom: 0;
 }
 
-/* Amigos en común */
-.caja_amigos{
-    border: 2px solid greenyellow;
+.img-not{
     width: 25%;
-    border-radius: 10px;
+}
+
+
+/* columna central */
+
+#col_cen, #col_izq, #col_der{
+    background-color: white;
+    border-radius: 25px;
+    height: 100vh;
+    overflow: scroll;
+}
+
+#col_cen::-webkit-scrollbar, #col_izq::-webkit-scrollbar, #col_der::-webkit-scrollbar {
+    display: none;
+}
+
+.fotoPost {
+    width: 75px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.bi {
+    font-size: 20px;
+    color: rgb(3, 69, 3);
+    padding: 2px;
+}
+
+.botonPublicar {
+    width: 180px;
+    border-radius: 20px;
+}
+
+.newPost,
+.post,
+.request_container,
+.datos,
+.noticias,
+select {
+    background-color: rgb(222,225,232);
+    border-radius: 15px;
+}
+
+.datos{
+    max-height: 668px;
+    min-height: 458px;
+}
+
+textarea {
+    resize: none;
+    margin-left: 2px;
+}
+
+.like{
+    color: red;
+}
+
+/*solicitudes de amistad*/
+
+#col_der{
+    display: none;
+}
+
+.friend_request{
+    height: 100%;
+    width: 100%;
+    min-width: 280px;
+    background-color: white;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 20px;
+}
+
+.request_container{
     display: flex;
     flex-direction: column;
 }
 
-.titulo{
-    justify-content: center;
-}
-
-.amigos{
+.like_container{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
 }
 
-.Foto-amigos{
-    height: 40px;
-    width: 40px;
+.likes{
+    display: flex;
+    gap: 5px;
 }
+
+.comment{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.request_container_profile{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 30px;
+}
+
+.request_container_profile span{
+    display: block;
+}
+
+.friend_photo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+#photo1{
+    background: url(../amigos/img/friend_1.jpg) center/cover no-repeat;
+}
+
+#photo2{
+    background: url(../amigos/img/10.jpeg) center/cover no-repeat;
+}
+
+#photo3{
+    background: url(../amigos/img/friend_3.jfif) center/cover no-repeat;
+}
+
+#photo4{
+    background: url(../amigos/img/4.jfif) center/cover no-repeat;
+}
+
+.button_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.confirm_delete{
+    margin-top: 10px;
+    border: none;
+    background-color: rgb(250, 237, 205);
+    border-radius: 25px;
+    width: 110px;
+    height: 40px;
+    color:  rgb(83, 83, 83);
+    font-weight: 700;
+}
+
+.gray{
+    background-color: rgb(193, 241, 227);
+    color: rgb(83, 83, 83);
+}
+
 
 /*chat*/
 
@@ -308,15 +386,16 @@ button:hover {
     border: 1px solid rgb(83, 83, 83);
 }
 
-/* Footer */
+/*Pie de pagina*/
 footer {
-    font-family: 'Roboto', sans-serif;
+    width: 50%;
+    justify-self: flex-end;
+    font-family: 'Roboto'
+    , sans-serif;
     font-size: x-small;
     color: gray;
     display: flex;
     flex-direction: column; 
-    margin: auto;
-    margin-top: 30px;
 }
 ul {
     list-style: none;
@@ -329,6 +408,7 @@ li {
 .pie1 {
     display: flex;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 .pie2 {
@@ -345,11 +425,15 @@ li {
     margin-right: 10px;
 }
 
+
 /*media queries*/
 
 @media (min-width: 1200px) {
     #menu_lateral {
         display: none;
+    }
+    #col_der{
+        display: flex;
     }
     #main_container{
         padding: 0;
@@ -372,9 +456,42 @@ li {
     }
 }
 
+@media (min-width: 768px){
+    #col_izq{
+        display: flex;
+    } 
+} 
+
+@media (max-width: 768px){
+   
+    #col_cen{
+        max-width: 600px;
+    }
+    #col_izq{
+        display: none;
+    } 
+    
+    #news_icon{
+        display: inline-block;
+    }
+}
+
 @media (max-width: 556px){
     #main_container{
         margin-top: 70px;
+    }
+    #menu_lateral{
+        display: none;
+    }
+
+    #main_container{
+        padding-left: 0;
+    }
+
+    #menu_superior_container{
+        display: flex;
+        letter-spacing:10pt;
+        padding-top: 5px;
     }
     #nav_profile{
         display: none;

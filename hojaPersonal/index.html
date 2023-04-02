@@ -23,51 +23,80 @@
                         <input type="search" id="search_input" placeholder="Comienza a escribir para buscar">
                     </div>
                 </form>
+                <div id="nav_profile" class="centrado_flex" >
+                    <span>
+                        <i class="bi bi-bell"></i>
+                    </span>
+                    <div class="dropdown">
+                        <button id="profileButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../img/avatar.jpeg" alt="perfil">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-lg-end" id="ulul">
+                          <li><a class="dropdown-item" href="../hojaPersonal/index.html">Perfil</a></li>
+                          <li><a class="dropdown-item" href="#">Configuración</a></li>
+                          <li><a class="dropdown-item" href="../index.html">Cerrar sesión</a></li>
+                        </ul>
+                      </div>               
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse " id="navbarToggler">
-                    <div id="nav_profile" class="centrado_flex" >
-                        <span>
-                            <i class="bi bi-bell"></i>
-                        </span>
-                        <div>
-                            <a href="../hojaPersonal/index.html">
-                                <img src="../main/img/avatar.jpg"" alt="perfil">
-                            </a>  
-                        </div>                
-                    </div>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarToggler">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
+                        <li class="nav-item">
                         <a class="nav-link active" href="#">Notificaciones</a>
-                      </li>
-                      <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
                         <a class="nav-link active" href="../hojaPersonal/index.html">Perfil</a>
-                      </li>    
+                        </li>    
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">Configuración</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Cerrar sesión</a>
+                        </li>
                     </ul>
-                  </div>
+                </div>
             </div>
           </nav>
     </header>
-    <main class="container-fluid">
+    <main class="container-fluid" id="principal">
         <div class="row" id="main_container">
-            <div class="col" id="col_izq">
+            <div class="col-2" id="col_izq">
+                <div class="container container_contacto p-3 pb-5 my-3" id="col_izq-container">
+                    <div class="row">
+                        <ul>
+                            <li>
+                                <a href="#">Editar perfil</a> 
+                            </li>
+                            <li>
+                                <a href="#">Seguridad</a> 
+                            </li>
+                            <li>
+                                <a href="../index.html">Cerrar sesión</a> 
+                            </li>
+                        </ul>
+                    </div>
+                    <button id="deleteAccount">Eliminar cuenta</button>
+                </div>
+            </div>
+            <div class="col" id="col_der">
                 <div class="container container_contacto p-3 my-3">
                     <div class="contacto row">                
                         <div class="col d-flex my-1 align-items-baseline">
                             <i class="bi bi-telephone me-2"></i>
-                            <p>696 987 776</p>
+                            <p id="phone">696 987 776</p>
                         </div>
                         <div class="col d-flex my-1 align-items-baseline">
                             <i class="bi bi-envelope-at me-2"></i>
-                            <p>luciasanchez@gmail.com</p>
+                            <p id="email">luciasanchez@gmail.com</p>
                         </div>
                         <div class="col d-flex my-1 align-items-baseline">
                             <i class="bi bi-linkedin me-2"></i>
-                            <p>https://www.linkedin.com/in/lucia-sanchez/</p>
+                            <p id="linkedin">https://www.linkedin.com/in/lucia-sanchez/</p>
                         </div>
                     </div>
-                    <i class="bi bi-pencil row"></i>
+                    <i class="bi bi-pencil"></i>
                 </div>
                 <div class="container container_experiencia p-3 mb-3">
                     <div class="row">
@@ -128,6 +157,10 @@
                 </div>
             </section>
         </div>
+        <div id="loader">            
+            <div class="spinner"></div>
+            <span>Eliminando cuenta...</span>
+        </div>
     </main>
     <footer class="container-fluid" >
         <div class="pie1">
@@ -153,5 +186,6 @@
         </div>        
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./hojaPersonal.js" type="module"></script>
 </body>
 </html>

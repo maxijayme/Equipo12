@@ -107,11 +107,20 @@ body{
 header i {
     position: absolute;
     margin-left: 20px;
-    margin-top: 3px;
+    margin-top: 7px;
 }
 
 #navbarToggler ul{
     display: none;
+}
+
+#profileButton{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#ulul{
+    background-color: rgb(43,48,53);
 }
 
 /* main */
@@ -126,15 +135,40 @@ main{
 }
 
 #col_izq, #col_der{
-    border: 1px solid red;
     background-color: white;
 }
+
 
 .container_contacto,
 .container_experiencia,
 .container_estudios {
     background-color: rgb(222,225,232);
     border-radius: 15px;
+}
+
+#col_izq-container{
+    height: 96%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#col_izq li{
+    list-style: none;
+    border-radius: 25px;
+    background-color: #e1d5d5;
+    text-align: center;
+    width: 180px;
+    cursor: pointer;
+}
+
+#col_izq li:hover{
+    background-color: #b5aaaa;
+}
+
+#col_izq a{
+    color: #000;
 }
 
 /*chat*/
@@ -147,7 +181,9 @@ main{
     position: fixed;
     bottom: 0;
     right: 10px;
-    border: 1px solid black;
+    box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
+    -webkit-box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
+    -moz-box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
 }
 
 #chat_container{
@@ -157,6 +193,10 @@ main{
    justify-content: space-between;
    padding: 10px;
    gap: 20px;
+}
+
+#chat_avatar{
+    height: 40px;
 }
 
 #chat_avatar{
@@ -174,7 +214,7 @@ footer {
     display: flex;
     flex-direction: column; 
 }
-ul {
+#pie1 {
     list-style: none;
     display: flex;
 }
@@ -201,6 +241,58 @@ li {
     color: gray;
     margin-right: 10px;
 }
+/*loader*/
+
+#loader{
+    position: fixed;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(119, 116, 116, 0.7);
+    z-index: 2;
+}
+
+#loader span{
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.spinner {
+    width: 156px;
+    height: 156px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side,#1ba673 94%,#0000) top/9px 9px no-repeat,
+           conic-gradient(#0000 30%,#1ba673);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+ }
+
+ #deleteAccount{
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(177, 26, 26);
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+ }
+
+ #deleteAccount:hover{
+    background-color: rgb(220, 32, 32);;
+ }
+ 
+ @keyframes spinner-c7wet2 {
+    100% {
+       transform: rotate(1turn);
+    }
+ }
+
 
 /*media queries*/
 

@@ -72,6 +72,7 @@ body{
 
 /*search input*/
 
+
 #searchbar{
     width: 25%;
     min-width: 340px;
@@ -107,12 +108,22 @@ body{
 header i {
     position: absolute;
     margin-left: 20px;
-    margin-top: 3px;
+    margin-top: 7px;
 }
 
 #navbarToggler ul{
     display: none;
 }
+
+#profileButton{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#ulul{
+    background-color: rgb(43,48,53);
+}
+
 /*main*/
 
 main{
@@ -194,10 +205,16 @@ main{
 
 /* columna central */
 
-#col_cen{
+#col_cen, #col_izq, #col_der{
     background-color: white;
     border-radius: 25px;
+    height: 100vh;
+    overflow: scroll;
 }
+
+#col_cen::-webkit-scrollbar, #col_izq::-webkit-scrollbar, #col_der::-webkit-scrollbar {
+    display: none;
+   }
 
 .fotoPost {
     width: 75px;
@@ -205,7 +222,7 @@ main{
     border-radius: 50%;
 }
 
-.bi {
+.adjuntar .bi {
     font-size: 20px;
     color: rgb(3, 69, 3);
     padding: 2px;
@@ -235,7 +252,9 @@ textarea {
     resize: none;
     margin-left: 2px;
 }
-
+.like{
+    color: red;
+}
 /*solicitudes de amistad*/
 
 #col_der{
