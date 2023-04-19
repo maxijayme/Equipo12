@@ -6,7 +6,7 @@
 
 a{
     text-decoration: none;
-    color: blue;
+    color: #0d6efd;
 }
 
 body{
@@ -15,20 +15,12 @@ body{
     justify-content: center;
     height: 99%;
     margin-top: 50px;
-<<<<<<< HEAD
-=======
-    background: rgb(234, 243, 243);
->>>>>>> branch-nedi
 }
 
 main{
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
     gap: 20px;
-=======
-    gap: 40px;
->>>>>>> branch-nedi
     flex-wrap: wrap;
 }
 
@@ -39,15 +31,7 @@ main{
 h1{
     font-size: 56px;
 }
-<<<<<<< HEAD
 
-=======
-#container-inicialr{
-    background-color: white;
-    padding: 25px;
-    border-radius: 25px;
-}
->>>>>>> branch-nedi
 #container-formulario{
     display: flex;
     flex-direction: column;
@@ -55,27 +39,15 @@ h1{
     align-items: center;
     border: 1px solid rgba(120, 200, 200, 0.5);
     padding: 0 15px;
-<<<<<<< HEAD
     height: 700px;
-    font-size: 10pt;
-}
-
-#logo{
-    width: 280px;
-    margin-bottom: 15px;
-=======
     font-size: 10pt;
     background:  rgb(222,225,232);
     border-radius: 0 0 15px 15px;
 }
 
 #logo{
-    width: 320px;
-    height: 65px;
-    background: rgb(43,48,53);
-    border-radius: 15px 15px 0 0;
-    padding: 10px
->>>>>>> branch-nedi
+    width: 280px;
+    margin-bottom: 15px;
 }
 
 #datos{
@@ -90,11 +62,7 @@ h1{
     height: 35px;
     width: 250px;
     border-radius: 5px;
-<<<<<<< HEAD
     background-color: rgba(120, 200, 200, 0.2);
-=======
-    background-color: white;
->>>>>>> branch-nedi
     border: 1px solid rgba(120, 200, 200, 0.5);
     padding-left: 10px;
 }
@@ -133,7 +101,6 @@ button a{
 }
 
 #google{
-    border: 1px solid rgb(44, 44, 44);
     height: 35px;
     width: 250px;
     color: white;
@@ -147,10 +114,6 @@ button a{
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
-<<<<<<< HEAD
-=======
-    background-color: white;
->>>>>>> branch-nedi
 }
 
 #logo_google{
@@ -167,13 +130,7 @@ button a{
     height: 50px;
     font-size: 10pt;
     width: 100%;
-<<<<<<< HEAD
     border: 1px solid rgba(120, 200, 200, 0.2);
-=======
-    /* border: 1px solid rgba(120, 200, 200, 0.2); */
-    background-color: rgb(222,225,232); 
-    border-radius: 15px;
->>>>>>> branch-nedi
 }
 #login a{
     font-weight: 700;
@@ -211,10 +168,6 @@ li {
     font-size: x-small;
     width: fit-content;
     border: 0;
-<<<<<<< HEAD
-=======
-    background-color: rgb(234, 243, 243);
->>>>>>> branch-nedi
     color: gray;
     margin-right: 10px;
 }

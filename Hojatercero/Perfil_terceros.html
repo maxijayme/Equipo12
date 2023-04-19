@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar bg-body-tertiary fixed-top navbar-expand-sm bg-dark navbar-dark ml-2 mr-2" data-bs-theme="dark">
             <div class="container-fluid no-padding flex-wrap">
-                <a class="navbar-brand" id="logo_link" href="../main/index.html">
+                <a class="navbar-brand" href="../main/index.html" id="logo_link">
                     <img src="../img/teclapedia_logo.svg" alt="Teclapedia" id="logo" >
                 </a>
                 <form class="d-flex" role="search" id="searchbar">
@@ -23,29 +23,40 @@
                         <input type="search" id="search_input" placeholder="Comienza a escribir para buscar">
                     </div>
                 </form>
+                <div id="nav_profile" class="centrado_flex" >
+                    <span>
+                        <i class="bi bi-bell"></i>
+                    </span>
+                    <div class="dropdown">
+                        <button id="profileButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../img/avatar.jpeg" alt="perfil">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-lg-end" id="ulul">
+                          <li><a class="dropdown-item" href="../hojaPersonal/index.html">Perfil</a></li>
+                          <li><a class="dropdown-item" href="#">Configuración</a></li>
+                          <li><a class="dropdown-item" href="../index.html">Cerrar sesión</a></li>
+                        </ul>
+                      </div>               
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse " id="navbarToggler">
-                    <div id="nav_profile" class="centrado_flex" >
-                        <span>
-                            <i class="bi bi-bell"></i>
-                        </span>
-                        <div>
-                            <a href="../hojaPersonal/index.html">
-                                <img src="../img/avatar.jpeg" alt="perfil">
-                            </a>  
-                        </div>                
-                    </div>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarToggler">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
+                        <li class="nav-item">
                         <a class="nav-link active" href="#">Notificaciones</a>
-                      </li>
-                      <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
                         <a class="nav-link active" href="../hojaPersonal/index.html">Perfil</a>
-                      </li>    
+                        </li>    
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">Configuración</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Cerrar sesión</a>
+                        </li>
                     </ul>
-                  </div>
+                </div>
             </div>
           </nav>
     </header>
@@ -72,10 +83,10 @@
             <div class="col-xl-2 col-md-2 py-3" id="col_izq">
                 <div class="container datos p-3 mb-3">
                     <div class="row mb-2">
-                        <img src="../amigos/img/friend_2.jfif" class="foto" alt="">
+                        <img src="../amigos/img/friend_2.jfif" class="foto" alt="" id="fotoTercero">
                     </div>
                     <div class="row">
-                        <h3 class="">Roberto Sanchez</h3>
+                        <h3 class="" id="nombreUsuario">Roberto Sanchez</h3>
                     </div>
                     <div class="row  my-1">
                         <p>@RobertoSanchez</p>
@@ -138,71 +149,9 @@
                 </div>
             </div>
             <div class="col-xl-5 col-md-6 col-sm-11 py-3 " id="col_cen">
-                <!-- nueva publicación -->
-                 <div class="newPost container p-3 mb-3">
-                     <div class="cabeceraNewPost row d-flex justify-content-left align-items-center mb-2">
-                         <img src="./img/avatar.jpg" alt="fotoUsuario" class="fotoPost img-fluid">
-                         <p class="col h4 text-dark">Comparte algo...</p>
-                     </div>                
-                     <div class="row m-1"><textarea class="form-control" name="funciones" id="funciones" rows="5" placeholder="¿Qué quieres compartir?..."></textarea></div>
-                     <div class="pieNewPost row m-1 d-flex justify-content-between">
-                         <div class="adjuntar col d-flex align-items-center">
-                             <i class="bi bi-camera me-2"></i>
-                             <i class="bi bi-camera-reels me-2"></i>
-                             <i class="bi bi-paperclip me-2"></i>
-                         </div>
-                         <div class="col d-flex justify-content-end" id="boton_publicar">
-                             <button class="confirm_delete">Publicar</button>
-                         </div>
-                     </div>                
-                 </div>
- 
+               
                  <!-- lista de publicaciones -->
-                 <div class="post container p-3 mb-3" id="post1">
-                     <div class="cabeceraPost row d-flex justify-content-left align-items-center">
-                         <img src="./img/estela.jpg" alt="fotoUsuario" class="fotoPost  img-fluid">
-                         <p class="col h4 text-dark">Estela Martínez</p>                    
-                     </div>
-                     <div class="row">
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum unde ipsa iste, natus expedita inventore nisi aperiam tempore, accusamus reprehenderit dolore asperiores quos nulla, quas saepe molestias culpa quis minus? Quam harum quibusdam et nulla dolorum quis accusantium aperiam sit voluptatum! Vel pariatur numquam voluptates cum sed in voluptas minima quam quidem. Ullam, porro ab odio, tempore harum beatae nobis possimus corrupti, hic ipsum itaque doloribus fugiat adipisci ex.</p>
-                     </div>
-                     <div class="row">
-                         <div class="piePost m-1">
-                             <i class="bi bi-heart" id="heart"></i>
-                             <i class="bi bi-share"></i>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="post container p-3 mb-3" id="post2">
-                     <div class="cabeceraPost row d-flex justify-content-left align-items-center">
-                         <img src="./img/estela.jpg" alt="fotoUsuario" class="fotoPost  img-fluid">
-                         <p class="col h4 text-dark">Estela Martínez</p>                    
-                     </div>
-                     <div class="row">
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum unde ipsa iste, natus expedita inventore nisi aperiam tempore, accusamus reprehenderit dolore asperiores quos nulla, quas saepe molestias culpa quis minus? Quam harum quibusdam et nulla dolorum quis accusantium aperiam sit voluptatum! Vel pariatur numquam voluptates cum sed in voluptas minima quam quidem. Ullam, porro ab odio, tempore harum beatae nobis possimus corrupti, hic ipsum itaque doloribus fugiat adipisci ex.</p>
-                     </div>
-                     <div class="row">
-                         <div class="piePost m-1">
-                             <i class="bi bi-heart"></i>
-                             <i class="bi bi-share"></i>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="post container p-3" id="post3">
-                     <div class="cabeceraPost row d-flex justify-content-left align-items-center">
-                         <img src="./img/estela.jpg" alt="fotoUsuario" class="fotoPost  img-fluid">
-                         <p class="col h4 text-dark">Estela Martínez</p>                    
-                     </div>
-                     <div class="row">
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum unde ipsa iste, natus expedita inventore nisi aperiam tempore, accusamus reprehenderit dolore asperiores quos nulla, quas saepe molestias culpa quis minus? Quam harum quibusdam et nulla dolorum quis accusantium aperiam sit voluptatum! Vel pariatur numquam voluptates cum sed in voluptas minima quam quidem. Ullam, porro ab odio, tempore harum beatae nobis possimus corrupti, hic ipsum itaque doloribus fugiat adipisci ex.</p>
-                     </div>
-                     <div class="row">
-                         <div class="piePost m-1">
-                             <i class="bi bi-heart"></i>
-                             <i class="bi bi-share"></i>
-                         </div>
-                     </div>
-                 </div>
+                
             </div>
             <div class="col-2" id="col_der">
                 <section class="friend_request ">

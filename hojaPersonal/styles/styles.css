@@ -114,6 +114,15 @@ header i {
     display: none;
 }
 
+#profileButton{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#ulul{
+    background-color: rgb(43,48,53);
+}
+
 /* main */
 main{
     width: 100%;
@@ -129,6 +138,7 @@ main{
     background-color: white;
 }
 
+
 .container_contacto,
 .container_experiencia,
 .container_estudios {
@@ -141,6 +151,24 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+}
+
+#col_izq li{
+    list-style: none;
+    border-radius: 25px;
+    background-color: #e1d5d5;
+    text-align: center;
+    width: 180px;
+    cursor: pointer;
+}
+
+#col_izq li:hover{
+    background-color: #b5aaaa;
+}
+
+#col_izq a{
+    color: #000;
 }
 
 /*chat*/
@@ -244,6 +272,19 @@ li {
            conic-gradient(#0000 30%,#1ba673);
     -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
     animation: spinner-c7wet2 1s infinite linear;
+ }
+
+ #deleteAccount{
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(177, 26, 26);
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+ }
+
+ #deleteAccount:hover{
+    background-color: rgb(220, 32, 32);;
  }
  
  @keyframes spinner-c7wet2 {
