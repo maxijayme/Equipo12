@@ -105,6 +105,17 @@ body{
     transition: 0.5s;
 }
 
+.userlist{
+    display: none;
+    position: absolute;
+    width: 90%;
+    height: 300px;
+    background-color:#f2f2f2;
+    left: 0;
+    right:0;
+    margin:auto;
+}
+
 header i {
     position: absolute;
     margin-left: 20px;
@@ -220,6 +231,19 @@ main{
     width: 75px;
     height: 50px;
     border-radius: 50%;
+}
+
+.post_header{
+    display: flex;
+    flex-direction: column;
+}
+
+.post_header p{
+    margin: 0;
+}
+
+.post_header:last-child p{
+    color: rgb(126, 126, 126);
 }
 
 .adjuntar .bi {

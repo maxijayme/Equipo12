@@ -18,14 +18,15 @@
                 <img src="./img/teclapedia_logo.svg" id=logo alt="">
             </div>
             <div id="container-formulario">
-                <form class="row" id="datos"></form>
-                    <input class="hueco" type="text" placeholder="Nombre y Apellidos">
-                    <input class="hueco" type="text" placeholder="Nombre de Usuario">
-                    <input class="hueco" type="text" placeholder="Email">
-                    <input class="hueco" type="text" placeholder="Contraseña">
-                    <input class="hueco" type="text" placeholder="Confirmación contraseña">
+                <form class="row" id="datos">
+                    <input class="hueco" type="text" placeholder="Nombre y Apellidos" id="fullname">
+                    <input class="hueco" type="text" placeholder="Nombre de Usuario" id="userName">
+                    <input class="hueco" type="email" placeholder="Email" id="email">
+                    <input class="hueco" type="password" placeholder="Contraseña" autocomplete="on" id="password">
+                    <input class="hueco" type="password" placeholder="Confirmación contraseña" autocomplete="on" id="passwordConfirm">
+                    <p class="error">Los campos contraseña no coinciden</p>
                     <p class="p-cond">Al registrarte, aceptas nuestras Condiciones. Obtén más información sobre cómo recopilamos, usamos y compartimos tus datos en la Política de privacidad, así como el uso que hacemos de las cookies y tecnologías similares en la Política de cookies.</p>
-                    <button><a href="../formulario/index.html">Registrarse</a></button>
+                    <button id="register" type="submit" disabled>Registrarse</button>
                 </form>
                 <div class="row" id="division">
                     <div class="linea"></div>
@@ -41,7 +42,10 @@
                 <p>¿Ya tienes cuenta?</p>
                 <a href="../index.html">Inicia</a>
             </div>
-        </div>  
+        </div> 
+        <div id="loader">            
+            <span>Usuario registrado con éxito</span>
+        </div> 
     </main>
     <footer>
         <div class="pie1">
@@ -66,5 +70,6 @@
             <p>&copy; 2023 Teclapedia</p>
         </div>        
     </footer>
+    <script src="./register.js"></script>
 </body>
 </html>

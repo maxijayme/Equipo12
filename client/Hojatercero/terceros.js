@@ -1,4 +1,33 @@
+const fullname = document.getElementById('nombreUsuario');
+const userName = document.getElementById('userName');
+const phone = document.getElementById('phone');
+const email = document.getElementById('email');
+const linkedin = document.getElementById('linkedin');
+const city  = document.getElementById('city');
+const registerDate  = document.getElementById('registerDate');
 
+const url = 'http://localhost:3001';
+
+const urlid = window.location.href; 
+const id = urlid.substr(url.indexOf('?'+2));
+const regex = /^[0-9]*$/;
+
+if(regex.test(id)){
+    getUserById()
+}
+
+async function getUserById(){
+    await fetch(`${url}/perfil_terceros/${id}`)
+    .then(data => data.json())
+    .then(data =>{
+        fullname.innerHTML= data[0].fullName
+        userName.innerHTML= "@"+data[0].userName
+        phone.innerHTML= data[0].phone
+        email.innerHTML= data[0].email
+        linkedin.innerHTML= data[0].linkedin
+        city.innerHTML= data[0].city
+    }).catch()
+}
 
 function addOrRemovelike(){
     if(this.classList.contains('bi-heart')){
@@ -8,6 +37,7 @@ function addOrRemovelike(){
         if(this.nextElementSibling.innerHTML == 0){
             this.nextElementSibling.style.display = 'contents'
         }
+        console.log(this.nextElementSibling)
         likes = parseInt(this.nextElementSibling.innerHTML) + 1;
         this.nextElementSibling.innerHTML = likes;
     }else{
@@ -96,4 +126,16 @@ fetch('https://jsonplaceholder.typicode.com/posts')
         for(let i= 0; i< cora.length; i++){
             cora[i].addEventListener("click", addOrRemovelike);
         }
+    }).catch(()=>{
+        loader()
     });
+
+function loader(){
+    let loaderContainer = document.getElementById('loader');
+    loaderContainer.style.display='flex';
+    setTimeout( redirect, 3000)       
+}
+
+function redirect(){
+    history.back ();
+}

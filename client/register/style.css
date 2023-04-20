@@ -74,6 +74,15 @@ h1{
     padding-left: 10px;
 }
 
+#register{
+    cursor: pointer;
+}
+
+#register:hover{
+    background-color: rgb(153, 230, 205);
+    transition: 0.5s;
+}
+
 button{
     height: 35px;
     width: 250px;
@@ -88,6 +97,10 @@ button{
 
 button a{
     color: rgb(44, 44, 44);
+}
+
+.error{
+    display: none;
 }
 
 .p-cond{
@@ -145,6 +158,30 @@ button a{
 #login a{
     font-weight: 700;
 }
+
+/*loader*/
+
+#loader{
+    position: fixed;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(119, 116, 116, 0.7);
+    z-index: 2;
+}
+
+#loader span{
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
 /*Pie de pagina*/
 footer {
     font-family: 'Roboto', sans-serif;

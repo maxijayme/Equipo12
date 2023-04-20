@@ -1,9 +1,8 @@
-import users from "../initialState.js"
+const initialState = require('.initialState.js');
 let prevPage = document.referrer
 const loginButton = document.getElementById('login');
-
 if(prevPage.length == 0){
-    localStorage.setItem("userList", JSON.stringify(users))
+    localStorage.setItem("userList", JSON.stringify(initialState))
 }else{
     loginButton.addEventListener('click', loginFunc);
 }
@@ -47,5 +46,7 @@ function verify(){
 function enableButton(){
     if(username.value != "" && password.value != ""){
         loginButton.disabled = false;
-     }
+     }else{
+        registerButton.disabled = true;
+    }
 }
