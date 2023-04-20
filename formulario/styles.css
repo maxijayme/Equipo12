@@ -13,9 +13,11 @@ gris oscuro: rgb(241, 241, 241)*/
 }
 
 body {   
-    background-color: rgb(222,225,232);
-    /* width: 30%; */
-    margin: 1% auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(234, 243, 243);
+    margin: 0 auto;
+    align-items: center;
 }
 
 h4 {
