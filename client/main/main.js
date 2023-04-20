@@ -1,6 +1,12 @@
-document.querySelector('#post1 i').addEventListener("click", captureLikes);
-document.querySelector('#post2 i').addEventListener("click", captureLikes);
-document.querySelector('#post3 i').addEventListener("click", captureLikes);
+
+export function addButtonFuntionality(){
+    const allpost = document.querySelectorAll('.post i')
+    for(let i=0; i< allpost.length;i++){
+        allpost[i].addEventListener("click", captureLikes);
+    }
+}
+
+addButtonFuntionality()
 
 function captureLikes(target){
     let targetT =  target.target;
