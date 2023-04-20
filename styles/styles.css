@@ -5,78 +5,72 @@
     font-family: 'Tilt Neon', cursive;
 }
 
-a {
+a{
     text-decoration: none;
+    color: #0d6efd;
 }
-
-
-html, body{
-    min-height: 100vh;
-    }
 
 body{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    height: 99%;
+    margin-top: 50px;
+    background: rgb(234, 243, 243);
 }
 
 main{
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100%;
-    margin-top: 80px;
-}
-
-#main_container{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
-#welcome_container {
+#container-inicial{
     width: 300px;
-    display: flex;
-    align-items: center;
 }
 
 h1{
-    font-size: 3.4rem;
+    font-size: 56px;
 }
-
-#form_container{
+#container-inicialr{
+    background-color: white;
+    padding: 25px;
+    border-radius: 25px;
+}
+#container-formulario{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 1px solid rgba(120, 200, 200, 0.5);
     padding: 0 15px;
-    height: 450px;
-    width: 300px;
     font-size: 10pt;
+    background:  rgb(222,225,232);
+    border-radius: 0 0 15px 15px;
 }
 
 #logo{
-    width: 280px;
-    margin-bottom: 15px;
+    width: 320px;
+    height: 65px;
+    background: rgb(43,48,53);
+    border-radius: 15px 15px 0 0;
+    padding: 10px
 }
 
-#fields{
+#datos{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.puts{
+.hueco{
     margin-top: 15px;
     height: 35px;
     width: 250px;
     border-radius: 5px;
-    background-color: rgba(120, 200, 200, 0.2);
+    background-color: white;
     border: 1px solid rgba(120, 200, 200, 0.5);
     padding-left: 10px;
 }
@@ -91,18 +85,21 @@ button{
     background-color:  rgb(193, 241, 227);
     border: none;
     transition: 0.5s;
-}
-
-button a{
     color: rgb(44, 44, 44);
 }
 
-button:hover {
-    background-color: rgb(153, 230, 205);
-    transition: 0.5s;
+
+#save{
+    padding: 20px;
 }
 
-#divide{
+
+
+.p-cond{
+    width: 290px;
+}
+
+#division{
     display: flex;
     align-items: center;
     gap: 10px;
@@ -110,13 +107,12 @@ button:hover {
     margin-bottom: 20px;
 }
 
-.line{
+.linea{
     border-top: 1px solid rgb(44, 44, 44);
     width: 130px;
 }
 
 #google{
-    border: 1px solid rgb(44, 44, 44);
     height: 35px;
     width: 250px;
     color: white;
@@ -130,25 +126,12 @@ button:hover {
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    background-color: white;
 }
 
 #logo_google{
     width: 15px;
     height: 15px;
-}
-
-#save{
-    display: flex;
-    align-self: flex-start;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-#forgot{
-    font-size: 10pt;
-    color: black;
 }
 
 #register{
@@ -158,37 +141,34 @@ button:hover {
     align-items: center;
     gap: 10px;
     height: 50px;
-    font-size: 10pt;
     width: 100%;
     border: 1px solid rgba(120, 200, 200, 0.2);
-}
-
-#register a{
-    font-weight: 700;
+    background-color: rgb(222,225,232); 
+    border-radius: 15px;
+    font-weight: 600;
 }
 
 /*Pie de pagina*/
 footer {
-    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
     font-size: x-small;
     color: gray;
     display: flex;
     flex-direction: column; 
+    margin: auto;
+    margin-top: 30px;
 }
 ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
 }
 li {
-    margin: 0 20px 0 20px;
+    margin: 20px;
 }
 
 .pie1 {
     display: flex;
     margin: auto;
-    flex-wrap: wrap;
 }
 
 .pie2 {
@@ -201,42 +181,7 @@ li {
     font-size: x-small;
     width: fit-content;
     border: 0;
+    background-color: rgb(234, 243, 243);
     color: gray;
     margin-right: 10px;
-}
-
-/*media queries*/
-
-@media (min-width: 1024px){
-    #main_container{
-        gap: 50px;
-    }
-}
-
-@media (max-width: 768px) {
-    h1{
-        font-size: 3rem;
-        
-    }
-    #form_container{
- 
-    }
-}
- 
-@media (max-width: 600px) {
-    h1{
-        font-size: 1.4rem;
-        text-align: center;
-    }
-}
-
-@media (max-width:375px){
-    #form_container{
-        width: auto;
-        border: none;
-    }
-
-    #register{
-        width: 100%;
-    }
 }

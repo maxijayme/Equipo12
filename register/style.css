@@ -15,12 +15,13 @@ body{
     justify-content: center;
     height: 99%;
     margin-top: 50px;
+    background: rgb(234, 243, 243);
 }
 
 main{
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
@@ -31,7 +32,11 @@ main{
 h1{
     font-size: 56px;
 }
-
+#container-inicialr{
+    background-color: white;
+    padding: 25px;
+    border-radius: 25px;
+}
 #container-formulario{
     display: flex;
     flex-direction: column;
@@ -39,15 +44,17 @@ h1{
     align-items: center;
     border: 1px solid rgba(120, 200, 200, 0.5);
     padding: 0 15px;
-    height: 700px;
     font-size: 10pt;
     background:  rgb(222,225,232);
     border-radius: 0 0 15px 15px;
 }
 
 #logo{
-    width: 280px;
-    margin-bottom: 15px;
+    width: 320px;
+    height: 65px;
+    background: rgb(43,48,53);
+    border-radius: 15px 15px 0 0;
+    padding: 10px
 }
 
 #datos{
@@ -62,7 +69,7 @@ h1{
     height: 35px;
     width: 250px;
     border-radius: 5px;
-    background-color: rgba(120, 200, 200, 0.2);
+    background-color: white;
     border: 1px solid rgba(120, 200, 200, 0.5);
     padding-left: 10px;
 }
@@ -114,6 +121,7 @@ button a{
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    background-color: white;
 }
 
 #logo_google{
@@ -130,7 +138,10 @@ button a{
     height: 50px;
     font-size: 10pt;
     width: 100%;
-    border: 1px solid rgba(120, 200, 200, 0.2);
+    /* border: 1px solid rgba(120, 200, 200, 0.2); */
+    background-color: rgb(222,225,232); 
+    border-radius: 15px;
+    font-weight: 600;
 }
 #login a{
     font-weight: 700;
@@ -168,6 +179,7 @@ li {
     font-size: x-small;
     width: fit-content;
     border: 0;
+    background-color: rgb(234, 243, 243);
     color: gray;
     margin-right: 10px;
 }
