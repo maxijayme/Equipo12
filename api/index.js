@@ -32,9 +32,8 @@ server.get('/perfil_terceros/:id', (req,res)=>{
 server.get('/search_user/:fullname', (req,res)=>{
     try{
         const {fullname} = req.params;
-        console.log(req.params)
         const user = initialState.filter(user => {
-                if(user.fullName.includes(fullname)){
+                if(user.fullName.toLocaleLowerCase().includes(fullname.toLocaleLowerCase())){
                     return user
                 }
             })
@@ -50,7 +49,8 @@ server.get('/search_user/:fullname', (req,res)=>{
 })
 
 server.get('/', (req, res) => {
-    let time = '19-04-2023 14:20';
+    // let time = '19-04-2023 14:20';
+    let time = moment()
     let postTime = moment((time), "DD/MM/YYYY hh:mm");
     let getTime = moment();
     let diffTime = moment(postTime).from(getTime);
