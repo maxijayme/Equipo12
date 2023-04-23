@@ -49,8 +49,8 @@ server.get('/search_user/:fullname', (req,res)=>{
 })
 
 server.get('/', (req, res) => {
-    // let time = '19-04-2023 14:20';
-    let time = moment()
+    let time = '21-04-2023 14:20';
+    // let time = moment()
     let postTime = moment((time), "DD/MM/YYYY hh:mm");
     let getTime = moment();
     let diffTime = moment(postTime).from(getTime);
