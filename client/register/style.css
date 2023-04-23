@@ -25,19 +25,19 @@ main{
     flex-wrap: wrap;
 }
 
-#container-initial{
+#container-inicial{
     width: 300px;
 }
 
 h1{
     font-size: 56px;
 }
-#container-initialr{
+#container-inicialr{
     background-color: white;
     padding: 25px;
     border-radius: 25px;
 }
-#container-form{
+#container-formulario{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,14 +57,14 @@ h1{
     padding: 10px
 }
 
-#data{
+#datos{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.fields{
+.hueco{
     margin-top: 15px;
     height: 35px;
     width: 250px;
@@ -115,7 +115,7 @@ button a{
     margin-bottom: 20px;
 }
 
-.line{
+.linea{
     border-top: 1px solid rgb(44, 44, 44);
     width: 130px;
 }
@@ -154,7 +154,6 @@ button a{
     /* border: 1px solid rgba(120, 200, 200, 0.2); */
     background-color: rgb(222,225,232); 
     border-radius: 15px;
-    font-weight: 600;
 }
 #login a{
     font-weight: 700;
@@ -201,17 +200,17 @@ li {
     margin: 20px;
 }
 
-.foot1 {
+.pie1 {
     display: flex;
     margin: auto;
 }
 
-.foot2 {
+.pie2 {
     display: flex;
     margin: auto;
     color: gray;
 }
-.language {
+.idioma {
     font-family: 'Roboto', sans-serif;
     font-size: x-small;
     width: fit-content;
