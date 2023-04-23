@@ -1,27 +1,44 @@
-document.querySelector('#post1 i').addEventListener("click", addOrRemovelike);
-document.querySelector('#post2 i').addEventListener("click", addOrRemovelike);
-document.querySelector('#post3 i').addEventListener("click", addOrRemovelike);
+document.querySelector('#post1 i').addEventListener("click", captureLikes);
+document.querySelector('#post2 i').addEventListener("click", captureLikes);
+document.querySelector('#post3 i').addEventListener("click", captureLikes);
 
-let like = document.querySelector('#post1 span')
-
-function addOrRemovelike(target){
-    if(this.classList.contains('bi-heart')){
-        this.classList.remove('bi-heart')
-        this.classList.add('bi-heart-fill');
-        this.classList.add('like');
-        if(target.target.nextElementSibling.innerHTML == 0){
-            target.target.nextElementSibling.style.display = 'contents'
+function captureLikes(target){
+    let targetT =  target.target;
+    return new Promise(function(resolve, reject){
+        let res = addOrRemovelike(targetT);
+        res != null ? resolve(res) : reject("Es imposible!")
         }
-        target.target.nextElementSibling.innerHTML = parseInt(target.target.nextElementSibling.innerHTML) + 1;
-    }else{
-        this.classList.add('bi-heart');
-        this.classList.remove('bi-heart-fill')
-        this.classList.remove('like')
-        target.target.nextElementSibling.innerHTML = parseInt(target.target.nextElementSibling.innerHTML) - 1;
-        if(target.target.nextElementSibling.innerHTML == 0){
-            target.target.nextElementSibling.style.display = 'none';
-        }
-    }
+    )
+    .then(likes => console.log(`El post ${likes[1]} tiene ${likes[0]} "Me gusta"`))
+    .catch()
+    
 }
 
-console.log('a')
+function addOrRemovelike(targetT){
+    let id = targetT.parentElement.parentElement.parentElement.id;
+    let likes;
+    if(targetT.classList.contains('bi-heart')){
+        targetT.classList.remove('bi-heart')
+        targetT.classList.add('bi-heart-fill');
+        targetT.classList.add('like');
+        if(targetT.nextElementSibling.innerHTML == 0){
+            targetT.nextElementSibling.style.display = 'contents'
+        }
+        likes = parseInt(targetT.nextElementSibling.innerHTML) + 1;
+        targetT.nextElementSibling.innerHTML = likes;
+    }else{
+        targetT.classList.add('bi-heart');
+        targetT.classList.remove('bi-heart-fill')
+        targetT.classList.remove('like')
+        likes = parseInt(targetT.nextElementSibling.innerHTML) - 1;
+        targetT.nextElementSibling.innerHTML = likes;
+        if(targetT.nextElementSibling.innerHTML == 0){
+            targetT.nextElementSibling.style.display = 'none';
+        }
+    }
+
+    let response = [likes, id]
+    return response;
+}
+
+
