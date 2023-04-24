@@ -16,8 +16,20 @@ username.addEventListener('focus', verify)
 password.addEventListener('focus', verify)
 
 const userList = JSON.parse(localStorage.getItem("userList"));
+git 
+async () => {
+    const rawResponse = await fetch('localhost:3001/post', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({a: username.value, b: password.value})
+  });
+  const content = await rawResponse.json();
 
-
+  console.log(content);
+}
 
 function loginFunc(event){
     event.preventDefault();
