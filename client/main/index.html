@@ -24,7 +24,7 @@
                         <div class="userlist" id="userlist_container"></div>
                     </div>
                 </form>
-                <div id="nav_profile" class="centrado_flex" >
+                <div id="nav_profile" class="center_flex" >
                     <span>
                         <i class="bi bi-bell"></i>
                     </span>
@@ -32,7 +32,7 @@
                         <button id="profileButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="./img/avatar.jpg" alt="perfil">
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-lg-end" id="ulul">
+                        <ul class="dropdown-menu dropdown-menu-lg-end" id="drop_menu">
                           <li><a class="dropdown-item" href="../hojaPersonal/index.html">Perfil</a></li>
                           <li><a class="dropdown-item" href="#">Configuración</a></li>
                           <li><a class="dropdown-item" href="../index.html">Cerrar sesión</a></li>
@@ -59,20 +59,20 @@
                     </ul>
                 </div>
             </div>
-          </nav>
+        </nav>
     </header>
     <main class="container-fluid h-auto">
         <div class="row" id="main_container">
-            <div class="container bg-body-tertiary bg-dark navbar-dark" data-bs-theme="dark" id="menu_superior_container">
-                <div class="col-1" id="menu_superior">
+            <div class="container bg-body-tertiary bg-dark navbar-dark" data-bs-theme="dark" id="top_menu_container">
+                <div class="col-1" id="top_menu">
                         <a href="..//amigos/index.html"><i class="bi bi-people-fill"></i></a>
                         <i class="bi bi-newspaper"></i>
                         <i class="bi bi-chat-left-dots-fill"></i>
                 </div>
             </div>
-            <div class="col-1 bg-body-tertiary bg-dark navbar-dark" data-bs-theme="dark" id="menu_lateral">
+            <div class="col-1 bg-body-tertiary bg-dark navbar-dark" data-bs-theme="dark" id="side_menu">
                 <div id="friend_icon">
-                    <a href="..//amigos/index.html"><i class="bi bi-people-fill"></i></a>
+                    <a href="../amigos/index.html"><i class="bi bi-people-fill"></i></a>
                 </div>
                 <div id="news_icon">
                     <i class="bi bi-newspaper"></i>
@@ -81,10 +81,10 @@
                     <i class="bi bi-chat-left-dots-fill"></i>
                 </div>
             </div>
-            <div class="col-xl-2 col-md-2 py-3" id="col_izq">
-                <div class="container datos p-3 mb-3">
+            <div class="col-xl-2 col-md-2 py-3" id="col_left">
+                <div class="container user_data p-3 mb-3">
                     <div class="row mb-2">
-                        <img src="./img/avatar.jpg" class="foto" alt="">
+                        <img src="./img/avatar.jpg" class="photo" alt="">
                     </div>
                     <div class="row">
                         <h3 class="">Lucia Sanchez</h3>
@@ -119,13 +119,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="container noticias">
+                <div class="container news">
                     <div class="row">
                         <h3>Ultimas noticias</h3>
                     </div>
                     <article class="post row">
                         <div class="header">
-                            <img class="img-fluid" src="../Hojatercero/Fotos/post1.jpg" alt="">
+                            <img class="img-fluid" src="../Hojatercero/img/post1.jpg" alt="">
                         </div>
                         <div class="post_body">                            
                             <a href="https://www.freecodecamp.org/" class="post_link" target="_blank">Leer mas</a>
@@ -133,7 +133,7 @@
                     </article>
                     <article class="post row">
                         <div class="header">
-                            <img class="img-fluid" src="../Hojatercero/Fotos/post2.jpg" alt="">
+                            <img class="img-fluid" src="../Hojatercero/img/post2.jpg" alt="">
                         </div>
                         <div class="post_body">                            
                             <a href="https://www.linuxfoundation.org/" class="post_link" target="_blank">Leer mas</a>
@@ -141,7 +141,7 @@
                     </article>
                     <article class="post row">
                         <div class="header">
-                            <img class="img-fluid" src="../Hojatercero/Fotos/post3.jpg" alt="">
+                            <img class="img-fluid" src="../Hojatercero/img/post3.jpg" alt="">
                         </div>
                         <div class="post_body">                            
                             <a href="https://www.helsinkitimes.fi/" class="post_link" target="_blank">Leer mas</a>
@@ -152,20 +152,20 @@
             <div class="col-xl-5 col-md-6 col-sm-11 py-3 " id="col_cen">
                 <!-- nueva publicación -->
                  <div id='newpost' class="newPost container p-3 mb-3">
-                     <div class="cabeceraNewPost row d-flex justify-content-left align-items-center mb-2">
-                         <img src="./img/avatar.jpg" alt="fotoUsuario" class="fotoPost img-fluid">
+                     <div class="row d-flex justify-content-left align-items-center mb-2">
+                         <img src="./img/avatar.jpg" alt="fotoUsuario" class="photoPost img-fluid">
                          <p class="col h4 text-dark">Comparte algo...</p>
                      </div>                
                      <div class="row m-1">
-                        <textarea class="form-control" name="funciones" id="funciones" rows="5" placeholder="¿Qué quieres compartir?..."></textarea>
+                        <textarea class="form-control" name="postContent" id="postContent" rows="5" placeholder="¿Qué quieres compartir?..."></textarea>
                     </div>
                      <div class="pieNewPost row m-1 d-flex justify-content-between">
-                         <div class="adjuntar col d-flex align-items-center">
+                         <div class="attach col d-flex align-items-center">
                              <i class="bi bi-camera me-2"></i>
                              <i class="bi bi-camera-reels me-2"></i>
                              <i class="bi bi-paperclip me-2"></i>
                          </div>
-                         <div class="col d-flex justify-content-end" id="boton_publicar">
+                         <div class="col d-flex justify-content-end" >
                              <button class="confirm_delete" id='postBtn'>Publicar</button>
                          </div>
                      </div>                
@@ -173,8 +173,8 @@
  
                  <!-- lista de publicaciones -->
                  <div class="post container p-3 mb-3" id="post3">
-                    <div class="cabeceraPost row d-flex flex-nowrap justify-content-left align-items-center">
-                        <img src="./img/estela.jpg" alt="fotoUsuario" class="fotoPost  img-fluid">
+                    <div class="row d-flex flex-nowrap justify-content-left align-items-center">
+                        <img src="./img/estela.jpg" alt="fotoUsuario" class="photoPost  img-fluid">
                         <div class="post_header">
                             <p class="col h4 text-dark">Estela Martínez</p> 
                             <p>23hs</p>                   
@@ -192,8 +192,8 @@
                     </div>
                 </div>
                 <div class="post container p-3 mb-3" id="post2">
-                    <div class="cabeceraPost row d-flex flex-nowrap justify-content-left align-items-center">
-                        <img src="./img/estela.jpg" alt="fotoUsuario" class="fotoPost  img-fluid">
+                    <div class="row d-flex flex-nowrap justify-content-left align-items-center">
+                        <img src="./img/estela.jpg" alt="fotoUsuario" class="photoPost  img-fluid">
                         <div class="post_header">
                             <p class="col h4 text-dark">Estela Martínez</p> 
                             <p>1d</p>                   
@@ -211,8 +211,8 @@
                     </div>
                 </div>
                 <div class="post container p-3" id="post1">
-                    <div class="cabeceraPost row d-flex flex-nowrap justify-content-left align-items-center">
-                        <img src="./img/estela.jpg" alt="fotoUsuario" class="fotoPost  img-fluid">
+                    <div class="row d-flex flex-nowrap justify-content-left align-items-center">
+                        <img src="./img/estela.jpg" alt="fotoUsuario" class="photoPost  img-fluid">
                         <div class="post_header">
                             <p class="col h4 text-dark">Estela Martínez</p> 
                             <p>3d</p>                   
@@ -230,7 +230,7 @@
                     </div>
                 </div>
            </div>
-           <div class="col-2" id="col_der">
+           <div class="col-2" id="col_right">
                <section class="friend_request ">
                    <div class="like_container">
                        <p class="h5 ps-3">Solicitud de amistad</p>
@@ -243,12 +243,12 @@
                            </a>
                            <div>
                                <span>Teresa Garía</span>
-                               <span class="gris">2 hours ago</span>
+                               <span class="gray">2 hours ago</span>
                            </div>
                        </div>
                        <div class="button_container">
                            <button class="confirm_delete">Confirm</button>
-                           <button class="confirm_delete gray">Delete</button>
+                           <button class="confirm_delete green">Delete</button>
                        </div>
                    </div>
                    <div class="request_container ms-3 me-3 p-2"> 
@@ -258,12 +258,12 @@
                            </a>
                            <div>
                                <span>Roberto Sanchez García</span>
-                               <span class="gris">4 hours ago</span>
+                               <span class="gray">4 hours ago</span>
                            </div>
                        </div>
                        <div class="button_container">
                            <button class="confirm_delete">Confirm</button>
-                           <button class="confirm_delete gray">Delete</button>
+                           <button class="confirm_delete green">Delete</button>
                        </div>
                    </div>
                    <div class="request_container ms-3 me-3 p-2"> 
@@ -273,12 +273,12 @@
                            </a>
                            <div>
                                <span>Juan Perez Perez</span>
-                               <span class="gris">13 hours ago</span>
+                               <span class="gray">13 hours ago</span>
                            </div>
                        </div>
                        <div class="button_container">
                            <button class="confirm_delete">Confirm</button>
-                           <button class="confirm_delete gray">Delete</button>
+                           <button class="confirm_delete green">Delete</button>
                        </div>
                    </div>
                    <div class="request_container ms-3 me-3 mb-3 p-2"> 
@@ -288,19 +288,19 @@
                            </a>
                            <div>
                                <span>Meta Mark </span>
-                               <span class="gris">43 hours ago</span>
+                               <span class="gray">43 hours ago</span>
                            </div>
                        </div>
                        <div class="button_container">
                            <button class="confirm_delete">Confirm</button>
-                           <button class="confirm_delete gray">Delete</button>
+                           <button class="confirm_delete green">Delete</button>
                        </div>
                    </div>
                </section>
            </div>
            <section id="chat">
                <div id="chat_container">
-                   <div class="centrado_flex">
+                   <div class="center_flex">
                        <img src="./img/avatar.jpg" alt="chat avatar" class="icon_nav" id="chat_avatar" style="border-radius: 50%;">
                        <span>Mensajes</span>
                    </div>
@@ -312,9 +312,9 @@
             </section>
         </div>
     </main>
-    <footer class="container-fluid" >
-        <div class="pie1">
-            <ul class="pie1">
+    <footer>
+        <div class="foot1">
+            <ul>
                 <li>Meta</li>
                 <li>Información</li>
                 <li>Blog</li>
@@ -325,8 +325,8 @@
                 <li>Condiciones</li>
             </ul>
         </div>
-        <div class="pie2">
-            <select class="idioma" name="idioma" id="">
+        <div class="foot2">
+            <select class="language" name="language">
                 <option value="esp">Español</option>                
                 <option value="eng">Inglés</option>                
                 <option value="fr">Francés</option>                

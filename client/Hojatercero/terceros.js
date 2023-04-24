@@ -1,4 +1,4 @@
-const fullname = document.getElementById('nombreUsuario');
+const fullname = document.getElementById('fullname');
 const userName = document.getElementById('userName');
 const phone = document.getElementById('phone');
 const email = document.getElementById('email');
@@ -17,7 +17,7 @@ if(regex.test(id)){
 }
 
 async function getUserById(){
-    await fetch(`${url}/perfil_terceros/${id}`)
+    await fetch(`${url}/users/${id}`)
     .then(data => data.json())
     .then(data =>{
         fullname.innerHTML= data[0].fullName
@@ -70,11 +70,11 @@ fetch('https://jsonplaceholder.typicode.com/posts')
             imgPost.classList.add("fotoPost","img-fluid");
             imgPost.setAttribute("alt","fotoUsuario");
 
-            const fotoUsuario = document.querySelector("#fotoTercero");
+            const fotoUsuario = document.querySelector("#thirdPersonPhoto");
             imgPost.setAttribute("src", fotoUsuario.src);
             const nombrePost = document.createElement('p');
 
-            const nombreUsuario = document.querySelector("#nombreUsuario");
+            const nombreUsuario = document.querySelector("#fullname");
             nombrePost.innerHTML = nombreUsuario.innerHTML;
             nombrePost.classList.add("col","h4","text-dark");
 

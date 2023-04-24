@@ -23,7 +23,7 @@
                         <input type="search" id="search_input" placeholder="Comienza a escribir para buscar">
                     </div>
                 </form>
-                <div id="nav_profile" class="centrado_flex" >
+                <div id="nav_profile" class="flex_center" >
                     <span>
                         <i class="bi bi-bell"></i>
                     </span>
@@ -31,7 +31,7 @@
                         <button id="profileButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="../img/avatar.jpeg" alt="perfil">
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-lg-end" id="ulul">
+                        <ul class="dropdown-menu dropdown-menu-lg-end" id="drop_menu">
                           <li><a class="dropdown-item" href="../hojaPersonal/index.html">Perfil</a></li>
                           <li><a class="dropdown-item" href="#">Configuración</a></li>
                           <li><a class="dropdown-item" href="../index.html">Cerrar sesión</a></li>
@@ -60,29 +60,47 @@
             </div>
           </nav>
     </header>
-    <main class="container-fluid" id="principal">
+    <main class="container-fluid">
         <div class="row" id="main_container">
-            <div class="col-2" id="col_izq">
-                <div class="container container_contacto p-3 pb-5 my-3" id="col_izq-container">
+            <div class="row" id="options_menu">
+                <ul>
+                    <li>
+                        <a href="#">Editar perfil</a> 
+                    </li>
+                    <li>
+                        <a href="#">Seguridad</a> 
+                    </li>
+                    <li>
+                        <a href="../index.html">Cerrar sesión</a> 
+                    </li>
+                </ul>
+            </div>
+            <div class="col-2" id="col_left">
+                <div class="container container_contact p-3 pb-5 my-3" id="col_left-container">
                     <div class="row">
-                        <ul>
+                        <ul class="options_list">
                             <li>
+                                <i class="bi bi-person-lines-fill"></i>
                                 <a href="#">Editar perfil</a> 
                             </li>
                             <li>
+                                <i class="bi bi-shield-lock-fill"></i>
                                 <a href="#">Seguridad</a> 
                             </li>
                             <li>
+                                <i class="bi bi-door-open-fill"></i>
                                 <a href="../index.html">Cerrar sesión</a> 
                             </li>
                         </ul>
                     </div>
-                    <button id="deleteAccount">Eliminar cuenta</button>
+                    <button id="deleteAccount">
+                        <i class="bi bi-x-square-fill"></i>
+                        Eliminar cuenta</button>
                 </div>
             </div>
-            <div class="col" id="col_der">
-                <div class="container container_contacto p-3 my-3">
-                    <div class="contacto row">                
+            <div class="col" id="col_right">
+                <div class="container container_contact p-3 my-3">
+                    <div class="row">                
                         <div class="col d-flex my-1 align-items-baseline">
                             <i class="bi bi-telephone me-2"></i>
                             <p id="phone">696 987 776</p>
@@ -98,16 +116,16 @@
                     </div>
                     <i class="bi bi-pencil"></i>
                 </div>
-                <div class="container container_experiencia p-3 mb-3">
+                <div class="container container_experience p-3 mb-3">
                     <div class="row">
                         <h3>Experiencia laboral</h3>
                     </div>
-                    <div class="row experiencia">
+                    <div class="row">
                         <h4>Fullstack developer</h4>
                         <h5>NewTech</h5>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus possimus accusantium, cum distinctio itaque pariatur autem ducimus officiis, laborum reiciendis atque ullam necessitatibus mollitia libero assumenda asperiores ipsum amet ex labore fuga consequatur iure odit explicabo. Nostrum amet, quod, harum odio laudantium sequi dicta obcaecati architecto atque fugit voluptatum in placeat officiis porro iusto eum accusamus commodi, dignissimos dolores velit?</p>
                     </div>
-                    <div class="row experiencia">
+                    <div class="row">
                         <h4>Fullstack developer</h4>
                         <h5>NewTech</h5>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus possimus accusantium, cum distinctio itaque pariatur autem ducimus officiis, laborum reiciendis atque ullam necessitatibus mollitia libero assumenda asperiores ipsum amet ex labore fuga consequatur iure odit explicabo. Nostrum amet, quod, harum odio laudantium sequi dicta obcaecati architecto atque fugit voluptatum in placeat officiis porro iusto eum accusamus commodi, dignissimos dolores velit?</p>
@@ -116,23 +134,25 @@
                         <i class="bi bi-pencil"></i>
                     </div>
                 </div>
-                <div class="container container_estudios p-3 mb-3">
-                    <h3 class="row">Estudios</h3>
-                    <div class="row estudio">
+                <div class="container container_studies p-3 mb-3">
+                    <div class="row">
+                        <h3>Estudios</h3>
+                    </div>
+                    <div class="row">
                         <h4>Grado en ingeniería informática</h4>
                         <div class="row">
                             <h5 class="col">Universidad de Oviedo</h5>
                             <h6 class="col">2012 - 2016</h6>
                         </div>
                     </div>
-                    <div class="row estudio">
+                    <div class="row">
                         <h4>Grado en ingeniería informática</h4>
                         <div class="row">
                             <h5 class="col">Universidad de Oviedo</h5>
                             <h6 class="col">2012 - 2016</h6>
                         </div>
                     </div>
-                    <div class="row estudio">
+                    <div class="row">
                         <h4>Grado en ingeniería informática</h4>
                         <div class="row">
                             <h5 class="col">Universidad de Oviedo</h5>
@@ -144,27 +164,15 @@
                     </div>
                 </div>
             </div>
-            <section id="chat">
-                <div id="chat_container">
-                    <div class="centrado_flex">
-                        <img src="../main/img/avatar.jpg" alt="chat avatar" class="icon_nav" id="chat_avatar" style="border-radius: 50%;">
-                        <span>Mensajes</span>
-                    </div>
-                    <div class="centrado">
-                        <span>...</span>
-                        <span>^</span>
-                    </div>
-                </div>
-            </section>
         </div>
         <div id="loader">            
             <div class="spinner"></div>
             <span>Eliminando cuenta...</span>
         </div>
     </main>
-    <footer class="container-fluid" >
-        <div class="pie1">
-            <ul class="pie1">
+    <footer>
+        <div class="foot1">
+            <ul>
                 <li>Meta</li>
                 <li>Información</li>
                 <li>Blog</li>
@@ -175,8 +183,8 @@
                 <li>Condiciones</li>
             </ul>
         </div>
-        <div class="pie2">
-            <select class="idioma" name="idioma" id="">
+        <div class="foot2">
+            <select class="language" name="language">
                 <option value="esp">Español</option>                
                 <option value="eng">Inglés</option>                
                 <option value="fr">Francés</option>                

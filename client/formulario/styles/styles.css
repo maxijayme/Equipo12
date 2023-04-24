@@ -150,40 +150,38 @@ button:hover {
 
 /*Pie de pagina*/
 footer {
-    width: 50%;
-    justify-self: flex-end;
-    font-family: 'Roboto'
-    , sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: x-small;
     color: gray;
     display: flex;
     flex-direction: column; 
+    margin: 0 auto;
 }
 ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
 }
 li {
     margin: 20px;
 }
 
-.pie1 {
+.foot1 {
     display: flex;
     margin: auto;
-    flex-wrap: wrap;
 }
 
-.pie2 {
+.foot2 {
     display: flex;
     margin: auto;
     color: gray;
 }
-.idioma {
+.language {
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(234, 243, 243);
     font-size: x-small;
     width: fit-content;
     border: 0;
+    background-color: rgb(234, 243, 243);
     color: gray;
     margin-right: 10px;
 }

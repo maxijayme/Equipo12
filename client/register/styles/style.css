@@ -12,13 +12,13 @@ a{
 body{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 99%;
-    margin-top: 50px;
+    justify-content: space-between;
+    height: 98vh;
     background: rgb(234, 243, 243);
 }
 
 main{
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -37,7 +37,7 @@ h1{
     padding: 25px;
     border-radius: 25px;
 }
-#container-formulario{
+#container-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,14 +57,14 @@ h1{
     padding: 10px
 }
 
-#datos{
+#data_form{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.hueco{
+.input_form{
     margin-top: 15px;
     height: 35px;
     width: 250px;
@@ -115,7 +115,7 @@ button a{
     margin-bottom: 20px;
 }
 
-.linea{
+.line{
     border-top: 1px solid rgb(44, 44, 44);
     width: 130px;
 }
@@ -189,28 +189,28 @@ footer {
     color: gray;
     display: flex;
     flex-direction: column; 
-    margin: auto;
-    margin-top: 30px;
+    margin:0 auto;
 }
 ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
 }
 li {
     margin: 20px;
 }
 
-.pie1 {
+.foot1 {
     display: flex;
     margin: auto;
 }
 
-.pie2 {
+.foot2 {
     display: flex;
     margin: auto;
     color: gray;
 }
-.idioma {
+.language {
     font-family: 'Roboto', sans-serif;
     font-size: x-small;
     width: fit-content;

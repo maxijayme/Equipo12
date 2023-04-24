@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">   
+    <link rel="stylesheet" href="./styles/style.css">   
     <link rel="shortcut icon" href="../img/icon_logo.svg" type="image/x-icon">
     <title>Registrarse</title>
 </head>
@@ -17,21 +17,21 @@
             <div class="col-3 bg-body-tertiary bg-dark">
                 <img src="./img/teclapedia_logo.svg" id=logo alt="">
             </div>
-            <div id="container-formulario">
-                <form class="row" id="datos">
-                    <input class="hueco" type="text" placeholder="Nombre y Apellidos" id="fullname">
-                    <input class="hueco" type="text" placeholder="Nombre de Usuario" id="userName">
-                    <input class="hueco" type="email" placeholder="Email" id="email">
-                    <input class="hueco" type="password" placeholder="Contraseña" autocomplete="on" id="password">
-                    <input class="hueco" type="password" placeholder="Confirmación contraseña" autocomplete="on" id="passwordConfirm">
+            <div id="container-form">
+                <form class="row" id="data_form">
+                    <input class="input_form" type="text" placeholder="Nombre y Apellidos" id="fullname">
+                    <input class="input_form" type="text" placeholder="Nombre de Usuario" id="userName">
+                    <input class="input_form" type="email" placeholder="Email" id="email">
+                    <input class="input_form" type="password" placeholder="Contraseña" autocomplete="on" id="password">
+                    <input class="input_form" type="password" placeholder="Confirmación contraseña" autocomplete="on" id="passwordConfirm">
                     <p class="error">Los campos contraseña no coinciden</p>
                     <p class="p-cond">Al registrarte, aceptas nuestras Condiciones. Obtén más información sobre cómo recopilamos, usamos y compartimos tus datos en la Política de privacidad, así como el uso que hacemos de las cookies y tecnologías similares en la Política de cookies.</p>
                     <button id="register" type="submit" disabled>Registrarse</button>
                 </form>
                 <div class="row" id="division">
-                    <div class="linea"></div>
+                    <div class="line"></div>
                     <span>o</span>
-                    <div class="linea"></div>
+                    <div class="line"></div>
                 </div>
                 <span class=row id="google">
                     <img src="./img/logo_google.png" alt="" id="logo_google">
@@ -48,7 +48,7 @@
         </div> 
     </main>
     <footer>
-        <div class="pie1">
+        <div class="foot1">
             <ul>
                 <li>Meta</li>
                 <li>Información</li>
@@ -60,8 +60,8 @@
                 <li>Condiciones</li>
             </ul>
         </div>
-        <div class="pie2">
-            <select class="idioma" name="idioma" id="">
+        <div class="foot2">
+            <select class="language" name="language">
                 <option value="esp">Español</option>                
                 <option value="eng">Inglés</option>                
                 <option value="fr">Francés</option>                

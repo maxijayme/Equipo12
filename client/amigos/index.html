@@ -13,51 +13,63 @@
     <header>
         <nav class="navbar bg-body-tertiary fixed-top navbar-expand-sm bg-dark navbar-dark ml-2 mr-2" data-bs-theme="dark">
             <div class="container-fluid no-padding flex-wrap">
-                <a class="navbar-brand" id="logo_link" href="../main/index.html">
+                <a class="navbar-brand" id="logo_link">
                     <img src="../img/teclapedia_logo.svg" alt="Teclapedia" id="logo" >
                 </a>
                 <form class="d-flex" role="search" id="searchbar">
                     <div id="search-wrapper">
                         <i class="bi bi-search"></i>
                         <input type="search" id="search_input" placeholder="Comienza a escribir para buscar">
+                        <div class="userlist" id="userlist_container"></div>
                     </div>
                 </form>
+                <div id="nav_profile" class="center_flex" >
+                    <span>
+                        <i class="bi bi-bell"></i>
+                    </span>
+                    <div class="dropdown">
+                        <button id="profileButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../main/img/avatar.jpg" alt="perfil">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-lg-end" id="drop_menu">
+                          <li><a class="dropdown-item" href="../hojaPersonal/index.html">Perfil</a></li>
+                          <li><a class="dropdown-item" href="#">Configuración</a></li>
+                          <li><a class="dropdown-item" href="../index.html">Cerrar sesión</a></li>
+                        </ul>
+                      </div>               
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse " id="navbarToggler">
-                    <div id="nav_profile" class="centrado_flex" >
-                        <span>
-                            <i class="bi bi-bell"></i>
-                        </span>
-                        <div>
-                            <a href="../hojaPersonal/index.html">
-                                <img src="../main//img/avatar.jpg"" alt="perfil">
-                            </a>  
-                        </div>                
-                    </div>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarToggler">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
+                        <li class="nav-item">
                         <a class="nav-link active" href="#">Notificaciones</a>
-                      </li>
-                      <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
                         <a class="nav-link active" href="../hojaPersonal/index.html">Perfil</a>
-                      </li>    
+                        </li>    
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">Configuración</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Cerrar sesión</a>
+                        </li>
                     </ul>
-                  </div>
+                </div>
             </div>
-          </nav>
+        </nav>
     </header>
     <main>
         <div class="row" id="main_container">
-            <div class="container bg-body-tertiary bg-dark navbar-dark" data-bs-theme="dark" id="menu_superior_container">
-                <div class="col-1" id="menu_superior">
+            <div class="container bg-body-tertiary bg-dark navbar-dark" data-bs-theme="dark" id="top_menu_container">
+                <div class="col-1" id="top_menu">
                     <a href="..//amigos/index.html"><i class="bi bi-people-fill"></i></a>
                         <i class="bi bi-newspaper"></i>
                         <i class="bi bi-chat-left-dots-fill"></i>
                 </div>
             </div>
-            <div class="col-1 bg-body-tertiary bg-dark navbar-dark" data-bs-theme="dark" id="menu_lateral">
+            <div class="col-1 bg-body-tertiary bg-dark navbar-dark" data-bs-theme="dark" id="side_menu">
                 <div id="friend_icon">
                     <a href="..//amigos/index.html"><i class="bi bi-people-fill"></i></a>
                 </div>
@@ -69,9 +81,9 @@
                 </div>
             </div>
             <div class="col-xl-2 col-md-2 py-3" id="col_izq">
-                <div class="container datos p-3 mb-3">
+                <div class="container p-3 mb-3">
                     <div class="row mb-2">
-                        <img src="../main/img/avatar.jpg" class="foto" alt="">
+                        <img src="../main/img/avatar.jpg" class="photo" alt="">
                     </div>
                     <div class="row">
                         <h3 class="">Lucia Sanchez</h3>
@@ -106,13 +118,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="container noticias">
+                <div class="container news">
                     <div class="row">
                         <h3>Ultimas noticias</h3>
                     </div>
                     <article class="post row">
                         <div class="header">
-                            <img class="img-fluid" src="../Hojatercero/Fotos/post1.jpg" alt="">
+                            <img class="img-fluid" src="../Hojatercero/img/post1.jpg" alt="">
                         </div>
                         <div class="post_body">                            
                             <a href="https://www.freecodecamp.org/" class="post_link" target="_blank">Leer mas</a>
@@ -120,7 +132,7 @@
                     </article>
                     <article class="post row">
                         <div class="header">
-                            <img class="img-fluid" src="../Hojatercero/Fotos/post2.jpg" alt="">
+                            <img class="img-fluid" src="../Hojatercero/img/post2.jpg" alt="">
                         </div>
                         <div class="post_body">                            
                             <a href="https://www.linuxfoundation.org/" class="post_link" target="_blank">Leer mas</a>
@@ -128,7 +140,7 @@
                     </article>
                     <article class="post row">
                         <div class="header">
-                            <img class="img-fluid" src="../Hojatercero/Fotos/post3.jpg" alt="">
+                            <img class="img-fluid" src="../Hojatercero/img/post3.jpg" alt="">
                         </div>
                         <div class="post_body">                            
                             <a href="https://www.helsinkitimes.fi/" class="post_link" target="_blank">Leer mas</a>

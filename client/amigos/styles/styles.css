@@ -22,7 +22,7 @@ a{
 }
 
 /*Clase para centrado flex*/
-.centrado_flex{
+.center_flex{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -66,11 +66,8 @@ a{
     color: white;
 }
 
-body{
-    background-color: rgb(234, 243, 243);
-}
-
 /*search input*/
+
 
 #searchbar{
     width: 25%;
@@ -104,6 +101,26 @@ body{
     transition: 0.5s;
 }
 
+.userlist{
+    visibility: hidden;
+    position: absolute;
+    width: 90%;
+    height: 300px;
+    background-color:#f2f2f2;
+    left: 0;
+    right:0;
+    margin:auto;
+}
+
+.userlist ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.userlist ul li{
+    margin: 10px 0 0 0;
+}
+
 header i {
     position: absolute;
     margin-left: 20px;
@@ -113,7 +130,21 @@ header i {
 #navbarToggler ul{
     display: none;
 }
+
+#profileButton{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#drop_menu{
+    background-color: rgb(43,48,53);
+}
+
 /*main*/
+
+body{
+    background-color: rgb(234, 243, 243);
+}
 
 main{
     width: 100%;
@@ -125,15 +156,16 @@ main{
     margin-top: 73px;
     justify-content: space-around;
     padding-left: 63px;
+    max-width: 100%;
 }
 
 /*menu superior*/
 
-#menu_superior_container{
+#top_menu_container{
     display: none;
 }
 
-#menu_superior{
+#top_menu{
     width: 100%;
     justify-content: center;
     align-content: center;
@@ -144,7 +176,7 @@ main{
 
 /*menu lateral*/
 
-#menu_lateral{
+#side_menu{
     position: absolute;
     border-radius: 0 15px 15px 0;
     left: 0;
@@ -153,11 +185,11 @@ main{
     min-width: 56px;
 }
 
-#menu_lateral div, #menu_superior{
+#side_menu div, #top_menu{
     text-align: center;
 }
 
-#menu_lateral i, #menu_superior i{
+#side_menu i, #top_menu i{
     font-size: 2.2rem;
     color: white;
 }
@@ -176,7 +208,7 @@ main{
     align-content: baseline;
 }
 
-.foto{
+.photo{
     width: 65%;
     display: flex;
     margin: auto;
@@ -442,7 +474,7 @@ top: 5px;
 /*media queries*/
 
 @media (min-width: 1200px) {
-    #menu_lateral {
+    #side_menu {
         display: none;
     }
     #col_der{
@@ -493,7 +525,7 @@ top: 5px;
     #main_container{
         margin-top: 70px;
     }
-    #menu_lateral{
+    #side_menu{
         display: none;
     }
 
@@ -501,7 +533,7 @@ top: 5px;
         padding-left: 0;
     }
 
-    #menu_superior_container{
+    #top_menu_container{
         display: flex;
         letter-spacing:10pt;
         padding-top: 5px;

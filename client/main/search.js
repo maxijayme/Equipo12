@@ -16,8 +16,11 @@ async function getUserByName(){
             searchResult.appendChild(userList)
             users.forEach(user=>{
                 const userItem = document.createElement('li');
-                userItem.innerHTML=user.fullName;
+                const userLink = document.createElement('a');
+                userLink.innerHTML=user.fullName;
+                userLink.setAttribute('href',`../Hojatercero/Perfil_terceros.html?id:${user.id}`)
                 searchResult.firstElementChild.appendChild(userItem);
+                userItem.appendChild(userLink);
             })
         }   
     }).catch(()=>{
