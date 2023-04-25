@@ -1,76 +1,109 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap%27');
 
 *{
     font-family: 'Tilt Neon', cursive;
 }
 
-a {
+a{
     text-decoration: none;
+    color: #0d6efd;
 }
 
+<<<<<<< HEAD
 
 /* html, body{
     min-height: 100vh;
     }
 
+=======
+>>>>>>> maxi
 body{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
+    height: 98vh;
+    background: rgb(234, 243, 243);
 }
 
 main{
+    padding-top: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100%;
-    margin-top: 80px;
-}
-
-#main_container{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
-#welcome_container {
+#container-initial{
     width: 300px;
+<<<<<<< HEAD
     display: flex;
     align-items: center;
 } */
+=======
+}
+>>>>>>> maxi
 
 h1{
-    font-size: 3.4rem;
+    font-size: 56px;
 }
+<<<<<<< HEAD
 
 /* #form_container{
+=======
+#container-initialr{
+    background-color: white;
+    padding: 25px;
+    border-radius: 25px;
+}
+#container-form{
+>>>>>>> maxi
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 1px solid rgba(120, 200, 200, 0.5);
     padding: 0 15px;
-    height: 450px;
-    width: 300px;
     font-size: 10pt;
+<<<<<<< HEAD
 } */
+=======
+    background:  rgb(222,225,232);
+    border-radius: 0 0 15px 15px;
+}
+>>>>>>> maxi
 
 #logo{
-    width: 280px;
-    margin-bottom: 15px;
+    width: 320px;
+    height: 65px;
+    background: rgb(43,48,53);
+    border-radius: 15px 15px 0 0;
+    padding: 10px
 }
+<<<<<<< HEAD
 /* 
 #fields{
+=======
+
+#data{
+>>>>>>> maxi
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 } */
 
+<<<<<<< HEAD
+=======
+.fields{
+    margin-top: 15px;
+    height: 35px;
+    width: 250px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid rgba(120, 200, 200, 0.5);
+    padding-left: 10px;
+}
+>>>>>>> maxi
 
 button{
     height: 35px;
@@ -82,18 +115,26 @@ button{
     background-color:  rgb(193, 241, 227);
     border: none;
     transition: 0.5s;
-}
-
-button a{
     color: rgb(44, 44, 44);
 }
 
-button:hover {
-    background-color: rgb(153, 230, 205);
-    transition: 0.5s;
+
+#save{
+    padding: 20px;
 }
+<<<<<<< HEAD
 /* 
 #divide{
+=======
+
+
+
+.p-cond{
+    width: 290px;
+}
+
+#division{
+>>>>>>> maxi
     display: flex;
     align-items: center;
     gap: 10px;
@@ -107,7 +148,6 @@ button:hover {
 } */
 
 #google{
-    border: 1px solid rgb(44, 44, 44);
     height: 35px;
     width: 250px;
     color: white;
@@ -121,12 +161,14 @@ button:hover {
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    background-color: white;
 }
 
 #logo_google{
     width: 15px;
     height: 15px;
 }
+<<<<<<< HEAD
 /* 
 #save{
     display: flex;
@@ -141,6 +183,8 @@ button:hover {
     font-size: 10pt;
     color: black;
 }
+=======
+>>>>>>> maxi
 
 #register{
     margin-top: 15px;
@@ -149,9 +193,9 @@ button:hover {
     align-items: center;
     gap: 10px;
     height: 50px;
-    font-size: 10pt;
     width: 100%;
     border: 1px solid rgba(120, 200, 200, 0.2);
+<<<<<<< HEAD
 }
 
 #register a{
@@ -161,42 +205,47 @@ button:hover {
 .container {
     background-color: rgb(222,225,232);
     border-radius: 15px;
+=======
+    background-color: rgb(222,225,232); 
+    border-radius: 15px;
+    font-weight: 600;
+>>>>>>> maxi
 }
 
 /*Pie de pagina*/
 footer {
-    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
     font-size: x-small;
     color: gray;
     display: flex;
     flex-direction: column; 
+    margin: 0 auto;
 }
 ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
 }
 li {
-    margin: 0 20px 0 20px;
+    margin: 20px;
 }
 
-.pie1 {
+.foot1 {
     display: flex;
     margin: auto;
-    flex-wrap: wrap;
 }
 
-.pie2 {
+.foot2 {
     display: flex;
     margin: auto;
     color: gray;
 }
-.idioma {
+.language {
     font-family: 'Roboto', sans-serif;
     font-size: x-small;
     width: fit-content;
     border: 0;
+    background-color: rgb(234, 243, 243);
     color: gray;
     margin-right: 10px;
 }

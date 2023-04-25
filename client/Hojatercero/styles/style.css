@@ -22,7 +22,7 @@ a{
 }
 
 /*Clase para centrado flex*/
-.centrado_flex{
+.center_flex{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -75,7 +75,7 @@ body{
     border: none;
 }
 
-#ulul{
+#drop_menu{
     background-color: rgb(43,48,53);
 }
 
@@ -138,11 +138,11 @@ main{
 
 /*menu superior*/
 
-#menu_superior_container{
+#top_menu_container{
     display: none;
 }
 
-#menu_superior{
+#top_menu{
     width: 100%;
     justify-content: center;
     align-content: center;
@@ -153,7 +153,7 @@ main{
 
 /*menu lateral*/
 
-#menu_lateral{
+#side_menu{
     position: absolute;
     border-radius: 0 15px 15px 0;
     left: 0;
@@ -162,11 +162,11 @@ main{
     min-width: 56px;
 }
 
-#menu_lateral div, #menu_superior{
+#side_menu div, #top_menu{
     text-align: center;
 }
 
-#menu_lateral i, #menu_superior i{
+#side_menu i, #top_menu i{
     font-size: 2.2rem;
     color: white;
 }
@@ -176,7 +176,7 @@ main{
 }
 
 /*columna izquierda */
-#col_izq{
+#col_left{
     display: flex;
     flex-wrap: wrap;
     min-width: 280px;
@@ -185,7 +185,7 @@ main{
     align-content: baseline;
 }
 
-.foto{
+.photo{
     width: 65%;
     display: flex;
     margin: auto;
@@ -204,14 +204,14 @@ main{
 
 /* columna central */
 
-#col_cen, #col_izq, #col_der{
+#col_cen, #col_left, #col_right{
     background-color: white;
     border-radius: 25px;
     height: 100vh;
     overflow: scroll;
 }
 
-#col_cen::-webkit-scrollbar, #col_izq::-webkit-scrollbar, #col_der::-webkit-scrollbar {
+#col_cen::-webkit-scrollbar, #col_left::-webkit-scrollbar, #col_right::-webkit-scrollbar {
     display: none;
 }
 
@@ -227,22 +227,21 @@ main{
     padding: 2px;
 }
 
-.botonPublicar {
-    width: 180px;
-    border-radius: 20px;
-}
-
 .newPost,
 .post,
 .request_container,
-.datos,
-.noticias,
+.user_data,
+.news,
 select {
     background-color: rgb(222,225,232);
     border-radius: 15px;
 }
 
-.datos{
+.news h3{
+    margin-top: 10px;
+}
+    
+.user_data{
     max-height: 668px;
     min-height: 458px;
 }
@@ -258,8 +257,9 @@ textarea {
 
 /*solicitudes de amistad*/
 
-#col_der{
+#col_right{
     display: none;
+    min-width: 300px;
 }
 
 .friend_request{
@@ -315,19 +315,19 @@ textarea {
 }
 
 #photo1{
-    background: url(../amigos/img/friend_1.jpg) center/cover no-repeat;
+    background: url(../../amigos/img/friend_1.jpg) center/cover no-repeat;
 }
 
 #photo2{
-    background: url(../amigos/img/10.jpeg) center/cover no-repeat;
+    background: url(../../amigos/img/10.jpeg) center/cover no-repeat;
 }
 
 #photo3{
-    background: url(../amigos/img/friend_3.jfif) center/cover no-repeat;
+    background: url(../../amigos/img/friend_3.jfif) center/cover no-repeat;
 }
 
 #photo4{
-    background: url(../amigos/img/4.jfif) center/cover no-repeat;
+    background: url(../../amigos/img/4.jfif) center/cover no-repeat;
 }
 
 .button_container{
@@ -348,11 +348,14 @@ textarea {
     font-weight: 700;
 }
 
-.gray{
+.green{
     background-color: rgb(193, 241, 227);
     color: rgb(83, 83, 83);
 }
 
+.gray{
+    color: rgb(121, 121, 121);
+}
 
 /*chat*/
 
@@ -388,39 +391,38 @@ button:hover {
 
 /*Pie de pagina*/
 footer {
-    width: 50%;
-    justify-self: flex-end;
-    font-family: 'Roboto'
-    , sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: x-small;
     color: gray;
     display: flex;
     flex-direction: column; 
+    margin: 0 auto;
 }
 ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
 }
 li {
     margin: 20px;
 }
 
-.pie1 {
+.foot1 {
     display: flex;
     margin: auto;
-    flex-wrap: wrap;
 }
 
-.pie2 {
+.foot2 {
     display: flex;
     margin: auto;
     color: gray;
 }
-.idioma {
+.language {
     font-family: 'Roboto', sans-serif;
     font-size: x-small;
     width: fit-content;
     border: 0;
+    background-color: rgb(234, 243, 243);
     color: gray;
     margin-right: 10px;
 }
@@ -451,10 +453,10 @@ li {
 /*media queries*/
 
 @media (min-width: 1200px) {
-    #menu_lateral {
+    #side_menu {
         display: none;
     }
-    #col_der{
+    #col_right{
         display: flex;
     }
     #main_container{
@@ -479,7 +481,7 @@ li {
 }
 
 @media (min-width: 768px){
-    #col_izq{
+    #col_left{
         display: flex;
     } 
 } 
@@ -489,7 +491,7 @@ li {
     #col_cen{
         max-width: 600px;
     }
-    #col_izq{
+    #col_left{
         display: none;
     } 
     
@@ -502,7 +504,7 @@ li {
     #main_container{
         margin-top: 70px;
     }
-    #menu_lateral{
+    #side_menu{
         display: none;
     }
 
@@ -510,7 +512,7 @@ li {
         padding-left: 0;
     }
 
-    #menu_superior_container{
+    #top_menu_container{
         display: flex;
         letter-spacing:10pt;
         padding-top: 5px;

@@ -22,7 +22,7 @@ a{
 }
 
 /*Clase para centrado flex*/
-.centrado_flex{
+.flex_center{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -67,7 +67,11 @@ a{
 }
 
 body{
-    background-color: rgb(234, 243, 243);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 98vh;
+    background: rgb(234, 243, 243);
 }
 
 /*search input*/
@@ -119,34 +123,38 @@ header i {
     border: none;
 }
 
-#ulul{
+#drop_menu{
     background-color: rgb(43,48,53);
 }
 
 /* main */
-main{
-    width: 100%;
-}
+
 
 #main_container{
     margin-top: 73px;
-    height: 100vh;
     justify-content: space-around;
 }
 
-#col_izq, #col_der{
+#options_menu{
+    display: none;
+}
+
+#col_left, #col_right{
     background-color: white;
 }
 
+#col_left{
+    min-width: 300px;
+}
 
-.container_contacto,
-.container_experiencia,
-.container_estudios {
+.container_contact,
+.container_experience,
+.container_studies {
     background-color: rgb(222,225,232);
     border-radius: 15px;
 }
 
-#col_izq-container{
+#col_left-container{
     height: 96%;
     display: flex;
     flex-direction: column;
@@ -154,93 +162,78 @@ main{
     align-items: center;
 }
 
-#col_izq li{
-    list-style: none;
-    border-radius: 25px;
-    background-color: #e1d5d5;
-    text-align: center;
-    width: 180px;
-    cursor: pointer;
+.options_list{
+    padding: 0;
 }
 
-#col_izq li:hover{
+.options_list li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-radius: 0 25px 25px 0;
+    background-color: #e1d5d5;
+    text-align: center;
+    width: 230px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.options_list li:hover{
     background-color: #b5aaaa;
 }
 
-#col_izq a{
+.options_list li i{
+    margin-left: 40px;
+}
+
+.options_list a{
     color: #000;
+    margin-left: 10px;
 }
 
-/*chat*/
-
-#chat{
-    background-color: white;
-    border-radius: 15px 15px 0 0;
-    height: 60px;
-    width: 300px;
-    position: fixed;
-    bottom: 0;
-    right: 10px;
-    box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
-    -webkit-box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
-    -moz-box-shadow: -5px -7px 20px -8px rgba(0,0,0,0.06);
-}
-
-#chat_container{
-    width: 90%;
-    display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding: 10px;
-   gap: 20px;
-}
-
-#chat_avatar{
-    height: 40px;
-}
-
-#chat_avatar{
-    height: 40px;
+#phone{
+    min-width: 133px;
 }
 
 /*Pie de pagina*/
 footer {
-    width: 50%;
-    justify-self: flex-end;
-    font-family: 'Roboto'
-    , sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: x-small;
     color: gray;
     display: flex;
     flex-direction: column; 
+    margin: 0 auto;
 }
-#pie1 {
+ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
 }
 li {
     margin: 20px;
 }
 
-.pie1 {
+.foot1 {
     display: flex;
     margin: auto;
-    flex-wrap: wrap;
 }
 
-.pie2 {
+.foot2 {
     display: flex;
     margin: auto;
     color: gray;
 }
-.idioma {
+.language {
     font-family: 'Roboto', sans-serif;
     font-size: x-small;
     width: fit-content;
     border: 0;
+    background-color: rgb(234, 243, 243);
     color: gray;
     margin-right: 10px;
 }
+
 /*loader*/
 
 #loader{
@@ -275,11 +268,16 @@ li {
  }
 
  #deleteAccount{
-    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 25px;
     border: none;
     background-color: rgb(177, 26, 26);
     color: white;
-    width: 80%;
+    width: 230px;
+    height: 40px;
     margin: 0 auto;
  }
 
@@ -295,15 +293,6 @@ li {
 
 
 /*media queries*/
-
-@media (min-width: 1200px) {
-    #menu_lateral {
-        display: none;
-    }
-    #main_container{
-        padding: 0;
-    }
-}
 
 @media (max-width: 1200px) {
     #chat{
@@ -321,7 +310,39 @@ li {
     }
 }
 
-@media (max-width: 556px){
+@media (max-width: 768px){
+    #options_menu{
+        height: 80px;
+        overflow-x: scroll;
+        display: flex;
+        justify-content: center;
+    }
+
+    #options_menu ul{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        align-items: flex-end;
+ 
+        margin-bottom: 5;
+    }
+
+    #options_menu li{
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    #options_menu a{
+        color: rgb(43,48,53);
+    }
+
+    #col_left{
+        display: none;
+    }
+}
+
+@media (max-width: 575px){
     #main_container{
         margin-top: 70px;
     }
