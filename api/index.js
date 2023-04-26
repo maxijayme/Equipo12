@@ -3,6 +3,7 @@ const server = express();
 const routes = require('./routes/index.js');
 var moment = require("moment");
 const bodyParser = require('body-parser')
+const sequelize = require('./db.js')
 
 server.use(express.urlencoded({ extended: true, limit: '50mb' }));  
 server.use(bodyParser.json({limit: '50mb'}))
