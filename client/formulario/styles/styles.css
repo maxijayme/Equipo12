@@ -1,0 +1,202 @@
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+/*font-family: 'Tilt Neon', cursive;*/
+
+/*gris claro: rgb(249, 249, 249)
+gris oscuro: rgb(241, 241, 241)*/
+/* colores background-image: linear-gradient( to top, rgb(1, 37, 22), rgb(22, 159, 7)); */
+
+/*Estilo principal*/
+*{
+    margin: 0;
+    font-family: 'Tilt Neon', cursive;
+}
+
+body {   
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(234, 243, 243);
+    margin: 0 auto;
+    align-items: center;
+}
+
+h4 {
+    color: black;
+}
+
+
+/*Cabecera*/
+
+.container_header {
+    height: 65px;
+    background-color: rgb(43,48,53);
+    border-radius: 15px 15px 0 0;
+    padding: 10px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.container {
+    background-color: rgb(222,225,232);
+    border-radius: 15px;
+}
+
+#first-container{
+    border-radius: 0 0 15px 15px;
+}
+
+/* formulario */
+main {
+    max-width: 750px;
+    min-width: 375px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 25px;
+    margin-top: 15px;
+}
+
+/* Datos personales */
+
+#fotoPerfil {
+    width: 140px;
+    height: 130px;
+    border-radius: 50%;    
+}
+
+#first-container_row .col-3{
+    position: relative;
+    margin-left: 20px;
+}
+
+#upload label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(177, 162, 162);
+    border-radius: 50%;
+    bottom: -10px;
+    right: 8px;
+    cursor: pointer;
+}
+
+#upload svg{
+    color: rgb(39, 36, 36);
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+#pic{
+    color: rgba(0, 0, 0, 0);
+    background-color: red
+}
+
+label {
+    color: rgb(83, 83, 83);
+    margin-right: 15px;
+}
+
+input,
+select, 
+input[type="date"],
+input[type="checkbox"],
+textarea {
+    margin-bottom: 15px;
+    color: gray;
+}
+
+textarea{
+    resize: none;
+}
+
+#fInicioEstudio, 
+#fFinEstudio,
+#fInicioTrabajo,
+#fFinTrabajo{
+    max-width: 166px;
+}
+
+
+
+
+/* botones */
+.confirm_delete{
+    margin-top: 10px;
+    border: none;
+    background-color: rgb(250, 237, 205);
+    border-radius: 25px;
+    width: 110px;
+    height: 40px;
+    color:  rgb(83, 83, 83);
+    font-weight: 700;
+}
+
+.green {
+    background-color: rgb(193, 241, 227);
+    color: rgb(83, 83, 83);
+}
+
+button a {
+    color: rgb(83, 83, 83);
+    text-decoration: none;
+}
+
+button:hover {
+    border: 1px solid rgb(83, 83, 83);
+}
+
+/*Pie de pagina*/
+footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    color: gray;
+    display: flex;
+    flex-direction: column; 
+    margin: 0 auto;
+}
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+li {
+    margin: 20px;
+}
+
+.foot1 {
+    display: flex;
+    margin: auto;
+}
+
+.foot2 {
+    display: flex;
+    margin: auto;
+    color: gray;
+}
+.language {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    width: fit-content;
+    border: 0;
+    background-color: rgb(234, 243, 243);
+    color: gray;
+    margin-right: 10px;
+}
+
+@media (max-width: 556px) {
+    #first-container_row{
+        flex-direction: column;
+        gap: 20px;
+    }
+    #first-container_row .col-3{
+        width: 150px;
+        align-self: center;
+        margin-left: 0;
+    }
+    #first-container_row .col-8{
+        width: 100%;
+    }
+}
