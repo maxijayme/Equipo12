@@ -20,13 +20,15 @@
                 </div>
                 <div  class ="col-6" id="container-form">
                     <form class = "row" id="data">
-                        <input class="fields" type="text" placeholder="Nombre de usuario" id="user">
-                        <input class="fields" type="password" placeholder="Contraseña" id="password" autocomplete="on">
+                        <input class="fields" type="text" name="username" placeholder="Nombre de usuario" id="user">
+                        <label id="username_label"></label>
+                        <input class="fields" type="password" name="password" placeholder="Contraseña" id="password" autocomplete="on">
+                        <label id="password_label"></label>
                         <span id="save">
                             <input type="checkbox">
                             <span>Recuerda mis datos</span>
                         </span>
-                        <button id="login" disabled>Iniciar sesión</button>
+                        <button id="login"  type="submit" disabled>Iniciar sesión</button>
                     </form>
                 <div>
                         <a href="">Has olvidado tus datos?</a>

@@ -84,6 +84,18 @@ button{
     background-color:  rgb(193, 241, 227);
     border: none;
     transition: 0.5s;
+}
+
+button:enabled{
+    cursor: pointer;
+}
+
+button:enabled:hover{
+    background-color: rgb(153, 230, 205);
+    transition: 0.5s;
+}
+
+button a{
     color: rgb(44, 44, 44);
 }
 
