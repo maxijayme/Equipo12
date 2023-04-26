@@ -47,8 +47,6 @@ async function loginFunc(event){
     }
 }
 
-let login
-
 function enableButton(e){
     validate(e)
     if(username.value.length > 0 && password.value.length > 0 && success){
@@ -63,10 +61,6 @@ function validate(e){
     const inputName = e.target.name;
     const inputValue = e.target.value;
     if(inputName === 'username'){
-        if (!/^[a-zA-Z\s]*$/.test(inputValue)) {
-            labelsData.user='Solo se permiten letras';   
-            userok = false  
-        }
         if(inputValue.length<4){
             labelsData.user='El usuario debe tener al menos 4 letras';
             userok = false  
@@ -77,8 +71,8 @@ function validate(e){
         }
     }
     if(inputName === 'password'){
-        if(inputValue.length < 8){
-            labelsData.password='La contraseña debe tener al menos 8 caracteres';
+        if(inputValue.length < 6){
+            labelsData.password='La contraseña debe tener al menos 6 caracteres';
             passwordok = false;
         }else
         if(inputValue.length > 20){

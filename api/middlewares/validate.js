@@ -1,21 +1,21 @@
-function validateLogin(req,res){
+function validateLogin(req,res,next){
     const data = req.body
     let response = {
         uservalid:'',
         passwordvalid:''
     };
-    if (!/^[a-zA-Z\s]*$/.test(data.userName)){
-        response.uservalid = 'Solo se permiten letras ';
-    }else
     if(data.user.length < 4){
        response.uservalid = 'El usuario debe tener al menos 4 letras';
     }
-    if(data.password.length < 8){
-       response.passwordvalid = 'La contraseña debe tener al menos 8 caracteres';
+    if(data.password.length < 6){
+       response.passwordvalid = 'La contraseña debe tener al menos 6 caracteres';
     }else if(data.password.length > 20){
        response.passwordvalid ='La contraseña debe tener 20 caracteres máximo';
     }
-    res.status(401).send(response)
+    if(response.uservalid!='' || response.passwordvalid != ''){
+        res.status(401).send(response)
+    }
+    next();
 }
 
 module.exports = validateLogin;
