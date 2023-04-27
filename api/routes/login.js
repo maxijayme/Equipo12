@@ -16,8 +16,9 @@ router.post('/', validateLogin, async(req,res)=>{
         }
     }
     catch(err){
-        res.send(err)
+        res.status(200).send(err)
     }
 })
+
 
 module.exports = router
