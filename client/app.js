@@ -9,23 +9,30 @@ password.addEventListener('input', enableButton)
 const usernameLabel = document.getElementById('username_label');
 const passwordLabel = document.getElementById('password_label');
 
-const userList = JSON.parse(localStorage.getItem("userList"));
+let loginData = {
+    user:"",
+    password:"",
+}
 
+let labelsData = {
+    password:"",
+    user:"",
+}
+let userok,passwordok = false
 
-
-function loginFunc(event){
+async function loginFunc(event){
     event.preventDefault();
     loginData.user = username.value;
     loginData.password = password.value;
     if(success){
-        const loginResponse =  fetch(`${URL}/login`,{
+        const loginResponse = await fetch(`${URL}/login`,{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(loginData)
         })
-        const responseJson =  loginResponse.json()
+        const responseJson = await loginResponse.json()
         if(loginResponse.status == 200){
             username.value=''
             password.value = ''

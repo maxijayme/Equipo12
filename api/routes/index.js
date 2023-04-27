@@ -1,7 +1,6 @@
 const { Router } = require('express');
 const users = require('./users.js')
 const search = require('./search.js')
-const login = require('./login.js')
 
 const router = Router();
 
