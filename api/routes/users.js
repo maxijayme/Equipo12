@@ -1,6 +1,8 @@
 const { Router } = require('express');
 const router = Router();
 const initialState = require('../../client/initialState.js')
+const db = require('../db/db.js');
+const { QueryTypes } = require('sequelize');
 
 router.get('/:id', (req,res)=>{
     try{
@@ -35,5 +37,40 @@ router.get('/search_user/:fullname', (req,res)=>{
         console.log(err)
     }
 })
+
+router.post('/create', async (req,res)=>{
+    const {fullname, userName, email, password} = req.body;
+    console.log(req.body)
+    const newUser = await db.query(`Insert into tusuario (fullname, username, password, email) values ("${fullname}", "${userName}", "${email}", "${password}")`,{type: QueryTypes.INSERT })
+    console.log(newUser)
+})
+
+
+router.post('/exist', async (req,res)=>{
+    try{
+        const {username,email} = req.body
+        let userExist = []
+        if(username){
+            username && (userExist =  await db.query(`Select * from tusuario where username = "${username}"`, { type: QueryTypes.SELECT }))
+            if(userExist.length==0){
+                res.status(200).json('no existe');
+            }else{
+                res.status(401).json('username')
+            }
+        }
+        if(email){
+            email && (userExist =  await db.query(`Select * from tusuario where email = "${email}"`, { type: QueryTypes.SELECT }))
+            if(userExist.length==0){
+                res.status(200).json('no existe');
+            }else{
+                res.status(401).json('email')
+            }
+        }  
+    }
+    catch(err){
+        res.send(err)
+    }
+})
+
 
 module.exports = router
