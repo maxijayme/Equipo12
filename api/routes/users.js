@@ -59,12 +59,12 @@ router.patch('/createprofile', async (req,res)=>{
         console.log(studiesInput)
         const {degree, academy, dateStartStudies, dateEndtStudies, stillStudying} = req.body[2];
         const newUser = await db.query(`Update tusuario set photo= "${photoInput}",phone= "${phoneInput}",linkedin= "${linkedinInput}",city= "${cityInput}",country= "${countryInput}", nivel_estudios= "${studiesInput}" where id_usuario = 15`,{type: QueryTypes.UPDATE })
-        // if(newUser.length>1){
-        //     res.status(200).json(newUser);
-        // }
-        // else{
-        //     res.status(404).send('No se pudo registrar el usuario')
-        // }
+        if(newUser.length>1){
+            res.status(200).json(newUser);
+        }
+        else{
+            res.status(404).send('No se pudieron guardar los datos personales')
+        }
     } catch(err){
         console.log(err)
     }

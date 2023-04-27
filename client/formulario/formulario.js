@@ -121,11 +121,24 @@ async function create(event){
         "Content-Type": "application/json",
     },
     body: JSON.stringify(userProfile)
-})
-const responseJson = await loginResponse.json()
-  location.href="/main/index.html"
+  })
+  const responseJson = await response.json()
+  if(responseJson.length>0){
+    loader();
+  }
 }
 
+function loader(){
+  let loaderContainer = document.getElementById('loader');
+  loaderContainer.style.display='flex';
+  setTimeout( redirect, 1500);       
+}
+
+function redirect(){
+  location.href="/client/main/index.html";
+}
+
+
 function cancel(){
-  location.href="/main/index.html"
+  location.href="/client/main/index.html"
 }

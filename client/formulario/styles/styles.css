@@ -149,6 +149,28 @@ button a {
 button:hover {
     border: 1px solid rgb(83, 83, 83);
 }
+/*loader*/
+
+#loader{
+    position: fixed;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(119, 116, 116, 0.7);
+    z-index: 2;
+}
+
+#loader span{
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
 
 /*Pie de pagina*/
 footer {
