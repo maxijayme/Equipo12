@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">    
+    <link rel="shortcut icon" href="../img/icon_logo.svg" type="image/x-icon">
+    <title>Teclapedia</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-body-tertiary fixed-top navbar-expand-sm bg-dark navbar-dark ml-2 mr-2" data-bs-theme="dark">
+            <div class="container-fluid no-padding flex-wrap">
+                <a class="navbar-brand" id="logo_link">
+                    <img src="../img/teclapedia_logo.svg" alt="Teclapedia" id="logo" >
+                </a>
+                <form class="d-flex" role="search" id="searchbar">
+                    <div id="search-wrapper">
+                        <i class="bi bi-search"></i>
+                        <input type="search" id="search_input" placeholder="Comienza a escribir para buscar">
+                        <div class="userlist" id="userlist_container"></div>
+                    </div>
+                </form>
+                <div id="nav_profile" class="center_flex" >
+                    <span>
+                        <i class="bi bi-bell"></i>
+                    </span>
+                    <div class="dropdown">
+                        <button id="profileButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./img/avatar.jpg" alt="perfil">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-lg-end" id="drop_menu">
+                          <li><a class="dropdown-item" href="../hojaPersonal/index.html">Perfil</a></li>
+                          <li><a class="dropdown-item" href="#">Configuración</a></li>
+                          <li><a class="dropdown-item" href="../index.html">Cerrar sesión</a></li>
+                        </ul>
+                      </div>               
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarToggler">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">Notificaciones</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="../hojaPersonal/index.html">Perfil</a>
+                        </li>    
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">Configuración</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid h-auto">
+        <div class="row" id="main_container">
+            <div class="container bg-body-tertiary bg-dark navbar-dark" data-bs-theme="dark" id="top_menu_container">
+                <div class="col-1" id="top_menu">
+                        <a href="..//amigos/index.html"><i class="bi bi-people-fill"></i></a>
+                        <i class="bi bi-newspaper"></i>
+                        <i class="bi bi-chat-left-dots-fill"></i>
+                </div>
+            </div>
+            <div class="col-1 bg-body-tertiary bg-dark navbar-dark" data-bs-theme="dark" id="side_menu">
+                <div id="friend_icon">
+                    <a href="../amigos/index.html"><i class="bi bi-people-fill"></i></a>
+                </div>
+                <div id="news_icon">
+                    <i class="bi bi-newspaper"></i>
+                </div>
+                <div id="chat_icon">
+                    <i class="bi bi-chat-left-dots-fill"></i>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-2 py-3" id="col_left">
+                <div class="container user_data p-3 mb-3">
+                    <div class="row mb-2">
+                        <img src="./img/avatar.jpg" class="photo" alt="">
+                    </div>
+                    <div class="row">
+                        <h3 class="">Lucia Sanchez</h3>
+                    </div>
+                    <div class="row  my-1">
+                        <p>@LuciaSanchez</p>
+                    </div>
+                    <!-- <div class="contacto row">                 -->
+                        <div class="col d-flex  my-1 align-items-baseline">
+                            <i class="bi bi-telephone me-2"></i>
+                            <p>696 987 776</p>
+                        </div>
+                        <div class="col d-flex  my-1 align-items-baseline">
+                            <i class="bi bi-envelope-at  me-2"></i>
+                            <p>luciasanchez@gmail.com</p>
+                        </div>
+                        <div class="col d-flex  my-1 align-items-baseline">
+                            <i class="bi bi-linkedin me-2"></i>
+                            <a>lucia-sanchez</a>
+                        </div>
+                    <!-- </div>                     -->
+                    <div class="row">                        
+                        <div  class="col d-flex  my-1 align-items-baseline">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            <span>Gijón</span>
+                        </div>
+                    </div>
+                    <div class="row">                        
+                        <div  class="col d-flex  my-1 align-items-baseline">
+                            <i class="bi bi-calendar-week me-2"></i>
+                            <span>Se unió en marzo de 2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container news">
+                    <div class="row">
+                        <h3>Ultimas noticias</h3>
+                    </div>
+                    <article class="post row">
+                        <div class="header">
+                            <img class="img-fluid" src="../Hojatercero/img/post1.jpg" alt="">
+                        </div>
+                        <div class="post_body">                            
+                            <a href="https://www.freecodecamp.org/" class="post_link" target="_blank">Leer mas</a>
+                        </div>
+                    </article>
+                    <article class="post row">
+                        <div class="header">
+                            <img class="img-fluid" src="../Hojatercero/img/post2.jpg" alt="">
+                        </div>
+                        <div class="post_body">                            
+                            <a href="https://www.linuxfoundation.org/" class="post_link" target="_blank">Leer mas</a>
+                        </div>
+                    </article>
+                    <article class="post row">
+                        <div class="header">
+                            <img class="img-fluid" src="../Hojatercero/img/post3.jpg" alt="">
+                        </div>
+                        <div class="post_body">                            
+                            <a href="https://www.helsinkitimes.fi/" class="post_link" target="_blank">Leer mas</a>
+                        </div>
+                    </article>             
+                </div>
+            </div>
+            <div class="col-xl-5 col-md-6 col-sm-11 py-3 " id="col_cen">
+                <!-- nueva publicación -->
+                 <div id='newpost' class="newPost container p-3 mb-3">
+                     <div class="row d-flex justify-content-left align-items-center mb-2">
+                         <img src="./img/avatar.jpg" alt="fotoUsuario" class="photoPost img-fluid">
+                         <p class="col h4 text-dark">Comparte algo...</p>
+                     </div>                
+                     <div class="row m-1">
+                        <textarea class="form-control" name="postContent" id="postContent" rows="5" placeholder="¿Qué quieres compartir?..."></textarea>
+                    </div>
+                     <div class="pieNewPost row m-1 d-flex justify-content-between">
+                         <div class="attach col d-flex align-items-center">
+                             <i class="bi bi-camera me-2"></i>
+                             <i class="bi bi-camera-reels me-2"></i>
+                             <i class="bi bi-paperclip me-2"></i>
+                         </div>
+                         <div class="col d-flex justify-content-end" >
+                             <button class="confirm_delete" id='postBtn'>Publicar</button>
+                         </div>
+                     </div>                
+                 </div>
+ 
+                 <!-- lista de publicaciones -->
+                 <div class="post container p-3 mb-3" id="post3">
+                    <div class="row d-flex flex-nowrap justify-content-left align-items-center">
+                        <img src="./img/estela.jpg" alt="fotoUsuario" class="photoPost  img-fluid">
+                        <div class="post_header">
+                            <p class="col h4 text-dark">Estela Martínez</p> 
+                            <p>23hs</p>                   
+                        </div>                 
+                    </div>
+                    <div class="row">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum unde ipsa iste, natus expedita inventore nisi aperiam tempore, accusamus reprehenderit dolore asperiores quos nulla, quas saepe molestias culpa quis minus? Quam harum quibusdam et nulla dolorum quis accusantium aperiam sit voluptatum! Vel pariatur numquam voluptates cum sed in voluptas minima quam quidem. Ullam, porro ab odio, tempore harum beatae nobis possimus corrupti, hic ipsum itaque doloribus fugiat adipisci ex.</p>
+                    </div>
+                    <div class="row">
+                        <div class="piePost m-1">
+                            <i class="bi bi-heart"></i>
+                            <span style="display: none;">0</span>
+                            <i class="bi bi-share btn btn-link" onclick="return nativeShare();"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="post container p-3 mb-3" id="post2">
+                    <div class="row d-flex flex-nowrap justify-content-left align-items-center">
+                        <img src="./img/estela.jpg" alt="fotoUsuario" class="photoPost  img-fluid">
+                        <div class="post_header">
+                            <p class="col h4 text-dark">Estela Martínez</p> 
+                            <p>1d</p>                   
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum unde ipsa iste, natus expedita inventore nisi aperiam tempore, accusamus reprehenderit dolore asperiores quos nulla, quas saepe molestias culpa quis minus? Quam harum quibusdam et nulla dolorum quis accusantium aperiam sit voluptatum! Vel pariatur numquam voluptates cum sed in voluptas minima quam quidem. Ullam, porro ab odio, tempore harum beatae nobis possimus corrupti, hic ipsum itaque doloribus fugiat adipisci ex.</p>
+                    </div>
+                    <div class="row">
+                        <div class="piePost m-1">
+                            <i class="bi bi-heart"></i>
+                            <span>21</span>
+                            <button class="bi bi-share btn btn-link" onclick="return nativeShare();"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="post container p-3" id="post1">
+                    <div class="row d-flex flex-nowrap justify-content-left align-items-center">
+                        <img src="./img/estela.jpg" alt="fotoUsuario" class="photoPost  img-fluid">
+                        <div class="post_header">
+                            <p class="col h4 text-dark">Estela Martínez</p> 
+                            <p>3d</p>                   
+                        </div>                
+                    </div>
+                    <div class="row">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum unde ipsa iste, natus expedita inventore nisi aperiam tempore, accusamus reprehenderit dolore asperiores quos nulla, quas saepe molestias culpa quis minus? Quam harum quibusdam et nulla dolorum quis accusantium aperiam sit voluptatum! Vel pariatur numquam voluptates cum sed in voluptas minima quam quidem. Ullam, porro ab odio, tempore harum beatae nobis possimus corrupti, hic ipsum itaque doloribus fugiat adipisci ex.</p>
+                    </div>
+                    <div class="row">
+                        <div class="piePost m-1">
+                            <i class="bi bi-heart"></i>
+                            <span>3</span>
+                            <i class="bi bi-share btn btn-link" onclick="return nativeShare();"></i>
+                        </div>
+                    </div>
+                </div>
+           </div>
+           <div class="col-2" id="col_right">
+               <section class="friend_request ">
+                   <div class="like_container">
+                       <p class="h5 ps-3">Solicitud de amistad</p>
+                       <a class="pe-3" href="../amigos/index.html">Ver todas</a>
+                   </div>
+                   <div class="request_container ms-3 me-3 p-2"> 
+                       <div class="request_container_profile">
+                           <a href="../Hojatercero/Perfil_terceros.html">
+                               <div class="friend_photo" id="photo1" ></div>
+                           </a>
+                           <div>
+                               <span>Teresa Garía</span>
+                               <span class="gray">2 hours ago</span>
+                           </div>
+                       </div>
+                       <div class="button_container">
+                           <button class="confirm_delete">Confirm</button>
+                           <button class="confirm_delete green">Delete</button>
+                       </div>
+                   </div>
+                   <div class="request_container ms-3 me-3 p-2"> 
+                       <div class="request_container_profile">
+                           <a href="../Hojatercero/Perfil_terceros.html">
+                               <div class="friend_photo" id="photo2" ></div>
+                           </a>
+                           <div>
+                               <span>Roberto Sanchez García</span>
+                               <span class="gray">4 hours ago</span>
+                           </div>
+                       </div>
+                       <div class="button_container">
+                           <button class="confirm_delete">Confirm</button>
+                           <button class="confirm_delete green">Delete</button>
+                       </div>
+                   </div>
+                   <div class="request_container ms-3 me-3 p-2"> 
+                       <div class="request_container_profile">
+                           <a href="../Hojatercero/Perfil_terceros.html">
+                               <div class="friend_photo" id="photo3" ></div>
+                           </a>
+                           <div>
+                               <span>Juan Perez Perez</span>
+                               <span class="gray">13 hours ago</span>
+                           </div>
+                       </div>
+                       <div class="button_container">
+                           <button class="confirm_delete">Confirm</button>
+                           <button class="confirm_delete green">Delete</button>
+                       </div>
+                   </div>
+                   <div class="request_container ms-3 me-3 mb-3 p-2"> 
+                       <div class="request_container_profile">
+                           <a href="../Hojatercero/Perfil_terceros.html">
+                               <div class="friend_photo" id="photo4" ></div>
+                           </a>
+                           <div>
+                               <span>Meta Mark </span>
+                               <span class="gray">43 hours ago</span>
+                           </div>
+                       </div>
+                       <div class="button_container">
+                           <button class="confirm_delete">Confirm</button>
+                           <button class="confirm_delete green">Delete</button>
+                       </div>
+                   </div>
+               </section>
+           </div>
+           <section id="chat">
+               <div id="chat_container">
+                   <div class="center_flex">
+                       <img src="./img/avatar.jpg" alt="chat avatar" class="icon_nav" id="chat_avatar" style="border-radius: 50%;">
+                       <span>Mensajes</span>
+                   </div>
+                   <div class="centrado">
+                       <span>...</span>
+                       <span>^</span>
+                   </div>
+               </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="foot1">
+            <ul>
+                <li>Meta</li>
+                <li>Información</li>
+                <li>Blog</li>
+                <li>Empleo</li>
+                <li>Ayuda</li>
+                <li>API</li>
+                <li>Privacidad</li>
+                <li>Condiciones</li>
+            </ul>
+        </div>
+        <div class="foot2">
+            <select class="language" name="language">
+                <option value="esp">Español</option>                
+                <option value="eng">Inglés</option>                
+                <option value="fr">Francés</option>                
+                <option value="deu">Alemán</option>
+            </select>
+            <p>&copy; 2023 Teclapedia</p>
+        </div>        
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./post.js" type="module"></script>
+    <script src="./search.js" type="module"></script>
+    <script src="./main.js" type="module"></script>
+</body>
+</html>
