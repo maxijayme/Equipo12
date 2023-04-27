@@ -70,6 +70,16 @@ router.patch('/createprofile', async (req,res)=>{
     }
 })
 
+router.post('/createprofile', async(req,res)=>{
+    try {
+        const {degree,academy,dateStartStudies,dateEndtStudies,stillStudying}=req.body[2];
+        // OJO LOS CAMPOS EN LAS TABLAS DE MAXI ESTAN EN INGLES
+        const newUser = await db.query(`Insert into testudios (titulo, centro, f_inicio,f_fin,actualidad,id_usuario) values ("${degree}", "${academy}", "${dateStartStudies}", "${dateEndtStudies}","${stillStudying}","2")`,{type: QueryTypes.INSERT })
+    } catch(err){
+        console.log(err)
+    }
+})
+
 router.post('/exist', async (req,res)=>{
     try{
         const {username,email} = req.body

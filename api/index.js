@@ -28,14 +28,6 @@ server.get('/', (req, res) => {
     res.json({time:diffTime})
 });
 
-server.post("/post",(req,res)=>{
-    const{a,b} = req.body;
-    try {
-
-    }catch(error) {
-        
-    }
-})
 
 server.listen(3001, console.log('server online'))
 
