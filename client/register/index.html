@@ -32,13 +32,16 @@
 =======
             <div id="container-form">
                 <form class="row" id="data_form">
-                    <input class="input_form" type="text" placeholder="Nombre y Apellidos" id="fullname">
-                    <input class="input_form" type="text" placeholder="Nombre de Usuario" id="userName">
-                    <input class="input_form" type="email" placeholder="Email" id="email">
-                    <input class="input_form" type="password" placeholder="Contraseña" autocomplete="on" id="password">
-                    <input class="input_form" type="password" placeholder="Confirmación contraseña" autocomplete="on" id="passwordConfirm">
-                    <p class="error">Los campos contraseña no coinciden</p>
->>>>>>> maxi:client/register/index.html
+                    <input class="input_form" type="text" placeholder="Nombre y Apellidos" id="fullname" name="fullname">
+                    <label id="fullnameLabel"></label>
+                    <input class="input_form" type="text" placeholder="Nombre de Usuario" id="userName" name="userName">
+                    <label id="userNameLabel"></label>
+                    <input class="input_form" type="email" placeholder="Email" id="email" name="email">
+                    <label id="emailLabel"></label>
+                    <input class="input_form" type="password" placeholder="Contraseña" autocomplete="on" id="password" name="password">
+                    <label id="passwordLabel"></label>
+                    <input class="input_form" type="password" placeholder="Confirmación contraseña" autocomplete="on" id="passwordConfirm" name="passwordConfirm">
+                    <label id="passwordConfirmLabel"></label>
                     <p class="p-cond">Al registrarte, aceptas nuestras Condiciones. Obtén más información sobre cómo recopilamos, usamos y compartimos tus datos en la Política de privacidad, así como el uso que hacemos de las cookies y tecnologías similares en la Política de cookies.</p>
                     <button id="register" type="submit" disabled>Registrarse</button>
                 </form>

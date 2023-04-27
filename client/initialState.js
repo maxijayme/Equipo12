@@ -4,7 +4,7 @@ const initialState =
             "id": 1,
             "fullName":"Lucia Sanchez",
             "userName":"LuciaSanchez",
-            "password":"tecla",
+            "password":"tecla123",
             "phone": "696 987 776",
             "email": "luciasanchez@gmail.com",
             "linkedin": "https://www.linkedin.com/in/lucia-sanchez/",

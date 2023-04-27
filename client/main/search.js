@@ -4,7 +4,7 @@ const searchResult = document.getElementById('userlist_container');
 const url = 'http://localhost:3001';
 
 searchInput.addEventListener('input', getUserByName)
-searchInput.addEventListener('focusout', closeResult)
+searchResult.addEventListener('mouseleave', closeResult)
 
 async function getUserByName(){
     await fetch(`${url}/search_user/${searchInput.value}`)
@@ -15,13 +15,12 @@ async function getUserByName(){
             const userList = document.createElement('ul');
             searchResult.appendChild(userList)
             users.forEach(user=>{
-                const userItem = document.createElement('li');
-                const userLink = document.createElement('a');
-                userLink.innerHTML=user.fullName;
-                userLink.setAttribute('href',`../Hojatercero/Perfil_terceros.html?id:${user.id}`)
+                const userItem = document.createElement('a');
+                userItem.innerHTML=user.fullName;
                 searchResult.firstElementChild.appendChild(userItem);
-                userItem.appendChild(userLink);
-            })
+                userItem.setAttribute('id',user.id)
+                userItem.addEventListener('click',redirect)
+            })     
         }   
     }).catch(()=>{
         searchResult.firstElementChild?.remove();
@@ -34,4 +33,8 @@ async function getUserByName(){
 
 function closeResult(){
     searchResult.style.visibility='hidden'
+}
+
+function redirect(){
+    location.href=`/client/Hojatercero/Perfil_terceros.html?id:${this.id}`;
 }

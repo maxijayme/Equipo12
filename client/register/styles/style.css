@@ -82,11 +82,7 @@ h1{
     padding-left: 10px;
 }
 
-#register{
-    cursor: pointer;
-}
-
-#register:hover{
+#register:enabled:hover{
     background-color: rgb(153, 230, 205);
     transition: 0.5s;
 }
@@ -103,12 +99,12 @@ button{
     transition: 0.5s;
 }
 
-button a{
-    color: rgb(44, 44, 44);
+button:enabled{
+    cursor: pointer;
 }
 
-.error{
-    display: none;
+button a{
+    color: rgb(44, 44, 44);
 }
 
 .p-cond{
