@@ -48,3 +48,13 @@ function addOrRemovelike(targetT){
 }
 
 
+var nativeShare = function() {
+    if (navigator.share) { 
+       navigator.share({
+          title: "titulo",
+          text: "texto",
+          url: "URL", 
+       }) 
+    }
+    return false;
+ }
