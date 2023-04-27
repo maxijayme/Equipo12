@@ -45,7 +45,7 @@ router.post('/create', async (req,res)=>{
     console.log(newUser)
 })
 
-
+// `Insert into tusuario (fullname, username, password, email) values ("${fullname}", "${userName}", "${email}", "${password}")`,{type: QueryTypes.INSERT }
 router.post('/exist', async (req,res)=>{
     try{
         const {username,email} = req.body
