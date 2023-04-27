@@ -99,7 +99,11 @@ async function createUser(event){
             },
             body: JSON.stringify(newUser)
         })
-        loader();
+        const responseJson = await response.json();
+        if(responseJson.length>0){
+            localStorage.setItem("userIdTeclapedia",JSON.stringify(responseJson[0]))
+            loader();
+        }
     }else{
         passwordConfirm.nextElementSibling.style.display='block';
     }
@@ -113,7 +117,7 @@ function loader(){
 }
 
 function redirect(){
-    location.href="/formulario/index.html";
+    location.href="/client/formulario/index.html";
 }
 
 
@@ -166,7 +170,7 @@ function validate(e){
     }
     if(inputName === 'passwordConfirm'){
         if(inputValue != password.value ){
-            labelsData.passwordConfirm='El campo confirmar contrasseña debe ser igual a la contraseña'
+            labelsData.passwordConfirm='Los campos contraseña deben coincidir'
             passwordConfirmok = false;
         }
         else{
