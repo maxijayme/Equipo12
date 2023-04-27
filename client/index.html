@@ -7,6 +7,9 @@
     <title>Login</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="shortcut icon" href="../img/icon_logo.svg" type="image/x-icon">
+    <!-- Script Google -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="524873749681-3bntf9dck6jsp2523161egmmvvsaqu55.apps.googleusercontent.com">
 </head>
 <body>
     <main>
@@ -36,11 +39,12 @@
                         <span>o</span>
                         <div class="line"></div>
                     </div>
-                    <span id="google">
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <!-- <span id="google">
                         <img src="./img/logo_google.png" alt="" id="logo_google">
                         <a href="./main/index.html">Iniciar sesión con Google</a>
-                    </span>
-                </div>
+                    </span> -->
+                    </div>
                 <div class = "row" id="register">
                     <span>¿No tienes una cuenta?</span>
                     <a href="./register/index.html">Únete ahora</a>
@@ -62,11 +66,7 @@
             </ul>
         </div>
         <div class="foot2">
-<<<<<<< HEAD:index.html
-            <select class="language" name="idioma" id="">
-=======
             <select class="language" name="language">
->>>>>>> maxi:client/index.html
                 <option value="esp">Español</option>                
                 <option value="eng">Inglés</option>                
                 <option value="fr">Francés</option>                

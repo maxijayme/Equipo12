@@ -12,14 +12,8 @@ a{
 body{
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD:styles/styles.css
-    justify-content: center;
-    height: 99%;
-    margin-top: 50px;
-=======
     justify-content: space-between;
     height: 98vh;
->>>>>>> maxi:client/styles/styles.css
     background: rgb(234, 243, 243);
 }
 
@@ -117,21 +111,21 @@ button{
     width: 130px;
 }
 
-#google{
-    height: 35px;
+.g-signin2{
+    /* height: 35px;
     width: 250px;
     color: white;
-    border-radius: 15px;
+    border-radius: 15px; */
     margin: 0 auto;
-    font-size: 10pt;
-    font-weight: 600;
+    /* font-size: 10pt;
+    font-weight: 600; */
     cursor: pointer;
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 10px; */
     margin-bottom: 10px;
-    background-color: white;
+    /* background-color: white; */
 }
 
 #logo_google{
@@ -160,20 +154,12 @@ footer {
     color: gray;
     display: flex;
     flex-direction: column; 
-<<<<<<< HEAD:styles/styles.css
-    margin: auto;
-    margin-top: 30px;
-=======
     margin: 0 auto;
->>>>>>> maxi:client/styles/styles.css
 }
 ul {
     list-style: none;
     display: flex;
-<<<<<<< HEAD:styles/styles.css
-=======
     flex-wrap: wrap;
->>>>>>> maxi:client/styles/styles.css
 }
 li {
     margin: 20px;
@@ -197,9 +183,6 @@ li {
     background-color: rgb(234, 243, 243);
     color: gray;
     margin-right: 10px;
-<<<<<<< HEAD:styles/styles.css
-}
-=======
 }
 
 /*media queries*/
@@ -234,4 +217,3 @@ li {
         width: 100%;
     }
 }
->>>>>>> maxi:client/styles/styles.css
