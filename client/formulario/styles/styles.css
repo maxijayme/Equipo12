@@ -68,7 +68,7 @@ main {
     margin-left: 20px;
 }
 
-#upload label{
+#upload button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,10 +76,12 @@ main {
     height: 40px;
     width: 40px;
     background-color: rgb(177, 162, 162);
+    border: none;
     border-radius: 50%;
     bottom: -10px;
     right: 8px;
     cursor: pointer;
+    padding: 0;
 }
 
 #upload svg{

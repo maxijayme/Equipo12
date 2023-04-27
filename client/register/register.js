@@ -30,17 +30,7 @@ class User{
 function createUser(event){
     event.preventDefault();
     if(password.value === passwordConfirm.value){
-        const userList = []
-        const userStorage = JSON.parse(localStorage.getItem("userList"));
-        if (userStorage) userList.concat((userStorage));
-        const user = new User({
-            fullname: fullname.value, 
-            userName: userName.value, 
-            email: email.value,
-            password: password.value,
-        })
-        userList.push(user);
-        localStorage.setItem("userList", JSON.stringify(userList));
+       
         loader();
     }else{
         passwordConfirm.nextElementSibling.style.display='block';
@@ -58,11 +48,38 @@ function redirect(){
 }
 
 
-function validate(){
-    passwordConfirm.nextElementSibling.style.display='none';
-    if(fullname.value, userName.value, email.value, password.value, passwordConfirm.value !== ""){
-        registerButton.disabled = false;
-    }else{
-        registerButton.disabled = true;
+function validate(e){
+    const inputName = e.target.name;
+    const inputValue = e.target.value;
+    if(inputName === 'username'){
+        if (!/^[a-zA-Z\s]*$/.test(inputValue)) {
+            labelsData.user='Solo se permiten letras';   
+            userok = false  
+        }
+        if(inputValue.length<4){
+            labelsData.user='El usuario debe tener al menos 4 letras';
+            userok = false  
+        }
+        else{
+            labelsData.user='';
+            userok = true  
+        }
     }
+    if(inputName === 'password'){
+        if(inputValue.length < 8){
+            labelsData.password='La contraseña debe tener al menos 8 caracteres';
+            passwordok = false;
+        }else
+        if(inputValue.length > 20){
+            labelsData.password='La contraseña debe tener 20 caracteres máximo';
+            passwordok = false;
+        }
+        else{
+            labelsData.password='';
+            passwordok = true;
+        }
+    }
+    usernameLabel.innerHTML= labelsData.user
+    passwordLabel.innerHTML= labelsData.password
+    userok && passwordok? success=true : success=false
 }
