@@ -1,4 +1,3 @@
-
 export function addButtonFuntionality(){
     const allpost = document.querySelectorAll('.post i')
     for(let i=0; i< allpost.length;i++){
@@ -48,7 +47,7 @@ function addOrRemovelike(targetT){
 }
 
 
-var nativeShare = function() {
+function nativeShare() {
     if (navigator.share) { 
        navigator.share({
           title: "titulo",
@@ -58,3 +57,8 @@ var nativeShare = function() {
     }
     return false;
  }
+
+const share = document.querySelectorAll('.bi-share');
+for(let i = 0; i< share.length;i++){
+    share[i].addEventListener('click', nativeShare)
+}
