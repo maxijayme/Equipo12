@@ -10,13 +10,15 @@ const cityInput = document.getElementById('city')
 const countryInput = document.getElementById('country')
 
 const studies = document.getElementById('studies')
-const studiesOption = studies.options[studies.selectedIndex].text
+let studiesOption = studies.selectedOptions[0].innerHTML
+studies.addEventListener('change',()=>{
+  studiesOption = studies.selectedOptions[0].innerHTML
+})
 const degree = document.getElementById('degree')
 const academy = document.getElementById('academy')
 const dateStartStudies = document.getElementById('dateStartStudies')
 const dateEndtStudies = document.getElementById('dateEndtStudies')
 const stillStudying = document.getElementById('stillStudying')
-
 const position = document.getElementById('position')
 const company = document.getElementById('company')
 const dateStartWorking = document.getElementById('dateStartWorking')
@@ -25,10 +27,16 @@ const stillWorking = document.getElementById('stillWorking')
 const tasks = document.getElementById('tasks')
 
 const licence = document.getElementById('licence')
-const licenceOption = licence.options[licence.selectedIndex].value
+let licenceOption = licence.selectedOptions[0].innerHTML
+licence.addEventListener('change',()=>{
+  licenceOption = licence.selectedOptions[0].innerHTML
+})
 const availability = document.getElementById('availability')
 const preference = document.getElementById('preference')
-const preferenceOption = preference.options[preference.selectedIndex].value
+let preferenceOption = preference.selectedOptions[0].innerHTML
+preference.addEventListener('change',()=>{
+  preferenceOption = preference.selectedOptions[0].innerHTML
+})
 const hobbies = document.getElementById('hobbies')
 
 let photoInput;
@@ -86,13 +94,14 @@ async function create(event){
     linkedinInput:linkedinInput.value,
     cityInput:cityInput.value,
     countryInput:countryInput.value,
-    studiesInput:studies.value,
+    studiesInput:studiesOption,
     },{
       degree:degree.value,
       academy:academy.value,
       dateStartStudies:dateStartStudies.value,
       dateEndtStudies:dateEndtStudies.value || null,
-      stillStudying:stillStudying.text},{
+      stillStudying:stillStudying.text
+    },{
       position:position.value,
       company:company.value,
       dateStartWorking:dateStartWorking.value,
