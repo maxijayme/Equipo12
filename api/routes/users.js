@@ -39,12 +39,36 @@ router.get('/search_user/:fullname', (req,res)=>{
 })
 
 router.post('/create', async (req,res)=>{
-    const {fullname, userName, email, password} = req.body;
-    console.log(req.body)
-    const newUser = await db.query(`Insert into tusuario (fullname, username, password, email) values ("${fullname}", "${userName}", "${email}", "${password}")`,{type: QueryTypes.INSERT })
-    console.log(newUser)
+    try{
+        const {fullname, userName, email, password} = req.body;
+        const newUser = await db.query(`Insert into tusuario (fullname, username, password, email) values ("${fullname}", "${userName}", "${password}", "${email}")`,{type: QueryTypes.INSERT })
+        if(newUser.length>1){
+            res.status(200).json(newUser);
+        }
+        else{
+            res.status(404).send('No se pudo registrar el usuario')
+        }
+    } catch(err){
+        console.log(err)
+    }
 })
 
+router.patch('/createprofile', async (req,res)=>{
+    try{
+        const {photoInput, phoneInput,linkedinInput,cityInput,countryInput,studiesInput} = req.body[1];
+        console.log(studiesInput)
+        const {degree, academy, dateStartStudies, dateEndtStudies, stillStudying} = req.body[2];
+        const newUser = await db.query(`Update tusuario set photo= "${photoInput}",phone= "${phoneInput}",linkedin= "${linkedinInput}",city= "${cityInput}",country= "${countryInput}", nivel_estudios= "${studiesInput}" where id_usuario = 15`,{type: QueryTypes.UPDATE })
+        // if(newUser.length>1){
+        //     res.status(200).json(newUser);
+        // }
+        // else{
+        //     res.status(404).send('No se pudo registrar el usuario')
+        // }
+    } catch(err){
+        console.log(err)
+    }
+})
 
 router.post('/exist', async (req,res)=>{
     try{
