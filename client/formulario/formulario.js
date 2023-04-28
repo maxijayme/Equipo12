@@ -25,10 +25,10 @@ const stillWorking = document.getElementById('stillWorking')
 const tasks = document.getElementById('tasks')
 
 const licence = document.getElementById('licence')
-const licenceOption = licence.options[licence.selectedIndex].value
+const licenceOption = licence.options[licence.selectedIndex].text
 const availability = document.getElementById('availability')
 const preference = document.getElementById('preference')
-const preferenceOption = preference.options[preference.selectedIndex].value
+const preferenceOption = preference.options[preference.selectedIndex].text
 const hobbies = document.getElementById('hobbies')
 
 let photoInput;
@@ -92,30 +92,32 @@ async function create(event){
       academy:academy.value,
       dateStartStudies:dateStartStudies.value,
       dateEndtStudies:dateEndtStudies.value || null,
-      stillStudying:stillStudying.text},{
+      stillStudying:stillStudying.checked},
+    {
       position:position.value,
       company:company.value,
       dateStartWorking:dateStartWorking.value,
       dateEndWorking:dateEndWorking.value || null,
-      stillWorking:stillWorking.value,
+      stillWorking:stillWorking.checked,
       tasks:tasks.value,
     },{
-      licence:licenceOption,
-      availability:availability.value,
-      preference:preferenceOption,
+      licence:licenceOption.value,
+      availability:availability.checked,
+      preference:preferenceOption.value,
       hobbies:hobbies.value
     }
   ]
+  
   const response = await fetch(`http://localhost:3001/users/createprofile`,{
-    method: "PATCH",
+    method: "PATCH", 
     headers: {
         "Content-Type": "application/json",
     },
     body: JSON.stringify(userProfile)
-})
-const responseJson = await loginResponse.json()
-  location.href="/main/index.html"
+  })
+
 }
+
 
 function cancel(){
   location.href="/main/index.html"
