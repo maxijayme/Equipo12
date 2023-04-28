@@ -1,4 +1,4 @@
-
+const actualUser = localStorage.getItem("userIdTeclapedia");
 export function addButtonFuntionality(){
     const allpost = document.querySelectorAll('.post i')
     for(let i=0; i< allpost.length;i++){
@@ -46,5 +46,3 @@ function addOrRemovelike(targetT){
     let response = [likes, id]
     return response;
 }
-
-

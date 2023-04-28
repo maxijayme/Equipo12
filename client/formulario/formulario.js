@@ -10,13 +10,15 @@ const cityInput = document.getElementById('city')
 const countryInput = document.getElementById('country')
 
 const studies = document.getElementById('studies')
-const studiesOption = studies.options[studies.selectedIndex].text
+let studiesOption = studies.selectedOptions[0].innerHTML
+studies.addEventListener('change',()=>{
+  studiesOption = studies.selectedOptions[0].innerHTML
+})
 const degree = document.getElementById('degree')
 const academy = document.getElementById('academy')
 const dateStartStudies = document.getElementById('dateStartStudies')
 const dateEndtStudies = document.getElementById('dateEndtStudies')
 const stillStudying = document.getElementById('stillStudying')
-
 const position = document.getElementById('position')
 const company = document.getElementById('company')
 const dateStartWorking = document.getElementById('dateStartWorking')
@@ -25,10 +27,16 @@ const stillWorking = document.getElementById('stillWorking')
 const tasks = document.getElementById('tasks')
 
 const licence = document.getElementById('licence')
-const licenceOption = licence.options[licence.selectedIndex].value
+let licenceOption = licence.selectedOptions[0].innerHTML
+licence.addEventListener('change',()=>{
+  licenceOption = licence.selectedOptions[0].innerHTML
+})
 const availability = document.getElementById('availability')
 const preference = document.getElementById('preference')
-const preferenceOption = preference.options[preference.selectedIndex].value
+let preferenceOption = preference.selectedOptions[0].innerHTML
+preference.addEventListener('change',()=>{
+  preferenceOption = preference.selectedOptions[0].innerHTML
+})
 const hobbies = document.getElementById('hobbies')
 
 let photoInput;
@@ -86,37 +94,61 @@ async function create(event){
     linkedinInput:linkedinInput.value,
     cityInput:cityInput.value,
     countryInput:countryInput.value,
-    studiesInput:studies.value,
+    studiesInput:studiesOption,
     },{
       degree:degree.value,
       academy:academy.value,
       dateStartStudies:dateStartStudies.value,
       dateEndtStudies:dateEndtStudies.value || null,
-      stillStudying:stillStudying.text},{
+      stillStudying:stillStudying.text
+    },{
+      stillStudying:stillStudying.checked},
+    {
       position:position.value,
       company:company.value,
       dateStartWorking:dateStartWorking.value,
       dateEndWorking:dateEndWorking.value || null,
-      stillWorking:stillWorking.value,
+      stillWorking:stillWorking.checked,
       tasks:tasks.value,
     },{
-      licence:licenceOption,
-      availability:availability.value,
-      preference:preferenceOption,
+      licence:licenceOption.value,
+      availability:availability.checked,
+      preference:preferenceOption.value,
       hobbies:hobbies.value
     }
   ]
+  
   const response = await fetch(`http://localhost:3001/users/createprofile`,{
-    method: "PATCH",
+    method: "PATCH", 
     headers: {
         "Content-Type": "application/json",
     },
     body: JSON.stringify(userProfile)
-})
-const responseJson = await loginResponse.json()
-  location.href="/main/index.html"
+  })
+  const responseJson = await response.json()
+  const res = await fetch('http://localhost:3001/users/createprofile',{
+    method: "POST", 
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userProfile)
+  })
+  // if(responseJson.length>0){
+  //   loader();
+  // }
 }
 
+function loader(){
+  let loaderContainer = document.getElementById('loader');
+  loaderContainer.style.display='flex';
+  setTimeout( redirect, 1500);       
+}
+
+function redirect(){
+  location.href="/client/main/index.html";
+}
+
+
 function cancel(){
-  location.href="/main/index.html"
+  location.href="/client/main/index.html"
 }

@@ -19,6 +19,7 @@ server.use((req, res, next) => {
 
 server.use('/', routes);
 
+<<<<<<< HEAD
 server.get('/', (req, res) => {
     let time = '22-04-2023 14:20';
     // let time = moment()
@@ -31,3 +32,6 @@ server.get('/', (req, res) => {
 
 server.listen(3001, console.log('server online'))
 
+=======
+server.listen(3001, console.log('server online'))
+>>>>>>> maxi
