@@ -1,5 +1,4 @@
 const actualUser = localStorage.getItem("userIdTeclapedia");
-
 const createButton = document.getElementById('create');
 const cancelButton = document.getElementById('cancel');
 const avatar = document.getElementById('fotoPerfil')
@@ -93,7 +92,7 @@ async function create(event){
     ,{
     photoInput:photoInput || 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg',
     phoneInput:phoneInput.value,
-    linkedinInput:linkedinInput.value,
+    linkedinInput:'@'+linkedinInput.value,
     cityInput:cityInput.value,
     countryInput:countryInput.value,
     studiesInput:studiesOption,
@@ -102,7 +101,7 @@ async function create(event){
       academy:academy.value,
       dateStartStudies:dateStartStudies.value,
       dateEndtStudies:dateEndtStudies.value || null,
-      stillStudying:stillStudying.text
+      stillStudying:stillStudying.checked
     },{
       stillStudying:stillStudying.checked},
     {
@@ -135,9 +134,10 @@ async function create(event){
     },
     body: JSON.stringify(userProfile)
   })
-  // if(responseJson.length>0){
-  //   loader();
-  // }
+  const resJson = await res.json()
+  if(responseJson.length>0 && resJson.length>0){
+    loader();
+  }
 }
 
 function loader(){
