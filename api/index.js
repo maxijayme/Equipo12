@@ -1,7 +1,6 @@
 const express = require('express')
 const server = express();
 const routes = require('./routes/index.js');
-var moment = require("moment");
 const bodyParser = require('body-parser')
 
 server.use(express.urlencoded({ extended: true, limit: '50mb' }));  

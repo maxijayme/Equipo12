@@ -1,13 +1,13 @@
 const { Router } = require('express');
 const router = Router();
-const initialState = require('../../client/initialState.js')
 const db = require('../db/db.js');
 const { QueryTypes } = require('sequelize');
 
-router.get('/:id', (req,res)=>{
+router.get('/:id', async (req,res)=>{
+    console.log(req.params)
     try{
         const {id} = req.params;
-        const user = initialState.filter(user => user.id == id)
+        const user =  await db.query(`Select * from tusuario where id_usuario = "${id}" `, { type: QueryTypes.SELECT })
         if(user.length>0){
             res.status(200).json(user)
         }else{
@@ -55,10 +55,9 @@ router.post('/create', async (req,res)=>{
 
 router.patch('/createprofile', async (req,res)=>{
     try{
+        const {id} = req.body[0];
         const {photoInput, phoneInput,linkedinInput,cityInput,countryInput,studiesInput} = req.body[1];
-        console.log(studiesInput)
-        const {degree, academy, dateStartStudies, dateEndtStudies, stillStudying} = req.body[2];
-        const newUser = await db.query(`Update tusuario set photo= "${photoInput}",phone= "${phoneInput}",linkedin= "${linkedinInput}",city= "${cityInput}",country= "${countryInput}", nivel_estudios= "${studiesInput}" where id_usuario = 13`,{type: QueryTypes.UPDATE })
+        const newUser = await db.query(`Update tusuario set photo= "${photoInput}",phone= "${phoneInput}",linkedin= "${linkedinInput}",city= "${cityInput}",country= "${countryInput}", nivel_estudios= "${studiesInput}" where id_usuario = ${id}`,{type: QueryTypes.UPDATE })
         if(newUser.length>1){
             res.status(200).json(newUser);
         }
@@ -72,12 +71,14 @@ router.patch('/createprofile', async (req,res)=>{
 
 router.post('/createprofile', async(req,res)=>{
     try {
+        const {id} = req.body[0];
         const {degree,academy,dateStartStudies,dateEndtStudies,stillStudying}=req.body[2];
         const {position,company,dateStartWorking,dateEndWorking,stillWorking,tasks} = req.body[3];
         const {licence,availability,preference,hobbies} = req.body[4];
-        const newStudy = await db.query(`Insert into testudios (titulo, centro, f_inicio,f_fin,actualidad,id_usuario) values ("${degree}", "${academy}", "${dateStartStudies}", "${dateEndtStudies}","${stillStudying ? 1:0}","13")`,{type: QueryTypes.INSERT })
-        const newJob = await db.query(`Insert into ttrabajos (id_usuario,puesto, empresa,funciones,f_inicio,f_fin,actualidad) values ("13","${position}", "${company}", "${tasks}", "${dateStartWorking}","${dateEndWorking}","${stillWorking ? 1:0}")`,{type: QueryTypes.INSERT })
-        const newOthers = await db.query(`Insert into totros_datos (id_usuario,licencia, disponibilidad,preferencia,hobbies) values ("13","${licence}", "${availability?1:0}", "${preference}", "${hobbies}")`,{type: QueryTypes.INSERT })
+        const newStudy = await db.query(`Insert into testudios (titulo, centro, f_inicio,f_fin,actualidad,id_usuario) values ("${degree}", "${academy}", "${dateStartStudies}", "${dateEndtStudies}","${stillStudying ? 1:0}","${id}")`,{type: QueryTypes.INSERT })
+        const newJob = await db.query(`Insert into ttrabajos (id_usuario,puesto, empresa,funciones,f_inicio,f_fin,actualidad) values ("${id}","${position}", "${company}", "${tasks}", "${dateStartWorking}","${dateEndWorking}","${stillWorking ? 1:0}")`,{type: QueryTypes.INSERT })
+        const newOthers = await db.query(`Insert into totros_datos (id_usuario,licencia, disponibilidad,preferencia,hobbies) values ("${id}","${licence}", "${availability?1:0}", "${preference}", "${hobbies}")`,{type: QueryTypes.INSERT })
+        res.status(200).json('ok')
     } catch(err){
         console.log(err)
     }

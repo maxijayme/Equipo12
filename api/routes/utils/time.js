@@ -1,12 +1,17 @@
-export default function getDate(oldDate){
-    let time;
-    if(oldDate){
-        time = oldDate;
-    }else{
-        time = moment()
-    }
-    let postTime = moment((time), "DD/MM/YYYY hh:mm");
-    let getTime = moment();
+const moment = require('moment');
+
+function getDate(){
+    let time = moment().utc(2)
+    let postTime = time.format("YYYY-MM-DD kk:mm:ss");
+    return postTime;
+}
+
+function getMoment(oldDate){
+    let time= moment(oldDate).format("DD-MM-YYYY kk:mm:ss");
+    let postTime = moment((time), "DD/MM/YYYY kk:mm:ss");
+    let getTime = moment().utc(2);
     let diffTime = moment(postTime).from(getTime);
     return diffTime;
 }
+
+module.exports = {getDate, getMoment}

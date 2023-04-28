@@ -8,7 +8,6 @@ router.post('/', validateLogin, async(req,res)=>{
     try{
         const {user,password}=req.body;
         const loginUser =  await db.query(`Select * from tusuario where username = "${user}" and password = "${password}" `, { type: QueryTypes.SELECT })
-        console.log(loginUser);
         if(loginUser.length>0){
             res.status(200).json({msj:'usuario logueado exitosamente'})
         }else{
