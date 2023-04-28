@@ -30,7 +30,7 @@
                     </span>
                     <div class="dropdown">
                         <button id="profileButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="./img/avatar.jpg" alt="perfil">
+                            <img src="./img/avatar.jpg" alt="perfil" id="navImg">
                         </button>
                         <ul class="dropdown-menu dropdown-menu-lg-end" id="drop_menu">
                           <li><a class="dropdown-item" href="../hojaPersonal/index.html">Perfil</a></li>
@@ -84,40 +84,40 @@
             <div class="col-xl-2 col-md-2 py-3" id="col_left">
                 <div class="container user_data p-3 mb-3">
                     <div class="row mb-2">
-                        <img src="./img/avatar.jpg" class="photo" alt="">
+                        <img src="" class="photo" id="thirdPersonPhoto">
                     </div>
                     <div class="row">
-                        <h3 class="">Lucia Sanchez</h3>
+                        <h3 id="fullname"></h3>
                     </div>
                     <div class="row  my-1">
-                        <p>@LuciaSanchez</p>
+                        <p id="userName"></p>
                     </div>
                     <!-- <div class="contacto row">                 -->
                         <div class="col d-flex  my-1 align-items-baseline">
                             <i class="bi bi-telephone me-2"></i>
-                            <p>696 987 776</p>
+                            <p id="phone"></p>
                         </div>
                         <div class="col d-flex  my-1 align-items-baseline">
                             <i class="bi bi-envelope-at  me-2"></i>
-                            <p>luciasanchez@gmail.com</p>
+                            <p id="email"></p>
                         </div>
                         <div class="col d-flex  my-1 align-items-baseline">
                             <i class="bi bi-linkedin me-2"></i>
-                            <a>lucia-sanchez</a>
+                            <a id="linkedin"></a>
                         </div>
                     <!-- </div>                     -->
                     <div class="row">                        
                         <div  class="col d-flex  my-1 align-items-baseline">
                             <i class="bi bi-geo-alt me-2"></i>
-                            <span>Gijón</span>
+                            <span id="city"></span>
                         </div>
                     </div>
-                    <div class="row">                        
+                    <!-- <div class="row">                        
                         <div  class="col d-flex  my-1 align-items-baseline">
                             <i class="bi bi-calendar-week me-2"></i>
-                            <span>Se unió en marzo de 2023</span>
+                            <span id="registerDate">Se unió en Abril de 2023</span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="container news">
                     <div class="row">
@@ -153,7 +153,7 @@
                 <!-- nueva publicación -->
                  <div id='newpost' class="newPost container p-3 mb-3">
                      <div class="row d-flex justify-content-left align-items-center mb-2">
-                         <img src="./img/avatar.jpg" alt="fotoUsuario" class="photoPost img-fluid">
+                         <img src="" id="postImg" alt="fotoUsuario" class="photoPost img-fluid">
                          <p class="col h4 text-dark">Comparte algo...</p>
                      </div>                
                      <div class="row m-1">
