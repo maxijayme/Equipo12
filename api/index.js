@@ -19,13 +19,4 @@ server.use((req, res, next) => {
 
 server.use('/', routes);
 
-server.get('/', (req, res) => {
-    let time = '22-04-2023 14:20';
-    // let time = moment()
-    let postTime = moment((time), "DD/MM/YYYY hh:mm");
-    let getTime = moment();
-    let diffTime = moment(postTime).from(getTime);
-    res.json({time:diffTime})
-});
-
 server.listen(3001, console.log('server online'))

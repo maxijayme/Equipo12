@@ -255,6 +255,30 @@ main{
     color: rgb(126, 126, 126);
 }
 
+#attachedImg{
+    border-radius: 15px;
+    background-color: rgb(172, 172, 172);
+    margin-bottom: 0;
+    margin-top: 10px;
+    width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+
+#upload_widget{
+    width: 50px;
+    height: 40px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+}
+
+#upload_widget:hover{
+    box-shadow: none;
+}
+
 .attach .bi {
     font-size: 20px;
     color: rgb(3, 69, 3);

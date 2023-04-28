@@ -123,9 +123,16 @@ async function create(event){
     body: JSON.stringify(userProfile)
   })
   const responseJson = await response.json()
-  if(responseJson.length>0){
-    loader();
-  }
+  const res = await fetch('http://localhost:3001/users/createprofile',{
+    method: "POST", 
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userProfile)
+  })
+  // if(responseJson.length>0){
+  //   loader();
+  // }
 }
 
 function loader(){
