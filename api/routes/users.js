@@ -58,7 +58,7 @@ router.patch('/createprofile', async (req,res)=>{
         const {photoInput, phoneInput,linkedinInput,cityInput,countryInput,studiesInput} = req.body[1];
         console.log(studiesInput)
         const {degree, academy, dateStartStudies, dateEndtStudies, stillStudying} = req.body[2];
-        const newUser = await db.query(`Update tusuario set photo= "${photoInput}",phone= "${phoneInput}",linkedin= "${linkedinInput}",city= "${cityInput}",country= "${countryInput}", nivel_estudios= "${studiesInput}" where id_usuario = 15`,{type: QueryTypes.UPDATE })
+        const newUser = await db.query(`Update tusuario set photo= "${photoInput}",phone= "${phoneInput}",linkedin= "${linkedinInput}",city= "${cityInput}",country= "${countryInput}", nivel_estudios= "${studiesInput}" where id_usuario = 9`,{type: QueryTypes.UPDATE })
         // if(newUser.length>1){
         //     res.status(200).json(newUser);
         // }
@@ -69,6 +69,8 @@ router.patch('/createprofile', async (req,res)=>{
         console.log(err)
     }
 })
+
+
 
 router.post('/exist', async (req,res)=>{
     try{
