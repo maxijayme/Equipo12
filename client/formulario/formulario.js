@@ -1,3 +1,5 @@
+const actualUser = localStorage.getItem("userIdTeclapedia");
+
 const createButton = document.getElementById('create');
 const cancelButton = document.getElementById('cancel');
 const avatar = document.getElementById('fotoPerfil')
@@ -86,7 +88,7 @@ const myWidget = cloudinary.createUploadWidget(
 async function create(event){
   event.preventDefault();
   const userProfile =[{
-    id: JSON.parse(localStorage.getItem("userIdTeclapedia"))
+    id: actualUser
     }
     ,{
     photoInput:photoInput || 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg',

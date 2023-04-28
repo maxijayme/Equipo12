@@ -1,12 +1,8 @@
 const { Router } = require('express');
 const users = require('./users.js')
 const search = require('./search.js')
-<<<<<<< HEAD
-=======
-const login = require('./login.js')
+const login= require('./login.js')
 const post = require('./post.js')
->>>>>>> maxi
-
 const router = Router();
 
 router.use('/login', login)
