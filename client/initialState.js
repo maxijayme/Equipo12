@@ -41,13 +41,13 @@ const initialState =
             ]
         },
         {
-            "id":2,
-            "fullName":"Roberto Sanchez",
-            "userName":"RobertoSanchez",
+            "id":5,
+            "fullName":"Tom White",
+            "userName":"@twhite",
             "password":"tecla",
             "phone": "696 987 776",
-            "email": "robertosanchez@gmail.com",
-            "linkedin": "roberto-sanchez",
+            "email": "twhite@email.com@gmail.com",
+            "linkedin": "tom-white",
             "city":"Gijón",
             "country":"España",
             "profesional_experience": [

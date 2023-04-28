@@ -4,13 +4,17 @@ const phone = document.getElementById('phone');
 const email = document.getElementById('email');
 const linkedin = document.getElementById('linkedin');
 const city  = document.getElementById('city');
+const navphoto  = document.getElementById('navphoto');
 const registerDate  = document.getElementById('registerDate');
+const thirdPersonPhoto  = document.getElementById('thirdPersonPhoto');
 
 const url = 'http://localhost:3001';
 
 const urlid = window.location.href; 
 const id = urlid.substr(url.indexOf('?'+2));
 const regex = /^[0-9]*$/;
+
+let avatar;
 
 if(regex.test(id)){
     getUserById()
@@ -20,12 +24,15 @@ async function getUserById(){
     await fetch(`${url}/users/${id}`)
     .then(data => data.json())
     .then(data =>{
-        fullname.innerHTML= data[0].fullName
-        userName.innerHTML= "@"+data[0].userName
+        fullname.innerHTML= data[0].fullname
+        userName.innerHTML= data[0].username
         phone.innerHTML= data[0].phone
         email.innerHTML= data[0].email
         linkedin.innerHTML= data[0].linkedin
         city.innerHTML= data[0].city
+        avatar=data[0].photo
+        thirdPersonPhoto.setAttribute('src',data[0].photo)
+        navphoto.setAttribute('src',data[0].photo)
     }).catch()
 }
 
@@ -71,7 +78,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
             imgPost.setAttribute("alt","fotoUsuario");
 
             const fotoUsuario = document.querySelector("#thirdPersonPhoto");
-            imgPost.setAttribute("src", fotoUsuario.src);
+            imgPost.setAttribute("src", avatar);
             const nombrePost = document.createElement('p');
 
             const nombreUsuario = document.querySelector("#fullname");
