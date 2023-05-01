@@ -36,6 +36,7 @@ async function loginFunc(event){
         if(loginResponse.status == 200){
             username.value=''
             password.value = ''
+            localStorage.setItem("userIdTeclapedia",JSON.stringify(responseJson[0].id_usuario))
             location.href="/client/main/index.html"
         }else if(loginResponse.status == 401){
             if(responseJson.uservalid != ''){usernameLabel.innerHTML = responseJson.uservalid};
@@ -88,3 +89,13 @@ function validate(e){
     passwordLabel.innerHTML= labelsData.password
     userok && passwordok? success=true : success=false
 }
+
+// Script Google
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    var id_token = googleUser.getAuthResponse().id_token;
+  }

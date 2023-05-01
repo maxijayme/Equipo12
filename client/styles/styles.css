@@ -165,21 +165,21 @@ button a{
     width: 130px;
 } */
 
-#google{
-    height: 35px;
+.g-signin2{
+    /* height: 35px;
     width: 250px;
     color: white;
-    border-radius: 15px;
+    border-radius: 15px; */
     margin: 0 auto;
-    font-size: 10pt;
-    font-weight: 600;
+    /* font-size: 10pt;
+    font-weight: 600; */
     cursor: pointer;
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 10px; */
     margin-bottom: 10px;
-    background-color: white;
+    /* background-color: white; */
 }
 
 #logo_google{

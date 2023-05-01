@@ -44,6 +44,7 @@ addButtonFuntionality()
 
 function captureLikes(target){
     let targetT =  target.target;
+    if(targetT.classList.contains('bi-heart-fill') || targetT.classList.contains('bi-heart') ){
     return new Promise(function(resolve, reject){
         let res = addOrRemovelike(targetT);
         res != null ? resolve(res) : reject("Es imposible!")
@@ -51,34 +52,36 @@ function captureLikes(target){
     )
     .then(likes => console.log(`El post ${likes[1]} tiene ${likes[0]} "Me gusta"`))
     .catch()
-    
+    }
 }
 
 function addOrRemovelike(targetT){
-    let id = targetT.parentElement.parentElement.parentElement.id;
-    let likes;
-    if(targetT.classList.contains('bi-heart')){
-        targetT.classList.remove('bi-heart')
-        targetT.classList.add('bi-heart-fill');
-        targetT.classList.add('like');
-        if(targetT.nextElementSibling.innerHTML == 0){
-            targetT.nextElementSibling.style.display = 'contents'
+    if(targetT.classList.contains('bi-heart-fill') || targetT.classList.contains('bi-heart') ){
+        let id = targetT.parentElement.parentElement.parentElement.id;
+        let likes;
+        if(targetT.classList.contains('bi-heart')){
+            targetT.classList.remove('bi-heart')
+            targetT.classList.add('bi-heart-fill');
+            targetT.classList.add('like');
+            if(targetT.nextElementSibling.innerHTML == 0){
+                targetT.nextElementSibling.style.display = 'contents'
+            }
+            likes = parseInt(targetT.nextElementSibling.innerHTML) + 1;
+            targetT.nextElementSibling.innerHTML = likes;
+        }else{
+            targetT.classList.add('bi-heart');
+            targetT.classList.remove('bi-heart-fill')
+            targetT.classList.remove('like')
+            likes = parseInt(targetT.nextElementSibling.innerHTML) - 1;
+            targetT.nextElementSibling.innerHTML = likes;
+            if(targetT.nextElementSibling.innerHTML == 0){
+                targetT.nextElementSibling.style.display = 'none';
+            }
         }
-        likes = parseInt(targetT.nextElementSibling.innerHTML) + 1;
-        targetT.nextElementSibling.innerHTML = likes;
-    }else{
-        targetT.classList.add('bi-heart');
-        targetT.classList.remove('bi-heart-fill')
-        targetT.classList.remove('like')
-        likes = parseInt(targetT.nextElementSibling.innerHTML) - 1;
-        targetT.nextElementSibling.innerHTML = likes;
-        if(targetT.nextElementSibling.innerHTML == 0){
-            targetT.nextElementSibling.style.display = 'none';
-        }
+    
+        let response = [likes, id]
+        return response;
     }
-
-    let response = [likes, id]
-    return response;
 }
 
 async function getPosts(){
@@ -118,7 +121,21 @@ async function getPosts(){
     })
     .catch(console.error)
 }
+function nativeShare() {
+    if (navigator.share) { 
+       navigator.share({
+          title: "titulo",
+          text: "texto",
+          url: "URL", 
+       }) 
+    }
+    return false;
+ }
 
+const share = document.querySelectorAll('.bi-share');
+for(let i = 0; i< share.length;i++){
+    share[i].addEventListener('click', nativeShare)
+}
 
 getPosts()
 

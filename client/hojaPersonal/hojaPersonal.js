@@ -23,14 +23,6 @@ function deleteAccount(){
     }
 }
 
-function redirect(){
-    location.href="/client/register/index.html";
-}
-
-function loader(){
-    let loaderContainer = document.getElementById('loader');
-    loaderContainer.style.display='flex'  
-}
 function closingSession(){
     let option2 = confirm("Estás segur@ que cerrar sesión?")
     if(option2 === true){
@@ -39,6 +31,16 @@ function closingSession(){
         setTimeout( redirect, 3000)       
     }
 }
+
+function redirect(){
+    location.href="/client/register/index.html";
+}
+
+function loader(){
+    let loaderContainer = document.getElementById('loader');
+    loaderContainer.style.display='flex'  
+}
+
 
 function loader2(){
     let loaderContainer = document.getElementById('loader2');
