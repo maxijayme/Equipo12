@@ -236,7 +236,7 @@ li {
 
 /*loader*/
 
-#loader{
+#loader, #loader2{
     position: fixed;
     flex-direction: column;
     gap: 30px;
@@ -251,7 +251,7 @@ li {
     z-index: 2;
 }
 
-#loader span{
+#loader span, #loader2 span{
     font-size: 2rem;
     font-weight: 700;
     color: white;
