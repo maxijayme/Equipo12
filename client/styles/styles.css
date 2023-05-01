@@ -9,11 +9,6 @@ a{
     color: #0d6efd;
 }
 
-
-html, body{
-    min-height: 100vh;
-    }
-
 body{
     display: flex;
     flex-direction: column;
@@ -32,9 +27,7 @@ main{
 
 #container-initial{
     width: 300px;
-    display: flex;
-    align-items: center;
-} */
+}
 
 h1{
     font-size: 56px;
@@ -69,7 +62,7 @@ h1{
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-} */
+}
 
 .fields{
     margin-top: 15px;
@@ -123,12 +116,12 @@ button a{
     gap: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
-} */
+}
 
-/* .line{
+.line{
     border-top: 1px solid rgb(44, 44, 44);
     width: 130px;
-} */
+}
 
 .g-signin2{
     /* height: 35px;
