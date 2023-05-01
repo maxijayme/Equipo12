@@ -138,3 +138,15 @@ for(let i = 0; i< share.length;i++){
 }
 
 getPosts()
+
+var nativeShare = function() {
+    if (navigator.share) { 
+       navigator.share({
+          title: "titulo",
+          text: "texto",
+          url: "URL", 
+       }) 
+    }
+    return false;
+ }
+

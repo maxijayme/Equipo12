@@ -1,3 +1,4 @@
+
 const actualUser = localStorage.getItem("userIdTeclapedia"); 
 const result = document.getElementById('result')
 const filter = document.getElementById('filter')
@@ -38,6 +39,11 @@ async function getUserById(){
 getData()
 getUserById()
 
+const result = document.getElementById('result')
+const filter = document.getElementById('filter')
+const listItems = []
+
+
 filter.addEventListener('input', (e) => filterData(e.target.value))
 
 async function getData() {
@@ -52,6 +58,7 @@ async function getData() {
     const li = document.createElement('li')
 
     listItems.push(li)
+
     li.classList.add('friend_container')
     li.innerHTML = `
         <img src="${user.picture.large}" alt="${user.name.first}">

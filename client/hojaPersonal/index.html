@@ -29,7 +29,7 @@
                     </span>
                     <div class="dropdown">
                         <button id="profileButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="../img/avatar.jpeg" alt="perfil">
+                            <img src="" alt="perfil" id="photoNavBar" class="img-fluid mx-auto">
                         </button>
                         <ul class="dropdown-menu dropdown-menu-lg-end" id="drop_menu">
                           <li><a class="dropdown-item" href="../hojaPersonal/index.html">Perfil</a></li>
@@ -100,68 +100,39 @@
             </div>
             <div class="col" id="col_right">
                 <div class="container container_contact p-3 my-3">
-                    <div class="row">                
+                    <div class="row justify-content-center mb-3">
+                        <img src="" alt="" id="profilePhoto" class="img-fluid mx-auto">
+                    </div>
+                    <div class="row m-2">                
                         <div class="col d-flex my-1 align-items-baseline">
                             <i class="bi bi-telephone me-2"></i>
-                            <p id="phone">696 987 776</p>
+                            <p id="phone"></p>
                         </div>
                         <div class="col d-flex my-1 align-items-baseline">
                             <i class="bi bi-envelope-at me-2"></i>
-                            <p id="email">luciasanchez@gmail.com</p>
+                            <p id="email"></p>
                         </div>
                         <div class="col d-flex my-1 align-items-baseline">
                             <i class="bi bi-linkedin me-2"></i>
-                            <p id="linkedin">https://www.linkedin.com/in/lucia-sanchez/</p>
+                            <p id="linkedin"></p>
                         </div>
                     </div>
-                    <i class="bi bi-pencil"></i>
+                    <div class="row m-2 d-flex justify-content-end"><i class="bi bi-pencil"></i></div>
                 </div>
-                <div class="container container_experience p-3 mb-3">
-                    <div class="row">
+                <div class="container container_experience p-3 mb-3" id="jobs">
+                    <div class="row m-2 d-flex">
                         <h3>Experiencia laboral</h3>
                     </div>
-                    <div class="row">
-                        <h4>Fullstack developer</h4>
-                        <h5>NewTech</h5>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus possimus accusantium, cum distinctio itaque pariatur autem ducimus officiis, laborum reiciendis atque ullam necessitatibus mollitia libero assumenda asperiores ipsum amet ex labore fuga consequatur iure odit explicabo. Nostrum amet, quod, harum odio laudantium sequi dicta obcaecati architecto atque fugit voluptatum in placeat officiis porro iusto eum accusamus commodi, dignissimos dolores velit?</p>
-                    </div>
-                    <div class="row">
-                        <h4>Fullstack developer</h4>
-                        <h5>NewTech</h5>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus possimus accusantium, cum distinctio itaque pariatur autem ducimus officiis, laborum reiciendis atque ullam necessitatibus mollitia libero assumenda asperiores ipsum amet ex labore fuga consequatur iure odit explicabo. Nostrum amet, quod, harum odio laudantium sequi dicta obcaecati architecto atque fugit voluptatum in placeat officiis porro iusto eum accusamus commodi, dignissimos dolores velit?</p>
-                    </div>
-                    <div class="row">
-                        <i class="bi bi-pencil"></i>
-                    </div>
+                    <div class="row m-2 d-flex justify-content-end"><i class="bi bi-pencil"></i></div>
                 </div>
-                <div class="container container_studies p-3 mb-3">
-                    <div class="row">
+                <div class="container container_studies p-3 mb-3" id="studies">
+                    <div class="row m-2 d-flex">
                         <h3>Estudios</h3>
-                    </div>
-                    <div class="row">
-                        <h4>Grado en ingeniería informática</h4>
-                        <div class="row">
-                            <h5 class="col">Universidad de Oviedo</h5>
-                            <h6 class="col">2012 - 2016</h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <h4>Grado en ingeniería informática</h4>
-                        <div class="row">
-                            <h5 class="col">Universidad de Oviedo</h5>
-                            <h6 class="col">2012 - 2016</h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <h4>Grado en ingeniería informática</h4>
-                        <div class="row">
-                            <h5 class="col">Universidad de Oviedo</h5>
-                            <h6 class="col">2012 - 2016</h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <i class="bi bi-pencil"></i>
-                    </div>
+                    </div>                   
+                    <div class="row m-2 d-flex justify-content-end"><i class="bi bi-pencil"></i></div>
+                </div>
+                <div class="container container_others p-3 mb-3" id="otherData">
+                    
                 </div>
             </div>
         </div>

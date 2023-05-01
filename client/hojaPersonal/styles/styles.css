@@ -149,7 +149,8 @@ header i {
 
 .container_contact,
 .container_experience,
-.container_studies {
+.container_studies,
+.container_others {
     background-color: rgb(222,225,232);
     border-radius: 15px;
 }
@@ -194,6 +195,17 @@ header i {
 
 #phone{
     min-width: 133px;
+}
+
+/* Cabecera perfil */
+#profilePhoto {
+    width: 140px;
+    height: 130px;
+    border-radius: 50%;    
+}
+
+.bi-pencil {
+    width: fit-content;
 }
 
 /*Pie de pagina*/
