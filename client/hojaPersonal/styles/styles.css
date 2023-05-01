@@ -149,7 +149,8 @@ header i {
 
 .container_contact,
 .container_experience,
-.container_studies {
+.container_studies,
+.container_others {
     background-color: rgb(222,225,232);
     border-radius: 15px;
 }
@@ -196,6 +197,17 @@ header i {
     min-width: 133px;
 }
 
+/* Cabecera perfil */
+#profilePhoto {
+    width: 140px;
+    height: 130px;
+    border-radius: 50%;    
+}
+
+.bi-pencil {
+    width: fit-content;
+}
+
 /*Pie de pagina*/
 footer {
     font-family: 'Roboto', sans-serif;
@@ -236,7 +248,7 @@ li {
 
 /*loader*/
 
-#loader{
+#loader, #loader2{
     position: fixed;
     flex-direction: column;
     gap: 30px;
@@ -251,7 +263,7 @@ li {
     z-index: 2;
 }
 
-#loader span{
+#loader span, #loader2 span{
     font-size: 2rem;
     font-weight: 700;
     color: white;
