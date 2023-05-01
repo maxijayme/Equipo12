@@ -20,8 +20,14 @@ a{
 body{
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD:styles/styles.css
+    justify-content: center;
+    height: 99%;
+    margin-top: 50px;
+=======
     justify-content: space-between;
     height: 98vh;
+>>>>>>> maxi:client/styles/styles.css
     background: rgb(234, 243, 243);
 }
 
@@ -231,12 +237,20 @@ footer {
     color: gray;
     display: flex;
     flex-direction: column; 
+<<<<<<< HEAD:styles/styles.css
+    margin: auto;
+    margin-top: 30px;
+=======
     margin: 0 auto;
+>>>>>>> maxi:client/styles/styles.css
 }
 ul {
     list-style: none;
     display: flex;
+<<<<<<< HEAD:styles/styles.css
+=======
     flex-wrap: wrap;
+>>>>>>> maxi:client/styles/styles.css
 }
 li {
     margin: 20px;
@@ -260,6 +274,9 @@ li {
     background-color: rgb(234, 243, 243);
     color: gray;
     margin-right: 10px;
+<<<<<<< HEAD:styles/styles.css
+}
+=======
 }
 
 /*media queries*/
@@ -294,3 +311,4 @@ li {
         width: 100%;
     }
 }
+>>>>>>> maxi:client/styles/styles.css
