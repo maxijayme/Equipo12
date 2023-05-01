@@ -47,7 +47,7 @@ function loader2(){
 
 // llamada para coger los datos
 async function getUserData(){
-    await fetch('http://localhost:3001/profile/'+"3")
+    await fetch('http://localhost:3001/profile/'+"actualUser")
     .then(data=> data.json())
     .then(data=>{
         console.log(data)
