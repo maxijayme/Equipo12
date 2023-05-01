@@ -103,21 +103,24 @@ async function create(event){
       dateEndtStudies:dateEndtStudies.value || null,
       stillStudying:stillStudying.checked
     },{
+      stillStudying:stillStudying.checked},
+    {
       position:position.value,
       company:company.value,
       dateStartWorking:dateStartWorking.value,
       dateEndWorking:dateEndWorking.value || null,
-      stillWorking:stillWorking.value,
+      stillWorking:stillWorking.checked,
       tasks:tasks.value,
     },{
-      licence:licenceOption,
-      availability:availability.value,
-      preference:preferenceOption,
+      licence:licenceOption.value,
+      availability:availability.checked,
+      preference:preferenceOption.value,
       hobbies:hobbies.value
     }
   ]
+  
   const response = await fetch(`http://localhost:3001/users/createprofile`,{
-    method: "PATCH",
+    method: "PATCH", 
     headers: {
         "Content-Type": "application/json",
     },

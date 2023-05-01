@@ -86,6 +86,8 @@ router.post('/createprofile', async(req,res)=>{
     }
 })
 
+
+
 router.post('/exist', async (req,res)=>{
     try{
         const {username,email} = req.body
