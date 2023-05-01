@@ -36,6 +36,7 @@ async function loginFunc(event){
         if(loginResponse.status == 200){
             username.value=''
             password.value = ''
+            localStorage.setItem("userIdTeclapedia",JSON.stringify(responseJson[0].id_usuario))
             location.href="/client/main/index.html"
         }else if(loginResponse.status == 401){
             if(responseJson.uservalid != ''){usernameLabel.innerHTML = responseJson.uservalid};

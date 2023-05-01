@@ -7,9 +7,9 @@ const { QueryTypes } = require('sequelize');
 router.post('/', validateLogin, async(req,res)=>{
     try{
         const {user,password}=req.body;
-        const loginUser =  await db.query(`Select * from tusuario where username = "${user}" and password = "${password}" `, { type: QueryTypes.SELECT })
+        const loginUser =  await db.query(`Select id_usuario from tusuario where username = "${user}" and password = "${password}" `, { type: QueryTypes.SELECT })
         if(loginUser.length>0){
-            res.status(200).json({msj:'usuario logueado exitosamente'})
+            res.status(200).json(loginUser)
         }else{
             res.status(404).json({msj:'usuario o password inválido'})
         }
