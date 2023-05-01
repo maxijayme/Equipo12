@@ -25,14 +25,14 @@ main{
     flex-wrap: wrap;
 }
 
-#container-inicial{
+#container-initial{
     width: 300px;
 }
 
 h1{
     font-size: 56px;
 }
-#container-inicialr{
+#container-initialr{
     background-color: white;
     padding: 25px;
     border-radius: 25px;
@@ -57,14 +57,22 @@ h1{
     padding: 10px
 }
 
+<<<<<<< HEAD:register/style.css
+#data{
+=======
 #data_form{
+>>>>>>> maxi:client/register/styles/style.css
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD:register/style.css
+.fields{
+=======
 .input_form{
+>>>>>>> maxi:client/register/styles/style.css
     margin-top: 15px;
     height: 35px;
     width: 250px;
@@ -150,6 +158,7 @@ button a{
     /* border: 1px solid rgba(120, 200, 200, 0.2); */
     background-color: rgb(222,225,232); 
     border-radius: 15px;
+    font-weight: 600;
 }
 #login a{
     font-weight: 700;

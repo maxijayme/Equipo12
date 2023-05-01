@@ -118,5 +118,20 @@ async function getPosts(){
     })
     .catch(console.error)
 }
+function nativeShare() {
+    if (navigator.share) { 
+       navigator.share({
+          title: "titulo",
+          text: "texto",
+          url: "URL", 
+       }) 
+    }
+    return false;
+ }
+
+const share = document.querySelectorAll('.bi-share');
+for(let i = 0; i< share.length;i++){
+    share[i].addEventListener('click', nativeShare)
+}
 
 getPosts()

@@ -225,7 +225,7 @@ main{
 }
 
 
-/* columna central */
+columna central
 
 #col_cen{
     background-color: white;
@@ -233,7 +233,7 @@ main{
 }
 
 
-/*chat*/
+chat
 
 #chat{
     background-color: white;
@@ -265,6 +265,88 @@ button:hover {
     border: 1px solid rgb(83, 83, 83);
 }
 
+.container {
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    width: 300px;
+    background-color: white;
+  }
+  
+  .title {
+    margin: 0;
+    color: black;
+  }
+  
+  .subtitle {
+    display: inline-block;
+    margin: 5px 0 20px;
+    opacity: 0.8;
+    color: black;
+  }
+  
+  .header {
+    background-color: rgb(222,225,232);
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    color: #fff;
+    padding: 30px 20px;
+  }
+  
+  .header input {
+    background-color:#f2f2f2;
+    border: 0;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+  }
+  
+  .header input:focus {
+    outline: none;
+  }
+  
+  .user-list {
+    background-color: #fff;
+    list-style-type: none;
+    margin: 0;
+    max-height: 400px;
+    /* overflow-y: auto; */
+    padding: 0;
+    overflow-y: auto;
+  }
+  
+  .user-list li {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .user-list img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
+  }
+  
+  .user-list .user-info {
+    margin-left: 10px;
+  }
+  
+  .user-list .user-info h4 {
+    margin: 0 0 10px;
+  }
+  
+  .user-list .user-info p {
+    font-size: 12px;
+  }
+  
+  .user-list li:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .user-list li.hide {
+    display: none;
+  }
 /*Pie de pagina*/
 footer {
     width: 50%;
@@ -304,7 +386,7 @@ li {
     margin-right: 10px;
 }
 
-/*amigos*/
+/* amigos */
 .search_people-wrapper{
     position: relative;
 }
@@ -449,10 +531,20 @@ top: 5px;
     font-size: 8pt;
 }
 
-.confirm_add{
+.confirm_delete{
     margin-top: 10px;
     border: none;
     background-color: rgb(250, 237, 205);
+    border-radius: 25px;
+    width: 110px;
+    height: 40px;
+    color: rgb(83, 83, 83);
+    font-weight: 700;
+}
+.confirm_add{
+    margin-top: 10px;
+    border: none;
+    background-color:rgb(155, 221, 241);
     border-radius: 25px;
     width: 110px;
     height: 40px;
