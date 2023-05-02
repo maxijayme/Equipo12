@@ -25,6 +25,16 @@ main{
     flex-wrap: wrap;
 }
 
+#main_container{
+    display: flex;
+    justify-content: center;
+    gap:50px;
+}
+
+#welcome_container{
+    max-width: 300px;
+}
+
 #container-initial{
     width: 300px;
 }
@@ -63,6 +73,7 @@ h1{
     align-items: center;
     margin-bottom: 20px;
 }
+}
 
 .fields{
     margin-top: 15px;
@@ -84,18 +95,6 @@ button{
     background-color:  rgb(193, 241, 227);
     border: none;
     transition: 0.5s;
-}
-
-button:enabled{
-    cursor: pointer;
-}
-
-button:enabled:hover{
-    background-color: rgb(153, 230, 205);
-    transition: 0.5s;
-}
-
-button a{
     color: rgb(44, 44, 44);
 }
 
@@ -117,10 +116,13 @@ button a{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+}
 
+.line{
 .line{
     border-top: 1px solid rgb(44, 44, 44);
     width: 130px;
+}
 }
 
 .g-signin2{
