@@ -73,7 +73,6 @@ h1{
     align-items: center;
     margin-bottom: 20px;
 }
-}
 
 .fields{
     margin-top: 15px;
@@ -116,13 +115,10 @@ button{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-}
 
-.line{
 .line{
     border-top: 1px solid rgb(44, 44, 44);
     width: 130px;
-}
 }
 
 .g-signin2{
@@ -230,4 +226,8 @@ li {
     #register{
         width: 100%;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c5379e0e84930cedc38b2181d9913fa7bf0c4b2d
