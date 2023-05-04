@@ -51,9 +51,7 @@ function loader2(){
 async function getUserData(){
     await fetch('http://localhost:3001/profile/'+actualUser)
     .then(data=> data.json())
-    .then(data=>{
-        console.log(data)
-        
+    .then(data=>{    
         // personal data
         const contact = data[0]
         photoNavBar.setAttribute("src",contact[0].photo);

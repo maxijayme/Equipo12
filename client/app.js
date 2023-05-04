@@ -33,6 +33,7 @@ async function loginFunc(event){
             body: JSON.stringify(loginData)
         })
         const responseJson = await loginResponse.json()
+        console.log(responseJson.status)
         if(loginResponse.status == 200){
             username.value=''
             password.value = ''
@@ -40,7 +41,7 @@ async function loginFunc(event){
             location.href="/client/main/index.html"
         }else if(loginResponse.status == 401){
             if(responseJson.uservalid != ''){usernameLabel.innerHTML = responseJson.uservalid};
-            if(responseJson.passwordvalid != ''){usernameLabel.innerHTML = responseJson.passwordvalid};
+            if(responseJson.passwordvalid != ''){passwordLabel.innerHTML = responseJson.passwordvalid};
         }
         else{
             passwordLabel.innerHTML='El usuario o la contraseña son incorrectos'
@@ -72,7 +73,7 @@ function validate(e){
         }
     }
     if(inputName === 'password'){
-        if(inputValue.length < 6){
+        if(inputValue.length < 5){
             labelsData.password='La contraseña debe tener al menos 6 caracteres';
             passwordok = false;
         }else
