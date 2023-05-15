@@ -6,11 +6,8 @@ const { QueryTypes } = require('sequelize');
 router.get('/:id', async (req,res)=>{
     console.log(req.params)
     try{
-        const {id} = req.params;
         const user =  await db.query(`Select * from tusuario where id_usuario = "${id}" `, { type: QueryTypes.SELECT })
-        const img = await db.query (`Select * from tusuario where id_usuario = "${id}"`, { type: QueryTypes.SELECT })
         if(user.length>0){
-            user[0].photo = img[0].photo
             res.status(200).json(user)
         }else{
             res.status(404).send('el usuario no existe')
@@ -21,14 +18,10 @@ router.get('/:id', async (req,res)=>{
     }
 })
 
-router.get('/search_user/:fullname', (req,res)=>{
+router.get('/search_user/:fullname', async (req,res)=>{
     try{
         const {fullname} = req.params;
-        const user = initialState.filter(user => {
-                if(user.fullName.toLocaleLowerCase().includes(fullname.toLocaleLowerCase())){
-                    return user
-                }
-            })
+        const user = await db.query (`Select * from tusuario where LOWER(fullname) = "${fullname.toLocaleLowerCase()}"`, { type: QueryTypes.SELECT })
         if(user.length>0){
             res.status(200).json(user)
         }else{
