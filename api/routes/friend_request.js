@@ -18,7 +18,7 @@ Recibir solicitud
 1-Muestro botones "Aceptar" / "Rechazar"
 1-a)Si acepto cambio botón por "Amigo"
 1-a)-I)Agrego relaciones en tabla "tamistades"
-1-a)-II)Elimino registro solicitud tabla "tsolicitudes"
+1-a)-II)Actualizo registro solicitud tabla "tsolicitudes" a "aceptada"
 1-b)Si rechazo solicitud, elimino card.
 1-b)-I) Elimino registro solicitud tabla "tsolicitudes"
 

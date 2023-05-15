@@ -4,9 +4,9 @@ const db = require('../db/db.js');
 const { QueryTypes } = require('sequelize');
 
 router.get('/:id', async (req,res)=>{
-    console.log(req.params)
+    const {id} = req.params;
     try{
-        const user =  await db.query(`Select * from tusuario where id_usuario = "${id}" `, { type: QueryTypes.SELECT })
+        const user =  await db.query(`Select id_usuario, fullname, username, phone, email, city, country, linkedin, photo, nivel_estudios from tusuario where id_usuario = "${id}" `, { type: QueryTypes.SELECT })
         if(user.length>0){
             res.status(200).json(user)
         }else{
@@ -21,7 +21,7 @@ router.get('/:id', async (req,res)=>{
 router.get('/search_user/:fullname', async (req,res)=>{
     try{
         const {fullname} = req.params;
-        const user = await db.query (`Select * from tusuario where LOWER(fullname) = "${fullname.toLocaleLowerCase()}"`, { type: QueryTypes.SELECT })
+        const user = await db.query (`Select id_usuario, fullname, username, phone, email, city, country, linkedin, photo, nivel_estudios from tusuario where LOWER(fullname) = "${fullname.toLocaleLowerCase()}"`, { type: QueryTypes.SELECT })
         if(user.length>0){
             res.status(200).json(user)
         }else{
@@ -86,7 +86,7 @@ router.post('/exist', async (req,res)=>{
         const {username,email} = req.body
         let userExist = []
         if(username){
-            username && (userExist =  await db.query(`Select * from tusuario where username = "${username}"`, { type: QueryTypes.SELECT }))
+            username && (userExist =  await db.query(`Select (username) from tusuario where username = "${username}"`, { type: QueryTypes.SELECT }))
             if(userExist.length==0){
                 res.status(200).json('no existe');
             }else{
@@ -94,7 +94,7 @@ router.post('/exist', async (req,res)=>{
             }
         }
         if(email){
-            email && (userExist =  await db.query(`Select * from tusuario where email = "${email}"`, { type: QueryTypes.SELECT }))
+            email && (userExist =  await db.query(`Select email from tusuario where email = "${email}"`, { type: QueryTypes.SELECT }))
             if(userExist.length==0){
                 res.status(200).json('no existe');
             }else{

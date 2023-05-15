@@ -1,8 +1,7 @@
 const { Router } = require('express');
 const users = require('./users.js')
-const search = require('./search.js')
 const login= require('./login.js')
-const post = require('./post.js')
+const social_media_post = require('./social_media_post.js')
 const profile = require('./profile.js')
 const friends = require('./friends.js')
 const friend_request = require('./friend_request.js')
@@ -13,8 +12,7 @@ const router = Router();
 
 router.use('/login', login)
 router.use('/users', users)
-router.use('/search_user', search)
-router.use('/post', post)
+router.use('/social_media_post', social_media_post)
 router.use('/profile',profile)
 router.use('/friends',friends)
 router.use('/friend_request', friend_request)
