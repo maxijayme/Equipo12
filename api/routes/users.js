@@ -2,6 +2,7 @@ const { Router } = require('express');
 const router = Router();
 const db = require('../db/db.js');
 const { QueryTypes } = require('sequelize');
+const hashPassword = require('./utils/hash_password.js')
 
 router.get('/:id', async (req,res)=>{
     const {id} = req.params;
@@ -36,7 +37,8 @@ router.get('/search_user/:fullname', async (req,res)=>{
 router.post('/create', async (req,res)=>{
     try{
         const {fullname, userName, email, password} = req.body;
-        const newUser = await db.query(`Insert into tusuario (fullname, username, password, email) values ("${fullname}", "${userName}", "${password}", "${email}")`,{type: QueryTypes.INSERT })
+        const hashed = await hashPassword(password,8)
+        const newUser = await db.query(`Insert into tusuario (fullname, username, password, email) values ("${fullname}", "${userName}", "${hashed}", "${email}")`,{type: QueryTypes.INSERT })
         if(newUser.length>1){
             res.status(200).json(newUser);
         }
