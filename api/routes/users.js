@@ -3,6 +3,9 @@ const router = Router();
 const db = require('../db/db.js');
 const { QueryTypes } = require('sequelize');
 const hashPassword = require('./utils/hash_password.js')
+require('dotenv').config()
+const secret_key = process.env.SECRET_KEY;
+const generateToken = require('./utils/generateToken.js');
 
 router.get('/:id', async (req,res)=>{
     const {id} = req.params;

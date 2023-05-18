@@ -3,7 +3,7 @@ import './Footer.css'
 export default function FooterUI(){
     return(
         <>
-            <div class="foot1">
+            <div className="foot1">
                 <ul>
                     <li>Meta</li>
                     <li>Información</li>
@@ -15,8 +15,8 @@ export default function FooterUI(){
                     <li>Condiciones</li>
                 </ul>
             </div>
-            <div class="foot2">
-                <select class="language center_flex" name="language">
+            <div className="foot2">
+                <select className="language center_flex" name="language">
                     <option value="esp">Español</option>                
                     <option value="eng">Inglés</option>                
                     <option value="fr">Francés</option>                

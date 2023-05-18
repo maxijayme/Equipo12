@@ -12,7 +12,7 @@ export default function ContactUI(){
         userId:1,
         title:"",
         question:"",
-        subject:"personal_data"
+        subject:""
     })
 
     function handleInputChange(event){
@@ -33,7 +33,7 @@ export default function ContactUI(){
         setForm({
             title:"",
             question:"",
-            subject:"personal_data"
+            subject:""
         })
     }
 
@@ -91,7 +91,8 @@ export default function ContactUI(){
                                 <form className="row">
                                     <input className="form-control mx-3" type="text" name="title" value={form.title} id="" placeholder="Título" onChange={handleInputChange} />
                                     <input className="form-control mx-3" type="text" name="question" value={form.question} id="" placeholder="Consulta" onChange={handleInputChange} />
-                                    <select className="form-select" name="subject" value={form.subject} onChange={handleInputChange}>
+                                    <select className="form-select" name="subject" onChange={handleInputChange}>
+                                        <option disabled selected>Elige una opción</option>
                                         <option value="personal_data">Datos personales</option>
                                         <option value="security">Seguridad</option>
                                         <option value="privacy">Privacidad</option>

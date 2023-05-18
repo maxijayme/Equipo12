@@ -10,6 +10,7 @@ const delete_friend = require('./delete_friend.js')
 const reject_friend = require('./reject_friend.js')
 const help = require('./help.js')
 const router = Router();
+const isLogged = require('../middlewares/isLogged.js')
 
 router.use('/login', login)
 router.use('/users', users)
@@ -22,5 +23,12 @@ router.use('/delete_friend', delete_friend)
 router.use('/reject_friend', reject_friend)
 router.use('/help', help)
 
+router.post('', isLogged, (req,res,next)=>{
+    if(req.authenticated){
+        res.status(200).send('isValid')
+    }else{
+        res.status(400).send('isNotValid')
+    }
+})
 
 module.exports = router;

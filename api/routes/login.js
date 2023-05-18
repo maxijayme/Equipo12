@@ -4,7 +4,10 @@ const validateLogin = require('../middlewares/validate.js');
 const db = require('../db/db.js');
 const { QueryTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const hashPassword = require('./utils/hash_password.js')
+const hashPassword = require('./utils/hash_password.js');
+require('dotenv').config()
+const generateToken = require('./utils/generateToken.js')
+const isLogged = require('../middlewares/isLogged.js')
 
 router.post('/hash', async(req,res)=>{
     const {user}=req.body;
@@ -19,13 +22,14 @@ router.post('/hash', async(req,res)=>{
     }
 })
 
-router.post('/',  async(req,res)=>{
+router.post('/',validateLogin,  async(req,res)=>{
     try{
         const {user,password}=req.body;
         const passwordDB = await db.query(`Select id_usuario, password from tusuario where username = "${user}" `, { type: QueryTypes.SELECT })
         bcrypt.compare(password, passwordDB[0].password, function(err, result) {
             if(result == true){
-                res.status(200).json(passwordDB[0].id_usuario)
+                const token = generateToken(passwordDB[0]);
+                res.status(200).json({token, userId: passwordDB[0].id_usuario})
             }
             else{
                 res.status(404).json({msj:'usuario o password inválido'})
