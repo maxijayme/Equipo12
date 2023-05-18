@@ -1,0 +1,14 @@
+#questions{
+    margin-top: 60px;
+    height: 83vh;
+}
+
+.question-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.question-list-item{
+    display: flex;
+    justify-content: space-evenly;
+}

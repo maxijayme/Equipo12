@@ -93,7 +93,7 @@ export default function ContactUI(){
                                     <input className="form-control mx-3" type="text" name="question" value={form.question} id="" placeholder="Consulta" onChange={handleInputChange} />
                                     <select className="form-select" name="subject" onChange={handleInputChange}>
                                         <option disabled selected>Elige una opción</option>
-                                        <option value="personal_data">Datos personales</option>
+                                        <option value="personal data">Datos personales</option>
                                         <option value="security">Seguridad</option>
                                         <option value="privacy">Privacidad</option>
                                         <option value="content">Contenido</option>

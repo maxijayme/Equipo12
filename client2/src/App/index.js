@@ -5,6 +5,7 @@ import Contact from '../containers/Contact';
 import Login from '../containers/Login';
 import Home from '../containers/Home';
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+import AdminPanel from '../containers/AdminPanel';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         {path:'/login', element: <Login/>},
         {path:'/main', element: <Main/>},
         {path:'/contact', element: <Contact/>},
+        {path:'/admin', element: <AdminPanel/>},
         // {path:'/', element: <Contact/>,  errorElement:<NotFound/> },
         // {path:'/checkout', element: <CheckOut/> },
       ]
