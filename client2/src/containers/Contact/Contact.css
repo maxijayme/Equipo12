@@ -1,0 +1,386 @@
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap%27');
+/*font-family: 'Tilt Neon', cursive;*/
+
+*{
+    margin: 0;    
+    font-family: 'Tilt Neon', cursive;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Clase para llevar hasta el borde de la pantalla*/
+.no-padding{
+    padding: 0;
+}
+
+.no_margin{
+    margin: 0;
+}
+
+/*Clase para centrado flex*/
+.flex_center{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/*header*/
+
+.navbar{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#logo{
+        width: 250px;
+}
+
+#navbarToggler{
+    flex-grow: 0;
+}
+
+#nav_profile{
+    width: 150px;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+#nav_profile img{
+    height: 55px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#nav_profile span{
+    width: 28px;
+    height: 36px;
+}
+
+#nav_profile  i{
+    font-size:18pt;
+    color: white;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 98vh;
+    background: rgb(234, 243, 243);
+}
+
+/*search input*/
+
+#searchbar{
+    width: 25%;
+    min-width: 340px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin: auto;
+}
+
+#search-wrapper{
+    position: relative;
+    width: 67%;
+    transition: 0.5s;
+}
+
+#search_input{
+    height: 35px;
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    padding-left: 45px;
+    padding-right: 10px ;
+    font-size: 12pt;
+    background-color: #f2f2f2;
+    min-width: 300px;
+}
+
+#search-wrapper:hover{
+    width: 100%;
+    transition: 0.5s;
+}
+
+header i {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 7px;
+}
+
+#navbarToggler ul{
+    display: none;
+}
+
+#profileButton{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#drop_menu{
+    background-color: rgb(43,48,53);
+}
+
+/* main */
+
+#helpArrow{
+    color: black;
+}
+
+#main_container{
+    margin-top: 73px;
+    justify-content: space-around;
+}
+
+#options_menu{
+    display: none;
+}
+
+#col_left, #col_right{
+    background-color: white;
+}
+
+#col_left{
+    min-width: 300px;
+}
+
+.container_contact,
+.container_experience,
+.container_studies,
+.container_others {
+    background-color: rgb(222,225,232);
+    border-radius: 15px;
+}
+
+#col_left-container{
+    height: 96%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options_list{
+    padding: 0;
+}
+
+.options_list li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-radius: 0 25px 25px 0;
+    background-color: #e1d5d5;
+    text-align: center;
+    width: 230px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.options_list li:hover{
+    background-color: #b5aaaa;
+}
+
+.options_list li i{
+    margin-left: 40px;
+}
+
+.options_list a{
+    color: #000;
+    margin-left: 10px;
+}
+
+#phone{
+    min-width: 133px;
+}
+
+/* Cabecera perfil */
+#profilePhoto {
+    width: 140px;
+    height: 130px;
+    border-radius: 50%;    
+}
+
+.bi-pencil {
+    width: fit-content;
+}
+
+/*Pie de pagina*/
+footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    color: gray;
+    display: flex;
+    flex-direction: column; 
+    margin: 0 auto;
+}
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+li {
+    margin: 20px;
+}
+
+.foot1 {
+    display: flex;
+    margin: auto;
+}
+
+.foot2 {
+    display: flex;
+    margin: auto;
+    color: gray;
+}
+.language {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    width: fit-content;
+    border: 0;
+    background-color: rgb(234, 243, 243);
+    color: gray;
+    margin-right: 10px;
+}
+
+/*loader*/
+
+#loader, #loader2{
+    position: fixed;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(119, 116, 116, 0.7);
+    z-index: 2;
+}
+
+#loader span, #loader2 span{
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.spinner {
+    width: 156px;
+    height: 156px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side,#1ba673 94%,#0000) top/9px 9px no-repeat,
+           conic-gradient(#0000 30%,#1ba673);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+ }
+
+ #deleteAccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(177, 26, 26);
+    color: white;
+    width: 230px;
+    height: 40px;
+    margin: 0 auto;
+ }
+
+ #deleteAccount:hover{
+    background-color: rgb(220, 32, 32);;
+ }
+ 
+ @keyframes spinner-c7wet2 {
+    100% {
+       transform: rotate(1turn);
+    }
+ }
+
+
+/*media queries*/
+
+@media (max-width: 1200px) {
+    #chat{
+        display: none;
+    }
+}
+
+@media (max-width: 795px){
+    #searchbar{
+        order: 3;
+        align-self: center;
+    }
+    #main_container{
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px){
+    #options_menu{
+        height: 80px;
+        overflow-x: scroll;
+        display: flex;
+        justify-content: center;
+    }
+
+    #options_menu ul{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        align-items: flex-end;
+ 
+        margin-bottom: 5;
+    }
+
+    #options_menu li{
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    #options_menu a{
+        color: rgb(43,48,53);
+    }
+
+    #col_left{
+        display: none;
+    }
+}
+
+@media (max-width: 575px){
+    #main_container{
+        margin-top: 70px;
+    }
+    #nav_profile{
+        display: none;
+    }    
+    #navbarToggler ul{
+        display:contents;
+    }
+    #navbarToggler li{
+        text-align: right;
+    }
+
+}
+
+@media (max-width: 456px){
+    #logo_link{
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 366px){
+    #logo{
+        max-width: 184px;
+    }
+}

@@ -12,7 +12,6 @@ router.get('/:id', async (req,res)=>{
         const studiesUser = await db.query(`Select titulo,centro,f_inicio,f_fin,actualidad from testudios where id_usuario = "${id}"`, { type: QueryTypes.SELECT });
         const otherDataUser = await db.query(`Select licencia,disponibilidad,preferencia,hobbies from totros_datos where id_usuario = "${id}"`, { type: QueryTypes.SELECT });
         const actualUser = [contactUser,jobsUser,studiesUser,otherDataUser];
-        console.log(actualUser);
         res.status(200).json(actualUser);
     }catch(err){
         console.log(err);

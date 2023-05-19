@@ -39,9 +39,6 @@ async function getUserById(){
 getData()
 getUserById()
 
-const result = document.getElementById('result')
-const filter = document.getElementById('filter')
-const listItems = []
 
 
 filter.addEventListener('input', (e) => filterData(e.target.value))
