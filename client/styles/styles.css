@@ -9,25 +9,11 @@ a{
     color: #0d6efd;
 }
 
-<<<<<<< HEAD
-
-/* html, body{
-    min-height: 100vh;
-    }
-
-=======
->>>>>>> maxi
 body{
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD:styles/styles.css
-    justify-content: center;
-    height: 99%;
-    margin-top: 50px;
-=======
     justify-content: space-between;
     height: 98vh;
->>>>>>> maxi:client/styles/styles.css
     background: rgb(234, 243, 243);
 }
 
@@ -39,30 +25,29 @@ main{
     flex-wrap: wrap;
 }
 
+#main_container{
+    display: flex;
+    justify-content: center;
+    gap:50px;
+}
+
+#welcome_container{
+    max-width: 300px;
+}
+
 #container-initial{
     width: 300px;
-<<<<<<< HEAD
-    display: flex;
-    align-items: center;
-} */
-=======
 }
->>>>>>> maxi
 
 h1{
     font-size: 56px;
 }
-<<<<<<< HEAD
-
-/* #form_container{
-=======
 #container-initialr{
     background-color: white;
     padding: 25px;
     border-radius: 25px;
 }
 #container-form{
->>>>>>> maxi
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,13 +55,9 @@ h1{
     border: 1px solid rgba(120, 200, 200, 0.5);
     padding: 0 15px;
     font-size: 10pt;
-<<<<<<< HEAD
-} */
-=======
     background:  rgb(222,225,232);
     border-radius: 0 0 15px 15px;
 }
->>>>>>> maxi
 
 #logo{
     width: 320px;
@@ -85,21 +66,14 @@ h1{
     border-radius: 15px 15px 0 0;
     padding: 10px
 }
-<<<<<<< HEAD
-/* 
-#fields{
-=======
 
 #data{
->>>>>>> maxi
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-} */
+}
 
-<<<<<<< HEAD
-=======
 .fields{
     margin-top: 15px;
     height: 35px;
@@ -109,7 +83,6 @@ h1{
     border: 1px solid rgba(120, 200, 200, 0.5);
     padding-left: 10px;
 }
->>>>>>> maxi
 
 button{
     height: 35px;
@@ -132,18 +105,15 @@ button:enabled:hover{
     transition: 0.5s;
 }
 
-button a{
-    color: rgb(44, 44, 44);
+button:disabled{
+    background-color:  rgb(207, 244, 234);
+    color: rgb(95, 95, 95);
 }
 
 
 #save{
     padding: 20px;
 }
-<<<<<<< HEAD
-/* 
-#divide{
-=======
 
 
 
@@ -152,57 +122,39 @@ button a{
 }
 
 #division{
->>>>>>> maxi
     display: flex;
     align-items: center;
     gap: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
-} */
+}
 
-/* .line{
+.line{
     border-top: 1px solid rgb(44, 44, 44);
     width: 130px;
-} */
+}
 
-#google{
-    height: 35px;
+.g-signin2{
+    /* height: 35px;
     width: 250px;
     color: white;
-    border-radius: 15px;
+    border-radius: 15px; */
     margin: 0 auto;
-    font-size: 10pt;
-    font-weight: 600;
+    /* font-size: 10pt;
+    font-weight: 600; */
     cursor: pointer;
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 10px; */
     margin-bottom: 10px;
-    background-color: white;
+    /* background-color: white; */
 }
 
 #logo_google{
     width: 15px;
     height: 15px;
 }
-<<<<<<< HEAD
-/* 
-#save{
-    display: flex;
-    align-self: flex-start;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-} */
-
-/* #forgot{
-    font-size: 10pt;
-    color: black;
-}
-=======
->>>>>>> maxi
 
 #register{
     margin-top: 15px;
@@ -213,21 +165,9 @@ button a{
     height: 50px;
     width: 100%;
     border: 1px solid rgba(120, 200, 200, 0.2);
-<<<<<<< HEAD
-}
-
-#register a{
-    font-weight: 700;
-} */
-
-.container {
-    background-color: rgb(222,225,232);
-    border-radius: 15px;
-=======
     background-color: rgb(222,225,232); 
     border-radius: 15px;
     font-weight: 600;
->>>>>>> maxi
 }
 
 /*Pie de pagina*/
@@ -237,20 +177,12 @@ footer {
     color: gray;
     display: flex;
     flex-direction: column; 
-<<<<<<< HEAD:styles/styles.css
-    margin: auto;
-    margin-top: 30px;
-=======
     margin: 0 auto;
->>>>>>> maxi:client/styles/styles.css
 }
 ul {
     list-style: none;
     display: flex;
-<<<<<<< HEAD:styles/styles.css
-=======
     flex-wrap: wrap;
->>>>>>> maxi:client/styles/styles.css
 }
 li {
     margin: 20px;
@@ -274,9 +206,6 @@ li {
     background-color: rgb(234, 243, 243);
     color: gray;
     margin-right: 10px;
-<<<<<<< HEAD:styles/styles.css
-}
-=======
 }
 
 /*media queries*/
@@ -310,5 +239,8 @@ li {
     #register{
         width: 100%;
     }
+<<<<<<< HEAD
 }
->>>>>>> maxi:client/styles/styles.css
+=======
+}
+>>>>>>> c5379e0e84930cedc38b2181d9913fa7bf0c4b2d

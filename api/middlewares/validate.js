@@ -14,8 +14,9 @@ function validateLogin(req,res,next){
     }
     if(response.uservalid!='' || response.passwordvalid != ''){
         res.status(401).send(response)
+    }else{
+        next();
     }
-    next();
 }
 
 module.exports = validateLogin;

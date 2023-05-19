@@ -561,7 +561,15 @@ top: 5px;
     color: rgb(83, 83, 83);
 }
 
+/*col derecha*/
+.friend_container{
+    margin: 0 auto;
+    padding: 0;
+}
 
+#result::-webkit-scrollbar{
+    display: none;
+}
 
 /*media queries*/
 

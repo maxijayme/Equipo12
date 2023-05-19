@@ -57,22 +57,14 @@ h1{
     padding: 10px
 }
 
-<<<<<<< HEAD:register/style.css
-#data{
-=======
 #data_form{
->>>>>>> maxi:client/register/styles/style.css
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 }
 
-<<<<<<< HEAD:register/style.css
-.fields{
-=======
 .input_form{
->>>>>>> maxi:client/register/styles/style.css
     margin-top: 15px;
     height: 35px;
     width: 250px;

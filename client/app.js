@@ -9,23 +9,18 @@ password.addEventListener('input', enableButton)
 const usernameLabel = document.getElementById('username_label');
 const passwordLabel = document.getElementById('password_label');
 
-const userList = JSON.parse(localStorage.getItem("userList"));
-git 
-async () => {
-    const rawResponse = await fetch('localhost:3001/post', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({a: username.value, b: password.value})
-  });
-  const content = await rawResponse.json();
-
-  console.log(content);
+let loginData = {
+    user:"",
+    password:"",
 }
 
-function loginFunc(event){
+let labelsData = {
+    password:"",
+    user:"",
+}
+let userok,passwordok = false
+
+async function loginFunc(event){
     event.preventDefault();
     loginData.user = username.value;
     loginData.password = password.value;
@@ -38,13 +33,15 @@ function loginFunc(event){
             body: JSON.stringify(loginData)
         })
         const responseJson = await loginResponse.json()
+        console.log(responseJson.status)
         if(loginResponse.status == 200){
             username.value=''
             password.value = ''
+            localStorage.setItem("userIdTeclapedia",JSON.stringify(responseJson[0].id_usuario))
             location.href="/client/main/index.html"
         }else if(loginResponse.status == 401){
             if(responseJson.uservalid != ''){usernameLabel.innerHTML = responseJson.uservalid};
-            if(responseJson.passwordvalid != ''){usernameLabel.innerHTML = responseJson.passwordvalid};
+            if(responseJson.passwordvalid != ''){passwordLabel.innerHTML = responseJson.passwordvalid};
         }
         else{
             passwordLabel.innerHTML='El usuario o la contraseña son incorrectos'
@@ -76,7 +73,7 @@ function validate(e){
         }
     }
     if(inputName === 'password'){
-        if(inputValue.length < 6){
+        if(inputValue.length < 5){
             labelsData.password='La contraseña debe tener al menos 6 caracteres';
             passwordok = false;
         }else
@@ -93,3 +90,13 @@ function validate(e){
     passwordLabel.innerHTML= labelsData.password
     userok && passwordok? success=true : success=false
 }
+
+// Script Google
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    var id_token = googleUser.getAuthResponse().id_token;
+  }

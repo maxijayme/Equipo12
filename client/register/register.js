@@ -63,7 +63,6 @@ async function allreadyExist(e){
         },
         body: JSON.stringify(inputToCheck)
     })
-    console.log(response.status)
     if(response.status == 401){
         const responseJson = await response.json();
         if(responseJson == 'email'){
@@ -83,7 +82,6 @@ async function allreadyExist(e){
 
 async function createUser(event){
     event.preventDefault();
-    console.log(success, exist)
     if(success && exist){
         const newUser = new User({
             fullname : fullname.value,
@@ -126,11 +124,11 @@ function validate(e){
     const inputValue = e.target.value;
     if(inputName === 'fullname'){
         if (!/^[a-zA-Z\s]*$/.test(inputValue)) {
-            labelsData.user='Solo se permiten letras';   
+            labelsData.fullname='Solo se permiten letras';   
             fullnameok = false  
         }
         else{
-            labelsData.user='';
+            labelsData.fullname='';
             fullnameok = true  
         }
     }

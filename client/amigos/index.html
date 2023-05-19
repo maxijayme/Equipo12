@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar bg-body-tertiary fixed-top navbar-expand-sm bg-dark navbar-dark ml-2 mr-2" data-bs-theme="dark">
             <div class="container-fluid no-padding flex-wrap">
-                <a class="navbar-brand" id="logo_link">
+                <a href="../main/index.html" class="navbar-brand" id="logo_link">
                     <img src="../img/teclapedia_logo.svg" alt="Teclapedia" id="logo" >
                 </a>
                 <form class="d-flex" role="search" id="searchbar">
@@ -29,7 +29,7 @@
                     </span>
                     <div class="dropdown">
                         <button id="profileButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="../main/img/avatar.jpg" alt="perfil">
+                            <img src="" alt="perfil" id="navphoto">
                         </button>
                         <ul class="dropdown-menu dropdown-menu-lg-end" id="drop_menu">
                           <li><a class="dropdown-item" href="../hojaPersonal/index.html">Perfil</a></li>
@@ -82,42 +82,42 @@
             </div>
             <div class="row">
                 <div class="col-xl-2 col-md-2 py-3" id="col_izq">
-                    <div class="container p-3 mb-3">
+                    <div class="container user_data p-3 mb-3">
                         <div class="row mb-2">
-                            <img src="../main/img/avatar.jpg" class="photo" alt="">
+                            <img class="photo" id="thirdPersonPhoto">
                         </div>
                         <div class="row">
-                            <h3 class="">Lucia Sanchez</h3>
+                            <h3 id="fullname"></h3>
                         </div>
                         <div class="row  my-1">
-                            <p>@LuciaSanchez</p>
+                            <p id="userName"></p>
                         </div>
-                        <div class="contacto row">                
+                        <!-- <div class="contacto row">                 -->
                             <div class="col d-flex  my-1 align-items-baseline">
                                 <i class="bi bi-telephone me-2"></i>
-                                <p>696 987 776</p>
+                                <p id="phone"></p>
                             </div>
                             <div class="col d-flex  my-1 align-items-baseline">
                                 <i class="bi bi-envelope-at  me-2"></i>
-                                <p>luciasanchez@gmail.com</p>
+                                <p id="email"></p>
                             </div>
                             <div class="col d-flex  my-1 align-items-baseline">
                                 <i class="bi bi-linkedin me-2"></i>
-                                <a>lucia-sanchez</a>
+                                <a id="linkedin"></a>
                             </div>
-                        </div>                     
+                        <!-- </div>                     -->
                         <div class="row">                        
                             <div  class="col d-flex  my-1 align-items-baseline">
                                 <i class="bi bi-geo-alt me-2"></i>
-                                <span>Gijón</span>
+                                <span id="city"></span>
                             </div>
                         </div>
-                        <div class="row">                        
+                        <!-- <div class="row">                        
                             <div  class="col d-flex  my-1 align-items-baseline">
                                 <i class="bi bi-calendar-week me-2"></i>
-                                <span>Se unió en marzo de 2023</span>
+                                <span id="registerDate">Se unió en Abril de 2023</span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="container news">
                         <div class="row">
@@ -247,18 +247,6 @@
                                 <button class="confirm_delete">Quitar</button>
                             </div>
                          </section>
-                        <section id="chat">
-                            <div id="chat_container">
-                                <div class="centrado">
-                                    <img src="./img/perfil_maxi.jpg" alt="" class="icon_nav" id="profile_photo">
-                                    <span>Mensajes</span>
-                                </div>
-                                <div class="centrado">
-                                    <span>...</span>
-                                    <span>^</span>
-                                </div>
-                            </div>
-                        </section>
                     </section>
                 </div>
                 <div class="col-xl-2 col-md-2 " id="col_dch">
@@ -280,7 +268,7 @@
             <section id="chat">
                 <div id="chat_container">
                     <div class="centrado_flex">
-                            <img src="../main/img/avatar.jpg" alt="chat avatar" class="icon_nav" id="chat_avatar" style="border-radius: 50%;">
+                            <img src="" alt="chat avatar" class="icon_nav" id="chat_avatar" style="border-radius: 50%;">
                         <span>Mensajes</span>
                     </div>
                     <div class="centrado">
@@ -289,9 +277,7 @@
                     </div>
                 </div>
             </section>
-        </div>
-        
-        
+        </div>    
     </main>
     <footer class="container-fluid" >
         <div class="pie1">
