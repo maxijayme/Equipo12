@@ -1,5 +1,3 @@
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer"
 import 'bootstrap/dist/css/bootstrap.css';
 import './AdminPanel.css'
 
@@ -7,9 +5,6 @@ import './AdminPanel.css'
 export default function AdminPanelUI({questions, handleResponse}){
     return(
         <>
-            <header>
-                <Navbar />
-            </header>
             <main className="container-fluid" id="questions">
                 <ul className="question-list">
                     <li className="question-list-item">
@@ -32,9 +27,6 @@ export default function AdminPanelUI({questions, handleResponse}){
                     )) }
                 </ul>
             </main>
-            <footer>
-                <Footer/>
-            </footer>
         </>
     )
 }

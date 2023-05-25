@@ -1,10 +1,28 @@
 import AdminPanelUI from "./AdminPanelUI";
 import { useEffect, useState } from "react";
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY4NDQzMTI3NywiZXhwIjoxNjg0NTE3Njc3fQ.MP1aWFKi2-01l2AtN8iOZfXK2JdK-bW_aU1knZ1-kLU'
-
+import { useNavigate } from "react-router-dom";
+import Restricted from '../../components/Restricted'
 export default function AdminPanel(){
+    
+    const token = JSON.parse(window.localStorage.getItem("jwt")).token
+    const profile = JSON.parse(window.localStorage.getItem("jwt")).profile
     const URL = 'http://localhost:3001';
     const [questions, setQuestions] = useState(null)
+    const navigate = useNavigate()
+
+    const [restricted, setRestricted] = useState(false)
+
+    useEffect(()=>{
+        if(!token){
+            navigate('/login')
+        }
+        else if(profile !== 'admin'){
+            setRestricted(true)
+            setTimeout(()=>{
+                navigate('/feed')
+            }, 2000)
+        }
+    },[])
 
     async function handleResponse(data, id_consulta){
             await fetch(`${URL}/questions`,{
@@ -41,6 +59,13 @@ export default function AdminPanel(){
     },[])
 
     return(
-        <AdminPanelUI questions={questions} handleResponse = {handleResponse}/>
+        <>
+        {
+            !restricted ?
+            <AdminPanelUI questions={questions} handleResponse = {handleResponse}/>
+            : <Restricted/>
+        }
+        
+        </>
     )
 }
