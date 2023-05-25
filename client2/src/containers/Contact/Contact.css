@@ -131,11 +131,15 @@ header i {
 
 #helpArrow{
     color: black;
+    
 }
 
 #main_container{
+    
     margin-top: 73px;
     justify-content: space-around;
+    height: 80vh;
+    
 }
 
 #options_menu{
@@ -148,6 +152,35 @@ header i {
 
 #col_left{
     min-width: 300px;
+}
+
+#col_right {
+    display: flex;
+}
+
+#container_help {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: center;
+}
+
+/* Boton enviar consulta */
+
+.confirm_delete{
+    margin-top: 10px;
+    border: none;
+    background-color: rgb(250, 237, 205);
+    border-radius: 25px;
+    width: 110px;
+    height: 40px;
+    color:  rgb(83, 83, 83);
+    font-weight: 700;
+}
+
+.green{
+    background-color: rgb(193, 241, 227);
+    color: rgb(83, 83, 83);
 }
 
 .container_contact,
@@ -219,7 +252,10 @@ footer {
     display: flex;
     flex-direction: column; 
     margin: 0 auto;
+    
+    
 }
+
 ul {
     list-style: none;
     display: flex;
@@ -385,6 +421,7 @@ li {
     }
 }
 
+<<<<<<< HEAD
 /*aaaa*/
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
@@ -402,6 +439,8 @@ body {
     margin:10% 15%;   
 }
 
+=======
+>>>>>>> sonia
 .close {
     float: right;
     font-size: 21px;
@@ -434,6 +473,7 @@ button.close {
     border-radius: 4px;
 }
 
+<<<<<<< HEAD
 .alert h4 {
     margin-top: 0;
     color: inherit;
@@ -635,4 +675,9 @@ button.close {
 .alert-white.alert-success .icon,.alert-white.alert-success .icon:after {
     border-color: #54a754;
     background: #60c060;
+=======
+#consultSended{
+    height: fit-content;
+    margin: auto;
+>>>>>>> sonia
 }
