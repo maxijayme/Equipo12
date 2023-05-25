@@ -17,14 +17,11 @@ function App() {
         {path:'/login', element: <Login/>},
         // {path:'/register', element: <Register/>},
         {path:'/', element: <Layout/>, children:[
-          {path:'/home', element: <Home/>},
           {path:'/feed', element: <Feed/>},
           {path:'/contact', element: <Contact/>},
           {path:'/admin', element: <AdminPanel/>},
-        ]},
-       
+        ]},   
         // {path:'/', element: <Contact/>,  errorElement:<NotFound/> },
-        // {path:'/checkout', element: <CheckOut/> },
       ]
     }
   ])

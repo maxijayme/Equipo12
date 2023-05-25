@@ -16,12 +16,12 @@ export default function AdminPanel(){
         if(!token){
             navigate('/login')
         }
-        // else if(profile !== 'admin'){
-        //     setRestricted(true)
-        //     setTimeout(()=>{
-        //         navigate('/feed')
-        //     }, 2000)
-        // }
+        else if(profile !== 'admin'){
+            setRestricted(true)
+            setTimeout(()=>{
+                navigate('/feed')
+            }, 2000)
+        }
     },[])
 
     async function handleResponse(data, id_consulta){

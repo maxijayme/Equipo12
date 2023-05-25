@@ -126,9 +126,9 @@ header i {
     margin-top: 7px;
 }
 
-#navbarToggler ul{
+/* #navbarToggler ul{
     display: none;
-}
+} */
 
 #profileButton{
     background-color: rgba(0, 0, 0, 0);
@@ -139,6 +139,14 @@ header i {
     background-color: rgb(43,48,53);
 }
 
+
+@media (max-width: 992px){
+    #img-button_menu{
+        display: none;
+    }
+}
+
+
 @media (max-width: 795px){
     #searchbar{
         order: 3;
@@ -146,20 +154,21 @@ header i {
     }
 }
 
-@media (max-width: 556px){
+@media (max-width: 576px){
     #top_menu_container{
         display: flex;
         letter-spacing:10pt;
         padding-top: 5px;
-    }
-    #nav_profile{
-        display: none;
-    }    
+    }  
     #navbarToggler ul{
         display:contents;
     }
     #navbarToggler li{
         text-align: right;
+    }
+
+    #menu_button{
+        display:block;
     }
 }
 

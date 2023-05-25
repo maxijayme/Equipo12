@@ -1,5 +1,3 @@
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer"
 import './Contact.css';
 import { ArrowLeftSquareFill, Check } from 'react-bootstrap-icons';
 import { useState } from "react";
