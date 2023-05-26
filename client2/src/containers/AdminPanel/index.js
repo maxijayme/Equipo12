@@ -3,13 +3,6 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Restricted from '../../components/Restricted'
 import AppContext from "../../context/UsersContext";
-<<<<<<< HEAD
-export default function AdminPanel(){
-    
-    const {jwt} = useContext(AppContext)
-    const token = true
-    const profile = true
-=======
 
 export default function AdminPanel(){
     
@@ -23,7 +16,6 @@ export default function AdminPanel(){
         profile = null;
     }
 
->>>>>>> 897e7e3081cd0f8cca6d06e3426b2b23f8492854
     const URL = 'http://localhost:3001';
     const [questions, setQuestions] = useState(null)
     const navigate = useNavigate()
@@ -31,28 +23,16 @@ export default function AdminPanel(){
     const [restricted, setRestricted] = useState(false)
 
     useEffect(()=>{
-<<<<<<< HEAD
-        if(token == ){
-            setRestricted(true)
-            setTimeout(()=>{
-                // navigate('/login')
-            }, 2000)   
-=======
         if(token === null){
             setRestricted(true)
             setTimeout(()=>{
                 navigate('/login')
                 }, 2000)
->>>>>>> 897e7e3081cd0f8cca6d06e3426b2b23f8492854
         }
         else if(profile !== 'admin'){
             setRestricted(true)
             setTimeout(()=>{
-<<<<<<< HEAD
-                // navigate('/feed')
-=======
             navigate('/feed')
->>>>>>> 897e7e3081cd0f8cca6d06e3426b2b23f8492854
             }, 2000)
         }
     },[])
