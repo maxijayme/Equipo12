@@ -86,14 +86,15 @@ export default function NavbarUI(){
                     />
                 </button>
             </div>
+            <Nav className={`ml-auto ${navClasses}`} >
+                <Nav.Link href="#home">Perfil</Nav.Link>
+                <Nav.Link href="#about">Configuración</Nav.Link>
+                <Nav.Link href="#contact">Cerrar sesión</Nav.Link>
+            </Nav>    
         </Navbar>
-                <Navbar id="basic-navbar-nav" className={navClasses}>
-                    <Nav className="ml-auto">
-                            <Nav.Link href="#home">Perfil</Nav.Link>
-                            <Nav.Link href="#about">Configuración</Nav.Link>
-                            <Nav.Link href="#contact">Cerrar sesión</Nav.Link>
-                    </Nav>         
-                </Navbar>
+                
+                         
+               
                 </>
     )
 }
