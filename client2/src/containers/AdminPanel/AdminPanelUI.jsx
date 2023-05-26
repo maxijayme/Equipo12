@@ -1,40 +1,33 @@
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer"
-import 'bootstrap/dist/css/bootstrap.css';
 import './AdminPanel.css'
 
 
 export default function AdminPanelUI({questions, handleResponse}){
     return(
         <>
-            <header>
-                <Navbar />
-            </header>
             <main className="container-fluid" id="questions">
-                <ul className="question-list">
-                    <li className="question-list-item">
-                        <h6>Título</h6>
-                        <h6>Consulta</h6>
-                        <h6>Usuario</h6>
-                        <h6>Respuesta</h6>
-                    </li>
+                <div className="titleTable row d-flex ms-4 mb-2">
+                    <h6 className="col">Título</h6>
+                    <h6 className="col">Consulta</h6>
+                    <h6 className="col">Usuario</h6>
+                    <h6 className="col">Respuesta</h6>
+                </div>
+                <ul className="question-list" id="questionList">
+                    
                     {questions && questions.map( question =>(
                         
-                        <li className="question-list-item" key = {question.id_consulta}>
-                            <p>{question.titulo}</p>
-                            <p>{question.texto}</p>
-                            <p>{question.username}</p>
-                            <div>
+                        <li className="question-list-item row" key = {question.id_consulta}>
+                            <p className="col">{question.titulo}</p>
+                            <p className="col">{question.texto}</p>
+                            <p className="col">{question.username}</p>
+                            <div className="col">
                                 <textarea id="textResponse" />
-                                <button onClick={()=>handleResponse(document.getElementById('textResponse').value, question.id_consulta )} >responder</button>
+                                <button className="confirm_delete green" onClick={()=>handleResponse(document.getElementById('textResponse').value, question.id_consulta )} >responder</button>
                             </div>
+                            
                         </li>
                     )) }
                 </ul>
             </main>
-            <footer>
-                <Footer/>
-            </footer>
         </>
     )
 }
