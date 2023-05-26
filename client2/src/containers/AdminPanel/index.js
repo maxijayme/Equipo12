@@ -1,25 +1,30 @@
 import AdminPanelUI from "./AdminPanelUI";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Restricted from '../../components/Restricted'
+import AppContext from "../../context/UsersContext";
 export default function AdminPanel(){
     
-    const token = JSON.parse(window.localStorage.getItem("jwt")).token
-    const profile = JSON.parse(window.localStorage.getItem("jwt")).profile
+    const {jwt} = useContext(AppContext)
+    const token = true
+    const profile = true
     const URL = 'http://localhost:3001';
     const [questions, setQuestions] = useState(null)
     const navigate = useNavigate()
-
+    console.log(jwt)
     const [restricted, setRestricted] = useState(false)
 
     useEffect(()=>{
-        if(!token){
-            navigate('/login')
+        if(token == ){
+            setRestricted(true)
+            setTimeout(()=>{
+                // navigate('/login')
+            }, 2000)   
         }
         else if(profile !== 'admin'){
             setRestricted(true)
             setTimeout(()=>{
-                navigate('/feed')
+                // navigate('/feed')
             }, 2000)
         }
     },[])
