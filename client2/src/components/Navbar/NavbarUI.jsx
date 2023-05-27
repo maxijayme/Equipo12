@@ -1,9 +1,10 @@
 import './Navbar.css'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Search } from 'react-bootstrap-icons';
 import { useState } from 'react';
 
-export default function NavbarUI({handleLogout}){
+export default function NavbarUI({handleLogout, handleSearch, searchResult, searchInput}){
     const [collapsed, setCollapsed] = useState(true);
 
     const toggleNavbar = () => {
@@ -20,8 +21,8 @@ export default function NavbarUI({handleLogout}){
                 </Navbar.Brand>
                 <form className="d-flex" role="search" id="searchbar">
                     <div id="search-wrapper">
-                        <i className="bi bi-search"></i>
-                        <input type="search" id="search_input" placeholder="Comienza a escribir para buscar"/>
+                        <Search style={{color:"black", position:"absolute", top: 11, left:12}}/>
+                        <input type="search" id="search_input" placeholder="Comienza a escribir para buscar" value={searchInput} onChange={handleSearch}/>
                         <div className="userlist" id="userlist_container"></div>
                     </div>
                 </form>

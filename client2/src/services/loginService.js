@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3001';
+import {URL} from '../utils/url' 
 
 export default async function login ({username,password}){
         const loginResponse = await fetch(`${URL}/login`,{

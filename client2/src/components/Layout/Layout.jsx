@@ -1,36 +1,27 @@
 import Header from '../Header'
-import Footer from '../Footer'
 import { Outlet} from 'react-router-dom';
-import { useContext, useEffect } from 'react';
 import AppContext from '../../context/UsersContext';
 import { useNavigate } from "react-router-dom";
-
-function Layout({children}) {
+import { useContext, useEffect   } from 'react';
+import Feed from '../../containers/Feed';
+function Layout() {  
   const navigate = useNavigate()
-  const URL = 'http://localhost:3001/';
-    const {jwt} = useContext(AppContext)
+  const {jwt} = useContext(AppContext)
 
-    useEffect(()=>{
-      fetch(URL,{
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${jwt}`
-        }
-      }).then(res =>{
-          if(res.status === 200){
-              // navigate('/feed')
-          }else{
-              navigate('/login')
-          }
-      })
-    },[])
-    
+  // useEffect(()=>{
+  //   if(jwt!==null ){
+  //     console.log()
+  //     navigate('/feed')
+  //   }
+  //   else{
+  //     navigate('/login')
+  //   }
+  // },[jwt])
   return (
     <div className='Main'>
         <Header/>
         <Outlet/>
-        <Footer/>
+        <Feed/>
     </div>
   )
 }

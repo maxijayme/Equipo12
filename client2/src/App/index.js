@@ -5,28 +5,27 @@ import Login from '../containers/Login';
 import Feed from '../containers/Feed'
 import Layout from '../components/Layout/Layout';
 import Register from '../containers/Register';
-import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+import Footer from '../components/Footer'
+import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import AdminPanel from '../containers/AdminPanel';
-
+import Navbar from '../components/Navbar';
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path:'', 
-      children:[
-        {path:'/login', element: <Login/>},
-        {path:'/register', element: <Register/>},
-        {path:'/', element: <Layout/>, children:[
-          {path:'/feed', element: <Feed/>},
-          {path:'/contact', element: <Contact/>},
-          {path:'/admin', element: <AdminPanel/>},
-        ]},   
-        // {path:'/', element: <Contact/>,  errorElement:<NotFound/> },
-      ]
-    }
-  ])
-  
-  return <RouterProvider router={router}/>
+  return (
+    <main >
+        <Router>
+          <Navbar/>
+          <Routes>
+            <Route exact path="/" element={<Feed/>}/>
+            <Route exact path="/contact" element={<Contact/>}/>
+            <Route exact path="/admin" element={<AdminPanel/>}/>
+            <Route exact path="/login" element={<Login/>}/>
+            <Route exact path="/register" element={<Register/>}/>
+          </Routes>
+          <Footer/>
+        </Router>
+    </main>
+    )
 }
 
 export default App;
