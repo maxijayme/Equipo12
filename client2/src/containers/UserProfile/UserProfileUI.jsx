@@ -1,7 +1,7 @@
-export default function UserProfileUI(){
+export default function UserProfileUI({username}){
     return(
         <>
-        profile
+        {username}
         </>
     )
 }

@@ -108,12 +108,19 @@ a{
 .userlist{
     position: absolute;
     width: 90%;
-    height: 300px;
+    height: fit-content;
+    max-height: 300px;
     background-color:#f2f2f2;
+    border: 1px solid red;
     left: 0;
     right:0;
     margin:auto;
+    overflow-y: scroll
 }
+
+.userlist::-webkit-scrollbar {
+    display: none;
+   }
 
 .userlist ul{
     display: flex;

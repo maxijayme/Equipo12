@@ -5,7 +5,7 @@ import { Search } from 'react-bootstrap-icons';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function NavbarUI({handleLogout, handleSearch, searchResult}){
+export default function NavbarUI({handleLogout, handleSearch, searchResult, searchInput}){
     const [collapsed, setCollapsed] = useState(true);
 
     const toggleNavbar = () => {
@@ -22,20 +22,21 @@ export default function NavbarUI({handleLogout, handleSearch, searchResult}){
                 <form className="d-flex" role="search" id="searchbar">
                     <div id="search-wrapper">
                         <Search style={{color:"black", position:"absolute", top: 11, left:12}}/>
-                        <input type="search" id="search_input" placeholder="Comienza a escribir para buscar"  onChange={handleSearch}/>
-                        <div className="userlist" id="userlist_container">
+                        <input type="search" id="search_input" placeholder="Comienza a escribir para buscar"  onChange={handleSearch} value={searchInput}/>
+                        {(searchResult.length >0 || searchInput.length > 0) && <div className="userlist" id="userlist_container">
                             <ul>
                                 {
-                                    searchResult.map( user =>(
+                                    searchResult.length >0?searchResult.map( user =>(
                                         <li key={user.id_usuario}>
                                             <Link to={`/profile/${user.username}`}>
                                                 {user.fullname}
                                             </Link>    
                                         </li> 
                                     ))
+                                    : <li>No hay resultados</li>
                                 }
                             </ul>
-                        </div>
+                        </div>}
                     </div>
                 </form>
                 <div id="nav_profile" className="center_flex me-3" >

@@ -9,24 +9,25 @@ export default function Navbar(){
     const navigate = useNavigate();
 
     const [searchResult,setSearchResult] = useState([])
-    
+    const [searchInput, SetSearchInput] = useState("")
     function handleLogout(){
         logout()
         navigate('./login')
     }
 
     async function handleSearch(e){
+        SetSearchInput(e.target.value)
         try{
             const result = await fetch(`${URL}/users/search_user/${e.target.value}`)
             const resultJson = await result.json();
             setSearchResult(resultJson)
         }
         catch(e){
-            setSearchResult("")
+            setSearchResult([])
         }
     }
 
     return(
-        <NavbarUI handleLogout={handleLogout} handleSearch={handleSearch} searchResult={searchResult} />
+        <NavbarUI handleLogout={handleLogout} handleSearch={handleSearch} searchResult={searchResult} searchInput={searchInput} />
     )
 }
