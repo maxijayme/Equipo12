@@ -106,7 +106,6 @@ a{
 }
 
 .userlist{
-    visibility: hidden;
     position: absolute;
     width: 90%;
     height: 300px;
@@ -144,6 +143,7 @@ header i {
 #img-button_menu{
     background-color: rgba(0, 0, 0, 0);
     height: fit-content;
+    border: none;
 }
 
 #menu-toggle{

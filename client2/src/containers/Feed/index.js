@@ -3,7 +3,6 @@ import { useContext, useEffect } from 'react';
 import AppContext from "../../context/UsersContext";
 import { useNavigate } from "react-router-dom";
 import {URL} from '../../utils/url' 
-import useLogin from "../../hooks/useLogin";
 
 export default function Feed(){
     const navigate = useNavigate()

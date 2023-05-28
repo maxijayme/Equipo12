@@ -9,6 +9,7 @@ import Footer from '../components/Footer'
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import AdminPanel from '../containers/AdminPanel';
 import Navbar from '../components/Navbar';
+import UserProfile from '../containers/UserProfile'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/admin" element={<AdminPanel/>}/>
             <Route exact path="/login" element={<Login/>}/>
             <Route exact path="/register" element={<Register/>}/>
+            <Route path="/profile/:username" element={<UserProfile/>}/>
           </Routes>
           <Footer/>
         </Router>
