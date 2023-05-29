@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Restricted from '../../components/Restricted'
 import AppContext from "../../context/UsersContext";
-import {URL} from '../../utils/url' 
+import Layout from "../../components/Layout/Layout";
 
 export default function AdminPanel(){
     
@@ -16,7 +16,6 @@ export default function AdminPanel(){
         token = null;
         profile = null;
     }
-    const [questions, setQuestions] = useState(null)
     const navigate = useNavigate()
     const [restricted, setRestricted] = useState(false)
 
@@ -25,7 +24,7 @@ export default function AdminPanel(){
             setRestricted(true)
             setTimeout(()=>{
                 navigate('/login')
-                }, 2000)
+            }, 2000)
         }
         // else if(profile !== 'admin'){
         //     setRestricted(true)
@@ -35,43 +34,15 @@ export default function AdminPanel(){
         // }
     },[])
 
-    async function handleResponse(data, id_consulta){
-            await fetch(`${URL}/questions`,{
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `"Bearer ${token}"`
-            },
-            body: JSON.stringify({data, id_consulta})
-            }).then(data => {
-                if(data.status === 200){
-                    getQuestions()
-                }
-            })
-    }
-
-    async function getQuestions(){
-        await fetch(`${URL}/questions`,{
-            method:'GET',
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `"Bearer ${token}"`
-            }
-        }).then(
-            questions => questions.json()
-        ).then(
-            res => setQuestions(res)
-        )
-    }
-    useEffect(()=>{
-        getQuestions()
-    },[])
+    
 
     return(
         <>
         {
             !restricted ?
-            <AdminPanelUI questions={questions} handleResponse = {handleResponse}/>
+            <Layout>
+                <AdminPanelUI token={token} />
+            </Layout>
             : <Restricted/>
         }
         

@@ -1,7 +1,10 @@
+import Layout from "../../components/Layout/Layout"
 import RegisterUI from "./RegisterUI"
 
 export default function Register(){
     return(
-        <RegisterUI/>
+        <Layout navbarOff={false}>
+            <RegisterUI/>
+        </Layout>
     )
 }

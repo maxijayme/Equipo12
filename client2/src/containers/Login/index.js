@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useLogin from '../../hooks/useLogin'
 import { useContext, useEffect, useState } from "react";
 import AppContext from "../../context/UsersContext";
+import Layout from "../../components/Layout/Layout";
 
 export default function Login(){
   const {isLoginLoading, hasLoginError, login, isLogged} = useLogin()
@@ -84,6 +85,8 @@ export default function Login(){
   }
 
   return (
-      <LoginUI handleFormSubmit={handleFormSubmit} inputHandleChange = {inputHandleChange} loginData={loginData} labelsData={labelsData} enableLoginButton={enableLoginButton}/>
+    <Layout navbarOff={false}>
+        <LoginUI handleFormSubmit={handleFormSubmit} inputHandleChange = {inputHandleChange} loginData={loginData} labelsData={labelsData} enableLoginButton={enableLoginButton}/>
+    </Layout>
     )
 }

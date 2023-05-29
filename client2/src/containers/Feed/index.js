@@ -3,6 +3,7 @@ import { useContext, useEffect } from 'react';
 import AppContext from "../../context/UsersContext";
 import { useNavigate } from "react-router-dom";
 import {URL} from '../../utils/url' 
+import Layout from "../../components/Layout/Layout";
 
 export default function Feed(){
     const navigate = useNavigate()
@@ -23,6 +24,8 @@ export default function Feed(){
         }
     },[jwt])
     return(
-        <FeedUI/>
+        <Layout >
+            <FeedUI/>
+        </Layout>
     )
 }

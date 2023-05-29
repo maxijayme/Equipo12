@@ -5,7 +5,6 @@ const { QueryTypes } = require('sequelize');
 const isLogged = require('../middlewares/isLogged.js')
 
 router.get('/',isLogged, async (req,res)=>{
-    console.log("llega")
     try{
         const questions = await db.query(`Select u.username, t.estado, t.titulo, t.texto, t.categoria, t.id_consulta from tconsultas t inner join tusuario u on t.id_usuario = u.id_usuario where t.estado = "pendiente" `, { type: QueryTypes.SELECT });
         res.status(200).json(questions);

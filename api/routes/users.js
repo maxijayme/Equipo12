@@ -22,10 +22,24 @@ router.get('/:id', async (req,res)=>{
     }
 })
 
+router.get('/', async (req,res)=>{
+    try{
+        const user =  await db.query(`Select id_usuario, fullname, username, phone, email, city, country, linkedin, photo, nivel_estudios from tusuario where perfil != "admin" `, { type: QueryTypes.SELECT })
+        if(user.length>0){
+            res.status(200).json(user)
+        }else{
+            res.status(404).send('no hay usuarios')
+        }
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
 router.get('/search_user/:fullname', async (req,res)=>{
     try{
         const {fullname} = req.params;
-        const user = await db.query (`Select id_usuario, fullname, username, phone, email, city, country, linkedin, photo, nivel_estudios from tusuario where LOWER(fullname) = "${fullname.toLocaleLowerCase()}"`, { type: QueryTypes.SELECT })
+        const user = await db.query (`Select id_usuario, fullname, username, phone, email, city, country, linkedin, photo, nivel_estudios from tusuario where LOWER(fullname) like "%${fullname.toLocaleLowerCase()}%" and perfil != "admin"`, { type: QueryTypes.SELECT })
         if(user.length>0){
             res.status(200).json(user)
         }else{

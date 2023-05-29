@@ -1,7 +1,7 @@
 import HeaderUI from './HeaderUI'
 
-export default function Header(){
+export default function Header({navbarOff}){
     return(
-        <HeaderUI/>
+        <HeaderUI navbarOff={navbarOff}/>
     )
 }

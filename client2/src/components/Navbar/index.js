@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import { useState } from "react";
 import {URL} from '../../utils/url.js'
 
-export default function Navbar(){
+export default function Navbar({navbarOff}){
     const {logout} = useLogin();
     const navigate = useNavigate();
 
@@ -28,6 +28,8 @@ export default function Navbar(){
     }
 
     return(
-        <NavbarUI handleLogout={handleLogout} handleSearch={handleSearch} searchResult={searchResult} searchInput={searchInput} />
+        <>
+            {navbarOff && <NavbarUI handleLogout={handleLogout} handleSearch={handleSearch} searchResult={searchResult} searchInput={searchInput} />}
+        </>
     )
 }
