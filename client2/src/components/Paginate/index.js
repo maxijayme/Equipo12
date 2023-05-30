@@ -28,7 +28,6 @@ export default function Paginate({userList, pagedUserList, setPagedUserList}){
     function nextPage() {
         setCurrentPage(currentPage + 1);
     }
-    console.log(pagedUserList)
     return(
         <>
             <PaginateUI paginated={paginated} currentPage={currentPage} nextPage={nextPage} prevPage={prevPage} pages={pages} totalPages={totalPages}/>

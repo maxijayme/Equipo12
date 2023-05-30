@@ -51,13 +51,24 @@ a{
 }
 
 #img-button_menu{
-    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 55px;
+    width: 55px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
 }
 
-#nav_profile img{
-    height: 55px;
+
+#navImg{
     cursor: pointer;
-    border-radius: 50%;
+    width: auto;
+    height: 105%;
+    display: block;
+    object-fit: cover;
 }
 
 #nav_profile span{
@@ -111,7 +122,6 @@ a{
     height: fit-content;
     max-height: 300px;
     background-color:#f2f2f2;
-    border: 1px solid red;
     left: 0;
     right:0;
     margin:auto;
@@ -143,13 +153,6 @@ header i {
 
 #profileButton{
     background-color: rgba(0, 0, 0, 0);
-    border: none;
-}
-
-
-#img-button_menu{
-    background-color: rgba(0, 0, 0, 0);
-    height: fit-content;
     border: none;
 }
 

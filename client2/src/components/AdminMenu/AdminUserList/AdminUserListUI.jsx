@@ -15,7 +15,7 @@ export default function AdminUserListUI({userList}){
         { label: 'nivel de estudios', key: 'nivel_estudios' }
     ];
     const [pagedUserList, setPagedUserList] = useState([])
-
+    console.log(userList)
     return(
         <div>
             <Paginate userList={userList} pagedUserList ={pagedUserList} setPagedUserList={setPagedUserList}/>

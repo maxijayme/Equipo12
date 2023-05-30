@@ -1,7 +1,8 @@
-export default function UserProfileUI({username}){
+import ProfileSection from "../../components/ProfileSection/ProfileSectionUI";
+export default function UserProfileUI({username, userData}){
     return(
         <>
-        {username}
+        <ProfileSection userData={userData}/>
         </>
     )
 }

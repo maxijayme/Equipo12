@@ -1,15 +1,20 @@
 import NavbarUI from "./NavbarUI";
 import useLogin from "../../hooks/useLogin";
 import {useNavigate} from 'react-router-dom'
-import { useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import {URL} from '../../utils/url.js'
+import AppContext from "../../context/UsersContext";
 
 export default function Navbar({navbarOff}){
     const {logout} = useLogin();
     const navigate = useNavigate();
 
+    const {jwt} = useContext(AppContext);
+    const userId = jwt.userId;
     const [searchResult,setSearchResult] = useState([])
     const [searchInput, SetSearchInput] = useState("")
+    const [userData, setUserData] = useState({})
+
     function handleLogout(){
         logout()
         navigate('./login')
@@ -27,9 +32,23 @@ export default function Navbar({navbarOff}){
         }
     }
 
+    useEffect(()=>{
+        try{
+            async function getUserById(){
+            const response = await fetch(`${URL}/users/${userId}`)
+            const responseJson = await response.json()
+            setUserData(responseJson[0])
+            }
+            getUserById()
+        }
+        catch(e){
+            console.log(e)
+        }
+    },[])
+
     return(
         <>
-            {navbarOff && <NavbarUI handleLogout={handleLogout} handleSearch={handleSearch} searchResult={searchResult} searchInput={searchInput} />}
+            {navbarOff && <NavbarUI userData={userData} handleLogout={handleLogout} handleSearch={handleSearch} searchResult={searchResult} searchInput={searchInput} />}
         </>
     )
 }
