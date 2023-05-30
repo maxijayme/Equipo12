@@ -1,13 +1,27 @@
 import Header from '../Header'
-import Footer from '../Footer'
-import { Outlet } from 'react-router-dom';
+import { Outlet} from 'react-router-dom';
+import AppContext from '../../context/UsersContext';
+import { useNavigate } from "react-router-dom";
+import { useContext, useEffect   } from 'react';
+import Feed from '../../containers/Feed';
+function Layout() {  
+  const navigate = useNavigate()
+  const {jwt} = useContext(AppContext)
 
-function Layout({}) {
+  // useEffect(()=>{
+  //   if(jwt!==null ){
+  //     console.log()
+  //     navigate('/feed')
+  //   }
+  //   else{
+  //     navigate('/login')
+  //   }
+  // },[jwt])
   return (
     <div className='Main'>
         <Header/>
         <Outlet/>
-        <Footer/>
+        <Feed/>
     </div>
   )
 }

@@ -1,6 +1,4 @@
-const URL = 'http://localhost:3001';
-// const token = window.localStorage.getItem('jwt')
-
+import {URL} from '../utils/url' 
 
 export default async function login ({username,password}){
         const loginResponse = await fetch(`${URL}/login`,{

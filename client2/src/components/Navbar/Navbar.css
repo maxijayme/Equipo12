@@ -1,4 +1,4 @@
-/*Fuentes*/
+
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap%27');
 /*font-family: 'Tilt Neon', cursive;*/
 
@@ -36,7 +36,8 @@ a{
 }
 
 #logo{
-        width: 250px;
+    width: 250px;
+    object-fit: cover;
 }
 
 #navbarToggler{
@@ -44,9 +45,13 @@ a{
 }
 
 #nav_profile{
-    width: 150px;
+    width: fit-content;
     gap: 20px;
     justify-content: space-around;
+}
+
+#img-button_menu{
+    width: fit-content;
 }
 
 #nav_profile img{
@@ -101,15 +106,21 @@ a{
 }
 
 .userlist{
-    visibility: hidden;
     position: absolute;
     width: 90%;
-    height: 300px;
+    height: fit-content;
+    max-height: 300px;
     background-color:#f2f2f2;
+    border: 1px solid red;
     left: 0;
     right:0;
     margin:auto;
+    overflow-y: scroll
 }
+
+.userlist::-webkit-scrollbar {
+    display: none;
+   }
 
 .userlist ul{
     display: flex;
@@ -135,9 +146,24 @@ header i {
     border: none;
 }
 
-#drop_menu{
-    background-color: rgb(43,48,53);
+
+#img-button_menu{
+    background-color: rgba(0, 0, 0, 0);
+    height: fit-content;
+    border: none;
 }
+
+#menu-toggle{
+    border-radius: 0 0 0 15px;
+    position: absolute;
+    right: 0;
+}
+
+#menu_button{
+    width: fit-content;
+    height: fit-content;
+}
+
 
 
 @media (max-width: 992px){
@@ -154,6 +180,15 @@ header i {
     }
 }
 
+@media (max-width: 721px){
+    #search-wrapper{
+        margin-top: 10px;
+    }
+    #search_input{
+        min-width: 200px;
+    }
+}
+
 @media (max-width: 576px){
     #top_menu_container{
         display: flex;
@@ -167,19 +202,17 @@ header i {
         text-align: right;
     }
 
-    #menu_button{
+    
+}
+
+@media (min-width: 576px){
+    #nav-profile{
         display:block;
     }
 }
 
-@media (max-width: 456px){
-    #logo_link{
-        max-width: 70%;
-    }
-}
-
-@media (max-width: 366px){
+@media (max-width: 383px){
     #logo{
-        max-width: 184px;
+        object-fit: cover;
     }
 }

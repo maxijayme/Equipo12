@@ -393,33 +393,6 @@ li {
     }
 }
 
-@media (max-width: 575px){
-    #main_container{
-        margin-top: 70px;
-    }
-    #nav_profile{
-        display: none;
-    }    
-    #navbarToggler ul{
-        display:contents;
-    }
-    #navbarToggler li{
-        text-align: right;
-    }
-
-}
-
-@media (max-width: 456px){
-    #logo_link{
-        max-width: 70%;
-    }
-}
-
-@media (max-width: 366px){
-    #logo{
-        max-width: 184px;
-    }
-}
 
 .close {
     float: right;

@@ -2,31 +2,34 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Contact from '../containers/Contact';
 import Login from '../containers/Login';
-import Home from '../containers/Home';
 import Feed from '../containers/Feed'
 import Layout from '../components/Layout/Layout';
-import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+import Register from '../containers/Register';
+import Footer from '../components/Footer'
+import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import AdminPanel from '../containers/AdminPanel';
-
+import Navbar from '../components/Navbar';
+import UserProfile from '../containers/UserProfile'
+import Form from '../components/Form'
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path:'', 
-      children:[
-        {path:'/login', element: <Login/>},
-        // {path:'/register', element: <Register/>},
-        {path:'/', element: <Layout/>, children:[
-          {path:'/feed', element: <Feed/>},
-          {path:'/contact', element: <Contact/>},
-          {path:'/admin', element: <AdminPanel/>},
-        ]},   
-        // {path:'/', element: <Contact/>,  errorElement:<NotFound/> },
-      ]
-    }
-  ])
-  
-  return <RouterProvider router={router}/>
+  return (
+    <main >
+        <Router>
+          <Navbar/>
+          <Routes>
+            <Route exact path="/" element={<Feed/>}/>
+            <Route exact path="/contact" element={<Contact/>}/>
+            <Route exact path="/admin" element={<AdminPanel/>}/>
+            <Route exact path="/login" element={<Login/>}/>
+            <Route exact path="/register" element={<Register/>}/>
+            <Route path="/profile/:username" element={<UserProfile/>}/>
+            <Route exact path="/form" element={<Form/>}/>
+          </Routes>
+          <Footer/>
+        </Router>
+    </main>
+    )
 }
 
 export default App;
