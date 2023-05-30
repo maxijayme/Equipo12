@@ -7,6 +7,7 @@ import Register from '../containers/Register';
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import AdminPanel from '../containers/AdminPanel';
 import UserProfile from '../containers/UserProfile'
+import Form from '../components/Form'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/login" element={<Login/>}/>
             <Route exact path="/register" element={<Register/>}/>
             <Route path="/profile/:username" element={<UserProfile/>}/>
+            <Route exact path="/form" element={<Form/>}/>
           </Routes>
         </Router>
     </main>
