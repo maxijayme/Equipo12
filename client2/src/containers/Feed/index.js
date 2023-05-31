@@ -10,9 +10,14 @@ export default function Feed(){
     const {jwt} = useContext(AppContext)
     const [userData, setUserData] = useState({})
     let userId;
-    if(jwt){
-        userId = jwt.userId;
-    }
+    useEffect(()=>{
+        if(jwt){
+            userId = jwt.userId;
+        }else{
+            navigate('/login')
+        }
+    },[])
+    
     useEffect(()=>{
         if(jwt!==null){
             fetch(URL,{
@@ -29,16 +34,18 @@ export default function Feed(){
     },[jwt])
 
     useEffect(()=>{
-        try{
-            async function getUserById(){
-            const response = await fetch(`${URL}/users/${userId}`)
-            const responseJson = await response.json()
-            setUserData(responseJson[0])
+        if(jwt!==null){
+            try{
+                async function getUserById(){
+                const response = await fetch(`${URL}/users/${userId}`)
+                const responseJson = await response.json()
+                setUserData(responseJson[0])
+                }
+                getUserById()
             }
-            getUserById()
-        }
-        catch(e){
-            console.log(e)
+            catch(e){
+                console.log(e)
+            }
         }
     },[])
 

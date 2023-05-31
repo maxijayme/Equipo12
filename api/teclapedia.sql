@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-05-2023 a las 15:52:43
+-- Tiempo de generación: 31-05-2023 a las 13:33:48
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -42,6 +42,12 @@ INSERT INTO `tamistades` (`id_usuario`, `id_amigo`) VALUES
 (2, 1),
 (3, 1),
 (2, 4),
+(4, 2),
+(1, 2),
+(1, 3),
+(2, 1),
+(3, 1),
+(2, 4),
 (4, 2);
 
 -- --------------------------------------------------------
@@ -65,7 +71,13 @@ CREATE TABLE `tconsultas` (
 --
 
 INSERT INTO `tconsultas` (`id_consulta`, `titulo`, `texto`, `categoria`, `estado`, `id_usuario`, `respuesta`) VALUES
-(3, 'Ayuda', 'Necesito ayuda', 'personal_data', 'pendiente', 1, '');
+(3, 'Ayuda', 'Necesito ayuda', 'personal_data', 'pendiente', 1, ''),
+(12, 'Modificar email', '¿Es posible modificar la dirección de email asociada sin perder los datos de mi cuenta?', 'personal data', 'respondida', 1, 'se podria...'),
+(15, 'Limitar contenido', '¿Se puede limitar a quién se muestra el contenido que publico?', 'content', 'pendiente', 1, ''),
+(16, 'Cambio de contraseña', 'He intentado hacer el cambio de contraseña pero no recibo el enlace de modificación', 'security', 'pendiente', 1, ''),
+(17, 'Nueva', 'Nueva consulta', 'personal data', 'pendiente', 1, ''),
+(19, 'Hola', 'Necesito ayuda', 'privacy', 'respondida', 1, ''),
+(20, 'Necesito ayuda', 'sldjfla', 'security', 'pendiente', 1, '');
 
 -- --------------------------------------------------------
 
@@ -116,7 +128,11 @@ INSERT INTO `testudios` (`id_estudio`, `titulo`, `centro`, `f_inicio`, `f_fin`, 
 (27, '', '', '0000-00-00', '0000-00-00', 0, 16),
 (28, '', '', '0000-00-00', '0000-00-00', 0, 18),
 (29, '', '', '0000-00-00', '0000-00-00', 0, 19),
-(30, '', '', '0000-00-00', '0000-00-00', 1, 20);
+(51, 'Ingeniería', 'Universidad de oviedo', '2023-05-25', '2023-05-19', 0, 20),
+(52, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 20),
+(53, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 20),
+(54, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 20),
+(55, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 20);
 
 -- --------------------------------------------------------
 
@@ -130,35 +146,39 @@ CREATE TABLE `totros_datos` (
   `licencia` varchar(6) DEFAULT NULL,
   `disponibilidad` tinyint(1) DEFAULT NULL,
   `preferencia` varchar(35) DEFAULT NULL,
-  `hobbies` varchar(50) DEFAULT NULL
+  `hobbies` varchar(50) DEFAULT NULL,
+  `otros_conocimientos` varchar(300) DEFAULT NULL,
+  `idiomas` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `totros_datos`
 --
 
-INSERT INTO `totros_datos` (`id_datos`, `id_usuario`, `licencia`, `disponibilidad`, `preferencia`, `hobbies`) VALUES
-(1, 1, 'B', 0, 'Jornada Continua', 'Lectura, escalada'),
-(2, 3, NULL, 0, 'Jornada Completa', 'Música, programación'),
-(3, 4, 'B', 0, 'Jornada Parcial', 'Cocina, montañismo'),
-(4, 5, 'B', 0, 'Jornada Flexible', 'Automoción, música'),
-(5, 6, '', 0, 'Jornada Flexible', 'Moda, cine'),
-(6, 7, 'B', 0, 'Jornada Completa', 'Naturaleza, arte'),
-(7, 8, 'B', 0, 'Jornada Parcial', 'Pintura, música'),
-(8, 13, 'No', 1, 'Turno Partido', 'adasdas'),
-(12, 16, 'No', 1, 'Mañanas', 'bbbb'),
-(13, 16, 'No', 1, 'Mañanas', ''),
-(14, 16, 'No', 1, 'Mañanas', ''),
-(15, 16, 'No', 1, 'Mañanas', ''),
-(16, 16, 'No', 1, 'Mañanas', ''),
-(17, 16, 'No', 1, 'Mañanas', ''),
-(18, 16, 'No', 1, 'Mañanas', ''),
-(19, 16, 'No', 1, 'Mañanas', ''),
-(20, 16, 'No', 1, 'Mañanas', ''),
-(21, 16, 'No', 1, 'Mañanas', ''),
-(22, 18, 'B', 1, 'Mañanas', 'Me gusta la bachata'),
-(23, 19, 'No', 1, 'Mañanas', ''),
-(24, 20, 'No', 1, 'Mañanas', '');
+INSERT INTO `totros_datos` (`id_datos`, `id_usuario`, `licencia`, `disponibilidad`, `preferencia`, `hobbies`, `otros_conocimientos`, `idiomas`) VALUES
+(1, 1, 'B', 0, 'Jornada Continua', 'Lectura, escalada', NULL, NULL),
+(2, 3, NULL, 0, 'Jornada Completa', 'Música, programación', NULL, NULL),
+(3, 4, 'B', 0, 'Jornada Parcial', 'Cocina, montañismo', NULL, NULL),
+(4, 5, 'B', 0, 'Jornada Flexible', 'Automoción, música', NULL, NULL),
+(5, 6, '', 0, 'Jornada Flexible', 'Moda, cine', NULL, NULL),
+(6, 7, 'B', 0, 'Jornada Completa', 'Naturaleza, arte', NULL, NULL),
+(7, 8, 'B', 0, 'Jornada Parcial', 'Pintura, música', NULL, NULL),
+(8, 13, 'No', 1, 'Turno Partido', 'adasdas', NULL, NULL),
+(12, 16, 'No', 1, 'Mañanas', 'bbbb', NULL, NULL),
+(13, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
+(14, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
+(15, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
+(16, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
+(17, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
+(18, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
+(19, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
+(20, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
+(21, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
+(22, 18, 'B', 1, 'Mañanas', 'Me gusta la bachata', NULL, NULL),
+(23, 19, 'No', 1, 'Mañanas', '', NULL, NULL),
+(24, 20, 'No', 1, 'Mañanas', '', NULL, NULL),
+(38, 20, 'b', 1, 'undefined', 'sfasfa', NULL, NULL),
+(39, 20, 'b', 0, 'turnoPartido', 'sfas', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -201,6 +221,19 @@ INSERT INTO `tpublicaciones` (`id_publicacion`, `id_usuario`, `fecha_publicacion
 (58, 2, '2023-04-28 14:33:07', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682685253/teclapedia/9.jpg', 'Maaaaal', NULL, NULL),
 (92, 18, '2023-04-28 17:18:18', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682695149/teclapedia/react-meme1_.png', 'Próxima parada...', NULL, NULL),
 (93, 20, '2023-04-28 19:32:15', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682695149/teclapedia/react-meme1_.png', 'memes por favor', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trecomendaciones`
+--
+
+CREATE TABLE `trecomendaciones` (
+  `id` int(11) NOT NULL,
+  `id_recomendante` int(11) NOT NULL,
+  `id_recomendado` int(11) NOT NULL,
+  `recomendación` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -263,7 +296,12 @@ INSERT INTO `ttrabajos` (`id_trabajo`, `id_usuario`, `puesto`, `empresa`, `funci
 (32, 16, '', '', '', '0000-00-00', '0000-00-00', 1),
 (33, 18, 'Teleoperado', 'Telefonica', 'Teleoperador', '2023-04-20', '2023-04-25', 1),
 (34, 19, '', 'Telefonica', '', '0000-00-00', '0000-00-00', 1),
-(35, 20, '', '', '', '0000-00-00', '0000-00-00', 1);
+(35, 20, '', '', '', '0000-00-00', '0000-00-00', 1),
+(49, 20, 'Tecnico', 'AL', 'sfasfdasd', '2023-05-13', '0000-00-00', 1),
+(50, 20, 'Tecnico', 'X', 'dfgdsfg', '2023-05-02', '0000-00-00', 1),
+(51, 20, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(52, 20, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(53, 20, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -304,7 +342,7 @@ INSERT INTO `tusuario` (`id_usuario`, `fullname`, `username`, `password`, `phone
 (17, 'pepe', 'pepepepe', '[object Promise', NULL, 'pepe@gmail.com', '', '', '', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg', '', 'usuario'),
 (18, 'Maximiliano Ruben Jayme Dahlquist', 'maxijayme', '[object Promise', 744650409, 'maxijayme@gmail.com', 'Gijón', 'España', '@maxi-jayme', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682694866/teclapedia/perfil_maxi.jpg', 'Sin estudios finalizados', 'usuario'),
 (19, 'Maximiliano Jayme Dahlquist', 'maxijayme2', '[object Promise', 744650409, 'maxjaga2@hotmail.com', 'Gijón', 'España', '@maxi-jayme', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682694866/teclapedia/perfil_maxi.jpg', 'Nivel de estudios', 'usuario'),
-(20, 'maxi jayme', 'maxijj', '[object Promise', 784564, 'maxijayme2@gmail.com', 'sdsd', 'dsd', '@maxi-jayme', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682694866/teclapedia/perfil_maxi.jpg', 'Nivel de estudios', 'usuario');
+(20, 'maxi jayme', 'maxijj', '[object Promise', 0, 'maxijayme2@gmail.com', 'undefined', 'undefined', 'undefined', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682694866/teclapedia/perfil_maxi.jpg', 'undefined', 'usuario');
 
 --
 -- Índices para tablas volcadas
@@ -346,6 +384,14 @@ ALTER TABLE `tpublicaciones`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
+-- Indices de la tabla `trecomendaciones`
+--
+ALTER TABLE `trecomendaciones`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_recomendado` (`id_recomendado`),
+  ADD KEY `fk_recomedante` (`id_recomendante`);
+
+--
 -- Indices de la tabla `tsolicitudes`
 --
 ALTER TABLE `tsolicitudes`
@@ -374,25 +420,31 @@ ALTER TABLE `tusuario`
 -- AUTO_INCREMENT de la tabla `tconsultas`
 --
 ALTER TABLE `tconsultas`
-  MODIFY `id_consulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_consulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `testudios`
 --
 ALTER TABLE `testudios`
-  MODIFY `id_estudio` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_estudio` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `totros_datos`
 --
 ALTER TABLE `totros_datos`
-  MODIFY `id_datos` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_datos` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `tpublicaciones`
 --
 ALTER TABLE `tpublicaciones`
   MODIFY `id_publicacion` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+
+--
+-- AUTO_INCREMENT de la tabla `trecomendaciones`
+--
+ALTER TABLE `trecomendaciones`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tsolicitudes`
@@ -404,13 +456,13 @@ ALTER TABLE `tsolicitudes`
 -- AUTO_INCREMENT de la tabla `ttrabajos`
 --
 ALTER TABLE `ttrabajos`
-  MODIFY `id_trabajo` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_trabajo` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT de la tabla `tusuario`
 --
 ALTER TABLE `tusuario`
-  MODIFY `id_usuario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_usuario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Restricciones para tablas volcadas
@@ -446,6 +498,13 @@ ALTER TABLE `totros_datos`
 --
 ALTER TABLE `tpublicaciones`
   ADD CONSTRAINT `tpublicaciones_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`);
+
+--
+-- Filtros para la tabla `trecomendaciones`
+--
+ALTER TABLE `trecomendaciones`
+  ADD CONSTRAINT `fk_recomedante` FOREIGN KEY (`id_recomendante`) REFERENCES `tusuario` (`id_usuario`),
+  ADD CONSTRAINT `fk_recomendado` FOREIGN KEY (`id_recomendado`) REFERENCES `tusuario` (`id_usuario`);
 
 --
 -- Filtros para la tabla `tsolicitudes`

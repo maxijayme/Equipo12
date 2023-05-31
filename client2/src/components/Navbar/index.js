@@ -36,16 +36,18 @@ export default function Navbar({navbarOff}){
     }
 
     useEffect(()=>{
-        try{
-            async function getUserById(){
-            const response = await fetch(`${URL}/users/${userId}`)
-            const responseJson = await response.json()
-            setUserData(responseJson[0])
+        if(jwt){
+            try{
+                async function getUserById(){
+                const response = await fetch(`${URL}/users/${userId}`)
+                const responseJson = await response.json()
+                setUserData(responseJson[0])
+                }
+                getUserById()
             }
-            getUserById()
-        }
-        catch(e){
-            console.log(e)
+            catch(e){
+                console.log(e)
+            }
         }
     },[])
 

@@ -7,7 +7,6 @@ import { useContext } from "react";
 export default function ProfileSectionUI(props){
     const {userData, handleOpenModal } = props
     const {jwt} = useContext(AppContext)
-    console.log(props)
     return(
         <div className="col-xl-2 col-md-2 py-3" id="col_left">
             <div className="container user_data p-3 mb-3" id="userData">
@@ -40,7 +39,7 @@ export default function ProfileSectionUI(props){
                         <span id="city">{userData.city}</span>
                     </div>
                 </div>
-            {jwt.userId !== userData.id_usuario && <button className='btn btn-primary' onClick={handleOpenModal}>Recomendar</button>}
+            {jwt && jwt.userId !== userData.id_usuario && <button className='btn btn-primary' onClick={handleOpenModal}>Recomendar</button>}
             </div> 
         </div>
     )
