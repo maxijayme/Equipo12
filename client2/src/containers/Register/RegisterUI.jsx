@@ -1,6 +1,8 @@
+import React from "react";
+import { Field, reduxForm } from 'redux-form';
 import './Register.css';
 
-export default function RegisterUI(){
+function RegisterUI(){
     return(
         <>
             <div className="col-6" id="container-initial">
@@ -12,16 +14,41 @@ export default function RegisterUI(){
                 </div>
                 <div id="container-form">
                     <form className="row" id="data_form">
-                        <input className="input_form" type="text" placeholder="Nombre y Apellidos" id="fullname" name="fullname"/>
-                        <label id="fullnameLabel"></label>
-                        <input className="input_form" type="text" placeholder="Nombre de Usuario" id="userName" name="userName"/>
-                        <label id="userNameLabel"></label>
-                        <input className="input_form" type="email" placeholder="Email" id="email" name="email"/>
-                        <label id="emailLabel"></label>
-                        <input className="input_form" type="password" placeholder="Contraseña" autocomplete="on" id="password" name="password"/>
-                        <label id="passwordLabel"></label>
-                        <input className="input_form" type="password" placeholder="Confirmación contraseña" autocomplete="on" id="passwordConfirm" name="passwordConfirm"/>
-                        <label id="passwordConfirmLabel"></label>
+                        <Field
+                            className="input_form form-control mb-2"
+                            placeholder="Nombre y Apellidos"
+                            type="text"
+                            name="fullname"
+                            component="input"
+                        />
+                        <Field
+                            className="input_form form-control mb-2"
+                            placeholder="Nombre de Usuario"
+                            type="text"
+                            name="userName"
+                            component="input"
+                        />
+                        <Field
+                            className="input_form form-control mb-2"
+                            placeholder="Email"
+                            type="text"
+                            name="email"
+                            component="input"
+                        />
+                        <Field
+                            className="input_form form-control mb-2"
+                            placeholder="Contraseña"
+                            type="password"
+                            name="password"
+                            component="input"
+                        />
+                        <Field
+                            className="input_form form-control mb-2"
+                            placeholder="Confirmación contraseña"
+                            type="password"
+                            name="passwordConfirm"
+                            component="input"
+                        />
                         <p className="p-cond">Al registrarte, aceptas nuestras Condiciones. Obtén más información sobre cómo recopilamos, usamos y compartimos tus datos en la Política de privacidad, así como el uso que hacemos de las cookies y tecnologías similares en la Política de cookies.</p>
                         <button id="register" type="submit" disabled>Registrarse</button>
                     </form>
@@ -46,3 +73,9 @@ export default function RegisterUI(){
         </>
     )
 }
+
+const createReduxForm = reduxForm({form:'firstRegister'});
+
+RegisterUI = createReduxForm(RegisterUI);
+
+export default RegisterUI;
