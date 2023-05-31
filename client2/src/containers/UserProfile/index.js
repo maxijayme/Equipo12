@@ -7,6 +7,7 @@ import {URL} from '../../utils/url'
 export default function UserProfile(){
     const { username } = useParams();
     const [userData, setUserData] = useState({})
+    const [isModalVisible, setIsModalVisible] = useState(false);
     useEffect(()=>{
         try{
             async function getUserByName(){
@@ -19,11 +20,15 @@ export default function UserProfile(){
         catch(e){
             console.log(e)
         }
-    },[])
-    
+    },[username])
+
+    function handleCloseModal(){
+        setIsModalVisible(false)
+    }
+
     return(
         <Layout>
-            <UserProfileUI username={username} userData={userData}/>
+            <UserProfileUI userData={userData} isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} handleCloseModal={handleCloseModal}/>
         </Layout>
     )
 }

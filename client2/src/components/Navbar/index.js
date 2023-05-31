@@ -10,14 +10,17 @@ export default function Navbar({navbarOff}){
     const navigate = useNavigate();
 
     const {jwt} = useContext(AppContext);
-    const userId = jwt.userId;
+    let userId;
+    if(jwt){
+        userId = jwt.userId;
+    }
     const [searchResult,setSearchResult] = useState([])
     const [searchInput, SetSearchInput] = useState("")
     const [userData, setUserData] = useState({})
 
     function handleLogout(){
         logout()
-        navigate('./login')
+        navigate('/login')
     }
 
     async function handleSearch(e){

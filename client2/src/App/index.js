@@ -7,7 +7,7 @@ import Register from '../containers/Register';
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import AdminPanel from '../containers/AdminPanel';
 import UserProfile from '../containers/UserProfile'
-import Form from '../components/Form'
+import Form from '../containers/Form'
 
 function App() {
   return (
