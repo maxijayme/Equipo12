@@ -14,7 +14,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       <Provider store={store}>
         <UserContextProvider>
           <App />
-
         </UserContextProvider>
       </Provider>
 
