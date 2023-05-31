@@ -2,7 +2,7 @@ import React from "react";
 import { Field, reduxForm } from 'redux-form';
 import './Register.css';
 
-function RegisterUI(){
+function RegisterUI({handleSubmit, pristine, submitting}){
     return(
         <>
             <div className="col-6" id="container-initial">
@@ -13,7 +13,7 @@ function RegisterUI(){
                     <img src="./img/teclapedia_logo.svg" id="logo" alt=""/>
                 </div>
                 <div id="container-form">
-                    <form className="row" id="data_form">
+                    <form className="row" id="data_form" onSubmit={handleSubmit}>
                         <Field
                             className="input_form form-control mb-2"
                             placeholder="Nombre y Apellidos"
@@ -28,6 +28,7 @@ function RegisterUI(){
                             name="userName"
                             component="input"
                         />
+                        <label className="form-label align-self-center me-2" htmlFor="userName"></label>
                         <Field
                             className="input_form form-control mb-2"
                             placeholder="Email"
@@ -35,6 +36,7 @@ function RegisterUI(){
                             name="email"
                             component="input"
                         />
+                        <label className="form-label align-self-center me-2" htmlFor="email"></label>
                         <Field
                             className="input_form form-control mb-2"
                             placeholder="Contraseña"
@@ -42,6 +44,7 @@ function RegisterUI(){
                             name="password"
                             component="input"
                         />
+                        <label className="form-label align-self-center me-2" htmlFor="password"></label>
                         <Field
                             className="input_form form-control mb-2"
                             placeholder="Confirmación contraseña"
@@ -49,18 +52,16 @@ function RegisterUI(){
                             name="passwordConfirm"
                             component="input"
                         />
+                        <label className="form-label align-self-center me-2" htmlFor="password"></label>
                         <p className="p-cond">Al registrarte, aceptas nuestras Condiciones. Obtén más información sobre cómo recopilamos, usamos y compartimos tus datos en la Política de privacidad, así como el uso que hacemos de las cookies y tecnologías similares en la Política de cookies.</p>
-                        <button id="register" type="submit" disabled>Registrarse</button>
+                        <button id="register" type="submit" disabled={pristine|submitting}>Registrarse</button>
                     </form>
                     <div className="row" id="division">
                         <div className="line"></div>
                         <span>o</span>
                         <div className="line"></div>
                     </div>
-                    <span className="row" id="google">
-                        <img src="./img/logo_google.png" alt="" id="logo_google"/>
-                        <a href="../main/index.html">Iniciar sesión con Google</a>
-                    </span>
+                    
                 </div>
                 <div className="row" id="login">
                     <p>¿Ya tienes cuenta?</p>

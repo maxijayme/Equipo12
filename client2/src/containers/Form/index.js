@@ -1,3 +1,4 @@
+import Layout from "../../components/Layout/Layout"
 import FormUI from "./FormsUI";
 import {URL} from '../../utils/url' 
 
@@ -16,7 +17,7 @@ export default function Form () {
                 if(data.status === 200){
                     console.log(data)
                 } else if (data.status === 400){
-                    console.log('Erroooor')
+                    console.log('Error')
                 }
         })
         await fetch(`${URL}/form`,{
@@ -29,11 +30,15 @@ export default function Form () {
                 if(data.status === 200){
                     console.log('grabado')
                 } else if (data.status === 400){
-                    console.log('Erroooor')
+                    console.log('Error')
                 }
         })
         
     }
 
-    return < FormUI onSubmit={handleSubmit}/>
+    return (
+        <Layout navbarOff={false}>
+            < FormUI onSubmit={handleSubmit}/>
+        </Layout>
+    )
 }

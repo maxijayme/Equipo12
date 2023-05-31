@@ -33,15 +33,6 @@ h4 {
     border-radius: 0 0 15px 15px;
 }
 
-main {
-    max-width: 750px;
-    min-width: 375px;
-    background-color: white;
-    border-radius: 25px;
-    padding: 25px;
-    margin-top: 15px;
-}
-
 #fotoPerfil {
     width: 140px;
     height: 130px;

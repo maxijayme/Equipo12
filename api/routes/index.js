@@ -13,7 +13,7 @@ const router = Router();
 const isLogged = require('../middlewares/isLogged.js')
 const questions = require('./questions.js')
 const form = require('./form.js')
-const register = require('./register.js')
+const register = require('./firsRegister.js')
 
 router.use('/login', login)
 router.use('/users', users)
