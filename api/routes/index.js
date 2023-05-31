@@ -12,6 +12,7 @@ const help = require('./help.js')
 const router = Router();
 const isLogged = require('../middlewares/isLogged.js')
 const questions = require('./questions.js')
+const form = require('./form.js')
 
 router.use('/login', login)
 router.use('/users', users)
@@ -24,6 +25,7 @@ router.use('/delete_friend', delete_friend)
 router.use('/reject_friend', reject_friend)
 router.use('/help', help)
 router.use('/questions', questions)
+router.use('/form', form)
 
 router.post('', isLogged, (req,res,next)=>{
     if(req.authenticated){
