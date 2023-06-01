@@ -11,7 +11,6 @@ import Form from '../containers/Form'
 
 function App() {
   return (
-    <main >
         <Router>
           <Routes>
             <Route exact path="/" element={<Feed/>}/>
@@ -23,7 +22,6 @@ function App() {
             <Route exact path="/form" element={<Form/>}/>
           </Routes>
         </Router>
-    </main>
     )
 }
 

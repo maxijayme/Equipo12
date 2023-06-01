@@ -1,14 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import ProfileSection from '../../components/ProfileSection';
+import Posts from '../../components/Posts';
 import FriendRequest from '../../components/FriendRequest';
 
 export default function FeedUI({userData}){
     return(
         <>
-            <div className="container-fluid h-auto">
+            <div className="row" id="main_container">
                 <ProfileSection userData={userData}/>
-            </div>
-            <div className="container-fluid h-auto">
+                <Posts userData={userData}/>
                 <FriendRequest/>
             </div>
         </>
