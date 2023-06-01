@@ -3,6 +3,7 @@ const router = Router();
 const db = require('../db/db.js');
 const { QueryTypes } = require('sequelize');
 const hashPassword = require('./utils/hash_password.js')
+const generateToken = require('./utils/generateToken.js')
 
 
 router.post('/exist', async (req,res)=>{
@@ -40,13 +41,14 @@ router.post('/exist', async (req,res)=>{
 })
 
 router.post('/', async (req,res)=>{
-    console.log(req.body)
     try{
         const {fullname, userName, email, password} = req.body;
         const hashed = await hashPassword(password,8)
         const newUser = await db.query(`Insert into tusuario (fullname, username, password, email) values ("${fullname}", "${userName}", "${hashed}", "${email}")`,{type: QueryTypes.INSERT })
-        if(newUser.length>1){
-            res.status(200).json(newUser);
+        console.log(newUser[0])
+        if(newUser.length>0){
+            const token = generateToken({id_usuario:newUser[0],profile:'usuario'})
+            res.status(200).json({token,userId:newUser[0],profile:'usuario'});
         }
         else{
             res.status(404).send('No se pudo registrar el usuario')
@@ -56,8 +58,5 @@ router.post('/', async (req,res)=>{
     }
 })
 
-router.get('/', async(req, res)=>{
-    console.log('algo')
-})
 
 module.exports = router

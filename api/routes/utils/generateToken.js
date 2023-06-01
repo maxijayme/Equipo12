@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken')
 const secretKey = process.env.SECRET_KEY;
 
 function generateToken(data) {
+    
     var u = {
         userId: data.id_usuario,
         type: data.profile     

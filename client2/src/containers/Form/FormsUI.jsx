@@ -1,7 +1,22 @@
 import React from "react";
 import { Field, reduxForm } from 'redux-form';
 import './Form.css'
+import validate from '../../utils/validations'
 
+const renderField = ({
+    className,
+    input,
+    label,
+    type,
+    meta: { touched, error }
+    }) => (
+    <div>
+        <div>
+            <input {...input} placeholder={label} type={type} className={className}/>
+            {touched && (error && <span>{error}</span>)}
+        </div>
+    </div>
+)
 
 function FormsUI({handleSubmit, pristine, submitting}){
     
@@ -34,31 +49,31 @@ function FormsUI({handleSubmit, pristine, submitting}){
                     <div className="col-9 d-flex-column px-4">
                         <Field
                             className="form-control mb-2"
-                            placeholder="Teléfono"
-                            type="text"
+                            label="Teléfono"
+                            type="number"
                             name="phone"
-                            component="input"
+                            component={renderField}
                         />
                         <Field
                             className="form-control mb-2"
-                            placeholder="Linkedin"
+                            label="Linkedin"
                             type="text"
                             name="linkedin"
-                            component="input"
+                            component={renderField}
                         />
                         <Field
                             className="form-control mb-2"
-                            placeholder="Ciudad"
+                            label="Ciudad"
                             type="text"
                             name="city"
-                            component="input"
+                            component={renderField}
                         />
                         <Field
                             className="form-control mb-2"
-                            placeholder="País"
+                            label="País"
                             type="text"
                             name="country"
-                            component="input"
+                            component={renderField}
                         />
                     </div>
                 </div>
@@ -67,7 +82,7 @@ function FormsUI({handleSubmit, pristine, submitting}){
                 <div className="row">
                     <p className="h4 text-dark">Estudios</p>
                 </div>
-                <Field className="form-select row mb-2" name="studiesLevel" component="select">
+                <Field className="form-select row mb-2" name="studiesLevel" component={renderField}>
                     <option value="studiesLevel">Nivel de estudios</option>
                     <option value="sinEstudios">Sin estudios finalizados</option>
                     <option value="graduado">Graduado escolar</option>
@@ -80,17 +95,17 @@ function FormsUI({handleSubmit, pristine, submitting}){
                 </Field>
                 <Field
                     className="form-control row mb-2"
-                    placeholder="Título"
+                    label="Título"
                     type="text"
                     name="degree"
-                    component="input"
+                    component={renderField}
                 />
                 <Field
                     className="form-control row mb-2"
-                    placeholder="Centro"
+                    label="Centro"
                     type="text"
                     name="academy"
-                    component="input"
+                    component={renderField}
                 />
                 
                 <div className="row align-items-center">
@@ -100,7 +115,7 @@ function FormsUI({handleSubmit, pristine, submitting}){
                             className="form-control"
                             type="date"
                             name="dateStartStudies"
-                            component="input"
+                            component={renderField}
                         />
                     </div>
                     <div className="d-flex col">
@@ -109,11 +124,11 @@ function FormsUI({handleSubmit, pristine, submitting}){
                             className="form-control"
                             type="date"
                             name="dateEndStudies"
-                            component="input"
+                            component={renderField}
                         />
                     </div>
                     <div className="d-flex col gap-2">
-                        <Field type="checkbox" className="form-check-input col-1" name="stillStudying" component="input"/>
+                        <Field type="checkbox" className="form-check-input col-1" name="stillStudying" component={renderField}/>
                         <label className="form-check-label col" htmlFor="stillStudying">Actualidad</label>
                     </div>
                 </div>
@@ -124,17 +139,17 @@ function FormsUI({handleSubmit, pristine, submitting}){
                 </div>
                 <Field
                     className="form-control row mb-2"
-                    placeholder="Puesto"
+                    label="Puesto"
                     type="text"
                     name="position"
-                    component="input"
+                    component={renderField}
                 />
                 <Field
                     className="form-control row mb-2"
-                    placeholder="Empresa"
+                    label="Empresa"
                     type="text"
                     name="company"
-                    component="input"
+                    component={renderField}
                 />
                 
                 <div className="row align-items-center  mb-2">
@@ -144,7 +159,7 @@ function FormsUI({handleSubmit, pristine, submitting}){
                             className="form-control"
                             type="date"
                             name="dateStartWorking"
-                            component="input"
+                            component={renderField}
                         />
                     </div>
                     <div className="d-flex col">
@@ -153,25 +168,25 @@ function FormsUI({handleSubmit, pristine, submitting}){
                             className="form-control"
                             type="date"
                             name="dateEndWorking"
-                            component="input"
+                            component={renderField}
                         />
                     </div>
                     <div className="d-flex col gap-2">
-                        <Field type="checkbox" className="form-check-input col-1" name="stillWorking" component="input"/>
+                        <Field type="checkbox" className="form-check-input col-1" name="stillWorking" component={renderField}/>
                         <label className="form-check-label col" htmlFor="stillWorking">Actualidad</label>
                     </div>
                 </div>
                 <Field className="form-control row"
-                    placeholder="Funciones desempeñadas..."
+                    label="Funciones desempeñadas..."
                     type="text"
                     name="tasks"
-                    component="textarea"/>
+                    component={renderField}/>
            </div>
            <div className="container p-3 mb-2">
                 <p className="h4 text-dark">Otros datos</p>
                     <div className="row mb-2">
                         <label className="form-label align-self-center col-2" htmlFor="licence">Carnet de conducir:</label>
-                        <Field className="form-select col" name="licence" component="select">
+                        <Field className="form-select col" name="licence" component={renderField}>
                             <option value="sinCarnet">No</option>
                             <option value="a">A</option>
                             <option value="b">B</option>
@@ -180,10 +195,10 @@ function FormsUI({handleSubmit, pristine, submitting}){
                             <option value="d">D</option>
                             <option value="de">D+E</option>
                         </Field>
-                        <Field type="checkbox" className="form-check-input col-1" name="availability" component="input"/>
+                        <Field type="checkbox" className="form-check-input col-1" name="availability" component={renderField}/>
                         <label className="form-check-label col" htmlFor="availability">Disponibilidad de incorporación inmediata</label>
                         <label className="form-check-label col" htmlFor="availability">Preferencia</label>
-                        <Field className="form-select col" name="preference" component="select">
+                        <Field className="form-select col" name="preference" component={renderField}>
                             <option></option>
                             <option value="mañanas">Mañanas</option>
                             <option value="tardes">Tardes</option>
@@ -193,25 +208,27 @@ function FormsUI({handleSubmit, pristine, submitting}){
                         </Field>
                     </div>
                    
-                    <Field className="form-control row mb-2"
-                    placeholder="Cuéntanos tus hobbies..."
+                    <Field 
+                    className="form-control row mb-2"
+                    label="Cuéntanos tus hobbies..."
                     type="text"
                     name="hobbies"
-                    component="textarea"/>
+                    component={renderField}/>
                 
-                    <Field className="form-control row mb-2"
-                    placeholder="Cuéntanos tus conocimientos..."
+                    <Field 
+                    className="form-control row mb-2"
+                    label="Cuéntanos tus conocimientos..."
                     type="text"
                     name="extra"
-                    component="textarea"/>
+                    component={renderField}/>
             
                 
                     <Field
                         className="form-control row mb-2"
-                        placeholder="Idiomas"
+                        label="Idiomas"
                         type="text"
                         name="languages"
-                        component="input"
+                        component={renderField}
                     />
                   
                 <div className="row justify-content-center gap-4">
@@ -228,7 +245,10 @@ function FormsUI({handleSubmit, pristine, submitting}){
 
 
 
-const createReduxForm = reduxForm({form:'register'});
+const createReduxForm = reduxForm({
+    form:'register',
+    validate
+});
 
 FormsUI = createReduxForm(FormsUI);
 

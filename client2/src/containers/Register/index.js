@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import Layout from "../../components/Layout/Layout"
 import RegisterUI from "./RegisterUI"
 import {URL} from '../../utils/url' 
+import useLogin from '../../hooks/useLogin'
 
 
 export default function Register(){
-    
+    const {isLoginLoading, hasLoginError, login, isLogged} = useLogin()
     const navigate = useNavigate();
     const [error, setError] = useState('')
 
@@ -41,11 +42,15 @@ export default function Register(){
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify(values)
-                    }).then(data => {
+                    }).then(async data => {
                         if(data.status === 200){
                             console.log('Usuario registrado')
-                            navigate('/form')
-                        } else if (data.status === 400){                            
+                            await login({username:values.userName, password:values.password})
+                            .then(response => {
+                                    if(response.userId){
+                                        navigate('/form')
+                                    }
+                        })} else if (data.status === 400){                            
                             console.log('Usuario registrado')
                             setError('Usuario registrado')
                         }
