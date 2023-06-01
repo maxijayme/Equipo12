@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap%27');
+
+*{
+    font-family: 'Tilt Neon', cursive;
+}
+
+a{
+    text-decoration: none;
+    color: #0d6efd;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 98vh;
+    background: rgb(234, 243, 243);
+}
+
+.completeRegister{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+#container-initial{
+    width: 300px;
+}
+
+#titleRegister {
+    font-size: 56px;
+}
+
+#container-initialr{
+    background-color: white;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+#container-form-register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(120, 200, 200, 0.5);
+    padding: 0 15px;
+    font-size: 10pt;
+    background:  rgb(222,225,232);
+    border-radius: 0 0 15px 15px;
+}
+
+#logo-register{
+    width: 320px;
+    height: 65px;
+    background: rgb(43,48,53);
+    border-radius: 15px 15px 0 0;
+    padding: 10px
+}
+
+#data_form_register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input_form{
+    margin-top: 15px;
+    height: 35px;
+    width: 250px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid rgba(120, 200, 200, 0.5);
+    padding-left: 10px;
+}
+
+#register_button:enabled:hover{
+    background-color: rgb(153, 230, 205);
+    transition: 0.5s;
+}
+
+.button_register{
+    height: 35px;
+    width: 250px;
+    border-radius: 15px;
+    margin: 0 auto;
+    font-size: 12pt;
+    font-weight: 600;
+    background-color:  rgb(193, 241, 227);
+    border: none;
+    transition: 0.5s;
+}
+
+.button_register:enabled{
+    cursor: pointer;
+}
+
+.p-cond{
+    width: 290px;
+}
+
+#allReadyRegistered{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10 15px;
+    height: 50px;
+    font-size: 10pt;
+    width: 98%;
+    background-color: rgb(222,225,232); 
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+#allReadyRegistered a{
+    font-weight: 700;
+}
+/* Mensaje de error */
+.error-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+  }
+  
+.visible {
+display: block;
+}
+
+.hidden {
+display: none;
+}

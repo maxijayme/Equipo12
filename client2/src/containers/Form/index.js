@@ -1,22 +1,29 @@
+import Layout from "../../components/Layout/Layout"
+import { useContext } from "react";
 import FormUI from "./FormsUI";
 import {URL} from '../../utils/url' 
+import AppContext from "../../context/UsersContext";
 
 export default function Form () {
-   
+    const {jwt} = useContext(AppContext)
+    let idUser;
+    if(jwt != null) {
+        idUser=jwt.userId;
+    } 
     const handleSubmit = async(values) => {
-        // console.log(values)
-         
+        const newValues = {...values}
+        newValues.id = idUser
         await fetch(`${URL}/form`,{
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(values)
+            body: JSON.stringify(newValues)
             }).then(data => {
                 if(data.status === 200){
                     console.log(data)
                 } else if (data.status === 400){
-                    console.log('Erroooor')
+                    console.log('Error')
                 }
         })
         await fetch(`${URL}/form`,{
@@ -24,16 +31,20 @@ export default function Form () {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(values)
+            body: JSON.stringify(newValues)
             }).then(data => {
                 if(data.status === 200){
                     console.log('grabado')
                 } else if (data.status === 400){
-                    console.log('Erroooor')
+                    console.log('Error')
                 }
         })
         
     }
 
-    return < FormUI onSubmit={handleSubmit}/>
+    return (
+        <Layout navbarOff={false}>
+            < FormUI onSubmit={handleSubmit}/>
+        </Layout>
+    )
 }
