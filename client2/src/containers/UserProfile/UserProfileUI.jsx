@@ -4,8 +4,10 @@ export default function UserProfileUI({userData, isModalVisible, setIsModalVisib
     
     return(
         <>
-         <ProfileSection userData={userData} setIsModalVisible={setIsModalVisible} />
-         {isModalVisible && <RecommendModal handleCloseModal={handleCloseModal} userData={userData}/>}
+            < div className="row" id="main_container">
+                <ProfileSection userData={userData} setIsModalVisible={setIsModalVisible} />
+                {isModalVisible && <RecommendModal handleCloseModal={handleCloseModal} userData={userData}/>}
+            </div>
         </>
     )
 }
