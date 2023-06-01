@@ -11,9 +11,9 @@ router.post('/', async(req,res)=>{
         const postDate = await getDate();
         const post = await db.query(`Insert into tpublicaciones (id_usuario, imagen_publicacion, texto_publicacion, fecha_publicacion) values ("${userId}", "${postImg}", "${postText}", "${postDate}")`,{type: QueryTypes.INSERT })
         if(loginUser.length>0){
-            res.status(200).json({msj:'usuario logueado exitosamente'})
+            res.status(200).json({msj:'new post success'})
         }else{
-            res.status(404).json({msj:'usuario o password inválido'})
+            res.status(404).json({msj:'new post error on db'})
         }
     }
     catch(err){

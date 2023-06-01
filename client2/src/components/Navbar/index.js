@@ -8,7 +8,7 @@ import AppContext from "../../context/UsersContext";
 export default function Navbar({navbarOff}){
     const {logout} = useLogin();
     const navigate = useNavigate();
-
+    
     const {jwt} = useContext(AppContext);
     let userId;
     if(jwt){

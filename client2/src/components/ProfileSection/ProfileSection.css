@@ -1,4 +1,4 @@
-#col_left{
+#ProfileSection-col_left{
     display: flex;
     min-width: 280px;
     background-color: white;
@@ -6,12 +6,12 @@
     align-content: baseline;
 }
 
-#userData{
+#ProfileSection-userData{
     display: flex;
     flex-direction: column;
 }
 
-#thirdPersonPhoto_container{
+#ProfileSection-thirdPersonPhoto_container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@
     align-self: center;
 }
 
-#thirdPersonPhoto{
+#ProfileSection-thirdPersonPhoto{
     width: auto;
     height: 105%;
     display: block;
@@ -30,11 +30,11 @@
     padding: 0;
 }
 
-.icon{
+.ProfileSection-icon{
     width: 20px;
     margin-bottom: 0;
 }
 
-.img-not{
+.ProfileSection-img-not{
     width: 25%;
 }

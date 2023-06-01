@@ -5,10 +5,10 @@ import Posts from '../../components/Posts';
 export default function FeedUI({userData}){
     return(
         <>
-            <div className="container-fluid h-auto">
+            <div className="row" id="main_container">
                 <ProfileSection userData={userData}/>
+                <Posts userData={userData}/>
             </div>
-            <Posts userData={userData}/>
         </>
     )
 }

@@ -1,11 +1,13 @@
 import CreatePostUI from './CreatePostUI'
 import {URL} from '../../utils/url'
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
 
 export default function CreatePost({userData}) {
     const[postData, setPostData] = useState({userId: "",postText:"", postImg:""})
     const [url, updateUrl] = useState();
-    
+    const [uploadImgName, setUploadImgName] = useState("");
+    const textareaRef = useRef(null);
+    const userImg = userData.userData.photo
     useEffect(() => {
         const userId = userData.userData.id_usuario
         setPostData(values => ({...values, "userId": userId}))
@@ -21,6 +23,8 @@ export default function CreatePost({userData}) {
           return;
         }
         updateUrl(result?.info?.secure_url);
+        const filename = result?.info?.public_id
+        setUploadImgName(filename.slice(filename.indexOf('/')+1,))
       }
 
     function handleChange(e){
@@ -40,12 +44,18 @@ export default function CreatePost({userData}) {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(postData)
-        }).then(data => console.log(data))
+        }).then(data =>{
+            if(data.status===200){
+                console.log(data)
+                setPostData({userId: "",postText:"", postImg:""})
+                textareaRef.current.value = "";
+            }
+        })
     }
 
     return (
         <>
-           <CreatePostUI handlePost={handlePost} handleChange={handleChange} postData={postData} handleOnUpload={handleOnUpload}/> 
+           <CreatePostUI uploadImgName={uploadImgName} userImg={userImg} textareaRef={textareaRef} handlePost={handlePost} handleChange={handleChange} postData={postData} handleOnUpload={handleOnUpload}/> 
         </>
     )
 }
