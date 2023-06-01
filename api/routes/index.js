@@ -14,6 +14,7 @@ const isLogged = require('../middlewares/isLogged.js')
 const questions = require('./questions.js')
 const form = require('./form.js')
 const register = require('./firsRegister.js')
+const pendingRequest = require('./pending_request.js')
 
 router.use('/login', login)
 router.use('/users', users)
@@ -28,6 +29,7 @@ router.use('/help', help)
 router.use('/questions', questions)
 router.use('/form', form)
 router.use('/register',register)
+router.use('/pending_request',pendingRequest)
 
 router.post('', isLogged, (req,res,next)=>{
     if(req.authenticated){
