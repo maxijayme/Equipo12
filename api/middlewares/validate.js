@@ -4,7 +4,7 @@ function validateLogin(req,res,next){
         uservalid:'',
         passwordvalid:''
     };
-    if(data.user.length < 4){
+    if(data.username.length < 4){
        response.uservalid = 'El usuario debe tener al menos 4 letras';
     }
     if(data.password.length < 6){

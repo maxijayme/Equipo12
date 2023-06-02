@@ -92,7 +92,7 @@ async function create(event){
     ,{
     photoInput:photoInput || 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg',
     phoneInput:phoneInput.value,
-    linkedinInput:'@'+linkedinInput.value,
+    linkedinInput:linkedinInput.value,
     cityInput:cityInput.value,
     countryInput:countryInput.value,
     studiesInput:studiesOption,

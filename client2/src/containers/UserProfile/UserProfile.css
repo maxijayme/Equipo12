@@ -1,0 +1,15 @@
+#profile_main_container {
+    
+    justify-content: space-around;
+    
+}
+
+#profile_col_cen, #profile_col_left, #profile_col_right{
+    background-color: white;
+    border-radius: 25px;
+    height: 100vh;
+    overflow: scroll;
+}
+#profile_col_cen::-webkit-scrollbar, #profile_col_left::-webkit-scrollbar, #profile_col_right::-webkit-scrollbar {
+    display: none;
+   }
