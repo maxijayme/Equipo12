@@ -5,13 +5,14 @@ import {URL} from '../../utils/url'
 export default function PostCard(props) {
     const[like, setLike] = useState(false)
     const[updateLikes, setUpdateLikes] = useState()
+    const [likesCount, setLikesCount] = useState(props.likes);
 
     function handleLike(e){
         setLike(!like)
         if(!like){
             const actualLike = parseInt(e.target.nextElementSibling.innerText)
-            postLike(actualLike+1)
-            setUpdateLikes(actualLike)
+            setUpdateLikes(actualLike + 1);
+            postLike(actualLike + 1);
         }
         else{
             postLike(updateLikes-1)
@@ -33,6 +34,7 @@ export default function PostCard(props) {
             }).then( data => {
               if(data.status===200){
                 console.log('success')
+                setLikesCount(likes);
               }
             })
           }
@@ -41,7 +43,7 @@ export default function PostCard(props) {
 
     return (
         <>
-            <PostCardUI userData = {props} handleLike={handleLike} like={like}/>
+            <PostCardUI postData = {props} handleLike={handleLike} like={like} likesCount={likesCount}/>
         </>
     )
 }

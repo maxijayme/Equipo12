@@ -1,65 +1,41 @@
 
-
-#first-container{
-    border-radius: 0 0 15px 15px;
+#form_complete_container{
+    display: flex;
+    justify-content: center;
 }
 
-main {
-    max-width: 750px;
-    min-width: 375px;
-    background-color: white;
-    border-radius: 25px;
-    padding: 25px;
-    margin-top: 15px;
+.form_container_header{
+    background-color: rgb(43,48,53);
+    border-radius: 15px 15px 0 0;
 }
 
-#fotoPerfil {
+#form_title{
+    color:white
+}
+#form_fotoPerfil {
     width: 140px;
     height: 130px;
     border-radius: 50%;    
 }
 
-#first-container_row .col-3{
-    position: relative;
-    margin-left: 20px;
+.form_data_container {
+    background:  rgb(222,225,232);
+    border: 1px solid rgba(120, 200, 200, 0.5);
+    border-radius:  15px;
 }
 
-#upload button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    background-color: rgb(177, 162, 162);
-    border: none;
-    border-radius: 50%;
-    bottom: -10px;
-    right: 8px;
-    cursor: pointer;
-    padding: 0;
+#form_create {
+    height: fit-content;
 }
 
-#upload svg{
-    color: rgb(39, 36, 36);
-    width: 25px;
-    height: 25px;
+#form_create:enabled:hover{
+    background-color: rgb(153, 230, 205);
+    transition: 0.5s;
+}
+
+#form_create:enabled{
     cursor: pointer;
 }
-
-label {
-    color: rgb(83, 83, 83);
-    margin-right: 15px;
-}
-
-/* input,
-select, 
-input[type="date"],
-input[type="checkbox"],
-textarea {
-    margin-bottom: 15px;
-    color: gray;
-} */
 
 Field {
     margin-bottom: 15px;

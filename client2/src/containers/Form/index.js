@@ -1,10 +1,12 @@
 import Layout from "../../components/Layout/Layout"
 import { useContext } from "react";
+import { useNavigate } from "react-router";
 import FormUI from "./FormsUI";
 import {URL} from '../../utils/url' 
 import AppContext from "../../context/UsersContext";
 
 export default function Form () {
+    const navigate = useNavigate()
     const {jwt} = useContext(AppContext)
     let idUser;
     if(jwt != null) {
@@ -35,6 +37,7 @@ export default function Form () {
             }).then(data => {
                 if(data.status === 200){
                     console.log('grabado')
+                    navigate('/')
                 } else if (data.status === 400){
                     console.log('Error')
                 }

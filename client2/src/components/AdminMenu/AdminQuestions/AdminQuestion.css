@@ -1,15 +1,22 @@
 #questions{
-    margin-top: 100px;
+    margin-top: 30px;
     height: 83vh;
 }
 
-.question-list{
+/* .question-list{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     height: 83vh;
     overflow: scroll;
+} */
+
+.question-list-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
+
 #questionList::-webkit-scrollbar {
     display: none;
    }

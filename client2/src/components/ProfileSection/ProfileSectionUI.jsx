@@ -9,20 +9,20 @@ export default function ProfileSectionUI(props){
     const {userData, handleOpenModal } = props
     const {jwt} = useContext(AppContext)
     return(
-        <div className="col-xl-2 col-md-2 py-3" id="ProfileSection-col_left">
+        <>
             <div className="container user_data p-3 mb-3" id="ProfileSection-userData">
                 <Link to={`/profile/${userData.username}`}>
                     <div className="row mb-2" id="ProfileSection-thirdPersonPhoto_container">
-                        <img src={userData.photo} className="ProfileSection-photo" id="ProfileSection-thirdPersonPhoto" alt='user avatar'/>
+                        <img src={userData.photo} className="ProfileSection-photo justify-self-center" id="ProfileSection-thirdPersonPhoto" alt='user avatar'/>
                     </div>
                 </Link>                
                 <div className="row">
-                    <h3 id="ProfileSection-fullname">{userData.fullname}</h3>
+                    <h3 className="ps-3" id="ProfileSection-fullname">{userData.fullname}</h3>
                 </div>
-                <div className="row  my-1">
+                <div className="row  my-1 ps-3">
                     <p id="ProfileSection-userName">{userData.username}</p>
                 </div>
-                <div className="col"> 
+                <div className="col ps-3"> 
                     <div className="col d-flex  my-1 align-items-baseline">
                         <Telephone className="me-2"/>
                         <p id="ProfileSection-phone">{userData.phone}</p>
@@ -36,15 +36,15 @@ export default function ProfileSectionUI(props){
                         <p id="ProfileSection-linkedin">/{userData.linkedin}</p>
                     </div>  
                 </div>
-                <div className="row">                        
+                <div className="row ps-3">                        
                     <div  className="col d-flex  my-1 align-items-baseline">
                         <GeoAlt className="me-2"/>
                         <span id="ProfileSection-city">{userData.city}</span>
                     </div>
                 </div>
-            {jwt && jwt.userId !== userData.id_usuario && <button className='btn btn-primary' onClick={handleOpenModal}>Recomendar</button>}
+            {jwt && jwt.userId !== userData.id_usuario && <button className='btn btn-primary mt-2' onClick={handleOpenModal}>Recomendar</button>}
             </div>
             {window.location.pathname !=='/' && <Recommendations userData={userData}/>}
-        </div>
+        </>
     )
 }

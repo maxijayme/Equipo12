@@ -16,6 +16,7 @@ const form = require('./form.js')
 const register = require('./firsRegister.js')
 const pendingRequest = require('./pending_request.js')
 const recommendation = require('./recommendation.js')
+const experience = require('./experience.js')
 
 router.use('/login', login)
 router.use('/users', users)
@@ -32,6 +33,7 @@ router.use('/form', form)
 router.use('/register',register)
 router.use('/pending_request',pendingRequest)
 router.use('/recommendation', recommendation)
+router.use('/experience',experience)
 
 router.post('', isLogged, (req,res,next)=>{
     if(req.authenticated){

@@ -1,22 +1,30 @@
+import './AdminQuestion.css';
+
 export default function AdminQuestionsUI({questions, handleResponse}){
     return(
         <>
-            <main className="container-fluid" id="questions">
-                <div className="titleTable row d-flex ms-4 mb-2">
-                    <h6 className="col">Título</h6>
-                    <h6 className="col">Consulta</h6>
-                    <h6 className="col">Usuario</h6>
-                    <h6 className="col">Respuesta</h6>
+            <div className="questions_container" id="questions">
+                <div className="titleTable row d-flex ms-4 mb-3">
+                    <h4 className="col">Título</h4>
+                    <h4 className="col">Consulta</h4>
+                    <h4 className="col">Usuario</h4>
+                    <h4 className="col">Respuesta</h4>
                 </div>
                 <ul className="question-list" id="questionList">
                     
                     {questions && questions.map( question =>(
                         
-                        <li className="question-list-item row" key = {question.id_consulta}>
-                            <p className="col">{question.titulo}</p>
-                            <p className="col">{question.texto}</p>
-                            <p className="col">{question.username}</p>
-                            <div className="col">
+                        <li className="question-list-item row d-flex" key = {question.id_consulta}>
+                            <div className="col-3">
+                                <p className="">{question.titulo}</p>
+                            </div>
+                            <div className="col-3">
+                                <p className="">{question.texto}</p>
+                            </div>
+                            <div className="col-3">
+                                <p className="">{question.username}</p>
+                            </div>
+                            <div className="col-3">
                                 <textarea id="textResponse" />
                                 <button className="confirm_delete green" onClick={()=>handleResponse(document.getElementById('textResponse').value, question.id_consulta )} >responder</button>
                             </div>
@@ -24,7 +32,7 @@ export default function AdminQuestionsUI({questions, handleResponse}){
                         </li>
                     )) }
                 </ul>
-            </main>
+            </div>
         </>
     )
 }

@@ -77,4 +77,18 @@ router.get('/friendsPosts/:userId', async(req,res)=>{
     }
 })
 
+router.get('/userPost/:userId',async(req,res)=>{
+    console.log('llega al back')
+    try{
+        const {userId} = req.params
+        const allPost = await db.query(`SELECT tpublicaciones.*, tusuario.*
+        FROM tpublicaciones
+        INNER JOIN tusuario ON tpublicaciones.id_usuario = tusuario.id_usuario WHERE tusuario.id_usuario = "${userId}" ORDER BY fecha_publicacion DESC`, { type: QueryTypes.SELECT })
+        res.status(200).json(allPost)
+    }
+    catch(err){
+        res.send(err)
+    }
+})
+
 module.exports = router

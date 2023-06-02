@@ -18,6 +18,7 @@ router.post('/', async (req,res)=>{
 });
 
 router.get('/:userId', async (req,res)=>{
+    
     try{
         const userId = req.params.userId;
         const userRecommendations = await db.query(`Select t.recomendacion, u.fullname from trecomendaciones t inner join tusuario u on t.id_recomendante = u.id_usuario where t.id_recomendado = "${userId}" `, { type: QueryTypes.SELECT });

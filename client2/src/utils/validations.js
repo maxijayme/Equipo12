@@ -29,7 +29,7 @@ const validate = values => {
 
     if (!values.phone) {
         errors.phone = 'Campo obligatorio'
-    } else if (values.phone.length != 9) {
+    } else if (values.phone.length !== 9) {
         errors.phone = 'El teléfono debe tener 9 dígitos'
     }
 
