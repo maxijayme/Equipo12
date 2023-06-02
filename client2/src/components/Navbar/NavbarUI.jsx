@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 export default function NavbarUI({handleLogout, handleSearch, searchResult, searchInput, userData}){
     const [collapsed, setCollapsed] = useState(true);
     const [openList, setOpenList] = useState(false); 
-
     const toggleNavbar = () => {
       setCollapsed(!collapsed);
     };
@@ -68,7 +67,7 @@ export default function NavbarUI({handleLogout, handleSearch, searchResult, sear
                 <Nav className={`ml-auto flex-column bg-dark border-dark p-2 ${navClasses}`} id='menu-toggle'>
                     <Nav.Link href="#home" className='text-light'>Perfil</Nav.Link>
                     <Nav.Link href="#config" className='text-light'>Configuración</Nav.Link>
-                    <Link className="nav-link text-light" to='/admin'>Administrar</Link>
+                    {userData.perfil==='admin' && <Link className="nav-link text-light" to='/admin'>Administrar</Link>}
                     <Nav.Link className='text-light' onClick={handleLogout}>Cerrar sesión</Nav.Link>
                 </Nav>    
          </>

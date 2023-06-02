@@ -10,7 +10,7 @@ const generateToken = require('./utils/generateToken.js');
 router.get('/:id', async (req,res)=>{
     const {id} = req.params;
     try{
-        const user =  await db.query(`Select id_usuario, fullname, username, phone, email, city, country, linkedin, photo, nivel_estudios from tusuario where id_usuario = "${id}" `, { type: QueryTypes.SELECT })
+        const user =  await db.query(`Select id_usuario, fullname, username, phone, email, city, country, linkedin, photo, nivel_estudios, perfil from tusuario where id_usuario = "${id}" `, { type: QueryTypes.SELECT })
         if(user.length>0){
             res.status(200).json(user)
         }else{
@@ -25,7 +25,7 @@ router.get('/:id', async (req,res)=>{
 router.get('/search_username/:username', async (req,res)=>{
     const {username} = req.params;
     try{
-        const user =  await db.query(`Select id_usuario, fullname, username, phone, email, city, country, linkedin, photo, nivel_estudios from tusuario where username = "${username}" `, { type: QueryTypes.SELECT })
+        const user =  await db.query(`Select id_usuario, fullname, username, phone, email, city, country, linkedin, photo, nivel_estudios, perfil from tusuario where username = "${username}" `, { type: QueryTypes.SELECT })
         if(user.length>0){
             res.status(200).json(user)
         }else{
@@ -39,7 +39,7 @@ router.get('/search_username/:username', async (req,res)=>{
 
 router.get('/', async (req,res)=>{
     try{
-        const user =  await db.query(`Select id_usuario, fullname, username, phone, email, city, country, linkedin, photo, nivel_estudios from tusuario`, { type: QueryTypes.SELECT })
+        const user =  await db.query(`Select id_usuario, fullname, username, phone, email, city, country, linkedin, photo, nivel_estudios, perfil from tusuario`, { type: QueryTypes.SELECT })
         if(user.length>0){
             res.status(200).json(user)
         }else{
