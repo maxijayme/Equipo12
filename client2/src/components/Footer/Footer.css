@@ -1,0 +1,36 @@
+footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    color: gray;
+    display: flex;
+    flex-direction: column; 
+    margin: 0 auto;
+}
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+li {
+    margin: 20px;
+}
+
+.foot1 {
+    display: flex;
+    margin: auto;
+}
+
+.foot2 {
+    display: flex;
+    margin: auto;
+    color: gray;
+}
+.language {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-small;
+    width: fit-content;
+    border: 0;
+    background-color: rgb(234, 243, 243);
+    color: gray;
+    margin-right: 10px;
+}

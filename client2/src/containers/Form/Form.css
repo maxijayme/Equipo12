@@ -1,0 +1,43 @@
+
+#form_complete_container{
+    display: flex;
+    justify-content: center;
+}
+
+.form_container_header{
+    background-color: rgb(43,48,53);
+    border-radius: 15px 15px 0 0;
+}
+
+#form_title{
+    color:white
+}
+#form_fotoPerfil {
+    width: 140px;
+    height: 130px;
+    border-radius: 50%;    
+}
+
+.form_data_container {
+    background:  rgb(222,225,232);
+    border: 1px solid rgba(120, 200, 200, 0.5);
+    border-radius:  15px;
+}
+
+#form_create {
+    height: fit-content;
+}
+
+#form_create:enabled:hover{
+    background-color: rgb(153, 230, 205);
+    transition: 0.5s;
+}
+
+#form_create:enabled{
+    cursor: pointer;
+}
+
+Field {
+    margin-bottom: 15px;
+    color: gray;
+}

@@ -1,0 +1,44 @@
+.PostCard-post{
+    background-color: rgb(222,225,232);
+    border-radius: 15px;
+}
+
+#PostCard-postImg_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 55px;
+    width: 55px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    padding: 0;
+}
+
+.PostCard-photoPost{
+    width: auto;
+    height: 105%;
+    display: block;
+    object-fit: cover;
+}
+
+.PostCard-post_header{
+    display: flex;
+    flex-direction: column;
+}
+
+.PostCard-post_header p{
+    margin: 0;
+}
+
+.PostCard-post_header:last-child p{
+    color: rgb(126, 126, 126);
+}
+
+.PostCard-piePost{
+    display: flex;
+    align-items: center;
+    gap:10px;
+
+}

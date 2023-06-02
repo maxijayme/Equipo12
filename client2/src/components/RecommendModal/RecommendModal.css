@@ -1,0 +1,22 @@
+#modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid;
+    height: 300px;
+    width: 50%;
+    min-width: 300px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+#modal-input{
+    height: 100px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: start;
+    resize: none;
+}

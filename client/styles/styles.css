@@ -94,7 +94,20 @@ button{
     background-color:  rgb(193, 241, 227);
     border: none;
     transition: 0.5s;
-    color: rgb(44, 44, 44);
+}
+
+button:enabled{
+    cursor: pointer;
+}
+
+button:enabled:hover{
+    background-color: rgb(153, 230, 205);
+    transition: 0.5s;
+}
+
+button:disabled{
+    background-color:  rgb(207, 244, 234);
+    color: rgb(95, 95, 95);
 }
 
 
@@ -225,5 +238,4 @@ li {
 
     #register{
         width: 100%;
-    }
-}
+    }}
