@@ -1,4 +1,3 @@
-
 import './ProfileSection.css'
 import {Telephone, Envelope, Linkedin, GeoAlt} from 'react-bootstrap-icons'
 import AppContext from "../../context/UsersContext";
@@ -7,9 +6,8 @@ import { useContext } from "react";
 export default function ProfileSectionUI(props){
     const {userData, handleOpenModal } = props
     const {jwt} = useContext(AppContext)
-    return(
-        <div className="col-xl-2 col-md-2 py-3" id="ProfileSection-col_left">
-            <div className="container user_data p-3 mb-3" id="ProfileSection-userData">
+    return(        
+            <div className="profile_section_container p-3 mb-3" id="ProfileSection-userData">
                 <div className="row mb-2" id="ProfileSection-thirdPersonPhoto_container">
                     <img src={userData.photo} className="ProfileSection-photo" id="ProfileSection-thirdPersonPhoto" alt='user avatar'/>
                 </div>
@@ -40,7 +38,6 @@ export default function ProfileSectionUI(props){
                     </div>
                 </div>
             {jwt && jwt.userId !== userData.id_usuario && <button className='btn btn-primary' onClick={handleOpenModal}>Recomendar</button>}
-            </div> 
-        </div>
+            </div>         
     )
 }

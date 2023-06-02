@@ -7,8 +7,24 @@ import {URL} from '../../utils/url'
 export default function FriendRequest(){
     const {jwt} = useContext(AppContext)
     const [allRequest, setAllRequest] = useState([]);
+    const [updateFlag, setUpdateFlag] = useState(false);
     let idUser;
-    async function fetchFriendRequests(){
+
+    const replyRequest = async({id_solicitud,estado}) => {
+      
+      await fetch(`${URL}/pending_request`,{
+          method: "PATCH",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({id_solicitud,estado})
+          }).then(data => {
+              if(data.status === 200){
+                  setUpdateFlag(!updateFlag)
+              } 
+      })
+   }
+    async function FriendRequests(){
         
         try {
           const response = await fetch(`${URL}/pending_request`,{
@@ -29,9 +45,12 @@ export default function FriendRequest(){
     
     useEffect(() => {
         if (jwt !== null) {
-            idUser=jwt.userId;
-        fetchFriendRequests() }}, [jwt]);
+            idUser=jwt.userId;         
+            FriendRequests() 
+          }
+    }, [jwt,updateFlag]);
+    
     return(
-        <FriendRequestUI allRequest={allRequest}/>
+        <FriendRequestUI allRequest={allRequest} replyRequest={replyRequest}/>
     )
 }

@@ -12,7 +12,6 @@ export default function Register(){
     const [error, setError] = useState('')
 
     const handleSubmit = async(values) => {
-        console.log(values)
         
         // para comprobar si existe
         try {

@@ -1,14 +1,16 @@
-#ProfileSection-col_left{
+/* #ProfileSection-col_left{
     display: flex;
     min-width: 280px;
     background-color: white;
     border-radius: 25px;
     align-content: baseline;
-}
+} */
 
 #ProfileSection-userData{
     display: flex;
     flex-direction: column;
+    background-color: rgb(222,225,232);
+    border-radius: 25px;
 }
 
 #ProfileSection-thirdPersonPhoto_container{
