@@ -11,7 +11,7 @@ export default function FriendRequestUI({allRequest,replyRequest}){
                 <a className="pe-3" href="../amigos/index.html">Ver todas</a>
             </div>
             {
-                allRequest?.map((request,i)=>{
+                allRequest.length>0 && allRequest.map((request,i)=>{
                     return (<FriendRequestCardUI
                         photo={request.photo}
                         fullname={request.fullname}

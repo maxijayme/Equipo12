@@ -36,7 +36,6 @@ export default function FriendRequest(){
             
         })
           const data = await response.json();
-          console.log(data)
           setAllRequest(data);
         } catch (error) {
           console.error("Error:", error);

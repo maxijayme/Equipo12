@@ -1,16 +1,21 @@
+import { Link } from 'react-router-dom';
 import './ProfileSection.css'
 import {Telephone, Envelope, Linkedin, GeoAlt} from 'react-bootstrap-icons'
 import AppContext from "../../context/UsersContext";
 import { useContext } from "react";
+import Recommendations from '../Recommendations';
 
 export default function ProfileSectionUI(props){
     const {userData, handleOpenModal } = props
     const {jwt} = useContext(AppContext)
-    return(        
-            <div className="profile_section_container p-3 mb-3" id="ProfileSection-userData">
-                <div className="row mb-2" id="ProfileSection-thirdPersonPhoto_container">
-                    <img src={userData.photo} className="ProfileSection-photo" id="ProfileSection-thirdPersonPhoto" alt='user avatar'/>
-                </div>
+    return(
+        <div className="col-xl-2 col-md-2 py-3" id="ProfileSection-col_left">
+            <div className="container user_data p-3 mb-3" id="ProfileSection-userData">
+                <Link to={`/profile/${userData.username}`}>
+                    <div className="row mb-2" id="ProfileSection-thirdPersonPhoto_container">
+                        <img src={userData.photo} className="ProfileSection-photo" id="ProfileSection-thirdPersonPhoto" alt='user avatar'/>
+                    </div>
+                </Link>                
                 <div className="row">
                     <h3 id="ProfileSection-fullname">{userData.fullname}</h3>
                 </div>
@@ -38,6 +43,8 @@ export default function ProfileSectionUI(props){
                     </div>
                 </div>
             {jwt && jwt.userId !== userData.id_usuario && <button className='btn btn-primary' onClick={handleOpenModal}>Recomendar</button>}
-            </div>         
+            </div>
+            {window.location.pathname !=='/' && <Recommendations userData={userData}/>}
+        </div>
     )
 }

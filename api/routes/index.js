@@ -13,9 +13,9 @@ const router = Router();
 const isLogged = require('../middlewares/isLogged.js')
 const questions = require('./questions.js')
 const form = require('./form.js')
-const recommendation = require('./recommendation.js')
 const register = require('./firsRegister.js')
 const pendingRequest = require('./pending_request.js')
+const recommendation = require('./recommendation.js')
 
 router.use('/login', login)
 router.use('/users', users)
@@ -29,9 +29,9 @@ router.use('/reject_friend', reject_friend)
 router.use('/help', help)
 router.use('/questions', questions)
 router.use('/form', form)
-router.use('/recommendation', recommendation)
 router.use('/register',register)
 router.use('/pending_request',pendingRequest)
+router.use('/recommendation', recommendation)
 
 router.post('', isLogged, (req,res,next)=>{
     if(req.authenticated){

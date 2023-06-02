@@ -46,7 +46,6 @@ export default function CreatePost({userData}) {
         body: JSON.stringify(postData)
         }).then(data =>{
             if(data.status===200){
-                console.log(data)
                 setPostData({userId: "",postText:"", postImg:""})
                 textareaRef.current.value = "";
             }
