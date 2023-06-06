@@ -42,6 +42,21 @@ export default function IsFriendButton({userData}) {
                 setAreFriends('Solicitar amistad') 
             }
         }
+        else if(areFriends=== 'Solicitar amistad'){
+            const response = await fetch(`${URL}/friend_request`,{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body:JSON.stringify({
+                    logged_user_id: actualUserId,
+                    other_user_id: userData.id_usuario
+                })
+            })
+            if(response.status === 200){
+                setAreFriends('Solicitud de amistad pendiente') 
+            }
+        }
     }
 
     async function isFriend(){

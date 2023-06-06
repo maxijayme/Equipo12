@@ -4,7 +4,6 @@ import { useContext } from 'react'
 import FriendRequestCardUI from '../FriendRequestCard/FriendRequestCardUI'
 
 export default function FriendRequestUI({allRequest,replyRequest}){
-    console.log(allRequest)
     return(
         <section className="friend_request_container">
             <div className="friend_request_like_container">

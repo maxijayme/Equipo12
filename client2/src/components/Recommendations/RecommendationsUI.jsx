@@ -1,6 +1,5 @@
 
 export default function RecommendationsUI({recommendationList}) {
-    console.log(recommendationList)
     return (
         <div className="container user_data p-3 mb-3">
             <h4>Recomendaciones</h4>
