@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import AdminPanel from '../containers/AdminPanel';
 import UserProfile from '../containers/UserProfile'
 import Form from '../containers/Form'
+import Friends from '../containers/Friends';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/register" element={<Register/>}/>
             <Route path="/profile/:username" element={<UserProfile/>}/>
             <Route exact path="/form" element={<Form/>}/>
+            <Route exact path='/friends' element={<Friends/>}/>
           </Routes>
         </Router>
     )

@@ -27,7 +27,7 @@ export default function FriendRequest(){
     async function FriendRequests(){
         
         try {
-          const response = await fetch(`${URL}/pending_request`,{
+          const response = await fetch(`${URL}/pending_request/pending`,{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
