@@ -37,9 +37,9 @@ router.get('/', async (req,res)=>{
             res.status(200).json({msj:"all ready friends"});
         }
         else{
-            const isPending = await db.query(`Select estado from tsolicitudes where ((id_solicitante = "${logged_user_id}" and id_solicitado = "${other_user_id}") or (id_solicitante = "${other_user_id}" and id_solicitado = "${logged_user_id}")) and (estado = "pendiente") `, { type: QueryTypes.SELECT });
+            const isPending = await db.query(`Select estado, id_solicitud from tsolicitudes where ((id_solicitante = "${logged_user_id}" and id_solicitado = "${other_user_id}") or (id_solicitante = "${other_user_id}" and id_solicitado = "${logged_user_id}")) and (estado = "pendiente") `, { type: QueryTypes.SELECT });
             if(isPending.length>0){
-                res.status(200).json({msj:"friend request is pending"})
+                res.status(200).json({msj:"friend request is pending", id_solicitud:isPending[0].id_solicitud})
             }
             else{
                 res.status(200).json({msj:"not yet friends or request pending"})

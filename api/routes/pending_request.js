@@ -22,9 +22,8 @@ router.post('/', async(req,res)=>{
 router.patch('/', async(req,res)=>{
     try {
         const {id_solicitud,estado} = req.body
-        console.log(req.body)
         await db.query(`Update tsolicitudes set estado="${estado}"  where id_solicitud = "${id_solicitud}"`,{type: QueryTypes.UPDATE })
-        res.status(200).json({msj:'solicitud respondida'})
+        res.status(200).json({msj:`estado de solicitud actualizada a ${estado}`})
     } catch(error){
         res.error(error)
     }

@@ -4,7 +4,7 @@
   "description": "social media for teclers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec test/*js"
   },
   "author": "grupo 12",
   "license": "ISC",
@@ -18,5 +18,10 @@
     "mysql2": "^3.2.4",
     "nodemon": "^2.0.22",
     "sequelize": "^6.31.0"
+  },
+  "devDependencies": {
+    "@types/chai-http": "^4.2.0",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
   }
 }

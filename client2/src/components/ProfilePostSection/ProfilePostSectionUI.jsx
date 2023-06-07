@@ -4,9 +4,12 @@ import PostCard from "../PostCard";
 export default function ProfilePostSectionUI({userPostList}) {
     return (
         <>
-          {userPostList.length > 0 && userPostList.map((post,i)=>(
+          {userPostList.length > 0 ?
+           userPostList.map((post,i)=>(
             <PostCard key={i} {...post}/>
-          ))  }
+          )): 
+          <p>Aún no ha publicado nada</p>
+          }
         </>
     )
 }

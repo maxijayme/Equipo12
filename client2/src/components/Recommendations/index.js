@@ -13,17 +13,22 @@ export default function Recommendations({userData}) {
     }, [userId])
 
     async function getRecommendatios(userId){
-        await fetch(`${URL}/recommendation/${userId}`,{
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            }
-        }).then(async data => {
-            if(data.status === 200){
-                const recommendations = await data.json()
-                setRecommendationList(recommendations)
-            }
-        })
+        try{
+            await fetch(`${URL}/recommendation/${userId}`,{
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            }).then(async data => {
+                if(data.status === 200){
+                    const recommendations = await data.json()
+                    setRecommendationList(recommendations)
+                }
+            })
+        }
+        catch(error){
+            console.log(error)
+        }
     }
     return (
         <>
