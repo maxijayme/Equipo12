@@ -1,7 +1,5 @@
 import './FriendRequest.css'
-import AppContext from '../../context/UsersContext'
-import { useContext } from 'react'
-import FriendRequestCardUI from '../FriendRequestCard/FriendRequestCardUI'
+import FriendRequestCard from '../FriendRequestCard'
 
 export default function FriendRequestUI({allRequest,replyRequest}){
     return(
@@ -9,7 +7,7 @@ export default function FriendRequestUI({allRequest,replyRequest}){
             {
                 allRequest.length>0 ? 
                 allRequest.map((request,i)=>{
-                    return (<FriendRequestCardUI
+                    return (<FriendRequestCard
                         photo={request.photo}
                         fullname={request.fullname}
                         idUser={request.id_solicitante}

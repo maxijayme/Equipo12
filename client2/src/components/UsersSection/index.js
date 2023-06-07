@@ -4,16 +4,15 @@ import { useContext,useEffect,useState } from "react";
 import AppContext from "../../context/UsersContext";
 
 
-export default function UsersSection(){
+export default function UsersSection({stateFlag}){
     const {jwt} = useContext(AppContext)
-    const [allUsers, setAllUsers] = useState([]);
-    const [updateFlag, setUpdateFlag] = useState(false);
+    const [allUsers, setAllUsers] = useState([]);    
     let idUser;
 
     async function AllUsers(){
         
         try {
-          const response = await fetch(`${URL}/users`,{
+          const response = await fetch(`${URL}/users/filterRelations/${idUser}`,{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -31,7 +30,7 @@ export default function UsersSection(){
             idUser=jwt.userId;         
             AllUsers() 
           }
-    }, [jwt,updateFlag]);
+    }, [jwt,stateFlag]);
 
     return (
         <UsersSectionUI allUsers={allUsers} />

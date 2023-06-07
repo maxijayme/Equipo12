@@ -40,7 +40,7 @@ router.post('/', async(req,res)=>{
 router.get('/', async(req,res)=>{
     try{
         const {idUser, otherUser} = req.query;
-        const request = await db.query(`Select estado, id_solicitud from tsolicitudes where id_solicitante="${idUser}" and id_solicitado="${otherUser}"`, { type: QueryTypes.SELECT })
+        const request = await db.query(`Select estado, id_solicitud from tsolicitudes where (id_solicitante="${idUser}" and id_solicitado="${otherUser}") or (id_solicitante="${otherUser}" and id_solicitado="${idUser}")`, { type: QueryTypes.SELECT })
         console.log(request)
         if(request.length>0) {
             res.status(200).json({estado:request[0].estado, msj:"",id_solicitud:request[0].id_solicitud})
