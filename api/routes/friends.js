@@ -17,12 +17,10 @@ router.get('/:id', async (req,res)=>{
 router.post('/recommended', async (req,res)=>{
     try{
         const [user, friends] = req.body;
-        console.log(friends)
         const friendsOfFriends = await Promise.all( friends.map(async friend => {
             const rep = await db.query(`Select id_amigo from tamistades where id_usuario = "${friend.id_amigo}" and id_amigo != "${user}"`, { type: QueryTypes.SELECT })
             return rep
         }))
-        console.log(friendsOfFriends)
         res.status(200).json(friendsOfFriends)
     }
     catch(error){

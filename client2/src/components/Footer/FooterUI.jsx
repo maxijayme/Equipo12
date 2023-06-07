@@ -2,7 +2,7 @@ import './Footer.css'
 
 export default function FooterUI(){
     return(
-        <>
+        <footer>
             <div className="foot1">
                 <ul>
                     <li>Meta</li>
@@ -24,6 +24,6 @@ export default function FooterUI(){
                 </select>
                 <p>&copy; 2023 Teclapedia</p>
             </div>        
-        </>
+        </footer>
     )
 }

@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+body{
+  background-color: rgb(234, 243, 243);
+}
+
+main{
+  width: 100%;
+  min-width: 340px;
+  padding-top: 20px;
+}
+
+#main_container{
+  margin-top: 73px;
+  justify-content: space-around;
+  padding-left: 63px;
+  max-width: 100%;
+}

@@ -1,9 +1,9 @@
 import Navbar from "../Navbar";
 
-function HeaderUI() {
+function HeaderUI({navbarOff}) {
   return (
     <header className='Header'>
-        <Navbar/>
+        <Navbar navbarOff={navbarOff}/>
     </header>
   )
 }

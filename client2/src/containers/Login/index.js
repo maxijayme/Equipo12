@@ -1,17 +1,20 @@
 import LoginUI from "./LoginUI";
 import { useNavigate } from "react-router-dom";
 import useLogin from '../../hooks/useLogin'
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import AppContext from "../../context/UsersContext";
+import Layout from "../../components/Layout/Layout";
 
 export default function Login(){
   const {isLoginLoading, hasLoginError, login, isLogged} = useLogin()
     const navigate = useNavigate();
-    
+    const {jwt} = useContext(AppContext)
+
     useEffect(() => {
-    if (isLogged) {
-        navigate('/feed')
-    }
-    }, [isLogged])
+      if (jwt!==null) {
+        navigate('/')
+      }
+    }, [])
 
 
  const [loginData, setLoginData] = useState({
@@ -67,7 +70,7 @@ export default function Login(){
     login({username:loginData.username, password:loginData.password})
     .then(response => {
             if(response.userId){
-              navigate('/feed')
+              navigate('/')
             }
             else if(response === 'El usuario o la contraseña son incorrectos'){
               setLabelsData({...labelsData, password: "El usuario o la contraseña son incorrectos"});
@@ -82,6 +85,8 @@ export default function Login(){
   }
 
   return (
-      <LoginUI handleFormSubmit={handleFormSubmit} inputHandleChange = {inputHandleChange} loginData={loginData} labelsData={labelsData} enableLoginButton={enableLoginButton}/>
+    <Layout navbarOff={false}>
+        <LoginUI handleFormSubmit={handleFormSubmit} inputHandleChange = {inputHandleChange} loginData={loginData} labelsData={labelsData} enableLoginButton={enableLoginButton}/>
+    </Layout>
     )
 }

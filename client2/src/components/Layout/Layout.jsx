@@ -1,14 +1,14 @@
 import Header from '../Header'
 import Footer from '../Footer'
-import { Outlet } from 'react-router-dom';
-
-function Layout({}) {
+function Layout({children, navbarOff = true}) {  
   return (
-    <div className='Main'>
-        <Header/>
-        <Outlet/>
+    <>
+        <Header navbarOff={navbarOff}/>
+          <main className='container-fluid h-auto'>
+            {children}
+          </main>
         <Footer/>
-    </div>
+    </>
   )
 }
 

@@ -1,0 +1,42 @@
+/* #ProfileSection-col_left{
+    display: flex;
+    min-width: 280px;
+    background-color: white;
+    border-radius: 25px;
+    align-content: baseline;
+} */
+
+#ProfileSection-userData{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(222,225,232);
+    border-radius: 25px;
+}
+
+#ProfileSection-thirdPersonPhoto_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    align-self: center;
+}
+
+#ProfileSection-thirdPersonPhoto{
+    width: auto;
+    height: 105%;
+    display: block;
+    object-fit: cover;
+    padding: 0;
+}
+
+.ProfileSection-icon{
+    width: 20px;
+    margin-bottom: 0;
+}
+
+.ProfileSection-img-not{
+    width: 25%;
+}
