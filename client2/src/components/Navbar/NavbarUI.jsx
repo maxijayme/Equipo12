@@ -65,8 +65,8 @@ export default function NavbarUI({handleLogout, handleSearch, searchResult, sear
                 </div>
             </Navbar>  
                 <Nav className={`ml-auto flex-column bg-dark border-dark p-2 ${navClasses}`} id='menu-toggle'>
-                    <Nav.Link to={`/profile/${userData.username}`} className='text-light'>Perfil</Nav.Link>
-                    <Nav.Link href="#config" className='text-light'>Configuración</Nav.Link>
+                    <Link to={`/profile/${userData.username}`} className='nav-link text-light'>Perfil</Link>
+                    <Link to={`/contact`} href="#config" className='nav-link text-light'>Ayuda</Link>
                     {userData.perfil==='admin' && <Link className="nav-link text-light" to='/admin'>Administrar</Link>}
                     <Nav.Link className='text-light' onClick={handleLogout}>Cerrar sesión</Nav.Link>
                 </Nav>    
