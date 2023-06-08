@@ -2,7 +2,8 @@ import React from "react";
 import { Field, reduxForm } from 'redux-form';
 import './Form.css'
 import validate from '../../utils/validations'
-
+import UploadWidget from '../../utils/CloudinaryUploadWidget'
+import {Camera} from 'react-bootstrap-icons'
 const renderField = ({
     className,
     input,
@@ -18,7 +19,7 @@ const renderField = ({
     </div>
 )
 
-function FormsUI({handleSubmit, pristine, submitting}){
+function FormsUI({handleSubmit, pristine, submitting, handleOnUpload, url}){
     
     return (
         <>
@@ -34,18 +35,21 @@ function FormsUI({handleSubmit, pristine, submitting}){
                <div className="form_data_container p-3 mb-2" id="form_first-container">
                     <div className="row align-items-center" id="first-container-row">
                         <div className="col-3 px-1">
-                            <img src="../img/avatar.jpg" alt="Foto de perfil" id="form_fotoPerfil" name="profilePhoto"  />
-                            <div id="upload">
-                                <button
-                                id="upload_widget"
-                                className="cloudinary-button"
-                                type="button">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-camera-fill" viewBox="0 0 16 16">
-                                        <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-                                        <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
-                                    </svg>
-                                </button>
-                            </div>
+                            <img src={url} alt="Foto de perfil" id="form_fotoPerfil" name="profilePhoto"  />
+                            <UploadWidget onUpload={handleOnUpload}>
+                                {({ open }) => {
+                                    function handleOnClick(e) {
+                                        e.preventDefault();
+                                        open();
+                                    }
+                                    return (
+                                        <button className="createPosts-cloudinary-button" onClick={handleOnClick}>
+                                            <Camera className="me-2"/>
+                                        </button>
+                                    )
+                                }
+                                } 
+                            </UploadWidget>
                         </div>
                         <div className="col-9 d-flex-column px-4">
                             <Field

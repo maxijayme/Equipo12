@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2023 a las 20:00:35
+-- Tiempo de generación: 08-06-2023 a las 20:21:36
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -91,7 +91,8 @@ INSERT INTO `testudios` (`id_estudio`, `titulo`, `centro`, `f_inicio`, `f_fin`, 
 (40, '', '', '0000-00-00', '0000-00-00', 0, 32),
 (42, '', '', '2021-04-05', '0000-00-00', 1, 34),
 (43, 'Ilustradora', 'Centro de artes plásticas de Ovieu', '2022-04-05', '0000-00-00', 1, 35),
-(44, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 37);
+(44, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 37),
+(46, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 52);
 
 -- --------------------------------------------------------
 
@@ -105,33 +106,36 @@ CREATE TABLE `totros_datos` (
   `licencia` varchar(6) DEFAULT NULL,
   `disponibilidad` tinyint(1) DEFAULT NULL,
   `preferencia` varchar(35) DEFAULT NULL,
-  `hobbies` varchar(50) DEFAULT NULL
+  `hobbies` varchar(50) DEFAULT NULL,
+  `otros_conocimientos` varchar(350) NOT NULL,
+  `idiomas` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `totros_datos`
 --
 
-INSERT INTO `totros_datos` (`id_datos`, `id_usuario`, `licencia`, `disponibilidad`, `preferencia`, `hobbies`) VALUES
-(1, 1, 'B', 0, 'Jornada Continua', 'Lectura, escalada'),
-(2, 3, NULL, 0, 'Jornada Completa', 'Música, programación'),
-(3, 4, 'B', 0, 'Jornada Parcial', 'Cocina, montañismo'),
-(4, 5, 'B', 0, 'Jornada Flexible', 'Automoción, música'),
-(5, 6, '', 0, 'Jornada Flexible', 'Moda, cine'),
-(6, 7, 'B', 0, 'Jornada Completa', 'Naturaleza, arte'),
-(7, 8, 'B', 0, 'Jornada Parcial', 'Pintura, música'),
-(25, 22, 'undefi', 0, 'undefined', 'undefined'),
-(26, 23, 'undefi', 0, 'undefined', 'undefined'),
-(27, 24, 'undefi', 0, 'undefined', 'undefined'),
-(28, 25, 'undefi', 0, 'undefined', 'undefined'),
-(29, 26, 'undefi', 0, 'undefined', 'undefined'),
-(30, 27, 'undefi', 0, 'undefined', 'undefined'),
-(31, 29, 'undefi', 0, 'undefined', 'undefined'),
-(32, 30, 'undefi', 0, 'undefined', 'undefined'),
-(33, 31, 'undefi', 0, 'undefined', 'undefined'),
-(34, 32, 'undefi', 0, 'undefined', 'undefined'),
-(36, 34, 'undefi', 0, 'undefined', 'undefined'),
-(37, 35, 'undefi', 0, 'undefined', 'undefined');
+INSERT INTO `totros_datos` (`id_datos`, `id_usuario`, `licencia`, `disponibilidad`, `preferencia`, `hobbies`, `otros_conocimientos`, `idiomas`) VALUES
+(1, 1, 'B', 0, 'Jornada Continua', 'Lectura, escalada', '', '0'),
+(2, 3, NULL, 0, 'Jornada Completa', 'Música, programación', '', '0'),
+(3, 4, 'B', 0, 'Jornada Parcial', 'Cocina, montañismo', '', '0'),
+(4, 5, 'B', 0, 'Jornada Flexible', 'Automoción, música', '', '0'),
+(5, 6, '', 0, 'Jornada Flexible', 'Moda, cine', '', '0'),
+(6, 7, 'B', 0, 'Jornada Completa', 'Naturaleza, arte', '', '0'),
+(7, 8, 'B', 0, 'Jornada Parcial', 'Pintura, música', '', '0'),
+(25, 22, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(26, 23, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(27, 24, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(28, 25, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(29, 26, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(30, 27, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(31, 29, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(32, 30, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(33, 31, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(34, 32, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(36, 34, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(37, 35, 'undefi', 0, 'undefined', 'undefined', '', '0'),
+(38, 52, 'undefi', 0, 'undefined', 'undefined', 'undefined', 'undefined');
 
 -- --------------------------------------------------------
 
@@ -282,7 +286,8 @@ INSERT INTO `ttrabajos` (`id_trabajo`, `id_usuario`, `puesto`, `empresa`, `funci
 (45, 32, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
 (47, 34, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
 (48, 35, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
-(49, 37, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0);
+(49, 37, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(51, 52, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -302,38 +307,37 @@ CREATE TABLE `tusuario` (
   `linkedin` varchar(60) NOT NULL,
   `photo` varchar(250) NOT NULL DEFAULT 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg',
   `nivel_estudios` varchar(30) NOT NULL,
-  `perfil` varchar(10) NOT NULL DEFAULT 'usuario',
-  `idioma` varchar(20) NOT NULL,
-  `conocimientos_extra` varchar(50) NOT NULL
+  `perfil` varchar(10) NOT NULL DEFAULT 'usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tusuario`
 --
 
-INSERT INTO `tusuario` (`id_usuario`, `fullname`, `username`, `password`, `phone`, `email`, `city`, `country`, `linkedin`, `photo`, `nivel_estudios`, `perfil`, `idioma`, `conocimientos_extra`) VALUES
-(1, 'María García', '@mgarcia', '$2b$08$8QrAFmp6RpVL.21PLJdek.vKVaNohP2GWTrEv3M8FckD61s9Gd4fu', 666759324, 'mgarcia@email.com', 'Gijón', 'España', 'maria-garcia', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682496741/cld-sample.jpg', 'Licenciatura', 'usuario', '', ''),
-(2, 'Lucía Sánchez', '@lsanchez', '$2b$08$uV9IJNwB.1LG1JEYXh6oGeb22RrPqDSEAhJuflAM3NgMa.p5uQS6C', 659412378, 'lsanchez@email.com', 'Gijón', 'España', 'lucia-sanchez', 'https://res.cloudinary.com/dfxw85ptb/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1682496724/samples/bike.jpg', 'Grado', 'usuario', '', ''),
-(3, 'Roberto Gómez', '@rgomez', '$2b$08$CVJ1hTm09gZ7NlmfwX6THunKlOdTxYyLp55apLhc6Yudj3jjMMmyK', 641287621, 'rgomez@email.com', 'Oviedo', 'España', 'roberto-gomez', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682496723/samples/people/smiling-man.jpg', 'Grado', 'usuario', '', ''),
-(4, 'Natalia Alonso', '@nalonso', '$2b$08$t2IescpEOxiaCmOjQXsUCOeeo0aLcPz7jzc6pZHoV4xfOf82BFUM.', 675842196, 'nalonso@email.com', 'Madrid', 'España', 'natalia-alonso', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682500030/pexels-andrea-piacquadio-3763188_whi3ce.jpg', 'Bachiller', 'usuario', '', ''),
-(5, 'Tom White', '@twhite', '$2b$08$22xU6vbuZathmbQQPeoTguAHVGCn4iltTLbkPH//fB4zov63edqMS', 641288746, 'twhite@email.com', 'Berlin', 'Alemania', 'tom-white', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682676820/teclapedia/friend_2.jpg', 'Master', 'usuario', '', ''),
-(6, 'Margaret Dubois', '@mdubois', '$2b$08$X329fVQwZCGlnCdtxWqasO8.dMBn85rr3z/SSPTUvJFPm7PLTWkMS', 641288746, 'mdubois@email.com', 'París', 'Francia', 'margaret-dubois', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682500482/pexels-pixabay-415829_kmxawj.jpg', 'Diplôme National de Licence', 'usuario', '', ''),
-(7, 'Carlos Rodríguez', '@crodriguez', '$2b$08$Arb2EbOnkq4gy2eImRzvm.ZYzvfQe2pPZb6pmDGIKG6sarIe.iZ4S', 623544571, 'crodriguez@email.com', 'Buenos Aires', 'Argentina', 'carlos-rodriguez', 'https://www.shutterstock.com/image-photo/side-view-attractive-hispanic-developer-260nw-1523847986.jpg', 'Licenciatura', 'usuario', '', ''),
-(8, 'Mike Wills', '@mwills', '$2b$08$fnoRhVzOn7NcQELA/F9pAuElIKDliCzjxLKKb2IsF7Oea8zUPcEwK', 665325874, 'mwills@email.com', 'Barcelona', 'España', 'mike-wills', 'https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg', 'Grado', 'usuario', '', ''),
-(21, 'Maximiliano Jayme Dahlquist', '@maxijayme', '$2b$08$X6bh5EjdA9ACzcq2IiDdgOAzd4vxJgeW36pbnbGlCw03gtsoChOpm', 744650409, 'maxijayme@gmail.com', 'Gijón', 'España', 'maxi-jayme', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682694866/teclapedia/perfil_maxi.jpg', '', 'admin', '', ''),
-(22, 'Lucas Lopez', '@lucaslopez', '$2b$08$C0Wtw0WcMrU4kNIMUhNfu.OCy6ovuMQWVyVTrF7yapMXdfiorov/K', 656147852, 'lucaslopez@gmail.com', 'Madrid', 'España', 'lucas-lopez', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685109847/teclapedia/86.jpg', 'Sin estudios finalizados', 'usuario', '', ''),
-(23, 'Laura Maldonado', '@laumaldo', '$2b$08$MbEUKP6BhH2fV4cjj5RhAeSd1FCoMiC.QQlTLPhzLRHt4aEZRYYAy', 656258369, 'laum@gmail.com', 'Sevilla', 'España', 'lau-maldo', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685125544/teclapedia/56.jpg', 'Titulo de máster o postgrado', 'usuario', '', ''),
-(24, 'Andrea San Martin', '@andreas', '$2b$08$KRmA.kdHyrCasE.1uwr3MecO4/qLP2uBG0ZOs5roJFsLZUhzTxIGu', 656369147, 'sanmaa@gmail.com', 'Cadiz', 'España', 'andrea-sm', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685125829/teclapedia/68.jpg', 'ESO', 'usuario', '', ''),
-(25, 'Juan Cristobal', '@juancristobal', '$2b$08$HUzZcbINRHHVRNKYKvoU9.p3jMKx2kbQ1A7pdLt5tuIVSFOuxwJwC', 655741852, 'juancristobal@gmail.com', 'Málaga', 'España', 'juan-cristobal', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685126003/teclapedia/3.jpg', 'Grado superior', 'usuario', '', ''),
-(26, 'Lorenzo Lamas', '@lorenzolamas', '$2b$08$GD.2t8ZkEkfQM4nhjbQgnuqiDSMbYJ6k6gm4qZWYObDY8baAqTNB2', 644225583, 'lorenzolamas@gmail.com', 'Lima', 'Perú', 'lorenzo-lamas', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685126182/teclapedia/82.jpg', 'Estudios universitarios', 'usuario', '', ''),
-(27, 'Paula Saez', '@pausaez', '$2b$08$IpBzBYMbwX9mFHhEfS30pOJu9Qpc/psLQ7/Wi4xTJZg5J19fap6P.', 644159565, 'pausaez@gmail.com', 'Córdoba', 'Argentina', 'pau-saez', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685126495/teclapedia/67.jpg', 'ESO', 'usuario', '', ''),
-(29, 'Gustavo Garcia', '@gustavogarcia', '$2b$08$cAiQ/ytkjJBz6731hn7Tje.HzuVCVyLUT2omMGdXRyIBz8URp/lA.', 656114538, 'gustavogarcia@hotmail.com', 'Cadiz', 'España', 'gustavo-garcia', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127128/teclapedia/32.jpg', 'Nivel de estudios', 'usuario', '', ''),
-(30, 'Lourdes Perez', '@louperez', '$2b$08$2BSA1RN8NpDAhfUCFO/QAeddNOKzT0JyHWIVta/FYhjJ.Fy.0iywW', 0, 'louperez@infomail.com', 'Barcelona', 'España', '', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127478/teclapedia/57.jpg', 'Nivel de estudios', 'usuario', '', ''),
-(31, 'Cristina Acevedo', '@crisacevedo', '$2b$08$LqpumxCiNcNAtWsdZsQAGOe7lEEVj6suvulfedCRwzo1rgKm/apMi', 2147483647, 'crisacevedo@gmail.com', 'Bahía Blanca', 'Argentina', 'cris-acevedo', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127612/teclapedia/53.jpg', 'Grado superior', 'usuario', '', ''),
-(32, 'Diego wallfish', '@diegowall', '$2b$08$nFueREaalPTPdzt9y.PSqOo2uNzYcm46PxGMITFfiCWeSPMO4Dey2', 0, 'diegowall@gmail.com', 'Houston', 'EEUU', '', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127842/teclapedia/72.jpg', 'Nivel de estudios', 'usuario', '', ''),
-(34, 'Gonzalo Pierri', '@gonzapierri', '$2b$08$s5/5fMQNETraOyb8.PBHoOEGz4GfhEVHC8C0jogJ3n8WHZu/33.2S', 665321951, 'gonzapierri@gmail.com', 'León', 'España', 'gonza-p', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685128285/teclapedia/51.jpg', 'ESO', 'usuario', '', ''),
-(35, 'Carmen Flores', '@carmencitaf', '$2b$08$PmPaDiU0ThueDsyNRM6t3.c4z7yfdMbF.UI1Akwr8AjnrN4cCIY32', 644889977, 'carmenflores@gmail.com', 'Oviedo', 'España', 'carmen-flores', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685128462/teclapedia/41.jpg', 'Sin estudios finalizados', 'usuario', '', ''),
-(37, 'Matías Fernández', '@admin1', '$2b$08$xwfk59cViqqJnMO1LBlN.OtLh01sqCUH5st1zaI/NlVR8WVNC1UC6', 699699699, 'admin@teclapedia.com', 'Oviedo', 'España', '--', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg', 'undefined', 'admin', '', '');
+INSERT INTO `tusuario` (`id_usuario`, `fullname`, `username`, `password`, `phone`, `email`, `city`, `country`, `linkedin`, `photo`, `nivel_estudios`, `perfil`) VALUES
+(1, 'María García', '@mgarcia', '$2b$08$8QrAFmp6RpVL.21PLJdek.vKVaNohP2GWTrEv3M8FckD61s9Gd4fu', 666759324, 'mgarcia@email.com', 'Gijón', 'España', 'maria-garcia', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682496741/cld-sample.jpg', 'Licenciatura', 'usuario'),
+(2, 'Lucía Sánchez', '@lsanchez', '$2b$08$uV9IJNwB.1LG1JEYXh6oGeb22RrPqDSEAhJuflAM3NgMa.p5uQS6C', 659412378, 'lsanchez@email.com', 'Gijón', 'España', 'lucia-sanchez', 'https://res.cloudinary.com/dfxw85ptb/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1682496724/samples/bike.jpg', 'Grado', 'usuario'),
+(3, 'Roberto Gómez', '@rgomez', '$2b$08$CVJ1hTm09gZ7NlmfwX6THunKlOdTxYyLp55apLhc6Yudj3jjMMmyK', 641287621, 'rgomez@email.com', 'Oviedo', 'España', 'roberto-gomez', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682496723/samples/people/smiling-man.jpg', 'Grado', 'usuario'),
+(4, 'Natalia Alonso', '@nalonso', '$2b$08$t2IescpEOxiaCmOjQXsUCOeeo0aLcPz7jzc6pZHoV4xfOf82BFUM.', 675842196, 'nalonso@email.com', 'Madrid', 'España', 'natalia-alonso', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682500030/pexels-andrea-piacquadio-3763188_whi3ce.jpg', 'Bachiller', 'usuario'),
+(5, 'Tom White', '@twhite', '$2b$08$22xU6vbuZathmbQQPeoTguAHVGCn4iltTLbkPH//fB4zov63edqMS', 641288746, 'twhite@email.com', 'Berlin', 'Alemania', 'tom-white', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682676820/teclapedia/friend_2.jpg', 'Master', 'usuario'),
+(6, 'Margaret Dubois', '@mdubois', '$2b$08$X329fVQwZCGlnCdtxWqasO8.dMBn85rr3z/SSPTUvJFPm7PLTWkMS', 641288746, 'mdubois@email.com', 'París', 'Francia', 'margaret-dubois', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682500482/pexels-pixabay-415829_kmxawj.jpg', 'Diplôme National de Licence', 'usuario'),
+(7, 'Carlos Rodríguez', '@crodriguez', '$2b$08$Arb2EbOnkq4gy2eImRzvm.ZYzvfQe2pPZb6pmDGIKG6sarIe.iZ4S', 623544571, 'crodriguez@email.com', 'Buenos Aires', 'Argentina', 'carlos-rodriguez', 'https://www.shutterstock.com/image-photo/side-view-attractive-hispanic-developer-260nw-1523847986.jpg', 'Licenciatura', 'usuario'),
+(8, 'Mike Wills', '@mwills', '$2b$08$fnoRhVzOn7NcQELA/F9pAuElIKDliCzjxLKKb2IsF7Oea8zUPcEwK', 665325874, 'mwills@email.com', 'Barcelona', 'España', 'mike-wills', 'https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg', 'Grado', 'usuario'),
+(21, 'Maximiliano Jayme Dahlquist', '@maxijayme', '$2b$08$X6bh5EjdA9ACzcq2IiDdgOAzd4vxJgeW36pbnbGlCw03gtsoChOpm', 744650409, 'maxijayme@gmail.com', 'Gijón', 'España', 'maxi-jayme', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682694866/teclapedia/perfil_maxi.jpg', '', 'admin'),
+(22, 'Lucas Lopez', '@lucaslopez', '$2b$08$C0Wtw0WcMrU4kNIMUhNfu.OCy6ovuMQWVyVTrF7yapMXdfiorov/K', 656147852, 'lucaslopez@gmail.com', 'Madrid', 'España', 'lucas-lopez', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685109847/teclapedia/86.jpg', 'Sin estudios finalizados', 'usuario'),
+(23, 'Laura Maldonado', '@laumaldo', '$2b$08$MbEUKP6BhH2fV4cjj5RhAeSd1FCoMiC.QQlTLPhzLRHt4aEZRYYAy', 656258369, 'laum@gmail.com', 'Sevilla', 'España', 'lau-maldo', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685125544/teclapedia/56.jpg', 'Titulo de máster o postgrado', 'usuario'),
+(24, 'Andrea San Martin', '@andreas', '$2b$08$KRmA.kdHyrCasE.1uwr3MecO4/qLP2uBG0ZOs5roJFsLZUhzTxIGu', 656369147, 'sanmaa@gmail.com', 'Cadiz', 'España', 'andrea-sm', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685125829/teclapedia/68.jpg', 'ESO', 'usuario'),
+(25, 'Juan Cristobal', '@juancristobal', '$2b$08$HUzZcbINRHHVRNKYKvoU9.p3jMKx2kbQ1A7pdLt5tuIVSFOuxwJwC', 655741852, 'juancristobal@gmail.com', 'Málaga', 'España', 'juan-cristobal', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685126003/teclapedia/3.jpg', 'Grado superior', 'usuario'),
+(26, 'Lorenzo Lamas', '@lorenzolamas', '$2b$08$GD.2t8ZkEkfQM4nhjbQgnuqiDSMbYJ6k6gm4qZWYObDY8baAqTNB2', 644225583, 'lorenzolamas@gmail.com', 'Lima', 'Perú', 'lorenzo-lamas', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685126182/teclapedia/82.jpg', 'Estudios universitarios', 'usuario'),
+(27, 'Paula Saez', '@pausaez', '$2b$08$IpBzBYMbwX9mFHhEfS30pOJu9Qpc/psLQ7/Wi4xTJZg5J19fap6P.', 644159565, 'pausaez@gmail.com', 'Córdoba', 'Argentina', 'pau-saez', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685126495/teclapedia/67.jpg', 'ESO', 'usuario'),
+(29, 'Gustavo Garcia', '@gustavogarcia', '$2b$08$cAiQ/ytkjJBz6731hn7Tje.HzuVCVyLUT2omMGdXRyIBz8URp/lA.', 656114538, 'gustavogarcia@hotmail.com', 'Cadiz', 'España', 'gustavo-garcia', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127128/teclapedia/32.jpg', 'Nivel de estudios', 'usuario'),
+(30, 'Lourdes Perez', '@louperez', '$2b$08$2BSA1RN8NpDAhfUCFO/QAeddNOKzT0JyHWIVta/FYhjJ.Fy.0iywW', 0, 'louperez@infomail.com', 'Barcelona', 'España', '', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127478/teclapedia/57.jpg', 'Nivel de estudios', 'usuario'),
+(31, 'Cristina Acevedo', '@crisacevedo', '$2b$08$LqpumxCiNcNAtWsdZsQAGOe7lEEVj6suvulfedCRwzo1rgKm/apMi', 2147483647, 'crisacevedo@gmail.com', 'Bahía Blanca', 'Argentina', 'cris-acevedo', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127612/teclapedia/53.jpg', 'Grado superior', 'usuario'),
+(32, 'Diego wallfish', '@diegowall', '$2b$08$nFueREaalPTPdzt9y.PSqOo2uNzYcm46PxGMITFfiCWeSPMO4Dey2', 0, 'diegowall@gmail.com', 'Houston', 'EEUU', '', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127842/teclapedia/72.jpg', 'Nivel de estudios', 'usuario'),
+(34, 'Gonzalo Pierri', '@gonzapierri', '$2b$08$s5/5fMQNETraOyb8.PBHoOEGz4GfhEVHC8C0jogJ3n8WHZu/33.2S', 665321951, 'gonzapierri@gmail.com', 'León', 'España', 'gonza-p', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685128285/teclapedia/51.jpg', 'ESO', 'usuario'),
+(35, 'Carmen Flores', '@carmencitaf', '$2b$08$PmPaDiU0ThueDsyNRM6t3.c4z7yfdMbF.UI1Akwr8AjnrN4cCIY32', 644889977, 'carmenflores@gmail.com', 'Oviedo', 'España', 'carmen-flores', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685128462/teclapedia/41.jpg', 'Sin estudios finalizados', 'usuario'),
+(37, 'Matías Fernández', '@admin1', '$2b$08$xwfk59cViqqJnMO1LBlN.OtLh01sqCUH5st1zaI/NlVR8WVNC1UC6', 699699699, 'admin@teclapedia.com', 'Oviedo', 'España', '--', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg', 'undefined', 'admin'),
+(52, 'prueba3', '@prueba3', '$2b$08$B9Wz8x1uzSbB5SEP5bWkIObKSueADYNvt9QFbtm4VGbS..fJhManq', 111111111, 'prueba@pu.com', 'prueba', 'prueba', 'prueba', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg', 'undefined', 'usuario');
 
 --
 -- Índices para tablas volcadas
@@ -410,13 +414,13 @@ ALTER TABLE `tconsultas`
 -- AUTO_INCREMENT de la tabla `testudios`
 --
 ALTER TABLE `testudios`
-  MODIFY `id_estudio` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_estudio` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `totros_datos`
 --
 ALTER TABLE `totros_datos`
-  MODIFY `id_datos` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_datos` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `tpublicaciones`
@@ -440,13 +444,13 @@ ALTER TABLE `tsolicitudes`
 -- AUTO_INCREMENT de la tabla `ttrabajos`
 --
 ALTER TABLE `ttrabajos`
-  MODIFY `id_trabajo` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_trabajo` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de la tabla `tusuario`
 --
 ALTER TABLE `tusuario`
-  MODIFY `id_usuario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_usuario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Restricciones para tablas volcadas
