@@ -13,7 +13,7 @@ export default function LoginUI({handleFormSubmit, inputHandleChange, loginData,
                     <div className="row  m-2" id="login_header">
                         <img className='img-fluid' src="./img/teclapedia_logo.svg" id="login_logo" alt=""/>
                     </div>
-                    {/* <div  className ="row" id="login_container-form p-2" > */}
+                    <div  className ="row" id="login_container-form p-2" >
                         <form className = "row d-flex align-content-center p-3" id="data" >
                             {/* <div className="row d-flex justify-content-end"> */}
                                 <input className="login_fields mb-2" type="text" name="username" placeholder="Nombre de usuario" id="login_user" value={loginData.username} onChange={inputHandleChange} />
@@ -32,7 +32,7 @@ export default function LoginUI({handleFormSubmit, inputHandleChange, loginData,
                         </div>
                         
                         {/* <div className="g-signin2" data-onsuccess="onSignIn"></div> */}
-                        
+                    </div>    
                     <div className = "row m-2" id="login_register">
                         <p className="text-center">¿No tienes una cuenta?</p>
                         <div className='text-center'>
