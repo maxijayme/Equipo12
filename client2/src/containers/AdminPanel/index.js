@@ -16,7 +16,6 @@ export default function AdminPanel(){
         token = null;
         profile = null;
     }
-    console.log(jwt)
     const navigate = useNavigate()
     const [restricted, setRestricted] = useState(false)
 

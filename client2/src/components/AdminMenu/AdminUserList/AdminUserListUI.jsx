@@ -1,6 +1,7 @@
 import { CSVLink } from 'react-csv';
 import Paginate from '../../Paginate';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function AdminUserListUI({userList}){
     const headers = [
@@ -14,10 +15,14 @@ export default function AdminUserListUI({userList}){
         { label: 'país', key: 'country' },
         { label: 'nivel de estudios', key: 'nivel_estudios' }
     ];
-    const [pagedUserList, setPagedUserList] = useState([])
+    const [ currentPage, setCurrentPage ] = useState(1);
+    const [usersPerPage, ] = useState(5);
+    const indexOfLastUser= currentPage * usersPerPage
+    const indexOfFirstUser = indexOfLastUser - usersPerPage
+    const pagedUserList = userList.slice(indexOfFirstUser,indexOfLastUser)
     return(
         <div>
-            <Paginate userList={userList} pagedUserList ={pagedUserList} setPagedUserList={setPagedUserList}/>
+            <Paginate usersPerPage={usersPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} userList={userList} pagedUserList ={pagedUserList}/>
             <ul>
             {pagedUserList.length > 0 && pagedUserList.map(user =>(
                 <li key={user.id_usuario}>

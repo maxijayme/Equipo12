@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2023 a las 11:33:04
+-- Tiempo de generación: 08-06-2023 a las 20:00:35
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -20,28 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `teclapedia`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tamistades`
---
-
-CREATE TABLE `tamistades` (
-  `id_usuario` int(4) NOT NULL,
-  `id_amigo` int(4) NOT NULL,
-  `fecha_amistad` date NOT NULL DEFAULT current_timestamp(),
-  `id_amistad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `tamistades`
---
-
-INSERT INTO `tamistades` (`id_usuario`, `id_amigo`, `fecha_amistad`, `id_amistad`) VALUES
-(2, 4, '2023-06-06', 1),
-(1, 7, '2023-06-07', 3),
-(1, 2, '2023-06-07', 4);
 
 -- --------------------------------------------------------
 
@@ -64,7 +42,8 @@ CREATE TABLE `tconsultas` (
 --
 
 INSERT INTO `tconsultas` (`id_consulta`, `titulo`, `texto`, `categoria`, `estado`, `id_usuario`, `respuesta`) VALUES
-(3, 'Ayuda', 'Necesito ayuda', 'personal_data', 'pendiente', 1, '');
+(3, 'Ayuda', 'Necesito ayuda', 'personal_data', 'respondida', 1, 'vale'),
+(4, 'Nueva consulta', 'Necesito linkear mi perfil', 'security', 'pendiente', 1, '');
 
 -- --------------------------------------------------------
 
@@ -110,9 +89,9 @@ INSERT INTO `testudios` (`id_estudio`, `titulo`, `centro`, `f_inicio`, `f_fin`, 
 (38, '', '', '0000-00-00', '0000-00-00', 0, 30),
 (39, 'Técnico electrónica', 'Instituto Superior de Artes y Oficios', '2016-04-20', '2020-11-15', 0, 31),
 (40, '', '', '0000-00-00', '0000-00-00', 0, 32),
-(41, '', '', '0000-00-00', '0000-00-00', 0, 33),
 (42, '', '', '2021-04-05', '0000-00-00', 1, 34),
-(43, 'Ilustradora', 'Centro de artes plásticas de Ovieu', '2022-04-05', '0000-00-00', 1, 35);
+(43, 'Ilustradora', 'Centro de artes plásticas de Ovieu', '2022-04-05', '0000-00-00', 1, 35),
+(44, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 37);
 
 -- --------------------------------------------------------
 
@@ -151,7 +130,6 @@ INSERT INTO `totros_datos` (`id_datos`, `id_usuario`, `licencia`, `disponibilida
 (32, 30, 'undefi', 0, 'undefined', 'undefined'),
 (33, 31, 'undefi', 0, 'undefined', 'undefined'),
 (34, 32, 'undefi', 0, 'undefined', 'undefined'),
-(35, 33, 'undefi', 0, 'undefined', 'undefined'),
 (36, 34, 'undefi', 0, 'undefined', 'undefined'),
 (37, 35, 'undefi', 0, 'undefined', 'undefined');
 
@@ -199,7 +177,9 @@ INSERT INTO `tpublicaciones` (`id_publicacion`, `id_usuario`, `fecha_publicacion
 (99, 1, '2023-06-01 19:19:56', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685626101/teclapedia/promise.jpg', 'algo', NULL, NULL),
 (100, 1, '2023-06-01 19:25:44', 'undefined', 'dsds', NULL, NULL),
 (102, 1, '2023-06-01 19:35:07', 'undefined', 'dsdsd', NULL, NULL),
-(103, 3, '2023-06-02 01:38:12', 'undefined', 'Me siento identificado!', NULL, NULL);
+(103, 3, '2023-06-02 01:38:12', 'undefined', 'Me siento identificado!', NULL, NULL),
+(104, 5, '2023-06-08 13:44:35', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685693133/teclapedia/fiesta.jpg', 'Hola', NULL, NULL),
+(105, 5, '2023-06-08 13:52:20', 'undefined', 'Hola2', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -243,14 +223,17 @@ CREATE TABLE `tsolicitudes` (
 --
 
 INSERT INTO `tsolicitudes` (`id_solicitud`, `id_solicitante`, `id_solicitado`, `estado`, `fecha_solicitud`) VALUES
-(7, 1, 5, 'pendiente', '2023-06-08 09:23:37'),
+(7, 1, 5, 'aceptada', '2023-06-08 11:07:58'),
 (8, 1, 21, 'pendiente', '2023-06-06 21:52:35'),
 (9, 5, 21, 'pendiente', '2023-06-07 16:08:21'),
-(13, 5, 2, 'pendiente', '2023-06-07 19:44:08'),
+(13, 5, 2, 'aceptada', '2023-06-08 11:43:15'),
 (14, 5, 22, 'pendiente', '2023-06-07 18:06:23'),
-(15, 5, 6, 'pendiente', '2023-06-07 18:57:14'),
+(15, 5, 6, 'aceptada', '2023-06-08 11:34:11'),
 (16, 5, 25, 'pendiente', '2023-06-07 18:57:15'),
-(17, 4, 5, 'pendiente', '2023-06-07 20:30:02');
+(17, 4, 5, 'eliminada', '2023-06-08 14:17:07'),
+(18, 4, 1, 'aceptada', '2023-06-08 16:04:08'),
+(19, 5, 3, 'pendiente', '2023-06-08 11:19:40'),
+(20, 5, 4, 'aceptada', '2023-06-08 14:17:29');
 
 -- --------------------------------------------------------
 
@@ -297,9 +280,9 @@ INSERT INTO `ttrabajos` (`id_trabajo`, `id_usuario`, `puesto`, `empresa`, `funci
 (43, 30, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
 (44, 31, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
 (45, 32, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
-(46, 33, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
 (47, 34, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
-(48, 35, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0);
+(48, 35, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(49, 37, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -348,21 +331,13 @@ INSERT INTO `tusuario` (`id_usuario`, `fullname`, `username`, `password`, `phone
 (30, 'Lourdes Perez', '@louperez', '$2b$08$2BSA1RN8NpDAhfUCFO/QAeddNOKzT0JyHWIVta/FYhjJ.Fy.0iywW', 0, 'louperez@infomail.com', 'Barcelona', 'España', '', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127478/teclapedia/57.jpg', 'Nivel de estudios', 'usuario', '', ''),
 (31, 'Cristina Acevedo', '@crisacevedo', '$2b$08$LqpumxCiNcNAtWsdZsQAGOe7lEEVj6suvulfedCRwzo1rgKm/apMi', 2147483647, 'crisacevedo@gmail.com', 'Bahía Blanca', 'Argentina', 'cris-acevedo', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127612/teclapedia/53.jpg', 'Grado superior', 'usuario', '', ''),
 (32, 'Diego wallfish', '@diegowall', '$2b$08$nFueREaalPTPdzt9y.PSqOo2uNzYcm46PxGMITFfiCWeSPMO4Dey2', 0, 'diegowall@gmail.com', 'Houston', 'EEUU', '', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127842/teclapedia/72.jpg', 'Nivel de estudios', 'usuario', '', ''),
-(33, 'David Groso', '@davidg', '$2b$08$qKXCOJJLHeuOESbzSsivHuEyiNxMCmrEbhgQwPjZ40BX/RI7yetv2', 0, 'davidg@gmail.com', '', '', 'david-groso', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685128094/teclapedia/33.jpg', 'Nivel de estudios', 'usuario', '', ''),
 (34, 'Gonzalo Pierri', '@gonzapierri', '$2b$08$s5/5fMQNETraOyb8.PBHoOEGz4GfhEVHC8C0jogJ3n8WHZu/33.2S', 665321951, 'gonzapierri@gmail.com', 'León', 'España', 'gonza-p', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685128285/teclapedia/51.jpg', 'ESO', 'usuario', '', ''),
-(35, 'Carmen Flores', '@carmencitaf', '$2b$08$PmPaDiU0ThueDsyNRM6t3.c4z7yfdMbF.UI1Akwr8AjnrN4cCIY32', 644889977, 'carmenflores@gmail.com', 'Oviedo', 'España', 'carmen-flores', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685128462/teclapedia/41.jpg', 'Sin estudios finalizados', 'usuario', '', '');
+(35, 'Carmen Flores', '@carmencitaf', '$2b$08$PmPaDiU0ThueDsyNRM6t3.c4z7yfdMbF.UI1Akwr8AjnrN4cCIY32', 644889977, 'carmenflores@gmail.com', 'Oviedo', 'España', 'carmen-flores', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685128462/teclapedia/41.jpg', 'Sin estudios finalizados', 'usuario', '', ''),
+(37, 'Matías Fernández', '@admin1', '$2b$08$xwfk59cViqqJnMO1LBlN.OtLh01sqCUH5st1zaI/NlVR8WVNC1UC6', 699699699, 'admin@teclapedia.com', 'Oviedo', 'España', '--', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg', 'undefined', 'admin', '', '');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `tamistades`
---
-ALTER TABLE `tamistades`
-  ADD PRIMARY KEY (`id_amistad`),
-  ADD KEY `id_usuario` (`id_usuario`),
-  ADD KEY `id_amigo` (`id_amigo`);
 
 --
 -- Indices de la tabla `tconsultas`
@@ -426,22 +401,16 @@ ALTER TABLE `tusuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `tamistades`
---
-ALTER TABLE `tamistades`
-  MODIFY `id_amistad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT de la tabla `tconsultas`
 --
 ALTER TABLE `tconsultas`
-  MODIFY `id_consulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_consulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `testudios`
 --
 ALTER TABLE `testudios`
-  MODIFY `id_estudio` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_estudio` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `totros_datos`
@@ -453,7 +422,7 @@ ALTER TABLE `totros_datos`
 -- AUTO_INCREMENT de la tabla `tpublicaciones`
 --
 ALTER TABLE `tpublicaciones`
-  MODIFY `id_publicacion` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id_publicacion` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT de la tabla `trecomendaciones`
@@ -465,74 +434,67 @@ ALTER TABLE `trecomendaciones`
 -- AUTO_INCREMENT de la tabla `tsolicitudes`
 --
 ALTER TABLE `tsolicitudes`
-  MODIFY `id_solicitud` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_solicitud` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `ttrabajos`
 --
 ALTER TABLE `ttrabajos`
-  MODIFY `id_trabajo` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_trabajo` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de la tabla `tusuario`
 --
 ALTER TABLE `tusuario`
-  MODIFY `id_usuario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_usuario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `tamistades`
---
-ALTER TABLE `tamistades`
-  ADD CONSTRAINT `id_amigo` FOREIGN KEY (`id_amigo`) REFERENCES `tusuario` (`id_usuario`),
-  ADD CONSTRAINT `id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`);
-
---
 -- Filtros para la tabla `tconsultas`
 --
 ALTER TABLE `tconsultas`
-  ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`);
+  ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `testudios`
 --
 ALTER TABLE `testudios`
-  ADD CONSTRAINT `test` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`);
+  ADD CONSTRAINT `test` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `totros_datos`
 --
 ALTER TABLE `totros_datos`
-  ADD CONSTRAINT `totros_datos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`);
+  ADD CONSTRAINT `totros_datos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `tpublicaciones`
 --
 ALTER TABLE `tpublicaciones`
-  ADD CONSTRAINT `tpublicaciones_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`);
+  ADD CONSTRAINT `tpublicaciones_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `trecomendaciones`
 --
 ALTER TABLE `trecomendaciones`
-  ADD CONSTRAINT `fk_recomedante` FOREIGN KEY (`id_recomendante`) REFERENCES `tusuario` (`id_usuario`),
-  ADD CONSTRAINT `fk_recomendado` FOREIGN KEY (`id_recomendado`) REFERENCES `tusuario` (`id_usuario`);
+  ADD CONSTRAINT `fk_recomedante` FOREIGN KEY (`id_recomendante`) REFERENCES `tusuario` (`id_usuario`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_recomendado` FOREIGN KEY (`id_recomendado`) REFERENCES `tusuario` (`id_usuario`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `tsolicitudes`
 --
 ALTER TABLE `tsolicitudes`
-  ADD CONSTRAINT `tsolicitudes_ibfk_1` FOREIGN KEY (`id_solicitante`) REFERENCES `tusuario` (`id_usuario`),
-  ADD CONSTRAINT `tsolicitudes_ibfk_2` FOREIGN KEY (`id_solicitado`) REFERENCES `tusuario` (`id_usuario`);
+  ADD CONSTRAINT `tsolicitudes_ibfk_1` FOREIGN KEY (`id_solicitante`) REFERENCES `tusuario` (`id_usuario`) ON DELETE CASCADE,
+  ADD CONSTRAINT `tsolicitudes_ibfk_2` FOREIGN KEY (`id_solicitado`) REFERENCES `tusuario` (`id_usuario`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `ttrabajos`
 --
 ALTER TABLE `ttrabajos`
-  ADD CONSTRAINT `FOREING KEY` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`);
+  ADD CONSTRAINT `FOREING KEY` FOREIGN KEY (`id_usuario`) REFERENCES `tusuario` (`id_usuario`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,20 +1,18 @@
 import PaginateUI from "./PaginateUI";
 import { useEffect, useState } from "react";
 
-export default function Paginate({userList, pagedUserList, setPagedUserList}){
+export default function Paginate({userList,usersPerPage, setCurrentPage, currentPage}){
 
-    const [ currentPage, setCurrentPage ] = useState(1);
-    const [usersPerPage, ] = useState(5);
     
-    useEffect(()=>{
-        setPagedUserList(userList.slice(indexOfFirstUser,indexOfLastUser))
-    }, [currentPage])
-    const indexOfLastUser= currentPage * usersPerPage
-    const indexOfFirstUser = indexOfLastUser - usersPerPage
-    const totalPages = Math.ceil(userList.length / usersPerPage);
+    
     const paginated = (pageNumber)=>{
         setCurrentPage(pageNumber)
     }
+    // useEffect(()=>{
+    //     setPagedUserList(userList.slice(indexOfFirstUser,indexOfLastUser))
+    // }, [currentPage])
+   
+    const totalPages = Math.ceil(userList.length / usersPerPage);
 
     const pages = [];   
     for(let i = 1; i <= Math.ceil(userList/usersPerPage); i++) {
