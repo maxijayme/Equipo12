@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-05-2023 a las 13:33:48
+-- Tiempo de generación: 07-06-2023 a las 16:13:10
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -29,26 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tamistades` (
   `id_usuario` int(4) NOT NULL,
-  `id_amigo` int(4) NOT NULL
+  `id_amigo` int(4) NOT NULL,
+  `fecha_amistad` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tamistades`
 --
 
-INSERT INTO `tamistades` (`id_usuario`, `id_amigo`) VALUES
-(1, 2),
-(1, 3),
-(2, 1),
-(3, 1),
-(2, 4),
-(4, 2),
-(1, 2),
-(1, 3),
-(2, 1),
-(3, 1),
-(2, 4),
-(4, 2);
+INSERT INTO `tamistades` (`id_usuario`, `id_amigo`, `fecha_amistad`) VALUES
+(2, 4, '2023-06-06'),
+(4, 2, '2023-06-06');
 
 -- --------------------------------------------------------
 
@@ -71,13 +62,7 @@ CREATE TABLE `tconsultas` (
 --
 
 INSERT INTO `tconsultas` (`id_consulta`, `titulo`, `texto`, `categoria`, `estado`, `id_usuario`, `respuesta`) VALUES
-(3, 'Ayuda', 'Necesito ayuda', 'personal_data', 'pendiente', 1, ''),
-(12, 'Modificar email', '¿Es posible modificar la dirección de email asociada sin perder los datos de mi cuenta?', 'personal data', 'respondida', 1, 'se podria...'),
-(15, 'Limitar contenido', '¿Se puede limitar a quién se muestra el contenido que publico?', 'content', 'pendiente', 1, ''),
-(16, 'Cambio de contraseña', 'He intentado hacer el cambio de contraseña pero no recibo el enlace de modificación', 'security', 'pendiente', 1, ''),
-(17, 'Nueva', 'Nueva consulta', 'personal data', 'pendiente', 1, ''),
-(19, 'Hola', 'Necesito ayuda', 'privacy', 'respondida', 1, ''),
-(20, 'Necesito ayuda', 'sldjfla', 'security', 'pendiente', 1, '');
+(3, 'Ayuda', 'Necesito ayuda', 'personal_data', 'pendiente', 1, '');
 
 -- --------------------------------------------------------
 
@@ -113,26 +98,19 @@ INSERT INTO `testudios` (`id_estudio`, `titulo`, `centro`, `f_inicio`, `f_fin`, 
 (11, 'Ingénierie des systèmes', 'École Polytechnique', '2014-06-01', '2019-05-01', 0, 6),
 (12, 'Licenciatura en informática', 'Universidad de Palermo', '2011-09-01', '2016-06-01', 0, 7),
 (13, 'Grado en ciencias tecnológicas', 'Universidad de Barcelona', '2012-09-01', '2016-06-01', 0, 8),
-(14, 'sdasd', 'sadasd', '2023-04-04', '0000-00-00', 0, 13),
-(16, '', '', '0000-00-00', '0000-00-00', 0, 16),
-(17, '', '', '0000-00-00', '0000-00-00', 0, 16),
-(18, 'bbb', 'bbbb', '0000-00-00', '0000-00-00', 0, 16),
-(19, '', '', '0000-00-00', '0000-00-00', 0, 16),
-(20, '', '', '0000-00-00', '0000-00-00', 0, 16),
-(21, '', '', '0000-00-00', '0000-00-00', 0, 16),
-(22, '', '', '0000-00-00', '0000-00-00', 0, 16),
-(23, '', '', '0000-00-00', '0000-00-00', 0, 16),
-(24, '', '', '0000-00-00', '0000-00-00', 0, 16),
-(25, '', '', '0000-00-00', '0000-00-00', 0, 16),
-(26, '', '', '0000-00-00', '0000-00-00', 0, 16),
-(27, '', '', '0000-00-00', '0000-00-00', 0, 16),
-(28, '', '', '0000-00-00', '0000-00-00', 0, 18),
-(29, '', '', '0000-00-00', '0000-00-00', 0, 19),
-(51, 'Ingeniería', 'Universidad de oviedo', '2023-05-25', '2023-05-19', 0, 20),
-(52, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 20),
-(53, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 20),
-(54, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 20),
-(55, 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0, 20);
+(31, '', '', '0000-00-00', '0000-00-00', 0, 22),
+(32, 'Master en Administración de Empresas', 'Universidad de Murcia', '2009-03-03', '2011-11-30', 0, 23),
+(33, '', '', '0000-00-00', '0000-00-00', 0, 24),
+(34, 'Técnico informático', 'Pro Malaga', '2022-07-15', '0000-00-00', 1, 25),
+(35, 'Ingeniero Mecánico', 'Universidad Nacional Lima', '1997-03-01', '2006-03-05', 0, 26),
+(36, 'Bachiller', 'Escuela n°10 Córdoba', '2018-03-15', '2021-11-30', 0, 27),
+(37, '', '', '0000-00-00', '0000-00-00', 0, 29),
+(38, '', '', '0000-00-00', '0000-00-00', 0, 30),
+(39, 'Técnico electrónica', 'Instituto Superior de Artes y Oficios', '2016-04-20', '2020-11-15', 0, 31),
+(40, '', '', '0000-00-00', '0000-00-00', 0, 32),
+(41, '', '', '0000-00-00', '0000-00-00', 0, 33),
+(42, '', '', '2021-04-05', '0000-00-00', 1, 34),
+(43, 'Ilustradora', 'Centro de artes plásticas de Ovieu', '2022-04-05', '0000-00-00', 1, 35);
 
 -- --------------------------------------------------------
 
@@ -146,39 +124,34 @@ CREATE TABLE `totros_datos` (
   `licencia` varchar(6) DEFAULT NULL,
   `disponibilidad` tinyint(1) DEFAULT NULL,
   `preferencia` varchar(35) DEFAULT NULL,
-  `hobbies` varchar(50) DEFAULT NULL,
-  `otros_conocimientos` varchar(300) DEFAULT NULL,
-  `idiomas` varchar(300) DEFAULT NULL
+  `hobbies` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `totros_datos`
 --
 
-INSERT INTO `totros_datos` (`id_datos`, `id_usuario`, `licencia`, `disponibilidad`, `preferencia`, `hobbies`, `otros_conocimientos`, `idiomas`) VALUES
-(1, 1, 'B', 0, 'Jornada Continua', 'Lectura, escalada', NULL, NULL),
-(2, 3, NULL, 0, 'Jornada Completa', 'Música, programación', NULL, NULL),
-(3, 4, 'B', 0, 'Jornada Parcial', 'Cocina, montañismo', NULL, NULL),
-(4, 5, 'B', 0, 'Jornada Flexible', 'Automoción, música', NULL, NULL),
-(5, 6, '', 0, 'Jornada Flexible', 'Moda, cine', NULL, NULL),
-(6, 7, 'B', 0, 'Jornada Completa', 'Naturaleza, arte', NULL, NULL),
-(7, 8, 'B', 0, 'Jornada Parcial', 'Pintura, música', NULL, NULL),
-(8, 13, 'No', 1, 'Turno Partido', 'adasdas', NULL, NULL),
-(12, 16, 'No', 1, 'Mañanas', 'bbbb', NULL, NULL),
-(13, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
-(14, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
-(15, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
-(16, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
-(17, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
-(18, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
-(19, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
-(20, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
-(21, 16, 'No', 1, 'Mañanas', '', NULL, NULL),
-(22, 18, 'B', 1, 'Mañanas', 'Me gusta la bachata', NULL, NULL),
-(23, 19, 'No', 1, 'Mañanas', '', NULL, NULL),
-(24, 20, 'No', 1, 'Mañanas', '', NULL, NULL),
-(38, 20, 'b', 1, 'undefined', 'sfasfa', NULL, NULL),
-(39, 20, 'b', 0, 'turnoPartido', 'sfas', NULL, NULL);
+INSERT INTO `totros_datos` (`id_datos`, `id_usuario`, `licencia`, `disponibilidad`, `preferencia`, `hobbies`) VALUES
+(1, 1, 'B', 0, 'Jornada Continua', 'Lectura, escalada'),
+(2, 3, NULL, 0, 'Jornada Completa', 'Música, programación'),
+(3, 4, 'B', 0, 'Jornada Parcial', 'Cocina, montañismo'),
+(4, 5, 'B', 0, 'Jornada Flexible', 'Automoción, música'),
+(5, 6, '', 0, 'Jornada Flexible', 'Moda, cine'),
+(6, 7, 'B', 0, 'Jornada Completa', 'Naturaleza, arte'),
+(7, 8, 'B', 0, 'Jornada Parcial', 'Pintura, música'),
+(25, 22, 'undefi', 0, 'undefined', 'undefined'),
+(26, 23, 'undefi', 0, 'undefined', 'undefined'),
+(27, 24, 'undefi', 0, 'undefined', 'undefined'),
+(28, 25, 'undefi', 0, 'undefined', 'undefined'),
+(29, 26, 'undefi', 0, 'undefined', 'undefined'),
+(30, 27, 'undefi', 0, 'undefined', 'undefined'),
+(31, 29, 'undefi', 0, 'undefined', 'undefined'),
+(32, 30, 'undefi', 0, 'undefined', 'undefined'),
+(33, 31, 'undefi', 0, 'undefined', 'undefined'),
+(34, 32, 'undefi', 0, 'undefined', 'undefined'),
+(35, 33, 'undefi', 0, 'undefined', 'undefined'),
+(36, 34, 'undefi', 0, 'undefined', 'undefined'),
+(37, 35, 'undefi', 0, 'undefined', 'undefined');
 
 -- --------------------------------------------------------
 
@@ -214,13 +187,17 @@ INSERT INTO `tpublicaciones` (`id_publicacion`, `id_usuario`, `fecha_publicacion
 (12, 7, '2023-04-25 12:41:27', 'https://eventos.una.ac.cr/_files/_event/_98186/_header_img/_137056.png', 'Allí nos vemos!', 96, 35),
 (13, 2, '2023-04-10 07:54:14', 'https://assets-global.website-files.com/5f3c19f18169b62a0d0bf387/60d33be8cf4ba7565123c8bc_YPD3ulQQAGQpOcnqIm3QzSTRgzmr1SexpW9ZjMpJ1mAnUxx4iF05XOTu44sk0qQG-8XgBcYmGZGAD-5SAZvJl3TjtmhgWnn-w0C2XKwhBscV78RVvhwZfyp0v_Pa6sNj5zxpOvRW.png', 'Un poco de humor para empezar la semana!', 115, 37),
 (14, 2, '2023-03-02 16:58:29', 'https://cdn.tutsplus.com/net/uploads/legacy/1069_api/preview.jpg', 'The Increasing Importance of APIs in Web Development: https://code.tutsplus.com/articles/the-increasing-importance-of-apis-in-web-development--net-22368', 100, 12),
-(49, 16, '2023-04-28 01:11:51', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682676573/teclapedia/4.jpg', 'foton', NULL, NULL),
-(50, 17, '2023-04-28 01:14:13', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682680517/teclapedia/5.jpg', 'fotasa', NULL, NULL),
 (56, 2, '2023-04-28 14:31:18', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682685144/teclapedia/7.jpg', 'Foton', NULL, NULL),
 (57, 2, '2023-04-28 14:32:15', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682677149/teclapedia/friend_1.jpg', 'Genial!', NULL, NULL),
-(58, 2, '2023-04-28 14:33:07', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682685253/teclapedia/9.jpg', 'Maaaaal', NULL, NULL),
-(92, 18, '2023-04-28 17:18:18', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682695149/teclapedia/react-meme1_.png', 'Próxima parada...', NULL, NULL),
-(93, 20, '2023-04-28 19:32:15', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682695149/teclapedia/react-meme1_.png', 'memes por favor', NULL, NULL);
+(58, 2, '2023-04-28 14:33:07', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682685253/teclapedia/9.jpg', 'Maaaaal', 0, NULL),
+(95, 1, '2023-06-01 17:36:54', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685626101/teclapedia/promise.jpg', 'Que buen meme', NULL, NULL),
+(96, 1, '2023-06-01 19:08:38', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685639365/teclapedia/reactmeme.jpg', 'probando', NULL, NULL),
+(97, 1, '2023-06-01 19:09:08', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685639365/teclapedia/reactmeme.jpg', '', NULL, NULL),
+(98, 1, '2023-06-01 19:09:18', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685639365/teclapedia/reactmeme.jpg', '', NULL, NULL),
+(99, 1, '2023-06-01 19:19:56', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685626101/teclapedia/promise.jpg', 'algo', NULL, NULL),
+(100, 1, '2023-06-01 19:25:44', 'undefined', 'dsds', NULL, NULL),
+(102, 1, '2023-06-01 19:35:07', 'undefined', 'dsdsd', NULL, NULL),
+(103, 3, '2023-06-02 01:38:12', 'undefined', 'Me siento identificado!', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -232,8 +209,16 @@ CREATE TABLE `trecomendaciones` (
   `id` int(11) NOT NULL,
   `id_recomendante` int(11) NOT NULL,
   `id_recomendado` int(11) NOT NULL,
-  `recomendación` varchar(500) NOT NULL
+  `recomendacion` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `trecomendaciones`
+--
+
+INSERT INTO `trecomendaciones` (`id`, `id_recomendante`, `id_recomendado`, `recomendacion`) VALUES
+(7, 1, 21, 'Ojo con este chico... Es argentino!'),
+(8, 21, 1, 'Es una gran persona. Muy profesional!');
 
 -- --------------------------------------------------------
 
@@ -254,7 +239,11 @@ CREATE TABLE `tsolicitudes` (
 --
 
 INSERT INTO `tsolicitudes` (`id_solicitud`, `id_solicitante`, `id_solicitado`, `estado`, `fecha_solicitud`) VALUES
-(1, 1, 5, 'aceptada', '2023-05-15 18:38:06');
+(1, 1, 5, 'rechazada', '2023-06-06 19:53:41'),
+(5, 1, 5, 'rechazada', '2023-06-06 21:32:04'),
+(6, 1, 5, 'rechazada', '2023-06-06 21:34:05'),
+(7, 1, 5, 'pendiente', '2023-06-06 21:34:06'),
+(8, 1, 21, 'pendiente', '2023-06-06 21:52:35');
 
 -- --------------------------------------------------------
 
@@ -291,17 +280,19 @@ INSERT INTO `ttrabajos` (`id_trabajo`, `id_usuario`, `puesto`, `empresa`, `funci
 (14, 6, 'Junior Systems Engineer', 'ThyssenGroup', 'Gérer les systèmes d exploitation, mettre à jour les fonctionnalités si nécessaire. Il est en charge de la maintenance du système ; traite les incidents des utilisateurs et résout les problèmes qui surviennent. Résoudre les incidents matériels et logiciels. Surveiller les différents systèmes.', '2018-03-15', '2019-03-04', 0),
 (15, 7, 'Chief Information Security Officer', 'SoundTrack', 'Anticipar nuevas amenazas y trabajar activamente para evitar que ocurran. El CISO debe trabajar con otros ejecutivos de diferentes departamentos para garantizar que los sistemas de seguridad funcionen sin problemas para reducir los riesgos operativos de la organización ante un ataque de seguridad. Garantizar que la privacidad de los datos de la empresa sea segura, administrar el Equipo de Respuest', '2019-03-04', NULL, 1),
 (16, 7, 'Técnico en ciberseguridad', 'Yuri Microsistems', 'Recabar información de manera pasiva en fuentes públicas, infraestructuras y redes sociales.Realizar ataques a diferentes estructuras y definir su modelo y estrategia de penetración.Exploración y evaluación de las posibles configuraciones inseguras, vulnerabilidades identificadasy posibles vectores de ataque.Atacar a redes Wireless.\r\nExplotación y post explotación aprovechando las vulnerabilidades en un sistema.\r\nElevar privilegios para controlar sistemas e información.Mantener protegidos los equipos de seguridad.', '2016-02-04', '2019-03-01', 0),
-(17, 8, 'Web Designer', 'Google', 'Identificar las necesidades de la marca.\r\nEstudiar el comportamiento de los usuarios.\r\nDefinir cuáles son los requisitos técnicos que demanda la creación del sitio web.\r\nCrear una estrategia detallada de los factores a tener en cuenta en el diseño.\r\nRealizar la maquetación de la estructura del sitio web.\r\nCrear contenido para cada página.\r\nDiseñar logotipos e íconos.\r\nUtilizar tipografías y paletas de colores.\r\nCrear toda la imagen de la marca.\r\nEncargarse de la usabilidad y la adaptación de las páginas web.\r\nGestionar el posicionamiento del sitio en buscadores.', '2016-02-04', '2019-03-01', 0),
-(18, 8, 'Web Designer', 'MachineRadio', 'Diseñar páginas web personalizadas con especial referencia al planteamiento estratégico de las interfaces.', '2019-05-01', NULL, 1),
-(32, 16, '', '', '', '0000-00-00', '0000-00-00', 1),
-(33, 18, 'Teleoperado', 'Telefonica', 'Teleoperador', '2023-04-20', '2023-04-25', 1),
-(34, 19, '', 'Telefonica', '', '0000-00-00', '0000-00-00', 1),
-(35, 20, '', '', '', '0000-00-00', '0000-00-00', 1),
-(49, 20, 'Tecnico', 'AL', 'sfasfdasd', '2023-05-13', '0000-00-00', 1),
-(50, 20, 'Tecnico', 'X', 'dfgdsfg', '2023-05-02', '0000-00-00', 1),
-(51, 20, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
-(52, 20, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
-(53, 20, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0);
+(36, 22, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(37, 23, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(38, 24, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(39, 25, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(40, 26, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(41, 27, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(42, 29, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(43, 30, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(44, 31, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(45, 32, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(46, 33, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(47, 34, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0),
+(48, 35, 'undefined', 'undefined', 'undefined', '0000-00-00', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -314,35 +305,45 @@ CREATE TABLE `tusuario` (
   `fullname` varchar(50) NOT NULL,
   `username` varchar(15) NOT NULL,
   `password` varchar(60) NOT NULL,
-  `phone` int(9) DEFAULT NULL,
+  `phone` int(9) NOT NULL,
   `email` varchar(30) NOT NULL,
   `city` varchar(20) NOT NULL,
   `country` varchar(20) NOT NULL,
   `linkedin` varchar(60) NOT NULL,
   `photo` varchar(250) NOT NULL DEFAULT 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg',
   `nivel_estudios` varchar(30) NOT NULL,
-  `perfil` varchar(10) NOT NULL DEFAULT 'usuario'
+  `perfil` varchar(10) NOT NULL DEFAULT 'usuario',
+  `idioma` varchar(20) NOT NULL,
+  `conocimientos_extra` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tusuario`
 --
 
-INSERT INTO `tusuario` (`id_usuario`, `fullname`, `username`, `password`, `phone`, `email`, `city`, `country`, `linkedin`, `photo`, `nivel_estudios`, `perfil`) VALUES
-(1, 'María García', '@mgarcia', '$2b$08$8QrAFmp6RpVL.21PLJdek.vKVaNohP2GWTrEv3M8FckD61s9Gd4fu', 666759324, 'mgarcia@email.com', 'Gijón', 'España', 'https://www.linkedin.com/in/maria', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682496741/cld-sample.jpg', 'Licenciatura', 'usuario'),
-(2, 'Lucía Sánchez', '@lsanchez', '$2b$08$uV9IJNwB.1LG1JEYXh6oGeb22RrPqDSEAhJuflAM3NgMa.p5uQS6C', 659412378, 'lsanchez@email.com', 'Gijón', 'España', 'lucia-sanchez', 'https://res.cloudinary.com/dfxw85ptb/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1682496724/samples/bike.jpg', 'Grado', 'usuario'),
-(3, 'Roberto Gómez', '@rgomez', '$2b$08$CVJ1hTm09gZ7NlmfwX6THunKlOdTxYyLp55apLhc6Yudj3jjMMmyK', 641287621, 'rgomez@email.com', 'Oviedo', 'España', 'roberto-gomez', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682496723/samples/people/smiling-man.jpg', 'Grado', 'usuario'),
-(4, 'Natalia Alonso', '@nalonso', '$2b$08$t2IescpEOxiaCmOjQXsUCOeeo0aLcPz7jzc6pZHoV4xfOf82BFUM.', 675842196, 'nalonso@email.com', 'Madrid', 'España', 'natalia-alonso', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682500030/pexels-andrea-piacquadio-3763188_whi3ce.jpg', 'Bachiller', 'usuario'),
-(5, 'Tom White', '@twhite', '$2b$08$22xU6vbuZathmbQQPeoTguAHVGCn4iltTLbkPH//fB4zov63edqMS', 641288746, 'twhite@email.com', 'Berlin', 'Alemania', 'tom-white', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682676820/teclapedia/friend_2.jpg', 'Master', 'usuario'),
-(6, 'Margaret Dubois', '@mdubois', '$2b$08$X329fVQwZCGlnCdtxWqasO8.dMBn85rr3z/SSPTUvJFPm7PLTWkMS', 641288746, 'mdubois@email.com', 'París', 'Francia', 'margaret-dubois', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682500482/pexels-pixabay-415829_kmxawj.jpg', 'Diplôme National de Licence', 'usuario'),
-(7, 'Carlos Rodríguez', '@crodriguez', '$2b$08$Arb2EbOnkq4gy2eImRzvm.ZYzvfQe2pPZb6pmDGIKG6sarIe.iZ4S', 623544571, 'crodriguez@email.com', 'Buenos Aires', 'Argentina', 'carlos-rodriguez', 'https://www.shutterstock.com/image-photo/side-view-attractive-hispanic-developer-260nw-1523847986.jpg', 'Licenciatura', 'usuario'),
-(8, 'Mike Wills', '@mwills', '$2b$08$fnoRhVzOn7NcQELA/F9pAuElIKDliCzjxLKKb2IsF7Oea8zUPcEwK', 665325874, 'mwills@email.com', 'Barcelona', 'España', 'mike-wills', 'https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg', 'Grado', 'usuario'),
-(13, 'Pepe', 'soniaG', '[object Promise', 744650409, 'mgarcia@emaill.com', 'Gijón', 'España', 'https://www.linkedin.com/in/maxi-jayme/', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg', 'Graduado escolar', 'usuario'),
-(16, 'Maximiliano Ruben Jayme Dahlquist', 'maxijaymed', '[object Promise', 0, 'maxijayme@gmail.com', '', '', '', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682676573/teclapedia/4.jpg', 'Nivel de estudios', 'usuario'),
-(17, 'pepe', 'pepepepe', '[object Promise', NULL, 'pepe@gmail.com', '', '', '', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682499176/teclapedia/avatar_vh25bz.jpg', '', 'usuario'),
-(18, 'Maximiliano Ruben Jayme Dahlquist', 'maxijayme', '[object Promise', 744650409, 'maxijayme@gmail.com', 'Gijón', 'España', '@maxi-jayme', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682694866/teclapedia/perfil_maxi.jpg', 'Sin estudios finalizados', 'usuario'),
-(19, 'Maximiliano Jayme Dahlquist', 'maxijayme2', '[object Promise', 744650409, 'maxjaga2@hotmail.com', 'Gijón', 'España', '@maxi-jayme', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682694866/teclapedia/perfil_maxi.jpg', 'Nivel de estudios', 'usuario'),
-(20, 'maxi jayme', 'maxijj', '[object Promise', 0, 'maxijayme2@gmail.com', 'undefined', 'undefined', 'undefined', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682694866/teclapedia/perfil_maxi.jpg', 'undefined', 'usuario');
+INSERT INTO `tusuario` (`id_usuario`, `fullname`, `username`, `password`, `phone`, `email`, `city`, `country`, `linkedin`, `photo`, `nivel_estudios`, `perfil`, `idioma`, `conocimientos_extra`) VALUES
+(1, 'María García', '@mgarcia', '$2b$08$8QrAFmp6RpVL.21PLJdek.vKVaNohP2GWTrEv3M8FckD61s9Gd4fu', 666759324, 'mgarcia@email.com', 'Gijón', 'España', 'maria-garcia', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682496741/cld-sample.jpg', 'Licenciatura', 'usuario', '', ''),
+(2, 'Lucía Sánchez', '@lsanchez', '$2b$08$uV9IJNwB.1LG1JEYXh6oGeb22RrPqDSEAhJuflAM3NgMa.p5uQS6C', 659412378, 'lsanchez@email.com', 'Gijón', 'España', 'lucia-sanchez', 'https://res.cloudinary.com/dfxw85ptb/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1682496724/samples/bike.jpg', 'Grado', 'usuario', '', ''),
+(3, 'Roberto Gómez', '@rgomez', '$2b$08$CVJ1hTm09gZ7NlmfwX6THunKlOdTxYyLp55apLhc6Yudj3jjMMmyK', 641287621, 'rgomez@email.com', 'Oviedo', 'España', 'roberto-gomez', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682496723/samples/people/smiling-man.jpg', 'Grado', 'usuario', '', ''),
+(4, 'Natalia Alonso', '@nalonso', '$2b$08$t2IescpEOxiaCmOjQXsUCOeeo0aLcPz7jzc6pZHoV4xfOf82BFUM.', 675842196, 'nalonso@email.com', 'Madrid', 'España', 'natalia-alonso', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682500030/pexels-andrea-piacquadio-3763188_whi3ce.jpg', 'Bachiller', 'usuario', '', ''),
+(5, 'Tom White', '@twhite', '$2b$08$22xU6vbuZathmbQQPeoTguAHVGCn4iltTLbkPH//fB4zov63edqMS', 641288746, 'twhite@email.com', 'Berlin', 'Alemania', 'tom-white', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682676820/teclapedia/friend_2.jpg', 'Master', 'usuario', '', ''),
+(6, 'Margaret Dubois', '@mdubois', '$2b$08$X329fVQwZCGlnCdtxWqasO8.dMBn85rr3z/SSPTUvJFPm7PLTWkMS', 641288746, 'mdubois@email.com', 'París', 'Francia', 'margaret-dubois', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682500482/pexels-pixabay-415829_kmxawj.jpg', 'Diplôme National de Licence', 'usuario', '', ''),
+(7, 'Carlos Rodríguez', '@crodriguez', '$2b$08$Arb2EbOnkq4gy2eImRzvm.ZYzvfQe2pPZb6pmDGIKG6sarIe.iZ4S', 623544571, 'crodriguez@email.com', 'Buenos Aires', 'Argentina', 'carlos-rodriguez', 'https://www.shutterstock.com/image-photo/side-view-attractive-hispanic-developer-260nw-1523847986.jpg', 'Licenciatura', 'usuario', '', ''),
+(8, 'Mike Wills', '@mwills', '$2b$08$fnoRhVzOn7NcQELA/F9pAuElIKDliCzjxLKKb2IsF7Oea8zUPcEwK', 665325874, 'mwills@email.com', 'Barcelona', 'España', 'mike-wills', 'https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg', 'Grado', 'usuario', '', ''),
+(21, 'Maximiliano Jayme Dahlquist', '@maxijayme', '$2b$08$X6bh5EjdA9ACzcq2IiDdgOAzd4vxJgeW36pbnbGlCw03gtsoChOpm', 744650409, 'maxijayme@gmail.com', 'Gijón', 'España', 'maxi-jayme', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682694866/teclapedia/perfil_maxi.jpg', '', 'admin', '', ''),
+(22, 'Lucas Lopez', '@lucaslopez', '$2b$08$C0Wtw0WcMrU4kNIMUhNfu.OCy6ovuMQWVyVTrF7yapMXdfiorov/K', 656147852, 'lucaslopez@gmail.com', 'Madrid', 'España', 'lucas-lopez', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685109847/teclapedia/86.jpg', 'Sin estudios finalizados', 'usuario', '', ''),
+(23, 'Laura Maldonado', '@laumaldo', '$2b$08$MbEUKP6BhH2fV4cjj5RhAeSd1FCoMiC.QQlTLPhzLRHt4aEZRYYAy', 656258369, 'laum@gmail.com', 'Sevilla', 'España', 'lau-maldo', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685125544/teclapedia/56.jpg', 'Titulo de máster o postgrado', 'usuario', '', ''),
+(24, 'Andrea San Martin', '@andreas', '$2b$08$KRmA.kdHyrCasE.1uwr3MecO4/qLP2uBG0ZOs5roJFsLZUhzTxIGu', 656369147, 'sanmaa@gmail.com', 'Cadiz', 'España', 'andrea-sm', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685125829/teclapedia/68.jpg', 'ESO', 'usuario', '', ''),
+(25, 'Juan Cristobal', '@juancristobal', '$2b$08$HUzZcbINRHHVRNKYKvoU9.p3jMKx2kbQ1A7pdLt5tuIVSFOuxwJwC', 655741852, 'juancristobal@gmail.com', 'Málaga', 'España', 'juan-cristobal', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685126003/teclapedia/3.jpg', 'Grado superior', 'usuario', '', ''),
+(26, 'Lorenzo Lamas', '@lorenzolamas', '$2b$08$GD.2t8ZkEkfQM4nhjbQgnuqiDSMbYJ6k6gm4qZWYObDY8baAqTNB2', 644225583, 'lorenzolamas@gmail.com', 'Lima', 'Perú', 'lorenzo-lamas', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685126182/teclapedia/82.jpg', 'Estudios universitarios', 'usuario', '', ''),
+(27, 'Paula Saez', '@pausaez', '$2b$08$IpBzBYMbwX9mFHhEfS30pOJu9Qpc/psLQ7/Wi4xTJZg5J19fap6P.', 644159565, 'pausaez@gmail.com', 'Córdoba', 'Argentina', 'pau-saez', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685126495/teclapedia/67.jpg', 'ESO', 'usuario', '', ''),
+(29, 'Gustavo Garcia', '@gustavogarcia', '$2b$08$cAiQ/ytkjJBz6731hn7Tje.HzuVCVyLUT2omMGdXRyIBz8URp/lA.', 656114538, 'gustavogarcia@hotmail.com', 'Cadiz', 'España', 'gustavo-garcia', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127128/teclapedia/32.jpg', 'Nivel de estudios', 'usuario', '', ''),
+(30, 'Lourdes Perez', '@louperez', '$2b$08$2BSA1RN8NpDAhfUCFO/QAeddNOKzT0JyHWIVta/FYhjJ.Fy.0iywW', 0, 'louperez@infomail.com', 'Barcelona', 'España', '', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127478/teclapedia/57.jpg', 'Nivel de estudios', 'usuario', '', ''),
+(31, 'Cristina Acevedo', '@crisacevedo', '$2b$08$LqpumxCiNcNAtWsdZsQAGOe7lEEVj6suvulfedCRwzo1rgKm/apMi', 2147483647, 'crisacevedo@gmail.com', 'Bahía Blanca', 'Argentina', 'cris-acevedo', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127612/teclapedia/53.jpg', 'Grado superior', 'usuario', '', ''),
+(32, 'Diego wallfish', '@diegowall', '$2b$08$nFueREaalPTPdzt9y.PSqOo2uNzYcm46PxGMITFfiCWeSPMO4Dey2', 0, 'diegowall@gmail.com', 'Houston', 'EEUU', '', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685127842/teclapedia/72.jpg', 'Nivel de estudios', 'usuario', '', ''),
+(33, 'David Groso', '@davidg', '$2b$08$qKXCOJJLHeuOESbzSsivHuEyiNxMCmrEbhgQwPjZ40BX/RI7yetv2', 0, 'davidg@gmail.com', '', '', 'david-groso', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685128094/teclapedia/33.jpg', 'Nivel de estudios', 'usuario', '', ''),
+(34, 'Gonzalo Pierri', '@gonzapierri', '$2b$08$s5/5fMQNETraOyb8.PBHoOEGz4GfhEVHC8C0jogJ3n8WHZu/33.2S', 665321951, 'gonzapierri@gmail.com', 'León', 'España', 'gonza-p', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685128285/teclapedia/51.jpg', 'ESO', 'usuario', '', ''),
+(35, 'Carmen Flores', '@carmencitaf', '$2b$08$PmPaDiU0ThueDsyNRM6t3.c4z7yfdMbF.UI1Akwr8AjnrN4cCIY32', 644889977, 'carmenflores@gmail.com', 'Oviedo', 'España', 'carmen-flores', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685128462/teclapedia/41.jpg', 'Sin estudios finalizados', 'usuario', '', '');
 
 --
 -- Índices para tablas volcadas
@@ -420,43 +421,43 @@ ALTER TABLE `tusuario`
 -- AUTO_INCREMENT de la tabla `tconsultas`
 --
 ALTER TABLE `tconsultas`
-  MODIFY `id_consulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_consulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `testudios`
 --
 ALTER TABLE `testudios`
-  MODIFY `id_estudio` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_estudio` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `totros_datos`
 --
 ALTER TABLE `totros_datos`
-  MODIFY `id_datos` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_datos` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `tpublicaciones`
 --
 ALTER TABLE `tpublicaciones`
-  MODIFY `id_publicacion` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id_publicacion` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT de la tabla `trecomendaciones`
 --
 ALTER TABLE `trecomendaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `tsolicitudes`
 --
 ALTER TABLE `tsolicitudes`
-  MODIFY `id_solicitud` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_solicitud` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `ttrabajos`
 --
 ALTER TABLE `ttrabajos`
-  MODIFY `id_trabajo` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_trabajo` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de la tabla `tusuario`

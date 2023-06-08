@@ -51,6 +51,23 @@ router.get('/', async (req,res)=>{
     }
 })
 
+router.get('/filterRelations/:idUser', async (req,res)=>{
+    const {idUser} = req.params;
+    console.log('2 -- '+ req.params)
+    try{
+        const user =  await db.query(`SELECT * FROM tusuario WHERE id_usuario != ${idUser} and id_usuario != (SELECT id_solicitante from tsolicitudes WHERE estado='pendiente' and id_solicitado=${idUser})`, { type: QueryTypes.SELECT })
+        console.log(user)
+        if(user.length>0){
+            res.status(200).json(user)
+        }else{
+            res.status(404).send({msj:'no hay usuarios'})
+        }
+    }
+    catch(err){
+        console.log(err)
+    }
+}) 
+
 router.get('/search_user/:fullname', async (req,res)=>{
     try{
         const {fullname} = req.params;

@@ -1,7 +1,7 @@
 import './FriendRequestCard.css'
 import { Link } from 'react-router-dom'
 
-export default function FriendRequestCardUI({photo,fullname,idUser,idSolicitud,username,replyRequest}){
+export default function FriendRequestCardUI({photo,fullname,idUser,idSolicitud,username,replyRequest,setStateFlag}){
     return (
         <div className="request_card_container ms-3 me-3 p-2 mb-3"> 
             <div className="requestcard_container_profile">
