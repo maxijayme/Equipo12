@@ -3,10 +3,10 @@ import PostCard from "../PostCard";
 
 export default function FriendsPostsUI({friendsPostList}) {
     return (
-        <>
+        <div id="posts_container">
           {friendsPostList.length > 0 && friendsPostList.map((post,i)=>(
             <PostCard key={i} {...post}/>
           ))  }
-        </>
+        </div>
     )
 }

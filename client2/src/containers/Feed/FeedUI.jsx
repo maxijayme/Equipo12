@@ -5,7 +5,7 @@ import Posts from '../../components/Posts';
 import FriendRequest from '../../components/FriendRequest';
 import { Link } from 'react-router-dom'
 
-export default function FeedUI({userData}){
+export default function FeedUI({userData, updatePostList, setUpdatePostList}){
     return(
         <>
             <div className="row" id="feed_main_container">
@@ -13,7 +13,7 @@ export default function FeedUI({userData}){
                     <ProfileSection userData={userData}/>
                 </div>
                 <div className="col-xl-4 col-md-6 col-sm-11 py-3" id="feed_col_cen">
-                    <Posts userData={userData}/>
+                    <Posts userData={userData} updatePostList={updatePostList}/>
                 </div>
                 <div className="col-3" id="feed_col_right">
                     <div className="friend_request_like_container">
@@ -22,7 +22,7 @@ export default function FeedUI({userData}){
                             Buscar teclers
                         </Link>
                     </div>
-                    <FriendRequest/>
+                    <FriendRequest setUpdatePostList={setUpdatePostList} updatePostList={updatePostList}/>
                 </div>
             </div>
         </>

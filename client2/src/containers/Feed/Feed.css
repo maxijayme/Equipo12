@@ -4,12 +4,12 @@
     
 }
 
-#feed_col_cen, #feed_col_left, #feed_col_right{
+#feed_col_left, #feed_col_right{
     background-color: white;
     border-radius: 25px;
     height: 100vh;
     overflow: scroll;
 }
-#feed_col_cen::-webkit-scrollbar, #feed_col_left::-webkit-scrollbar, #feed_col_right::-webkit-scrollbar {
+#feed_col_left::-webkit-scrollbar, #feed_col_right::-webkit-scrollbar {
     display: none;
    }

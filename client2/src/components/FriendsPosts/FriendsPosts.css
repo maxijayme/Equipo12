@@ -1,0 +1,7 @@
+#posts_container{
+    overflow: scroll;
+}
+
+#posts_container::-webkit-scrollbar{
+    display: none;
+}
