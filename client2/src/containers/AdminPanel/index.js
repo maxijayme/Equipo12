@@ -27,12 +27,12 @@ export default function AdminPanel(){
                 navigate('/login')
             }, 2000)
         }
-        // else if(profile !== 'admin'){
-        //     setRestricted(true)
-        //     setTimeout(()=>{
-        //     navigate('/')
-        //     }, 2000)
-        // }
+        else if(profile !== 'admin'){
+            setRestricted(true)
+            setTimeout(()=>{
+            navigate('/')
+            }, 2000)
+        }
     },[])
 
     

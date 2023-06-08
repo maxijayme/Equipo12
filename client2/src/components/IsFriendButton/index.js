@@ -17,11 +17,15 @@ export default function IsFriendButton({userData}) {
 
     async function handleFriendButton(){
         if(areFriends === 'Amigos'){
-            const response = await fetch(`${URL}/delete_friend?logged_user_id=${actualUserId}&other_user_id=${userData.id_usuario}`,{
-                method: "DELETE",
+            const response = await fetch(`${URL}/pending_request`,{
+                method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
-                }
+                },
+                body:JSON.stringify({
+                    id_solicitud: idFriendshioReq,
+                    estado: "eliminada"
+                })
             })
             if(response.status === 200){
                 setAreFriends('Solicitar amistad')  
@@ -43,42 +47,69 @@ export default function IsFriendButton({userData}) {
             }
         }
         else if(areFriends=== 'Solicitar amistad'){
-            const response = await fetch(`${URL}/friend_request`,{
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body:JSON.stringify({
-                    logged_user_id: actualUserId,
-                    other_user_id: userData.id_usuario
+            if (idFriendshioReq !== "") {
+                const response = await fetch(`${URL}/pending_request`,{
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body:JSON.stringify({
+                        id_solicitud: idFriendshioReq,
+                        estado: "pendiente"
+                    })
                 })
-            })
-            if(response.status === 200){
-                setAreFriends('Solicitud de amistad pendiente') 
+                if(response.status === 200){
+                    setAreFriends('Solicitud de amistad pendiente') 
+                }
+            } else {
+                const response = await fetch(`${URL}/pending_request/newRequest`,{
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body:JSON.stringify({
+                        logged_user_id: actualUserId,
+                        other_user_id: userData.id_usuario
+                    })
+                })
+                if(response.status === 200){
+                    setAreFriends('Solicitud de amistad pendiente') 
+                    isFriend()
+                }
             }
+
+            
         }
     }
 
     async function isFriend(){
         try{
-            const response = await fetch(`${URL}/friend_request?logged_user_id=${actualUserId}&other_user_id=${userData.id_usuario}`,{
+            const response = await fetch(`${URL}/pending_request?idUser=${actualUserId}&otherUser=${userData.id_usuario}`,{
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                 }
             })
             const responseJson = await response.json();
-            setIdFriendshioReq(responseJson.id_solicitud)
-            if(responseJson.msj === 'all ready friends'){
-                setAreFriends('Amigos')
+            console.log(responseJson)
+            if(responseJson.estado === 'aceptada'){
+                setAreFriends('Amigos')                
+                setIdFriendshioReq(responseJson.id_solicitud)
             }
-            else if(responseJson.msj === 'friend request is pending'){
+            else if(responseJson.estado === 'pendiente'){
                 setAreFriends('Solicitud de amistad pendiente')
+                setIdFriendshioReq(responseJson.id_solicitud)
             }
-            else if(responseJson.msj === 'not yet friends or request pending'){
+            else if(responseJson.estado === 'rechazada' || responseJson.estado === 'eliminada'){
                 setAreFriends('Solicitar amistad')
-            }else{
-                console.log('Ha ocurrido un error en el seridor')
+                setIdFriendshioReq(responseJson.id_solicitud)
+            }
+            else if (responseJson.msj === 'No hay solicitudes pendientes'){
+                setAreFriends('Solicitar amistad')
+
+            }
+            else{
+                console.log('Ocurrió un error')
             }
         }
         catch(e){
