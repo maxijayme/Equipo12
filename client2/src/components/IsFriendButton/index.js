@@ -47,38 +47,20 @@ export default function IsFriendButton({userData}) {
             }
         }
         else if(areFriends=== 'Solicitar amistad'){
-            if (idFriendshioReq !== "") {
-                const response = await fetch(`${URL}/pending_request`,{
-                    method: "PATCH",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body:JSON.stringify({
-                        id_solicitud: idFriendshioReq,
-                        estado: "pendiente"
-                    })
+            const response = await fetch(`${URL}/pending_request/newRequest`,{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body:JSON.stringify({
+                    logged_user_id: actualUserId,
+                    other_user_id: userData.id_usuario
                 })
-                if(response.status === 200){
-                    setAreFriends('Solicitud pendiente') 
-                }
-            } else {
-                const response = await fetch(`${URL}/pending_request/newRequest`,{
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body:JSON.stringify({
-                        logged_user_id: actualUserId,
-                        other_user_id: userData.id_usuario
-                    })
-                })
-                if(response.status === 200){
-                    setAreFriends('Solicitud de amistad pendiente') 
-                    isFriend()
-                }
-            }
-
-            
+            })
+            if(response.status === 200){
+                setAreFriends('Solicitud pendiente') 
+                isFriend()
+            }            
         }
     }
 

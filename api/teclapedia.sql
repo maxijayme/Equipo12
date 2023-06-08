@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2023 a las 16:13:10
+-- Tiempo de generación: 08-06-2023 a las 11:33:04
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -30,16 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `tamistades` (
   `id_usuario` int(4) NOT NULL,
   `id_amigo` int(4) NOT NULL,
-  `fecha_amistad` date NOT NULL DEFAULT current_timestamp()
+  `fecha_amistad` date NOT NULL DEFAULT current_timestamp(),
+  `id_amistad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tamistades`
 --
 
-INSERT INTO `tamistades` (`id_usuario`, `id_amigo`, `fecha_amistad`) VALUES
-(2, 4, '2023-06-06'),
-(4, 2, '2023-06-06');
+INSERT INTO `tamistades` (`id_usuario`, `id_amigo`, `fecha_amistad`, `id_amistad`) VALUES
+(2, 4, '2023-06-06', 1),
+(1, 7, '2023-06-07', 3),
+(1, 2, '2023-06-07', 4);
 
 -- --------------------------------------------------------
 
@@ -218,7 +220,9 @@ CREATE TABLE `trecomendaciones` (
 
 INSERT INTO `trecomendaciones` (`id`, `id_recomendante`, `id_recomendado`, `recomendacion`) VALUES
 (7, 1, 21, 'Ojo con este chico... Es argentino!'),
-(8, 21, 1, 'Es una gran persona. Muy profesional!');
+(8, 21, 1, 'Es una gran persona. Muy profesional!'),
+(9, 5, 2, 'Es muy buena compañera!'),
+(10, 5, 21, 'Y tanto!');
 
 -- --------------------------------------------------------
 
@@ -239,11 +243,14 @@ CREATE TABLE `tsolicitudes` (
 --
 
 INSERT INTO `tsolicitudes` (`id_solicitud`, `id_solicitante`, `id_solicitado`, `estado`, `fecha_solicitud`) VALUES
-(1, 1, 5, 'rechazada', '2023-06-06 19:53:41'),
-(5, 1, 5, 'rechazada', '2023-06-06 21:32:04'),
-(6, 1, 5, 'rechazada', '2023-06-06 21:34:05'),
-(7, 1, 5, 'pendiente', '2023-06-06 21:34:06'),
-(8, 1, 21, 'pendiente', '2023-06-06 21:52:35');
+(7, 1, 5, 'pendiente', '2023-06-08 09:23:37'),
+(8, 1, 21, 'pendiente', '2023-06-06 21:52:35'),
+(9, 5, 21, 'pendiente', '2023-06-07 16:08:21'),
+(13, 5, 2, 'pendiente', '2023-06-07 19:44:08'),
+(14, 5, 22, 'pendiente', '2023-06-07 18:06:23'),
+(15, 5, 6, 'pendiente', '2023-06-07 18:57:14'),
+(16, 5, 25, 'pendiente', '2023-06-07 18:57:15'),
+(17, 4, 5, 'pendiente', '2023-06-07 20:30:02');
 
 -- --------------------------------------------------------
 
@@ -353,6 +360,7 @@ INSERT INTO `tusuario` (`id_usuario`, `fullname`, `username`, `password`, `phone
 -- Indices de la tabla `tamistades`
 --
 ALTER TABLE `tamistades`
+  ADD PRIMARY KEY (`id_amistad`),
   ADD KEY `id_usuario` (`id_usuario`),
   ADD KEY `id_amigo` (`id_amigo`);
 
@@ -418,6 +426,12 @@ ALTER TABLE `tusuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `tamistades`
+--
+ALTER TABLE `tamistades`
+  MODIFY `id_amistad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `tconsultas`
 --
 ALTER TABLE `tconsultas`
@@ -445,13 +459,13 @@ ALTER TABLE `tpublicaciones`
 -- AUTO_INCREMENT de la tabla `trecomendaciones`
 --
 ALTER TABLE `trecomendaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `tsolicitudes`
 --
 ALTER TABLE `tsolicitudes`
-  MODIFY `id_solicitud` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_solicitud` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `ttrabajos`
