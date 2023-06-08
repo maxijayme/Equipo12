@@ -31,7 +31,7 @@ export default function IsFriendButton({userData}) {
                 setAreFriends('Solicitar amistad')  
             }
         }
-        else if(areFriends === 'Solicitud de amistad pendiente'){
+        else if(areFriends === 'Solicitud pendiente'){
             const response = await fetch(`${URL}/pending_request`,{
                 method: "PATCH",
                 headers: {
@@ -59,7 +59,7 @@ export default function IsFriendButton({userData}) {
                     })
                 })
                 if(response.status === 200){
-                    setAreFriends('Solicitud de amistad pendiente') 
+                    setAreFriends('Solicitud pendiente') 
                 }
             } else {
                 const response = await fetch(`${URL}/pending_request/newRequest`,{
@@ -97,7 +97,7 @@ export default function IsFriendButton({userData}) {
                 setIdFriendshioReq(responseJson.id_solicitud)
             }
             else if(responseJson.estado === 'pendiente'){
-                setAreFriends('Solicitud de amistad pendiente')
+                setAreFriends('Solicitud pendiente')
                 setIdFriendshioReq(responseJson.id_solicitud)
             }
             else if(responseJson.estado === 'rechazada' || responseJson.estado === 'eliminada'){

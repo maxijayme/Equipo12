@@ -64,10 +64,16 @@ router.get('/', async(req,res)=>{
 router.get('/friendsPosts/:userId', async(req,res)=>{
     try{
         const {userId} = req.params
-        const allPost = await db.query(`SELECT tpublicaciones.*, tusuario.*
+    //     const allPost = await db.query(`SELECT tpublicaciones.*, tusuario.*
+    //     FROM tpublicaciones
+    //     INNER JOIN tusuario ON tpublicaciones.id_usuario = tusuario.id_usuario
+    //     WHERE tusuario.id_usuario IN (SELECT id_amigo FROM tamistades WHERE id_usuario = "${userId}")
+    //     ORDER BY fecha_publicacion DESC;
+    //  `, { type: QueryTypes.SELECT })
+    const allPost = await db.query(`SELECT tpublicaciones.*, tusuario.*
         FROM tpublicaciones
         INNER JOIN tusuario ON tpublicaciones.id_usuario = tusuario.id_usuario
-        WHERE tusuario.id_usuario IN (SELECT id_amigo FROM tamistades WHERE id_usuario = "${userId}")
+        WHERE tusuario.id_usuario IN (SELECT id_solicitante as id_user from tsolicitudes WHERE id_solicitado="${userId}" and estado="aceptada" UNION SELECT id_solicitado id_user from tsolicitudes WHERE id_solicitante="${userId}" and estado="aceptada") or tusuario.id_usuario="${userId}"
         ORDER BY fecha_publicacion DESC;
      `, { type: QueryTypes.SELECT })
         res.status(200).json(allPost)
