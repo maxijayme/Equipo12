@@ -84,6 +84,19 @@ router.get('/search_user/:fullname', async (req,res)=>{
     }
 })
 
+router.delete('/delete_user', async (req,res) => {
+    try {
+        const {idUser} = req.body;
+        console.log(req.body)
+        const deleteUser = await db.query (`DELETE FROM tusuario WHERE id_usuario=${idUser}`, { type: QueryTypes.DELETE })
+        console.log(deleteUser)
+        
+        res.status(200).json({msj:'usuario borrado'})        
+    } catch (error){
+        console.log(error)
+    }
+})
+
 
 
 module.exports = router

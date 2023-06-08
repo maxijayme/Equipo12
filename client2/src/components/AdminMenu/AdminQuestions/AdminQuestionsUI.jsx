@@ -24,9 +24,9 @@ export default function AdminQuestionsUI({questions, handleResponse}){
                             <div className="col-3">
                                 <p className="">{question.username}</p>
                             </div>
-                            <div className="col-3">
+                            <div className="col-3 d-flex flex-column">
                                 <textarea id="textResponse" />
-                                <button className="confirm_delete green" onClick={()=>handleResponse(document.getElementById('textResponse').value, question.id_consulta )} >responder</button>
+                                <button className="confirm_delete green align-self-center" onClick={()=>handleResponse(document.getElementById('textResponse').value, question.id_consulta )} >responder</button>
                             </div>
                             
                         </li>
