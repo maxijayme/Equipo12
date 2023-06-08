@@ -237,7 +237,6 @@ function FormsUI({handleSubmit, pristine, submitting, handleOnUpload, url}){
             
                     <div className="row justify-content-center gap-4">
                         <button className="confirm_delete" type="submit" id="form_create" disabled={pristine|submitting}>Crear perfil</button>
-                        <button className="confirm_delete green" type="button" id="form_cancel">Cancelar</button>
                     </div>
                </div>
                    </form>
