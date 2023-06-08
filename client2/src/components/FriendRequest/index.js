@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import AppContext from "../../context/UsersContext";
 import {URL} from '../../utils/url'
 
-export default function FriendRequest({stateFlag,setStateFlag}){
+export default function FriendRequest(){
     const {jwt} = useContext(AppContext)
     const [allRequest, setAllRequest] = useState([]);
     const [updateFlag, setUpdateFlag] = useState(false);
@@ -21,7 +21,6 @@ export default function FriendRequest({stateFlag,setStateFlag}){
           }).then(data => {
               if(data.status === 200){
                   setUpdateFlag(!updateFlag)
-                  setStateFlag(!stateFlag)
               } 
       })
    }
