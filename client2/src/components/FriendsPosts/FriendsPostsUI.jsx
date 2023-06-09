@@ -1,5 +1,5 @@
 import PostCard from "../PostCard";
-
+import './FriendsPosts.css'
 
 export default function FriendsPostsUI({friendsPostList}) {
     return (

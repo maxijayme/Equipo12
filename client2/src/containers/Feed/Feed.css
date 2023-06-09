@@ -7,9 +7,13 @@
 #feed_col_left, #feed_col_right{
     background-color: white;
     border-radius: 25px;
-    /* height: 80vh; */
     overflow: scroll;
+    height: 98vh;
 }
 #feed_col_left::-webkit-scrollbar, #feed_col_right::-webkit-scrollbar {
     display: none;
-   }
+}
+
+#feed_col_cen{
+    height: 98vh;
+}
