@@ -43,44 +43,8 @@ export default function ContactUI(){
     }
 
     return(
-        <main className="container-fluid">
+        
             <div className="row gb-5" id="main_container">
-                <div className="row" id="options_menu">
-                    <ul>
-                        <li>
-                            <a href="#">Editar perfil</a> 
-                        </li>
-                        <li>
-                            <a href="#">Seguridad</a> 
-                        </li>
-                        <li>
-                            <a >Cerrar sesión</a> 
-                        </li>
-                    </ul>
-                </div>
-                <div className="col-2" id="col_left">
-                    <div className="container container_contact p-3 pb-5 my-3" id="col_left-container">
-                        <div className="row">
-                            <ul className="options_list">
-                                <li>
-                                    <i className="bi bi-person-lines-fill"></i>
-                                    <a href="#">Editar perfil</a> 
-                                </li>
-                                <li>
-                                    <i className="bi bi-shield-lock-fill"></i>
-                                    <a href="#">Seguridad</a> 
-                                </li>
-                                <li>
-                                    <i className="bi bi-door-open-fill"></i>
-                                    <a id="closeSession">Cerrar sesión</a> 
-                                </li>
-                            </ul>
-                        </div>
-                        <button id="deleteAccount">
-                            <i className="bi bi-x-square-fill"></i>
-                            Eliminar cuenta</button>
-                    </div>
-                </div>
                 <div className="col" id="col_right">
                     {!contact? <div className="container p-3 pb-5 my-3" id="container_help">
                         <div className="row mb-3 d-flex">
@@ -112,14 +76,7 @@ export default function ContactUI(){
                     </div>}
                 </div>
             </div>
-            <div id="loader">            
-                <div className="spinner"></div>
-                <span>Eliminando cuenta...</span>
-            </div>
-            <div id="loader2">            
-                <div className="spinner"></div>
-                <span>Cerrando sesión...</span>
-            </div>
-        </main>
+            
+
     )
 }
