@@ -9,7 +9,7 @@ export default function FriendUI({stateFlag,setStateFlag}) {
             
             <div className="row"> 
                 <p className="h5 ps-3 pe-3">Teclers</p>               
-                <UsersSection stateFlag={stateFlag}/>
+                <UsersSection stateFlag={stateFlag} setStateFlag={setStateFlag}/>
             </div>
        
     </>)

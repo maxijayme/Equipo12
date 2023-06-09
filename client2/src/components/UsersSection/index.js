@@ -4,7 +4,7 @@ import { useContext,useEffect,useState } from "react";
 import AppContext from "../../context/UsersContext";
 
 
-export default function UsersSection({stateFlag}){
+export default function UsersSection({stateFlag, setStateFlag}){
     const {jwt} = useContext(AppContext)
     const [allUsers, setAllUsers] = useState([]);    
     let idUser;
@@ -33,6 +33,6 @@ export default function UsersSection({stateFlag}){
     }, [jwt,stateFlag]);
 
     return (
-        <UsersSectionUI allUsers={allUsers} />
+        <UsersSectionUI allUsers={allUsers}/>
     )
 }
