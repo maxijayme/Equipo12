@@ -15,7 +15,8 @@
 }
 
 #feed_col_cen{
-    overflow: hidden;
+    position: relative;
     border-radius: 15px;
     height: 100%;
+    background-color: red;
 }

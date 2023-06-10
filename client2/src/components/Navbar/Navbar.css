@@ -1,12 +1,3 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap%27');
-/*font-family: 'Tilt Neon', cursive;*/
-
-*{
-    margin: 0;
-    font-family: 'Tilt Neon', cursive;
-}
-
 a{
     text-decoration: none;
     cursor: pointer;

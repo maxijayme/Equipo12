@@ -1,9 +1,8 @@
 #posts_container{
     overflow: scroll;
     border-radius: 15px;
-    
 }
 
 #posts_container::-webkit-scrollbar{
-    display: none;
+    /* display: none; */
 }
