@@ -1,7 +1,7 @@
 #posts_container{
     overflow: scroll;
     border-radius: 15px;
-    height: 100%;
+    
 }
 
 #posts_container::-webkit-scrollbar{

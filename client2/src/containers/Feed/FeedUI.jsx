@@ -12,7 +12,7 @@ export default function FeedUI({userData, updatePostList, setUpdatePostList}){
                 <div className="col-xl-3 col-md-2 py-3" id="feed_col_left">
                     <ProfileSection userData={userData}/>
                 </div>
-                <div className="col-xl-4 col-md-6 col-sm-11 py-3" id="feed_col_cen">
+                <div className="col-xl-4 col-md-6 col-sm-11" id="feed_col_cen">
                     <Posts userData={userData} updatePostList={updatePostList}/>
                 </div>
                 <div className="col-3" id="feed_col_right">

@@ -4,7 +4,7 @@ function Layout({children, navbarOff = true}) {
   return (
     <>
         <Header navbarOff={navbarOff}/>
-          <main className='container-fluid h-auto'>
+          <main className='container-fluid'>
             {children}
           </main>
         <Footer/>

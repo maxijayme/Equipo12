@@ -11,7 +11,7 @@ export default function ProfileSectionUI(props){
     const {jwt} = useContext(AppContext)
     return(
         <>
-            <div className="container user_data p-3 mb-3" id="ProfileSection-userData">
+            <div className="container user_data p-3" id="ProfileSection-userData">
                 <div className="row mb-2">
                     <Link to={`/profile/${userData.username}`}>
                         <div className="" id="ProfileSection-thirdPersonPhoto_container">

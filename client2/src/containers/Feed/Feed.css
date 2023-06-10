@@ -1,19 +1,21 @@
 #feed_main_container {
-    
+    height: 100%;
     justify-content: space-around;
     
 }
 
-#feed_col_left, #feed_col_right{
+#feed_col_left, #feed_col_right {
     background-color: white;
-    border-radius: 25px;
+    border-radius: 15px;
     overflow: scroll;
-    height: 98vh;
+    height: fit-content;
 }
 #feed_col_left::-webkit-scrollbar, #feed_col_right::-webkit-scrollbar {
     display: none;
 }
 
 #feed_col_cen{
-    height: 98vh;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 100%;
 }
