@@ -1,7 +1,6 @@
 #login_main_container {
     display: flex;
     justify-content: center;
-    padding-top: 50px;
     gap: 40px;
     flex-wrap: wrap;
 }
