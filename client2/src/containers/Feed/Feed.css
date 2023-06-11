@@ -1,7 +1,7 @@
 #feed_main_container {
-    height: 100%;
+    height: 100vh;
     justify-content: space-around;
-    
+
 }
 
 #feed_col_left, #feed_col_right, #feed_col_cen {
@@ -14,6 +14,12 @@
     display: none;
 }
 
+#feed_col_left, #feed_col_right{
+    margin-top: 20px;
+}
+
 #feed_col_cen{
-    background-color: red;
+    padding-top: 20px;
+    height: 100%;
+    border-radius: 0 0 15px 15px;
 }
