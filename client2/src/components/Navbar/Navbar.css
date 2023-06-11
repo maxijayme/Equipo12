@@ -3,6 +3,9 @@ a{
     cursor: pointer;
 }
 
+#Navbar-friends{
+    display: none;
+}
 
 /*Clase para llevar hasta el borde de la pantalla*/
 .no-padding{
@@ -28,7 +31,9 @@ a{
 
 #logo{
     width: 250px;
+    height: 29px;
     object-fit: cover;
+    background: url("../../../public/img/teclapedia_logo.svg") center/cover no-repeat;
 }
 
 #navbarToggler{
@@ -39,6 +44,7 @@ a{
     width: fit-content;
     gap: 20px;
     justify-content: space-around;
+    margin-left: 10px;
 }
 
 #img-button_menu{
@@ -151,6 +157,11 @@ header i {
     border-radius: 0 0 0 15px;
     position: absolute;
     right: 0;
+    transition: all 0.7s ease-in-out;
+}
+
+#menu-toggle:nth-child(){
+    transition: all 0.7s ease-in-out;
 }
 
 #menu_button{
@@ -160,17 +171,33 @@ header i {
 
 
 
-@media (max-width: 992px){
+@media (max-width: 991px){
+    #Navbar-friends{
+        display: inline-block;
+        margin-left: 10px;
+    }
     #img-button_menu{
         display: none;
     }
 }
 
 
-@media (max-width: 795px){
-    #searchbar{
-        order: 3;
-        align-self: center;
+
+@media (max-width: 785px){
+    #nav_profile{
+        align-self: flex-end;
+        justify-self: flex-end
+    }
+    #logo{
+        width: 35px;
+        height: 35px;
+        object-fit: cover;
+        background: url("../../../public/img/icon_logo.svg") center/cover no-repeat;
+    }
+
+    #menu-toggle{
+        width: 100%;
+        border-radius: 0;
     }
 }
 
@@ -183,7 +210,7 @@ header i {
     }
 }
 
-@media (max-width: 576px){
+@media (max-width: 570px){
     #top_menu_container{
         display: flex;
         letter-spacing:10pt;
@@ -195,9 +222,13 @@ header i {
     #navbarToggler li{
         text-align: right;
     }
-
+    #searchbar{
+        order: 3;
+        align-self: center;
+    }
     
 }
+
 
 @media (min-width: 576px){
     #nav-profile{

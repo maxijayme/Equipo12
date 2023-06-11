@@ -10,7 +10,7 @@ export default function PostCardUI({getMoment, postData, handleLike, like, likes
                             <img src={postData.photo} alt="fotoUsuario" className="PostCard-photoPost img-fluid"/>
                     </Link>
                     <div className="PostCard-post_header">
-                        <p className="col text-dark h5">{postData.fullname}</p> 
+                        <h5 className="col text-dark">{postData.fullname}</h5> 
                         <p className="col text-dark h6">{getMoment(postData.fecha_publicacion)}</p> 
                     </div>                 
                 </div>
