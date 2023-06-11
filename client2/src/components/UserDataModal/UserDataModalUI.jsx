@@ -1,4 +1,5 @@
 import { isValid } from "redux-form";
+import './UserDataModal.css'
 
 export default function UserDataModalUI ({handleCloseEditModal,userData,handleDataInputChange,fullnameValue,phoneValue,emailValue,linkedinValue,cityValue,handleSubmit,phoneErrorMessage,emailErrorMessage,isValidForm}) {
     

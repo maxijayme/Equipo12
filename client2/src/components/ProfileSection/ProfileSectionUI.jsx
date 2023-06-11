@@ -45,7 +45,8 @@ export default function ProfileSectionUI(props){
                     </div>
                 </div>
                 <div className="row ps-3 justify-content-end">
-                    {jwt && jwt.userId === userData.id_usuario && <Pencil className='col-3' onClick={handleOpenDataModal}/>}
+                    
+                    {jwt && jwt.userId === userData.id_usuario && window.location.pathname !=='/' && <Pencil className='col-3' onClick={handleOpenDataModal}/>}
                 </div>
 
             {jwt && jwt.userId !== userData.id_usuario && <button className='btn btn-primary mt-2' onClick={handleOpenModal}>Recomendar</button>}

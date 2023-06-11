@@ -6,7 +6,7 @@
     bottom: 0;
     margin: auto;
     border: 1px solid;
-    height: 300px;
+    height: fit-content;
     width: 50%;
     min-width: 300px;
     border-radius: 15px;

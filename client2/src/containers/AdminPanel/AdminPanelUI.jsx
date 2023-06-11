@@ -6,12 +6,14 @@ import './AdminPanel.css'
 export default function AdminPanelUI({token,selectedOption, handleSelectOption}){
     return(
         <>  
-            <div className="adminPanel-container row">
-                <div className='adminPanel_sidebar col-2 d-flex flex-column'>
-                    <button onClick={() => handleSelectOption('questions')}>Questions</button>
-                    <button onClick={() => handleSelectOption('userList')}>User List</button>
+            <div className="row" id="adminPanel_main_container">
+                <div className='col-2 d-flex align-items-center justify-content-center ms-3' id='adminPanel_sidebar '>
+                    <div className=' d-flex flex-column'>
+                        <button className='mb-3 admin_button' onClick={() => handleSelectOption('questions')}>Questions</button>
+                        <button className="admin_button" onClick={() => handleSelectOption('userList')}>User List</button>
+                    </div>
                 </div>
-                <div className="content col">
+                <div className="col m-3" id="adminPanel_content">
                     {selectedOption === 'questions' && <AdminQuestions token={token} />}
                     {selectedOption === 'userList' && <AdminUserList token={token} />}
                 </div>
