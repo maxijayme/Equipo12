@@ -7,11 +7,11 @@ const { QueryTypes } = require('sequelize');
 router.get('/:userId', async (req,res)=>{
     const userId = req.params.userId;
     try{
-        const experiences = await db.query(`Select puesto, empresa, funciones, f_inicio, f_fin, actualidad from ttrabajos WHERE id_usuario="${userId}" `, { type: QueryTypes.SELECT });
-        if(experiences.length>0){
-            res.status(200).json(experiences);
+        const studies = await db.query(`Select titulo, centro, f_inicio, f_fin, actualidad from testudios WHERE id_usuario="${userId}" `, { type: QueryTypes.SELECT });
+        if(studies.length>0){
+            res.status(200).json(studies);
         }else{
-            res.status(400).send('Aún no tiene experiencia registrada')
+            res.status(400).send('Aún no tiene estudios registrados')
         }
     }
     catch(err){

@@ -44,8 +44,8 @@ export default function ContactUI(){
 
     return(
         
-            <div className="row gb-5" id="main_container">
-                <div className="col" id="col_right">
+            <div className="row gb-5" id="contact_main_container">
+                <div className="col p-3" id="col_right">
                     {!contact? <div className="container p-3 pb-5 my-3" id="container_help">
                         <div className="row mb-3 d-flex">
                             <div className="col-1 ms-1">
@@ -54,9 +54,9 @@ export default function ContactUI(){
                             <div className="col"><h4 className="">¿Necesitas ayuda?</h4></div>
                         </div>
                         <form className="row">
-                            <input className="form-control mx-3 mb-3" type="text" name="title" value={form.title} id="" placeholder="Título" onChange={handleInputChange} />
-                            <textarea className="form-control mx-3 mb-3" type="text" name="question" value={form.question} id="" placeholder="Consulta" onChange={handleInputChange} />
-                            <select className="form-select mx-3 mb-3" name="subject" onChange={handleInputChange}>
+                            <input className="form-control mb-3" type="text" name="title" value={form.title} id="" placeholder="Título" onChange={handleInputChange} />
+                            <textarea className="form-control mb-3" type="text" name="question" value={form.question} id="" placeholder="Consulta" onChange={handleInputChange} />
+                            <select className="form-select mb-3" name="subject" onChange={handleInputChange}>
                                 <option disabled selected>Elige una opción</option>
                                 <option value="personal data">Datos personales</option>
                                 <option value="security">Seguridad</option>

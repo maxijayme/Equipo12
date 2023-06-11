@@ -8,6 +8,7 @@ export default function UserProfile(){
     const { username } = useParams();
     const [userData, setUserData] = useState({})
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [isEditVisible, setIsEditVisible] = useState(false);
     useEffect(()=>{
         try{
             async function getUserByName(){
@@ -26,9 +27,13 @@ export default function UserProfile(){
         setIsModalVisible(false)
     }
 
+    function handleCloseEditModal(){
+        setIsEditVisible(false)
+    }
+
     return(
         <Layout>
-            <UserProfileUI userData={userData} isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} handleCloseModal={handleCloseModal}/>
+            <UserProfileUI userData={userData} isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} handleCloseModal={handleCloseModal} isEditVisible={isEditVisible} setIsEditVisible={setIsEditVisible} handleCloseEditModal={handleCloseEditModal}/>
         </Layout>
     )
 }

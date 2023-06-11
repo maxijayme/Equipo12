@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import './ProfileSection.css'
-import {Telephone, Envelope, Linkedin, GeoAlt} from 'react-bootstrap-icons'
+import {Telephone, Envelope, Linkedin, GeoAlt, Pencil} from 'react-bootstrap-icons'
 import AppContext from "../../context/UsersContext";
 import { useContext } from "react";
 import IsFriendButton from '../IsFriendButton';
 
 export default function ProfileSectionUI(props){
-    const {userData, handleOpenModal } = props
+    const {userData, handleOpenModal, handleOpenDataModal } = props
     const {jwt} = useContext(AppContext)
     return(
         <>
@@ -43,6 +43,11 @@ export default function ProfileSectionUI(props){
                         <span id="ProfileSection-city">{userData.city}</span>
                     </div>
                 </div>
+                <div className="row ps-3 justify-content-end">
+                    
+                    {jwt && jwt.userId === userData.id_usuario && window.location.pathname !=='/' && <Pencil className='col-3' onClick={handleOpenDataModal}/>}
+                </div>
+
             {jwt && jwt.userId !== userData.id_usuario && <button className='btn btn-primary mt-2' id="profile_recommentadion_button" onClick={handleOpenModal}>Recomendar</button>}
             </div>
         </>
