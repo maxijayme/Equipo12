@@ -1,6 +1,22 @@
-/* #root {
-    height: 80vh;
+#root {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-} */
+    background-color: rgb(234, 243, 243);
+}
+
+html{
+    height: 100%;
+    margin: 0;
+    overflow: scroll;
+}
+
+html::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+    min-height: 100%;
+    width: 100vw;
+}

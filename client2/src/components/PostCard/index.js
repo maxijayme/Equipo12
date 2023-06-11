@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PostCardUI from "./PostCardUI";
 import {URL} from '../../utils/url'
+import getMoment from '../../utils/time'
 
 export default function PostCard(props) {
     const[like, setLike] = useState(false)
@@ -19,7 +20,6 @@ export default function PostCard(props) {
         }
     }
     
-
     async function postLike(likes){
         try{
             await fetch(`${URL}/social_media_post`,{
@@ -33,7 +33,6 @@ export default function PostCard(props) {
               })
             }).then( data => {
               if(data.status===200){
-                console.log('success')
                 setLikesCount(likes);
               }
             })
@@ -43,7 +42,7 @@ export default function PostCard(props) {
 
     return (
         <>
-            <PostCardUI postData = {props} handleLike={handleLike} like={like} likesCount={likesCount}/>
+            <PostCardUI postData = {props} handleLike={handleLike} like={like} likesCount={likesCount} getMoment={getMoment}/>
         </>
     )
 }

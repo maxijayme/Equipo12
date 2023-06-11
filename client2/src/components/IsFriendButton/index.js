@@ -73,7 +73,6 @@ export default function IsFriendButton({userData}) {
                 }
             })
             const responseJson = await response.json();
-            console.log(responseJson)
             if(responseJson.estado === 'aceptada'){
                 setAreFriends('Amigos')                
                 setIdFriendshioReq(responseJson.id_solicitud)

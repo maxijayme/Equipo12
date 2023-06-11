@@ -2,7 +2,7 @@ import './UserCard.css'
 import { Link } from 'react-router-dom'
 import IsFriendButton from '../IsFriendButton'
 
-export default function UserCardUI({userData,stateFlag}) {
+export default function UserCardUI({userData}) {
     return (
         <div className="userCard_container m-2 p-3">
             <Link to={`/profile/${userData.username}`}>

@@ -7,9 +7,9 @@ export default function CreatePost({userData}) {
     const [url, updateUrl] = useState();
     const [uploadImgName, setUploadImgName] = useState("");
     const textareaRef = useRef(null);
-    const userImg = userData.userData.photo
+    const userImg = userData.photo
     useEffect(() => {
-        const userId = userData.userData.id_usuario
+        const userId = userData.id_usuario
         setPostData(values => ({...values, "userId": userId}))
         setPostData(values => ({...values, "postImg": url}))
     }, [userData, url])

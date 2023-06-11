@@ -1,4 +1,5 @@
 export default function PaginateUI({pages, currentPage, totalPages, nextPage, prevPage, paginated}){
+    console.log(pages)
     return(
         <div className="paged">  
             <button className="btn-slide prev" disabled={currentPage <= 1} onClick={prevPage}>

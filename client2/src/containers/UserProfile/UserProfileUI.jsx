@@ -18,7 +18,7 @@ export default function UserProfileUI({userData, isModalVisible, setIsModalVisib
                     {isModalVisible && <RecommendModal handleCloseModal={handleCloseModal} userData={userData}/>}
                     {isEditVisible && <UserDataModal handleCloseEditModal={handleCloseEditModal} userData={userData}/>}
                 </div>
-                <div className="col-xl-4 col-md-6 col-sm-11 py-3" id="profile_col_cen">
+                <div className="col-xl-5 col-md-5 col-sm-11" id="profile_col_cen">
                     <ProfilePostSection userData={userData}/>
                     
                 </div>

@@ -1,0 +1,9 @@
+@media(max-width: 767px){
+    main{
+        overflow: scroll;
+    }
+
+    main::-webkit-scrollbar {
+        display: none;
+    }
+}
