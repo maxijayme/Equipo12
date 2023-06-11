@@ -1,5 +1,6 @@
 import Header from '../Header'
 import Footer from '../Footer'
+import './Layout.css'
 function Layout({children, navbarOff = true}) {  
   return (
     <>

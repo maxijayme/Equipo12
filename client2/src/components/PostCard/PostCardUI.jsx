@@ -4,7 +4,7 @@ import './PostCard.css'
 export default function PostCardUI({getMoment, postData, handleLike, like, likesCount}) {
     return (
         <>
-            <div className="PostCard-post container p-3 mb-3" id="post${postId++}">
+            <div className="PostCard-post row p-3 mb-3" id="post${postId++}">
                 <div className="row d-flex flex-nowrap justify-content-left align-items-center">
                     <Link to={`/profile/${postData.username}`} id="PostCard-postImg_container" className='ms-3'>
                             <img src={postData.photo} alt="fotoUsuario" className="PostCard-photoPost img-fluid"/>

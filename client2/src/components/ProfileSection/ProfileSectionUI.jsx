@@ -20,28 +20,26 @@ export default function ProfileSectionUI(props){
                     </Link>     
                 </div>
                     {window.location.pathname !=='/' && <IsFriendButton userData={userData}/>}           
-                <div className="row">
-                    <h3 className="ps-3" id="ProfileSection-fullname">{userData.fullname}</h3>
-                </div>
-                <div className="row  my-1 ps-3">
-                    <p id="ProfileSection-userName">{userData.username}</p>
-                </div>
-                <div className="col ps-3"> 
-                    <div className="col d-flex  my-1 align-items-baseline">
+                <div className="col ps-3" id="ProfileSection-user-info"> 
+                    <div id="ProfileSection-fullname_container">
+                        <h5 id="ProfileSection-fullname">{userData.fullname}</h5>
+                    </div>
+                    <div className="col d-flex  align-items-baseline">
+                        <p id="ProfileSection-userName">{userData.username}</p>
+                    </div>
+                    <div className="col d-flex  align-items-baseline">
                         <Telephone className="me-2"/>
                         <p id="ProfileSection-phone">{userData.phone}</p>
                     </div>
-                    <div className="col d-flex  my-1 align-items-baseline">
+                    <div className="col d-flex  align-items-baseline">
                         <Envelope className="me-2"/>
                         <p id="ProfileSection-email">{userData.email}</p>
                     </div>
-                    <div className="col d-flex  my-1 align-items-baseline">
+                    <div className="col d-flex  align-items-baseline">
                         <Linkedin className="me-2"/>
                         <p id="ProfileSection-linkedin">/{userData.linkedin}</p>
                     </div>  
-                </div>
-                <div className="row ps-3">                        
-                    <div  className="col d-flex  my-1 align-items-baseline">
+                    <div  className="col d-flex  align-items-baseline">
                         <GeoAlt className="me-2"/>
                         <span id="ProfileSection-city">{userData.city}</span>
                     </div>

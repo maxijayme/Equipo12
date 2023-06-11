@@ -32,6 +32,10 @@
     padding: 0;
 }
 
+#ProfileSection-fullname_container{
+    width: 100%;
+}
+
 .ProfileSection-icon{
     width: 20px;
     margin-bottom: 0;
@@ -39,4 +43,28 @@
 
 .ProfileSection-img-not{
     width: 25%;
+}
+
+@media(max-width: 767px){
+    #ProfileSection-userData{
+        flex-direction: row;
+        font-size: 9pt;
+        height: fit-content;
+    }
+
+    #ProfileSection-user-info{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #ProfileSection-user-info p{
+        margin: 0;
+    }
+    
+    #ProfileSection-thirdPersonPhoto_container{
+        height: 80px;
+        width: 80px;
+    }
 }
