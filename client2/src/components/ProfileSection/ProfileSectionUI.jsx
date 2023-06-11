@@ -12,14 +12,14 @@ export default function ProfileSectionUI(props){
     return(
         <>
             <div className="container user_data p-3" id="ProfileSection-userData">
-                <div className="row mb-2">
-                    <Link to={`/profile/${userData.username}`}>
-                        <div className="" id="ProfileSection-thirdPersonPhoto_container">
+                <div className="row mb-2 pe-3 align-items-end justify-content-between">
+                    <Link to={`/profile/${userData.username}`} className="w-50">
+                        <div id="ProfileSection-thirdPersonPhoto_container">
                             <img src={userData.photo} className="ProfileSection-photo justify-self-center" id="ProfileSection-thirdPersonPhoto" alt='user avatar'/>
                         </div>
                     </Link>     
-                </div>
                     {window.location.pathname !=='/' && <IsFriendButton userData={userData}/>}           
+                </div>
                 <div className="col ps-3" id="ProfileSection-user-info"> 
                     <div id="ProfileSection-fullname_container">
                         <h5 id="ProfileSection-fullname">{userData.fullname}</h5>

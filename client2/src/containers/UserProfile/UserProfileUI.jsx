@@ -9,11 +9,11 @@ export default function UserProfileUI({userData, isModalVisible, setIsModalVisib
     return(
         <>
             < div className="row" id="profile_main_container">
-                <div className="col-xl-3 col-md-2 py-3" id="profile_col_left">
+                <div className="col-xl-2 col-md-3 col-sm-11 py-3 mb-2" id="profile_col_left">
                     <ProfileSection userData={userData} setIsModalVisible={setIsModalVisible} />
                     {isModalVisible && <RecommendModal handleCloseModal={handleCloseModal} userData={userData}/>}
                 </div>
-                <div className="col-xl-4 col-md-6 col-sm-11 py-3" id="profile_col_cen">
+                <div className="col-xl-5 col-md-5 col-sm-11" id="profile_col_cen">
                     <ProfilePostSection userData={userData}/>
                     
                 </div>

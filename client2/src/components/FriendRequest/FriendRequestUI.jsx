@@ -11,7 +11,7 @@ export default function FriendRequestUI({allRequest,replyRequest}){
         }
     },[])
     return(
-        <section className={`friend_request_container ${fstart}`}>
+        <section className={`friend_request_container ${fstart} mb-4 ps-2`}>
             {
                 allRequest.length>0 ? 
                 allRequest.map((request,i)=>{
@@ -25,7 +25,7 @@ export default function FriendRequestUI({allRequest,replyRequest}){
                         replyRequest={replyRequest}
                     />)
                 })
-                : <p>No hay solicitudes pendientes</p>
+                : <h6>No hay solicitudes pendientes</h6>
             }
         </section>
     )
