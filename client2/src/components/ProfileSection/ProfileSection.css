@@ -67,4 +67,14 @@
         height: 80px;
         width: 80px;
     }
+
+    #profile_recommentadion_button{
+        height: 40px;
+        font-size: 9pt;
+        align-self: flex-end;
+    }
+
+    #profile_header{
+        align-self: center;
+    }
 }
