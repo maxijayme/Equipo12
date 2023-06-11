@@ -13,6 +13,8 @@ const register = require('./firsRegister.js')
 const pendingRequest = require('./pending_request.js')
 const recommendation = require('./recommendation.js')
 const experience = require('./experience.js')
+const other_data = require('./other_data.js')
+const studies = require('./studies.js')
 
 router.use('/login', login)
 router.use('/users', users)
@@ -26,6 +28,8 @@ router.use('/register',register)
 router.use('/pending_request',pendingRequest)
 router.use('/recommendation', recommendation)
 router.use('/experience',experience)
+router.use('/other_data',other_data)
+router.use('/studies',studies)
 
 router.post('', isLogged, (req,res,next)=>{
     if(req.authenticated){

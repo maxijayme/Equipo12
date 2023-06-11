@@ -6,7 +6,9 @@ import AppContext from "../../context/UsersContext";
 import Layout from "../../components/Layout/Layout";
 
 export default function AdminPanel(){
-    
+    const [selectedOption, setSelectedOption] = useState('questions');
+    const navigate = useNavigate()
+    const [restricted, setRestricted] = useState(false)
     const {jwt} = useContext(AppContext)
     let token,profile;
     if(jwt != null) {
@@ -17,8 +19,6 @@ export default function AdminPanel(){
         profile = null;
     }
     console.log(jwt)
-    const navigate = useNavigate()
-    const [restricted, setRestricted] = useState(false)
 
     useEffect(()=>{
         if(token === null){
@@ -35,14 +35,16 @@ export default function AdminPanel(){
         }
     },[])
 
-    
+    const handleSelectOption = (option) => {
+        setSelectedOption(option);
+      };
 
     return(
         <>
         {
             !restricted ?
             <Layout>
-                <AdminPanelUI token={token} />
+                <AdminPanelUI token={token} selectedOption={selectedOption} handleSelectOption={handleSelectOption}/>
             </Layout>
             : <Restricted/>
         }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2023 a las 20:21:36
+-- Tiempo de generación: 11-06-2023 a las 21:43:38
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -103,12 +103,12 @@ INSERT INTO `testudios` (`id_estudio`, `titulo`, `centro`, `f_inicio`, `f_fin`, 
 CREATE TABLE `totros_datos` (
   `id_datos` int(4) NOT NULL,
   `id_usuario` int(4) DEFAULT NULL,
-  `licencia` varchar(6) DEFAULT NULL,
+  `licencia` varchar(15) DEFAULT NULL,
   `disponibilidad` tinyint(1) DEFAULT NULL,
   `preferencia` varchar(35) DEFAULT NULL,
   `hobbies` varchar(50) DEFAULT NULL,
-  `otros_conocimientos` varchar(350) NOT NULL,
-  `idiomas` varchar(100) NOT NULL
+  `otros_conocimientos` varchar(350) DEFAULT NULL,
+  `idiomas` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -174,16 +174,7 @@ INSERT INTO `tpublicaciones` (`id_publicacion`, `id_usuario`, `fecha_publicacion
 (56, 2, '2023-04-28 14:31:18', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682685144/teclapedia/7.jpg', 'Foton', NULL, NULL),
 (57, 2, '2023-04-28 14:32:15', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682677149/teclapedia/friend_1.jpg', 'Genial!', NULL, NULL),
 (58, 2, '2023-04-28 14:33:07', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1682685253/teclapedia/9.jpg', 'Maaaaal', 0, NULL),
-(95, 1, '2023-06-01 17:36:54', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685626101/teclapedia/promise.jpg', 'Que buen meme', NULL, NULL),
-(96, 1, '2023-06-01 19:08:38', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685639365/teclapedia/reactmeme.jpg', 'probando', NULL, NULL),
-(97, 1, '2023-06-01 19:09:08', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685639365/teclapedia/reactmeme.jpg', '', NULL, NULL),
-(98, 1, '2023-06-01 19:09:18', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685639365/teclapedia/reactmeme.jpg', '', NULL, NULL),
-(99, 1, '2023-06-01 19:19:56', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685626101/teclapedia/promise.jpg', 'algo', NULL, NULL),
-(100, 1, '2023-06-01 19:25:44', 'undefined', 'dsds', NULL, NULL),
-(102, 1, '2023-06-01 19:35:07', 'undefined', 'dsdsd', NULL, NULL),
-(103, 3, '2023-06-02 01:38:12', 'undefined', 'Me siento identificado!', NULL, NULL),
-(104, 5, '2023-06-08 13:44:35', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685693133/teclapedia/fiesta.jpg', 'Hola', NULL, NULL),
-(105, 5, '2023-06-08 13:52:20', 'undefined', 'Hola2', NULL, NULL);
+(95, 1, '2023-06-01 17:36:54', 'https://res.cloudinary.com/deirkmhyd/image/upload/v1685626101/teclapedia/promise.jpg', 'Que buen meme', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -206,7 +197,8 @@ INSERT INTO `trecomendaciones` (`id`, `id_recomendante`, `id_recomendado`, `reco
 (7, 1, 21, 'Ojo con este chico... Es argentino!'),
 (8, 21, 1, 'Es una gran persona. Muy profesional!'),
 (9, 5, 2, 'Es muy buena compañera!'),
-(10, 5, 21, 'Y tanto!');
+(10, 5, 21, 'Y tanto!'),
+(11, 1, 5, 'Es muy majo');
 
 -- --------------------------------------------------------
 
@@ -315,7 +307,7 @@ CREATE TABLE `tusuario` (
 --
 
 INSERT INTO `tusuario` (`id_usuario`, `fullname`, `username`, `password`, `phone`, `email`, `city`, `country`, `linkedin`, `photo`, `nivel_estudios`, `perfil`) VALUES
-(1, 'María García', '@mgarcia', '$2b$08$8QrAFmp6RpVL.21PLJdek.vKVaNohP2GWTrEv3M8FckD61s9Gd4fu', 666759324, 'mgarcia@email.com', 'Gijón', 'España', 'maria-garcia', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682496741/cld-sample.jpg', 'Licenciatura', 'usuario'),
+(1, 'María García', '@mgarcia', '$2b$08$8QrAFmp6RpVL.21PLJdek.vKVaNohP2GWTrEv3M8FckD61s9Gd4fu', 614527895, 'mgarcia@email.es', 'Gijón', 'España', 'maria-garcia', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682496741/cld-sample.jpg', 'Licenciatura', 'usuario'),
 (2, 'Lucía Sánchez', '@lsanchez', '$2b$08$uV9IJNwB.1LG1JEYXh6oGeb22RrPqDSEAhJuflAM3NgMa.p5uQS6C', 659412378, 'lsanchez@email.com', 'Gijón', 'España', 'lucia-sanchez', 'https://res.cloudinary.com/dfxw85ptb/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1682496724/samples/bike.jpg', 'Grado', 'usuario'),
 (3, 'Roberto Gómez', '@rgomez', '$2b$08$CVJ1hTm09gZ7NlmfwX6THunKlOdTxYyLp55apLhc6Yudj3jjMMmyK', 641287621, 'rgomez@email.com', 'Oviedo', 'España', 'roberto-gomez', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682496723/samples/people/smiling-man.jpg', 'Grado', 'usuario'),
 (4, 'Natalia Alonso', '@nalonso', '$2b$08$t2IescpEOxiaCmOjQXsUCOeeo0aLcPz7jzc6pZHoV4xfOf82BFUM.', 675842196, 'nalonso@email.com', 'Madrid', 'España', 'natalia-alonso', 'https://res.cloudinary.com/dfxw85ptb/image/upload/v1682500030/pexels-andrea-piacquadio-3763188_whi3ce.jpg', 'Bachiller', 'usuario'),
@@ -426,13 +418,13 @@ ALTER TABLE `totros_datos`
 -- AUTO_INCREMENT de la tabla `tpublicaciones`
 --
 ALTER TABLE `tpublicaciones`
-  MODIFY `id_publicacion` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id_publicacion` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT de la tabla `trecomendaciones`
 --
 ALTER TABLE `trecomendaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `tsolicitudes`
