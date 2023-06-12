@@ -129,6 +129,10 @@ a{
     display: none;
    }
 
+#userlist_container{
+    z-index: 2;
+}
+
 .userlist ul{
     display: flex;
     flex-direction: column;
@@ -158,6 +162,7 @@ header i {
     position: absolute;
     right: 0;
     transition: all 0.7s ease-in-out;
+    z-index: 2;
 }
 
 #menu-toggle:nth-child(){
