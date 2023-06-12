@@ -2,7 +2,7 @@ import CreatePostUI from './CreatePostUI'
 import {URL} from '../../utils/url'
 import {useState, useEffect, useRef} from 'react';
 
-export default function CreatePost({userData}) {
+export default function CreatePost({userData, updatePosts , setUpdatePosts}) {
     const[postData, setPostData] = useState({userId: "",postText:"", postImg:""})
     const [url, updateUrl] = useState();
     const [uploadImgName, setUploadImgName] = useState("");
@@ -48,6 +48,7 @@ export default function CreatePost({userData}) {
             if(data.status===200){
                 setPostData({userId: "",postText:"", postImg:""})
                 textareaRef.current.value = "";
+                setUpdatePosts(!updatePosts)
             }
         })
     }
