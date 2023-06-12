@@ -171,16 +171,18 @@ header i {
 
 
 
-@media (max-width: 991px){
+@media (max-width: 1199px){
     #Navbar-friends{
         display: inline-block;
         margin-left: 10px;
     }
+}
+
+@media (max-width: 991px){
     #img-button_menu{
         display: none;
     }
 }
-
 
 
 @media (max-width: 785px){

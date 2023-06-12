@@ -1,4 +1,4 @@
-#modal_userData{
+#modal_moreInfo{
     position: absolute;
     top: 0;
     left: 0;
@@ -11,13 +11,6 @@
     min-width: 300px;
     border-radius: 15px;
     background-color: white;
-}
-
-#modal-userInput{
-    height: 50px;
-    width: 80%;
-    margin: 0 auto;
-    text-align: start;
-    resize: none;
-    margin-bottom: 5px;
+    padding: 15px;
+    overflow: scroll;
 }

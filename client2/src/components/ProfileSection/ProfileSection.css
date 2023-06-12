@@ -1,11 +1,3 @@
-/* #ProfileSection-col_left{
-    display: flex;
-    min-width: 280px;
-    background-color: white;
-    border-radius: 25px;
-    align-content: baseline;
-} */
-
 #ProfileSection-userData{
     display: flex;
     flex-direction: column;
@@ -43,6 +35,10 @@
 
 .ProfileSection-img-not{
     width: 25%;
+}
+
+#pencil-icon:hover{
+    cursor: pointer;
 }
 
 @media(max-width: 767px){

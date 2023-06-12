@@ -12,14 +12,14 @@ export default function UserProfileUI({userData, isModalVisible, setIsModalVisib
     return(
         <>
             < div className="row" id="profile_main_container">
-                <div className="col-xl-3 col-md-2 py-3" id="profile_col_left">
+                <div className="col-xl-3 col-md-2 col-sm-11 py-3 mb-3" id="profile_col_left">
                     <ProfileSection userData={userData} setIsModalVisible={setIsModalVisible} setIsEditVisible={setIsEditVisible}/>
                     <OtherDataSection userData={userData}/>
                     {isModalVisible && <RecommendModal handleCloseModal={handleCloseModal} userData={userData}/>}
                     {isEditVisible && <UserDataModal handleCloseEditModal={handleCloseEditModal} userData={userData}/>}
                     {window.location.pathname !=='/' && <Recommendations userData={userData}/>}
                 </div>
-                <div className="col-xl-5 col-md-5 col-sm-11" id="profile_col_cen">
+                <div className="col-xl-5 col-md-7 col-sm-11" id="profile_col_cen">
                     <ProfilePostSection userData={userData}/>
                     
                 </div>

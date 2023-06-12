@@ -6,7 +6,7 @@ export default function UserDataModalUI ({handleCloseEditModal,userData,handleDa
     return (
         <div className="modal-dialog modal-dialog-centered" id="modal_userData" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-content align-items-center gap-4">
-                <button type="button" className="btn-close align-self-end me-3" aria-label="Close" onClick={handleCloseEditModal}></button>
+                <button type="button" className="btn-close align-self-end me-3 mt-2" aria-label="Close" onClick={handleCloseEditModal}></button>
             <div className="modal-header justify-content-center w-100">
                 <h1 className="modal-title fs-5" id="exampleModalLabel">Edita tus datos</h1>
             </div>
@@ -19,7 +19,7 @@ export default function UserDataModalUI ({handleCloseEditModal,userData,handleDa
                 <input className="form-control" id="modal-userInput" type="text" placeholder={userData.linkedin} value={linkedinValue} onChange={(e) => handleDataInputChange("linkedin", e.target.value)}/>
                 <input className="form-control" id="modal-userInput" type="text" placeholder={userData.city} value={cityValue} onChange={(e) => handleDataInputChange("city", e.target.value)}/>
             </div>
-            <div className="modal-footer gap-5">
+            <div className="modal-footer gap-5 mb-3">
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleCloseEditModal}>Close</button>
                 <button type="button" className="btn btn-primary" onClick={handleSubmit} disabled={!isValidForm}>Save changes</button>
             </div>

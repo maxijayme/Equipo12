@@ -22,9 +22,7 @@ export default function ExperienceSection({userData}){
             },   
          }).then(async data => {
             if(data.status === 200){
-                const experiences = await data.json()
-                console.log(experiences[0].puesto)
-                
+                const experiences = await data.json()              
                 setExperiences(experiences)
             }
         })

@@ -24,10 +24,17 @@
 #feed_col_cen{
     padding-top: 20px;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 0 0 15px 15px;
 }
 
 /*media queries*/
+@media (max-width: 767px){
+    #feed_col_cen{
+        border-radius: 15px;
+    }
+}
+
+
 
 @media (max-width: 991px) {
     #feed_col_right{
