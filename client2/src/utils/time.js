@@ -1,11 +1,12 @@
 const moment = require('moment');
 
 export default function getMoment(oldDate){
-    moment.locale('es');
-    let time= moment(oldDate).format("DD-MM-YYYY kk:mm:ss");
-    let postTime = moment((time), "DD/MM/YYYY kk:mm:ss");
-    let getTime = moment().utc(2);
-    let diffTime = moment(postTime).from(getTime);
+  moment.locale('es');
+  let time= moment(oldDate).format("DD-MM-YYYY kk:mm:ss");
+  let postTime = moment((time), "DD/MM/YYYY kk:mm:ss");
+  let getTime = moment().utc(2);
+  let diffTime = moment(postTime).from(getTime);
+  console.log(diffTime)
     return diffTime;
   }
   moment.updateLocale('en', {
