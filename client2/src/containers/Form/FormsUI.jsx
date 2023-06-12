@@ -25,16 +25,16 @@ function FormsUI({handleSubmit, pristine, submitting, handleOnUpload, url}){
         <>
        
         <div className="form-container row" id='form_complete_container'>
-            <header className="form_container_header p-3 mb-2 col-9">
+            <header className="form_container_header p-3 mb-2 col-9 mt-2">
                 <div className="row">
                     <h3 className="col" id="form_title">Crea tu perfil</h3>
-                    <img className="col" id="logo" src="../img/teclapedia_logo.svg" alt="logo"></img>
+                    <img className="col" id="form_logo" src="../img/teclapedia_logo.svg" alt="logo"></img>
                 </div>
             </header>
             <form onSubmit={handleSubmit} className="col-9">
                <div className="form_data_container p-3 mb-2" id="form_first-container">
                     <div className="row align-items-center" id="first-container-row">
-                        <div className="col-3 px-1">
+                        <div className="d-flex col-lg-3 col-md-12 px-1 justify-content-center">
                             <img src={url} alt="Foto de perfil" id="form_fotoPerfil" name="profilePhoto"  />
                             <UploadWidget onUpload={handleOnUpload}>
                                 {({ open }) => {
@@ -43,7 +43,7 @@ function FormsUI({handleSubmit, pristine, submitting, handleOnUpload, url}){
                                         open();
                                     }
                                     return (
-                                        <button className="createPosts-cloudinary-button" onClick={handleOnClick}>
+                                        <button className="createPosts-cloudinary-button align-self-end" onClick={handleOnClick}>
                                             <Camera className="me-2"/>
                                         </button>
                                     )
@@ -51,7 +51,7 @@ function FormsUI({handleSubmit, pristine, submitting, handleOnUpload, url}){
                                 } 
                             </UploadWidget>
                         </div>
-                        <div className="col-9 d-flex-column px-4">
+                        <div className="col-lg-9 col-md-12 d-flex-column px-4">
                             <Field
                                 className="form-control mb-2"
                                 label="Teléfono"

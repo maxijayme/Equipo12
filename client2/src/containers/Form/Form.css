@@ -24,6 +24,12 @@
     border-radius:  15px;
 }
 
+#form_logo{
+    width: 25%;
+    max-width: 330px;
+    min-width: 250px;
+}
+
 #form_create {
     height: fit-content;
 }
@@ -40,4 +46,15 @@
 Field {
     margin-bottom: 15px;
     color: gray;
+}
+
+@media (max-width: 991px){
+    #form_fotoPerfil{
+        width: 100px;
+        height: 100px;
+    }
+
+    #first-container-row{
+        gap: 10px;
+    }
 }

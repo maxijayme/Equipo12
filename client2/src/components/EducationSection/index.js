@@ -28,7 +28,7 @@ export default function EducationSection({userData}){
     
     return(
         <>
-            {educationList.length0 && educationList[0].titulo !== 'undefined' && <EducationSectionUI educationList={educationList}/>}
+            {educationList.length > 0 && educationList[0].titulo !== 'undefined' && <EducationSectionUI educationList={educationList}/>}
         </>
         
     )
