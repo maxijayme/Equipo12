@@ -38,6 +38,10 @@
     justify-content: center;
 }
 
+.error-message {
+    width: fit-content;
+}
+
 /* Boton enviar consulta */
 
 .confirm_delete{
