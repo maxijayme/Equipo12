@@ -6,8 +6,7 @@
 }
 
 #contact_main_container{
-    
-    margin-top: 73px;
+    margin: 0 auto;
     border-radius: 25px;
     justify-content: space-around;
     height: fit-content;
