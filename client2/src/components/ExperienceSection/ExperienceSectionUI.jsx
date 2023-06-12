@@ -5,7 +5,8 @@ export default function ExperienceSectionUI({experiencesList}){
         <section className="experience_container">
             <p className="h4 p-3">Experiencia laboral</p>
             {
-                experiencesList.length>0 && experiencesList.map((experience,i)=>{
+                experiencesList.map((experience,i)=>{
+                    
                     return (<ExperienceCardUI
                         job={experience.puesto}
                         company={experience.empresa}

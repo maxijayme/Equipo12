@@ -5,7 +5,7 @@ export default function EducationSectionUI({educationList}){
         <section className="experience_container">
             <p className="h4 p-3">Estudios</p>
             {
-                educationList.length>0 && educationList.map((study,i)=>{
+                 educationList.map((study,i)=>{
                     return (<EducationCardUI
                         title={study.titulo}
                         studiesCenter={study.centro}

@@ -27,6 +27,9 @@ export default function EducationSection({userData}){
     }
     
     return(
-        <EducationSectionUI educationList={educationList}/>
+        <>
+            {educationList.length0 && educationList[0].titulo !== 'undefined' && <EducationSectionUI educationList={educationList}/>}
+        </>
+        
     )
 }

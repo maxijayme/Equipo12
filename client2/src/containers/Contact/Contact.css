@@ -7,7 +7,7 @@
 
 #contact_main_container{
     
-    margin-top: 73px;
+    margin: 0 auto;
     border-radius: 25px;
     justify-content: space-around;
     height: fit-content;
@@ -37,6 +37,10 @@
     flex-direction: column;
     width: auto;
     justify-content: center;
+}
+
+.error-message {
+    width: fit-content;
 }
 
 /* Boton enviar consulta */
