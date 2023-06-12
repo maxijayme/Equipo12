@@ -95,7 +95,7 @@ export default function ContactUI(){
                         </div>
                         <form className="row">
                             <input className="form-control mb-3" type="text" name="title" value={form.title} id="" placeholder="Título" onChange={handleInputChange} />
-                            {titleErrorMessage && <p className="error-message">{titleErrorMessage}</p>}
+                            {titleErrorMessage && <span className="error-message ">{titleErrorMessage}</span>}
                             <textarea className="form-control mb-3" type="text" name="question" value={form.question} id="" placeholder="Consulta" onChange={handleInputChange} />
                             {questionErrorMessage && <p className="error-message">{questionErrorMessage}</p>}
                             <select className="form-select mb-3" name="subject" onChange={handleInputChange}>
