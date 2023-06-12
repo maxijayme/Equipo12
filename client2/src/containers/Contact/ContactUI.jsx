@@ -95,9 +95,9 @@ export default function ContactUI(){
                         </div>
                         <form className="row">
                             <input className="form-control mb-3" type="text" name="title" value={form.title} id="" placeholder="Título" onChange={handleInputChange} />
-                            {titleErrorMessage && <p className="error-message error-message-width">{titleErrorMessage}</p>}
+                            {titleErrorMessage && <p className="error-message">{titleErrorMessage}</p>}
                             <textarea className="form-control mb-3" type="text" name="question" value={form.question} id="" placeholder="Consulta" onChange={handleInputChange} />
-                            {questionErrorMessage && <p className="error-message error-message-width">{questionErrorMessage}</p>}
+                            {questionErrorMessage && <p className="error-message">{questionErrorMessage}</p>}
                             <select className="form-select mb-3" name="subject" onChange={handleInputChange}>
                                 <option disabled selected>Elige una opción</option>
                                 <option value="personal data">Datos personales</option>
@@ -106,7 +106,7 @@ export default function ContactUI(){
                                 <option value="content">Contenido</option>
                                 <option value="other_questions">Otras consultas</option>
                             </select>
-                            {subjectErrorMessage && <p className="error-message error-message-width">{subjectErrorMessage}</p>}
+                            {subjectErrorMessage && <p className="error-message">{subjectErrorMessage}</p>}
                             <div className="row d-flex justify-content-center">
                                 <button className="confirm_delete green" onClick={handleSubmit} >Enviar</button>
                             </div>

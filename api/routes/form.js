@@ -45,9 +45,16 @@ router.post('/', async (req,res)=>{
         const {position,company,dateStartWorking,dateEndWorking,stillWorking,tasks} = req.body;
         const {licence,availability,preference,hobbies,extra,languages} = req.body;
         const {id} = req.body;
-        const newStudy = await db.query(`Insert into testudios (titulo, centro, f_inicio,f_fin,actualidad,id_usuario) values ("${degree}", "${academy}", "${dateStartStudies}", "${dateEndStudies}","${stillStudying ? 1:0}","${id}")`,{type: QueryTypes.INSERT })
-        const newJob = await db.query(`Insert into ttrabajos (id_usuario,puesto, empresa,funciones,f_inicio,f_fin,actualidad) values ("${id}","${position}", "${company}", "${tasks}", "${dateStartWorking}","${dateEndWorking}","${stillWorking ? 1:0}")`,{type: QueryTypes.INSERT })
-        const newOthers = await db.query(`Insert into totros_datos (id_usuario,licencia, disponibilidad,preferencia,hobbies,otros_conocimientos,idiomas) values ("${id}","${licence}", "${availability?1:0}", "${preference}", "${hobbies}", "${extra}", "${languages}")`,{type: QueryTypes.INSERT })
+        console.log(degree)
+        if (degree !== undefined) {
+            const newStudy = await db.query(`Insert into testudios (titulo, centro, f_inicio,f_fin,actualidad,id_usuario) values ("${degree}", "${academy}", "${dateStartStudies}", "${dateEndStudies}","${stillStudying ? 1:0}","${id}")`,{type: QueryTypes.INSERT })
+        }
+        if (position !== undefined) {
+            const newJob = await db.query(`Insert into ttrabajos (id_usuario,puesto, empresa,funciones,f_inicio,f_fin,actualidad) values ("${id}","${position}", "${company}", "${tasks}", "${dateStartWorking}","${dateEndWorking}","${stillWorking ? 1:0}")`,{type: QueryTypes.INSERT })
+        }
+        if (licence !== undefined || preference !== undefined || hobbies !== undefined || extra !== undefined || languages !== undefined) {
+            const newOthers = await db.query(`INSERT INTO totros_datos (id_usuario, licencia, disponibilidad, preferencia, hobbies, otros_conocimientos, idiomas) VALUES ("${id}","${licence}", ${availability ? 1 : 0}, "${preference}", "${hobbies}","${extra}", "${languages}")`, { type: QueryTypes.INSERT });
+        }
         res.status(200).json('ok')
     } catch(err){
         console.log(err)
