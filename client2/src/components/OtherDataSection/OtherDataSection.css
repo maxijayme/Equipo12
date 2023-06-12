@@ -1,0 +1,22 @@
+#otherData_container{
+    background-color: rgb(222,225,232);
+    border-radius: 15px;
+    height: fit-content;
+}
+
+.otherData_info {
+    background-color: rgb(222,225,232);
+    border-radius: 15px;
+}
+
+#more-info_icon{
+    height: 25px;
+    width: 25px;
+    display: none;
+}
+
+@media(max-width: 1199px){
+    #more-info_icon{
+        display: inline-block;
+    } 
+}

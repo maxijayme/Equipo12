@@ -1,8 +1,10 @@
 import { CSVLink } from 'react-csv';
 import Paginate from '../../Paginate';
 import { useState } from 'react';
+import { useEffect } from 'react';
+import './AdminUserList.css'
 
-export default function AdminUserListUI({userList}){
+export default function AdminUserListUI({userList,deleteUser}){
     const headers = [
         { label: 'id', key: 'id_usuario' },
         { label: 'nombre completo', key: 'fullname' },
@@ -14,16 +16,51 @@ export default function AdminUserListUI({userList}){
         { label: 'país', key: 'country' },
         { label: 'nivel de estudios', key: 'nivel_estudios' }
     ];
-    const [pagedUserList, setPagedUserList] = useState([])
+    const [ currentPage, setCurrentPage ] = useState(1);
+    const [usersPerPage, ] = useState(5);
+    const indexOfLastUser= currentPage * usersPerPage
+    const indexOfFirstUser = indexOfLastUser - usersPerPage
+    const pagedUserList = userList.slice(indexOfFirstUser,indexOfLastUser)
     return(
-        <div>
-            <Paginate userList={userList} pagedUserList ={pagedUserList} setPagedUserList={setPagedUserList}/>
+        <div className='m-3'>
+            
+            <Paginate usersPerPage={usersPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} userList={userList} pagedUserList ={pagedUserList}/>
+            <table className="adminUserList_table table table-bordered">
+                <thead>
+                    <tr >
+                        <th>Usuario</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Ciudad</th>
+                        <th>País</th>
+                        <th>Linkedin</th>
+                        <th>Nivel de estudios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {pagedUserList.length > 0 && pagedUserList.map((user,i) => (
+                        <tr key={i}>
+                            <td className='userList_jail'>{user.username}</td>
+                            <td>{user.fullname}</td>
+                            <td>{user.email}</td>
+                            <td>{user.phone}</td>
+                            <td>{user.city}</td>
+                            <td>{user.country}</td>
+                            <td>{user.linkedin}</td>
+                            <td>{user.nivel_estudios}</td>
+                            <td><button onClick={() => {deleteUser(user.id_usuario)}}>Eliminar</button></td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            {/* <Paginate userList={userList} pagedUserList ={pagedUserList} setPagedUserList={setPagedUserList}/>
             <ul>
             {pagedUserList.length > 0 && pagedUserList.map(user =>(
                 <li key={user.id_usuario}>
                     <p>{user.username}</p>
                     <p>{user.fullname}</p>
-                    <p>{user.mail}</p>
+                    <p>{user.email}</p>
                     <p>{user.phone}</p>
                     <p>{user.city}</p>
                     <p>{user.country}</p>
@@ -31,7 +68,7 @@ export default function AdminUserListUI({userList}){
                     <p>{user.nivel_estudios}</p>
                 </li>
             ))}
-            </ul>
+            </ul> */}
             <CSVLink
                 data={userList}
                 headers={headers}

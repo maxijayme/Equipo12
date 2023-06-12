@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react'
 import FriendsPostsUI from './FriendsPostsUI'
 import {URL} from '../../utils/url'
 
-export default function FriendsPosts({userData}) {
+export default function FriendsPosts({userData, updatePostList}) {
     const [friendsPostList, setFriendsPostList] = useState([])
     
     useEffect(() => {
-            if(userData.userData.id_usuario){
-            const userId = userData.userData.id_usuario
+            if(userData.id_usuario){
+            const userId = userData.id_usuario
             getFriendsPosts(userId)}
-    }, [userData.userData.id_usuario])
+    }, [userData.id_usuario, updatePostList])
 
     async function getFriendsPosts(userId){
         const response = await fetch(`${URL}/social_media_post/friendsPosts/${userId}`,{

@@ -9,6 +9,7 @@ export default function Feed(){
     const navigate = useNavigate()
     const {jwt} = useContext(AppContext)
     const [userData, setUserData] = useState({})
+    const [updatePostList, setUpdatePostList] = useState(false)
     let userId;
     useEffect(()=>{
         if(jwt){
@@ -51,7 +52,7 @@ export default function Feed(){
 
     return(
         <Layout >
-            <FeedUI userData={userData}/>
+            <FeedUI userData={userData} updatePostList ={updatePostList} setUpdatePostList={setUpdatePostList}/>
         </Layout>
     )
 }

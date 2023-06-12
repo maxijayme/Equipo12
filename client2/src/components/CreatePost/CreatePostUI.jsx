@@ -14,7 +14,7 @@ export default function CreatePostUI({handleChange, handlePost, handleOnUpload,t
                     <p className="col h5 text-dark">Comparte algo...</p>
                 </div>                
                 <div className="createPosts row m-1">
-                    <textarea ref={textareaRef} className="createPosts form-control" name="postText" id="createPosts-postText" rows="5" placeholder="¿Qué quieres compartir?..." onChange={handleChange} ></textarea>
+                    <textarea ref={textareaRef} className="createPosts form-control" name="postText" id="createPosts-postText" rows="3" placeholder="¿Qué quieres compartir?..." onChange={handleChange} ></textarea>
                     <p id="createPosts-attachedImg">{uploadImgName}</p   >
                 </div>
                 <div className="createPosts-pieNewPost row m-1 d-flex justify-content-between">

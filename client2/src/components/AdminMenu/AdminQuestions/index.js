@@ -38,6 +38,6 @@ export default function AdminQuestions({token}){
     },[])
 
     return(
-        <AdminQuestionsUI questions={questions}/>
+        <AdminQuestionsUI questions={questions} handleResponse={handleResponse}/>
     )
 }

@@ -2,7 +2,7 @@ import './ExperienceCard.css'
 
 export default function ExperienceCardUI({job,company,tasks,init_date,finish_date,still}){
     return (
-        <div className="experience_card_container ms-3 me-3 p-2 mb-3"> 
+        <div className="experience_card_container p-2 mb-3"> 
             <p className="h5 p-2">{job}</p>
             <p className="h6 px-2">{company}</p>
             <div className="experience_time px-2">

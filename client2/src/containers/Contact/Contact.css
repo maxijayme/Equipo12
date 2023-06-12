@@ -5,11 +5,12 @@
     
 }
 
-#main_container{
-    
-    margin-top: 73px;
+#contact_main_container{
+    margin: 0 auto;
+    border-radius: 25px;
     justify-content: space-around;
-    height: 80vh;
+    height: fit-content;
+    width: fit-content;
     
 }
 
@@ -27,6 +28,7 @@
 
 #col_right {
     display: flex;
+    border-radius: 25px;
 }
 
 #container_help {
@@ -34,6 +36,10 @@
     flex-direction: column;
     width: auto;
     justify-content: center;
+}
+
+.error-message {
+    width: fit-content;
 }
 
 /* Boton enviar consulta */

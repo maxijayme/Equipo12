@@ -1,7 +1,7 @@
 import './Navbar.css'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Search } from 'react-bootstrap-icons';
+import { Search, PersonFillAdd } from 'react-bootstrap-icons';
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ export default function NavbarUI({handleLogout, handleSearch, searchResult, sear
         <> 
             <Navbar bg="dark" variant="dark" expand="lg">
                 <Navbar.Brand href="../" id='logo-container'>
-                    <img src="/img/teclapedia_logo.svg" alt="Teclapedia" id="logo" />
+                    <div alt="Teclapedia" id="logo"></div>
                 </Navbar.Brand>
                 <form className="d-flex" role="search" id="searchbar">
                     <div id="search-wrapper">
@@ -54,6 +54,9 @@ export default function NavbarUI({handleLogout, handleSearch, searchResult, sear
                     </div>
                 </form>
                 <div id="nav_profile" className="center_flex me-3" >
+                    <Link to="/friends" id="Navbar-friends">
+                        <PersonFillAdd style={{color:"white", height:30, width:30}}/>
+                    </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleNavbar} className='show-always' id="menu_button"/>
                     <button className="menu-toggle" id="img-button_menu" onClick={toggleNavbar}>
                         <img
@@ -65,8 +68,8 @@ export default function NavbarUI({handleLogout, handleSearch, searchResult, sear
                 </div>
             </Navbar>  
                 <Nav className={`ml-auto flex-column bg-dark border-dark p-2 ${navClasses}`} id='menu-toggle'>
-                    <Nav.Link href="#home" className='text-light'>Perfil</Nav.Link>
-                    <Nav.Link href="#config" className='text-light'>Configuración</Nav.Link>
+                    <Link to={`/profile/${userData.username}`} className='nav-link text-light'>Perfil</Link>
+                    <Link to={`/contact`} href="#config" className='nav-link text-light'>Ayuda</Link>
                     {userData.perfil==='admin' && <Link className="nav-link text-light" to='/admin'>Administrar</Link>}
                     <Nav.Link className='text-light' onClick={handleLogout}>Cerrar sesión</Nav.Link>
                 </Nav>    
