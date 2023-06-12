@@ -1,0 +1,17 @@
+
+#recommendation_container{
+    background-color: rgb(222,225,232);
+    border-radius: 15px;
+    height: fit-content;
+    overflow: scroll;
+}    
+
+#recommendation_container::-webkit-scrollbar{
+    display: none;
+}
+
+#recommendation_division-line{
+    border: 1px solid rgb(199, 199, 199);
+    width: 80%;
+    margin: 0 auto;
+}

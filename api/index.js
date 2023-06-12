@@ -19,4 +19,6 @@ server.use((req, res, next) => {
 
 server.use('/', routes);
 
-server.listen(3001, console.log('server online'))
+const app = server.listen(3001, console.log('server online'))
+
+module.exports= app;

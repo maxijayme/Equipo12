@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect} from "react";
 import Layout from "../../components/Layout/Layout"
+import AppContext from "../../context/UsersContext";
 import RegisterUI from "./RegisterUI"
 import {URL} from '../../utils/url' 
 import useLogin from '../../hooks/useLogin'
@@ -10,7 +11,13 @@ export default function Register(){
     const {isLoginLoading, hasLoginError, login, isLogged} = useLogin()
     const navigate = useNavigate();
     const [error, setError] = useState('')
+    const {jwt} = useContext(AppContext)
 
+    useEffect(() => {
+      if (jwt!==null) {
+        navigate('/')
+      }
+    }, [])
     const handleSubmit = async(values) => {
         
         // para comprobar si existe

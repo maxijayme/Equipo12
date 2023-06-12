@@ -14,8 +14,8 @@ export default function RecommendModalUI({handleCloseModal, handleInputChange, h
                 <textarea id="modal-input" value={inputValue} onChange={handleInputChange} maxLength="500" rows="1" cols="50" />
             </div>
             <div className="modal-footer gap-5">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleCloseModal}>Close</button>
-                <button type="button" className="btn btn-primary" onClick={handleSubmit}>Save changes</button>
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleCloseModal}>Cerrar</button>
+                <button type="button" className="btn btn-primary" onClick={handleSubmit}>Enviar</button>
             </div>
             </div>
         </div>

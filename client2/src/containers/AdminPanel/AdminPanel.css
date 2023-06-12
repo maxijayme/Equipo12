@@ -1,0 +1,27 @@
+#adminPanel_main_container {
+    height: 100dvh;
+    justify-content: space-evenly;
+}
+
+#adminPanel_sidebar, #adminPanel_content {
+    background-color: white;
+    border-radius: 25px;
+    height: 100vh;
+    overflow: scroll;
+}
+
+#adminPanel_content::-webkit-scrollbar {
+    display: none;
+}
+
+.admin_button{
+    height: 35px;
+    width: 250px;
+    border-radius: 15px;
+    margin: 0 auto;
+    font-size: 12pt;
+    font-weight: 600;
+    background-color:  rgb(193, 241, 227);
+    border: none;
+    transition: 0.5s;
+}

@@ -26,6 +26,7 @@
 .PostCard-post_header{
     display: flex;
     flex-direction: column;
+    flex-shrink: unset;
 }
 
 .PostCard-post_header p{

@@ -1,13 +1,13 @@
 .friend_request_container {
     height: 100%;
     width: 100%;
-    min-width: 280px;
     background-color: white;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     gap: 40px;
     padding-top: 20px;
+    align-items: center;
 }
 
 .friend_request_like_container {

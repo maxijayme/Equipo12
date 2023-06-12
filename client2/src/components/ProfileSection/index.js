@@ -2,7 +2,7 @@ import ProfileSectionUI from "./ProfileSectionUI";
 import { useState } from "react";
 // import {URL} from '../../utils/url'
 
-export default function ProfileSection({userData, setIsModalVisible}){
+export default function ProfileSection({userData, setIsModalVisible,setIsEditVisible}){
     const [inputValue, setInputValue] = useState(false);
     
 
@@ -29,7 +29,11 @@ export default function ProfileSection({userData, setIsModalVisible}){
         console.log('Input value:', inputValue);
       };
 
+      const handleOpenDataModal = () => {
+        setIsEditVisible(true);
+      }
+
     return (
-        <ProfileSectionUI userData={userData} handleOpenModal={handleOpenModal} inputValue={inputValue} handleInputChange={handleInputChange} handleSubmit= {handleSubmit}/>
+        <ProfileSectionUI userData={userData} handleOpenModal={handleOpenModal} handleOpenDataModal={handleOpenDataModal} inputValue={inputValue} handleInputChange={handleInputChange} handleSubmit= {handleSubmit}/>
     )
 }

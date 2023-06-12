@@ -58,7 +58,6 @@
 }
 
 #createPosts-botonPublicar {
-    margin-top: 10px;
     border: none;
     background-color: rgb(250, 237, 205);
     border-radius: 25px;
@@ -71,4 +70,8 @@
 .createPosts-newPost{
     background-color: rgb(222,225,232);
     border-radius: 15px;
+}
+
+#createPosts-postText{
+    resize: none;
 }

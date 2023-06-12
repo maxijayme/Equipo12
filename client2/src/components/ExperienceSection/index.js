@@ -22,13 +22,16 @@ export default function ExperienceSection({userData}){
             },   
          }).then(async data => {
             if(data.status === 200){
-                const experiences = await data.json()
+                const experiences = await data.json()              
                 setExperiences(experiences)
             }
         })
     }
     
     return(
-        <ExperienceSectionUI experiencesList={experiencesList}/>
+        <>
+        {experiencesList.length>0 && experiencesList[0].puesto !== 'undefined' && <ExperienceSectionUI experiencesList={experiencesList}/>}
+        </>
+    
     )
 }
