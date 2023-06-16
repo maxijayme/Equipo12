@@ -4,7 +4,8 @@
   "description": "social media for teclers",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec test/*js"
+    "test": "mocha --reporter spec test/*js",
+    "start": "node index.js"
   },
   "author": "grupo 12",
   "license": "ISC",
